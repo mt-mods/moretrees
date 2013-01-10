@@ -269,7 +269,7 @@ for color = 1, 3 do
 					-- this is because max_items is 1
 					items = {"jungletree:leaves_"..leaves[color]},
 				}
-			}z
+			}
 		},
 		sounds = default.node_sound_leaves_defaults(),
 	})
