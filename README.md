@@ -12,3 +12,5 @@ Ezekowitz.
 Jungle tree axioms/rules tweaked by RealBadAngel
 
 License:  WTFPL
+
+Dependencies:  plants_lib (or plantlife modpack), default
