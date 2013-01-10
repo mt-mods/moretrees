@@ -12,15 +12,15 @@
 -- Jungle tree axioms/rules tweaked by RealBadAngel
 --
 
-local DEBUG = true
+local DEBUG = false
 
 -- Jungletree init stuff:
 
-local JT_SPAWN_INTERVAL = 1 -- 100
-local JT_SPAWN_CHANCE = 2 -- 10
+local JT_SPAWN_INTERVAL = 100
+local JT_SPAWN_CHANCE = 10
 
-local JT_GROW_INTERVAL = 1 -- 1000
-local JT_GROW_CHANCE = 2 -- 100
+local JT_GROW_INTERVAL = 1000
+local JT_GROW_CHANCE = 100
 
 local JT_RADIUS = 8
 local JT_WATER_RADIUS = 25
@@ -30,11 +30,11 @@ local jungletree_seed_diff = plantlife_seed_diff
 
 -- Conifers init stuff:
 
-local CONIFERS_SPAWN_SAPLING_CHANCE = 1 -- 500
-local CONIFERS_SPAWN_SAPLING_INTERVAL = 2 -- 3600
+local CONIFERS_SPAWN_SAPLING_CHANCE = 500
+local CONIFERS_SPAWN_SAPLING_INTERVAL = 3600
 
-local CONIFERS_GROW_SAPLING_CHANCE = 1 -- 100
-local CONIFERS_GROW_SAPLING_INTERVAL = 2 -- 3600
+local CONIFERS_GROW_SAPLING_CHANCE = 100
+local CONIFERS_GROW_SAPLING_INTERVAL = 3600
 
 --local CONIFERS_TRUNK_MINHEIGHT = 7
 --local CONIFERS_TRUNK_MAXHEIGHT = 25

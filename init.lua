@@ -7,9 +7,11 @@
 -- jungle trees mod.
 --
 -- Brought together into one mod and made L-systems compatible by Vanessa
--- Ezekowitz.
+-- Ezekowitz.  Thrown together on 2013-01-09 :-)
 --
 -- Jungle tree axioms/rules tweaked by RealBadAngel
+--
+-- License: WTFPL for all parts (code and textures)
 --
 
 local DEBUG = false
