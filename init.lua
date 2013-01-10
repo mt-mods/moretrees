@@ -267,9 +267,9 @@ for color = 1, 3 do
 				{
 					-- player will get leaves only if he get no saplings,
 					-- this is because max_items is 1
-					items = {leave_name},
+					items = {"jungletree:leaves_"..leaves[color]},
 				}
-			}
+			}z
 		},
 		sounds = default.node_sound_leaves_defaults(),
 	})
