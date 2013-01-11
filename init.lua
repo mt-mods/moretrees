@@ -18,11 +18,11 @@ local DEBUG = false
 
 -- Jungletree init stuff:
 
-local JT_SPAWN_INTERVAL = 100
-local JT_SPAWN_CHANCE = 10
+local JT_SPAWN_INTERVAL = 1000
+local JT_SPAWN_CHANCE = 100
 
-local JT_GROW_INTERVAL = 1000
-local JT_GROW_CHANCE = 100
+local JT_GROW_INTERVAL = 100
+local JT_GROW_CHANCE = 10
 
 local JT_RADIUS = 8
 local JT_WATER_RADIUS = 25
@@ -32,11 +32,11 @@ local jungletree_seed_diff = plantlife_seed_diff
 
 -- Conifers init stuff:
 
-local CONIFERS_SPAWN_SAPLING_CHANCE = 500
-local CONIFERS_SPAWN_SAPLING_INTERVAL = 3600
+local CONIFERS_SPAWN_SAPLING_INTERVAL = 1000
+local CONIFERS_SPAWN_SAPLING_CHANCE = 100
 
-local CONIFERS_GROW_SAPLING_CHANCE = 100
-local CONIFERS_GROW_SAPLING_INTERVAL = 3600
+local CONIFERS_GROW_SAPLING_INTERVAL = 100
+local CONIFERS_GROW_SAPLING_CHANCE = 10
 
 --local CONIFERS_TRUNK_MINHEIGHT = 7
 --local CONIFERS_TRUNK_MAXHEIGHT = 25
@@ -130,24 +130,113 @@ grow_plants(
 	conifers_seed_diff
 )
 
+-- L-System Tree definitions
+
+jungle_tree={
+	axiom=nil,
+	rules_a=nil,
+	rules_b=nil,
+	trunk="default:jungletree",
+	leaves="jungletree:leaves_green",
+	leaves2=nil,
+	leaves2_chance=nil,
+	angle=45,
+	iterations=nil,
+	random_level=2,
+	trunk_type=nil,
+	thin_branches=true;
+	fruit_chance=15,
+	fruit="vines:vine"
+}
+
+jt_axiom1 = "FFFA"
+jt_rules_a1 = "FFF[&&-FBf[&&&Ff]^^^Ff][&&+FBFf[&&&FFf]^^^Ff][&&---FBFf[&&&Ff]^^^Ff][&&+++FBFf[&&&Ff]^^^Ff]F/A"
+jt_rules_b1 = "[-Ff&f][+Ff&f]B"
+
+jt_axiom2 = "FFFFFA"
+jt_rules_a2 = "FFFFF[&&-FFFBF[&&&FFff]^^^FFf][&&+FFFBFF[&&&FFff]^^^FFf][&&---FFFBFF[&&&FFff]^^^FFf][&&+++FFFBFF[&&&FFff]^^^FFf]FF/A"
+jt_rules_b2 = "[-FFf&ff][+FFf&ff]B"
+
+conifer_tree={
+	axiom="FFFAF[&&-F][&&+F][&&---F][&&+++F]Fff",
+	rules_a=nil,
+	rules_b=nil,
+	trunk="conifers:trunk",
+	leaves=nil,
+	angle=45,
+	iterations=7,
+	random_level=5,
+	thin_trunks=true
+}
+
+ct_rules_a1 = "FF[FF][&&-FBF][&&+FBF][&&---FBF][&&+++FBF]F/A"
+ct_rules_b1 = "[-FBf][+FBf]"
+
+ct_rules_a2 = "FF[FF][&&-FBF][&&+FBF][&&---FBF][&&+++FBF]F/A"
+ct_rules_b2 = "[-fB][+fB]"
+
 -- Code that actually spawns the trees!
 
 function grow_jungletree(pos, noise)
-	minetest.env:remove_node(pos)
-	if math.random(1, 2) > 1.5 then
-		minetest.env:spawn_tree(pos,jungle_tree1)
-	else
-		minetest.env:spawn_tree(pos,jungle_tree2)
+	local r1 = math.random(2)
+	local r2 = math.random(3)
+	if r1 == 1 then
+		jungle_tree["leaves2"] = "jungletree:leaves_red"
+	else 
+		jungle_tree["leaves2"] = "jungletree:leaves_yellow"
 	end
+	jungle_tree["leaves2_chance"] = math.random(25, 75)
+
+	if r2 == 1 then
+		jungle_tree["trunk_type"] = "single"
+		jungle_tree["iterations"] = 2
+		jungle_tree["axiom"] = jt_axiom1
+		jungle_tree["rules_a"] = jt_rules_a1
+		jungle_tree["rules_b"] = jt_rules_b1
+	elseif r2 == 2 then
+		jungle_tree["trunk_type"] = "double"
+		jungle_tree["iterations"] = 4
+		jungle_tree["axiom"] = jt_axiom2
+		jungle_tree["rules_a"] = jt_rules_a2
+		jungle_tree["rules_b"] = jt_rules_b2
+	elseif r2 == 3 then
+		jungle_tree["trunk_type"] = "crossed"
+		jungle_tree["iterations"] = 4
+		jungle_tree["axiom"] = jt_axiom2
+		jungle_tree["rules_a"] = jt_rules_a2
+		jungle_tree["rules_b"] = jt_rules_b2
+	end
+
+	minetest.env:remove_node(pos)
+	local leaves = minetest.env:find_nodes_in_area({x = pos.x-1, y = pos.y, z = pos.z-1}, {x = pos.x+1, y = pos.y+10, z = pos.z+1}, "default:leaves")
+
+	for leaf in ipairs(leaves) do
+			minetest.env:remove_node(leaves[leaf])
+	end
+	minetest.env:spawn_tree(pos,jungle_tree)
 end
 
 function grow_conifer(pos, noise)
-	minetest.env:remove_node(pos)
-	if math.random(1, 2) > 1.5 then
-		minetest.env:spawn_tree(pos,conifer_tree1)
+	if math.random(2) == 1 then
+		conifer_tree["leaves"]="conifers:leaves"
 	else
-		minetest.env:spawn_tree(pos,conifer_tree2)
+		conifer_tree["leaves"]="conifers:leaves_special"
 	end
+	if math.random(2) == 1 then
+		conifer_tree["rules_a"] = ct_rules_a1
+		conifer_tree["rules_b"] = ct_rules_b1
+	else
+		conifer_tree["rules_a"] = ct_rules_a2
+		conifer_tree["rules_b"] = ct_rules_b2
+	end
+
+	minetest.env:remove_node(pos)
+	local leaves = minetest.env:find_nodes_in_area({x = pos.x, y = pos.y, z = pos.z}, {x = pos.x, y = pos.y+5, z = pos.z}, "default:leaves")
+
+	for leaf in ipairs(leaves) do
+			minetest.env:remove_node(leaves[leaf])
+	end
+	minetest.env:spawn_tree(pos,conifer_tree)
 end
 
 -- Other stuff
@@ -171,67 +260,6 @@ if CONIFERS_REMOVE_TREES == true then
 		end
 	})
 end
-
--- L-System Tree definitions
-
-jungle_tree1={
-	axiom="FFFFFA",
-	rules_a="FFFFF[&&-FFFBF[&&&FFf]^^^FFf][&&+FFFBFF[&&&FFf]^^^FFf][&&---FFFBFF[&&&FFf]^^^FFf][&&+++FFFBFF[&&&FFf]^^^FFf]FF/A",
-	rules_b="[-FFf&F][+FFf&F]B",
-	trunk="default:jungletree",
-	leaves="jungletree:leaves_green",
-	leaves2="jungletree:leaves_yellow",
-	leaves2_chance=50,
-	angle=45,
-	iterations=4,
-	random_level=2,
-	trunk_type="crossed",
-	thin_branches=true;
-	fruit_chance=15,
-	fruit="vines:vine"
-}
-
-jungle_tree2={
-	axiom="FFFFFA",
-	rules_a="FFFFF[&&-FFFBF[&&&FFf]^^^FFf][&&+FFFBFF[&&&FFf]^^^FFf][&&---FFFBFF[&&&FFf]^^^FFf][&&+++FFFBFF[&&&FFf]^^^FFf]FF/A",
-	rules_b="[-FFf&F][+FFf&F]B",
-	trunk="default:jungletree",
-	leaves="jungletree:leaves_green",
-	leaves2="jungletree:leaves_red",
-	leaves2_chance=50,
-	angle=45,
-	iterations=4,
-	random_level=2,
-	trunk_type="crossed",
-	thin_branches=true;
-	fruit_chance=15,
-	fruit="vines:vine"
-}
-
-
-conifer_tree1={
-	axiom="FFFAF[&&-F][&&+F][&&---F][&&+++F]FF",
-	rules_a="FF[FF][&&-FBF][&&+FBF][&&---FBF][&&+++FBF]F/A",
-	rules_b="[-FB][+FB]",
-	trunk="conifers:trunk",
-	leaves="conifers:leaves",
-	angle=45,
-	iterations=7,
-	random_level=4,
-	thin_trunks=true
-}
-
-conifer_tree2={
-	axiom="FFFAF[&&-F][&&+F][&&---F][&&+++F]FF",
-	rules_a="FF[FF][&&-FBF][&&+FBF][&&---FBF][&&+++FBF]F/A",
-	rules_b="[-FB][+FB]",
-	trunk="conifers:trunk",
-	leaves="conifers:leaves_special",
-	angle=45,
-	iterations=7,
-	random_level=4,
-	thin_trunks=true
-}
 
 -- Nodes for jungle trees
 
