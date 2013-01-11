@@ -67,8 +67,8 @@ spawn_on_surfaces(
 	jungletree_seed_diff,			-- duh? :-)
 	5,								-- minimum light needed 
 	nil,							-- maximim (default, 14)
-	nil,							-- ABM neighbors parameter...
-	nil, 							-- don't care what else is around
+	{"default:dirt_with_grass"},	-- must have grass..
+	8, 								-- in all 8 of the surrounding nodes
 	nil,							-- we don't care about facedir
 	nil,							-- or water depth
 	-5,								-- must be 5m below sea level or higher
@@ -89,7 +89,7 @@ spawn_on_surfaces(
 	nil,
 	nil,					
 	{"default:dirt_with_grass"},
-	3,
+	8,
 	nil,
 	nil,
 	CONIFERS_ALTITUDE,
