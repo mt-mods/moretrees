@@ -75,7 +75,9 @@ spawn_on_surfaces(
 	15,								-- but no higher than 15m
 	{"default:water_source"},		-- Jungle trees must be near water
 	JT_WATER_RADIUS,				-- within this radius of it (default 25)
-	JT_WATER_COUNT					-- with this many water nodes in the area
+	JT_WATER_COUNT,					-- with this many water nodes in the area
+	1,								-- air size area of 1 (+/- 1 node in X and Z directions)
+	9								-- there must be 9 air nodes in the area
 )
 
 spawn_on_surfaces(
@@ -93,7 +95,9 @@ spawn_on_surfaces(
 	nil,
 	nil,
 	CONIFERS_ALTITUDE,
-	nil					
+	nil,
+	1,
+	9
 )	
 
 -- growing functions
@@ -209,7 +213,6 @@ function grow_jungletree(pos, noise)
 
 	minetest.env:remove_node(pos)
 	local leaves = minetest.env:find_nodes_in_area({x = pos.x-1, y = pos.y, z = pos.z-1}, {x = pos.x+1, y = pos.y+10, z = pos.z+1}, "default:leaves")
-
 	for leaf in ipairs(leaves) do
 			minetest.env:remove_node(leaves[leaf])
 	end
@@ -232,7 +235,6 @@ function grow_conifer(pos, noise)
 
 	minetest.env:remove_node(pos)
 	local leaves = minetest.env:find_nodes_in_area({x = pos.x, y = pos.y, z = pos.z}, {x = pos.x, y = pos.y+5, z = pos.z}, "default:leaves")
-
 	for leaf in ipairs(leaves) do
 			minetest.env:remove_node(leaves[leaf])
 	end
