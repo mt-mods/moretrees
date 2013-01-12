@@ -24,8 +24,8 @@ local JT_SPAWN_CHANCE = 100
 local JT_GROW_INTERVAL = 100
 local JT_GROW_CHANCE = 10
 
-local JT_RADIUS = 8
-local JT_WATER_RADIUS = 25
+local JT_RADIUS = 15
+local JT_WATER_RADIUS = 15
 local JT_WATER_COUNT = 10
 
 local jungletree_seed_diff = plantlife_seed_diff
@@ -72,7 +72,7 @@ spawn_on_surfaces(
 	nil,							-- we don't care about facedir
 	nil,							-- or water depth
 	-5,								-- must be 5m below sea level or higher
-	15,								-- but no higher than 15m
+	10,								-- but no higher than 15m
 	{"default:water_source"},		-- Jungle trees must be near water
 	JT_WATER_RADIUS,				-- within this radius of it (default 25)
 	JT_WATER_COUNT,					-- with this many water nodes in the area
