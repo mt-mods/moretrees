@@ -14,6 +14,19 @@
 -- License: WTFPL for all parts (code and textures)
 --
 
+-- snow biomes mod uses this code to make biomes:
+--
+--		local perlin1 = env:get_perlin(112,3, 0.5, 150)
+--		local test = perlin1:get2d({x=pos.x, y=pos.z})
+--		if smooth and (test > 0.73 or (test > 0.43 and math.random(0,29) > (0.73 - test) * 100 )) then
+--			in_biome = true
+--		elseif not smooth and test > 0.53 then
+--			in_biome = true
+--		end
+--
+-- We'll just save this for later use ;-)
+--
+
 local DEBUG = false
 
 -- Jungletree init stuff:
@@ -95,6 +108,9 @@ spawn_on_surfaces(
 	nil,
 	nil,
 	CONIFERS_ALTITUDE,
+	nil,
+	nil,
+	nil,
 	nil,
 	1,
 	9
