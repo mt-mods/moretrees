@@ -62,40 +62,44 @@ local conifers_seed_diff = plantslib.plantlife_seed_diff + 30
 
 -- Spawning functions
 
---	generate_on_surfaces = function(splant, sradius, ssurface, savoid,
---		seed_diff, lightmin, lightmax, nneighbors, ocount, facedir,
---		depthmax, altitudemin, altitudemax,sbiome,sbiomesize,
---		sbiomecount,tempmin,tempmax)
+jungletrees_biome = {
+	surface = "default:dirt_with_grass",	-- must grow on grass only
+	avoid =	{"jungletree:sapling","default:jungletree"}, -- avoid spawning near these
+	radius = JT_RADIUS,			-- Keep this much room around the above avoid items
+	seed_diff = jungletree_seed_diff,	-- duh? :-)
+	neighbors = nil,			-- we don't care about neighbors
+	ncount = nil,				-- or the count thereof
+	water_depth = nil,			-- or water depth
+	min_elevation = -5,			-- must be 5m below sea level or higher
+	max_elevation = 10,			-- but no higher than 10m
+	near_nodes = {"default:water_source"},	-- Jungle trees must be near water
+	near_nodes_size = JT_WATER_RADIUS,	-- within this radius of it (default 25)
+	near_nodes_count = JT_WATER_COUNT,	-- with this many water nodes in the area
+	temp_min = nil,				-- don't care about temperature
+	temp_max = nil,				-- at either end of the scale
+	exec_funct = "moretrees:grow_jungletree" -- name of the function to execute to grow a tree
+}
 
-plantslib:generate_on_surfaces(
-	"jungletree:sapling",				-- We want to spawn a sapling
-	JT_RADIUS,					-- Keep this much room around saplings
-	"default:dirt_with_grass",			-- must grow on grass only
-	{"jungletree:sapling","default:jungletree"},	-- avoid spawning near these
-	jungletree_seed_diff,				-- duh? :-)
-	{"default:dirt_with_grass"},			-- must have grass..
-	8,		 				-- in all 8 of the surrounding nodes
-	nil,						-- we don't care about facedir
-	nil,						-- or water depth
-	-5,						-- must be 5m below sea level or higher
-	10,						-- but no higher than 10m
-	{"default:water_source"},			-- Jungle trees must be near water
-	JT_WATER_RADIUS,				-- within this radius of it (default 25)
-	JT_WATER_COUNT					-- with this many water nodes in the area
-)
+conifers_biome = {
+	surface = "default:dirt_with_grass",
+	avoid =	{"conifers:sapling", "conifers:trunk"},
+	radius = CONIFERS_DISTANCE,
+	seed_diff = conifers_seed_diff,														
+	neighbors = nil,
+	ncount = nil,
+	water_depth = nil,
+	min_elevation = CONIFERS_ALTITUDE,
+	max_elevation = nil,
+	near_nodes = nil,
+	near_nodes_size = nil,
+	near_nodes_count = nil,
+	temp_min = nil,
+	temp_max = nil,
+	exec_funct = "moretrees:grow_conifer"
+}
 
-plantslib:generate_on_surfaces(
-	"conifers:sapling",
-	CONIFERS_DISTANCE,
-	"default:dirt_with_grass",
-	{"conifers:sapling", "conifers:trunk"},
-	conifers_seed_diff,														
-	{"default:dirt_with_grass"},
-	8,
-	nil,
-	nil,
-	CONIFERS_ALTITUDE
-)
+plantslib:register_generate_plant(jungletrees_biome)
+plantslib:register_generate_plant(conifers_biome)
 
 -- growing functions
 
@@ -178,7 +182,7 @@ local ct_rules_b2 = "[-fB][+fB]"
 
 -- Code that actually spawns the trees!
 
-function moretrees:grow_jungletree(pos, noise)
+function moretrees:grow_jungletree(pos)
 	local r1 = math.random(2)
 	local r2 = math.random(3)
 	if r1 == 1 then
@@ -216,7 +220,7 @@ function moretrees:grow_jungletree(pos, noise)
 	minetest.env:spawn_tree(pos,jungle_tree)
 end
 
-function moretrees:grow_conifer(pos, noise)
+function moretrees:grow_conifer(pos)
 	if math.random(2) == 1 then
 		conifer_tree["leaves"]="conifers:leaves"
 	else
