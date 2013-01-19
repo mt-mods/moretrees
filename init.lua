@@ -3,8 +3,8 @@
 -- This mod adds more types of trees to the game
 -- at present, they consist of jungle trees and conifers
 --
--- Much of the code here came from cisoun's conifers mod and bas080's 
--- jungle trees mod.
+-- Much of the node definitions here came from cisoun's conifers mod and
+-- bas080's jungle trees mod.
 --
 -- Brought together into one mod and made L-systems compatible by Vanessa
 -- Ezekowitz.  Thrown together on 2013-01-09 :-)
@@ -16,18 +16,18 @@
 
 -- snow biomes mod uses this code to make biomes:
 --
---		local perlin1 = env:get_perlin(112,3, 0.5, 150)
---		local test = perlin1:get2d({x=pos.x, y=pos.z})
---		if smooth and (test > 0.73 or (test > 0.43 and math.random(0,29) > (0.73 - test) * 100 )) then
---			in_biome = true
---		elseif not smooth and test > 0.53 then
---			in_biome = true
---		end
---
+--	local perlin1 = env:get_perlin(112,3, 0.5, 150)
+--	local test = perlin1:get2d({x=pos.x, y=pos.z})
+--	if smooth and (test > 0.73 or (test > 0.43 and math.random(0,29) > (0.73 - test) * 100 )) then
+--		in_biome = true
+--	elseif not smooth and test > 0.53 then
+--		in_biome = true
+--	end
+--	
 -- We'll just save this for later use ;-)
 --
 
-local DEBUG = false
+moretrees = {}
 
 -- Jungletree init stuff:
 
@@ -41,7 +41,7 @@ local JT_RADIUS = 15
 local JT_WATER_RADIUS = 15
 local JT_WATER_COUNT = 10
 
-local jungletree_seed_diff = plantlife_seed_diff
+local jungletree_seed_diff = plantslib.plantlife_seed_diff
 
 -- Conifers init stuff:
 
@@ -51,14 +51,6 @@ local CONIFERS_SPAWN_SAPLING_CHANCE = 100
 local CONIFERS_GROW_SAPLING_INTERVAL = 100
 local CONIFERS_GROW_SAPLING_CHANCE = 10
 
---local CONIFERS_TRUNK_MINHEIGHT = 7
---local CONIFERS_TRUNK_MAXHEIGHT = 25
-
---local CONIFERS_LEAVES_MINHEIGHT = 2
---local CONIFERS_LEAVES_MAXHEIGHT = 6
---local CONIFERS_LEAVES_MAXRADIUS = 5
---local CONIFERS_LEAVES_NARROWRADIUS = 3 -- For narrow typed conifers.
-
 local CONIFERS_DISTANCE = 9 -- how far apart should conifer saplings spawn?
 local CONIFERS_ALTITUDE = 25
 
@@ -66,59 +58,48 @@ local CONIFERS_REMOVE_TREES = false -- Remove trees above CONIFERS_ALTITUDE?
 local CONIFERS_RTREES_INTERVAL = 360
 local CONIFERS_RTREES_CHANCE = 10
 
-local conifers_seed_diff = plantlife_seed_diff+30
+local conifers_seed_diff = plantslib.plantlife_seed_diff + 30
 
 -- Spawning functions
 
-spawn_on_surfaces(
-	JT_SPAWN_INTERVAL,				-- ABM interval parameter
-	"jungletree:sapling",			-- We want to spawn a sapling
-	JT_RADIUS,						-- Keep this much room around saplings
-	JT_SPAWN_CHANCE,				-- ABM chance parameter
-	"default:dirt_with_grass",		-- must grow on grass only
-	{"jungletree:sapling","default:jungletree"}, -- avoid spawning near these
-	jungletree_seed_diff,			-- duh? :-)
-	5,								-- minimum light needed 
-	nil,							-- maximim (default, 14)
-	{"default:dirt_with_grass"},	-- must have grass..
-	8, 								-- in all 8 of the surrounding nodes
-	nil,							-- we don't care about facedir
-	nil,							-- or water depth
-	-5,								-- must be 5m below sea level or higher
-	10,								-- but no higher than 15m
-	{"default:water_source"},		-- Jungle trees must be near water
+--	generate_on_surfaces = function(splant, sradius, ssurface, savoid,
+--		seed_diff, lightmin, lightmax, nneighbors, ocount, facedir,
+--		depthmax, altitudemin, altitudemax,sbiome,sbiomesize,
+--		sbiomecount,tempmin,tempmax)
+
+plantslib:generate_on_surfaces(
+	"jungletree:sapling",				-- We want to spawn a sapling
+	JT_RADIUS,					-- Keep this much room around saplings
+	"default:dirt_with_grass",			-- must grow on grass only
+	{"jungletree:sapling","default:jungletree"},	-- avoid spawning near these
+	jungletree_seed_diff,				-- duh? :-)
+	{"default:dirt_with_grass"},			-- must have grass..
+	8,		 				-- in all 8 of the surrounding nodes
+	nil,						-- we don't care about facedir
+	nil,						-- or water depth
+	-5,						-- must be 5m below sea level or higher
+	10,						-- but no higher than 10m
+	{"default:water_source"},			-- Jungle trees must be near water
 	JT_WATER_RADIUS,				-- within this radius of it (default 25)
-	JT_WATER_COUNT,					-- with this many water nodes in the area
-	1,								-- air size area of 1 (+/- 1 node in X and Z directions)
-	9								-- there must be 9 air nodes in the area
+	JT_WATER_COUNT					-- with this many water nodes in the area
 )
 
-spawn_on_surfaces(
-	CONIFERS_SPAWN_SAPLING_INTERVAL,
+plantslib:generate_on_surfaces(
 	"conifers:sapling",
 	CONIFERS_DISTANCE,
-	CONIFERS_SPAWN_SAPLING_CHANCE,
 	"default:dirt_with_grass",
 	{"conifers:sapling", "conifers:trunk"},
-	conifers_seed_diff,										
-	nil,
-	nil,					
+	conifers_seed_diff,														
 	{"default:dirt_with_grass"},
 	8,
 	nil,
 	nil,
-	CONIFERS_ALTITUDE,
-	nil,
-	nil,
-	nil,
-	nil,
-	1,
-	9
-)	
+	CONIFERS_ALTITUDE
+)
 
 -- growing functions
 
-grow_plants(
+plantslib:grow_plants(
 	JT_GROW_INTERVAL,
 	JT_GROW_CHANCE,
 	"jungletree:sapling",
@@ -130,11 +111,11 @@ grow_plants(
 	nil,
 	nil,
 	nil,
-	"grow_jungletree",
+	"moretrees:grow_jungletree",
 	jungletree_seed_diff
 )
 
-grow_plants(
+plantslib:grow_plants(
 	CONIFERS_GROW_SAPLING_INTERVAL,
 	CONIFERS_GROW_SAPLING_CHANCE,
 	"conifers:sapling",
@@ -146,13 +127,13 @@ grow_plants(
 	nil,
 	nil,
 	nil,
-	"grow_conifer",
+	"moretrees:grow_conifer",
 	conifers_seed_diff
 )
 
 -- L-System Tree definitions
 
-jungle_tree={
+local jungle_tree={
 	axiom=nil,
 	rules_a=nil,
 	rules_b=nil,
@@ -169,15 +150,15 @@ jungle_tree={
 	fruit="vines:vine"
 }
 
-jt_axiom1 = "FFFA"
-jt_rules_a1 = "FFF[&&-FBf[&&&Ff]^^^Ff][&&+FBFf[&&&FFf]^^^Ff][&&---FBFf[&&&Ff]^^^Ff][&&+++FBFf[&&&Ff]^^^Ff]F/A"
-jt_rules_b1 = "[-Ff&f][+Ff&f]B"
+local jt_axiom1 = "FFFA"
+local jt_rules_a1 = "FFF[&&-FBf[&&&Ff]^^^Ff][&&+FBFf[&&&FFf]^^^Ff][&&---FBFf[&&&Ff]^^^Ff][&&+++FBFf[&&&Ff]^^^Ff]F/A"
+local jt_rules_b1 = "[-Ff&f][+Ff&f]B"
 
-jt_axiom2 = "FFFFFA"
-jt_rules_a2 = "FFFFF[&&-FFFBF[&&&FFff]^^^FFf][&&+FFFBFF[&&&FFff]^^^FFf][&&---FFFBFF[&&&FFff]^^^FFf][&&+++FFFBFF[&&&FFff]^^^FFf]FF/A"
-jt_rules_b2 = "[-FFf&ff][+FFf&ff]B"
+local jt_axiom2 = "FFFFFA"
+local jt_rules_a2 = "FFFFF[&&-FFFBF[&&&FFff]^^^FFf][&&+FFFBFF[&&&FFff]^^^FFf][&&---FFFBFF[&&&FFff]^^^FFf][&&+++FFFBFF[&&&FFff]^^^FFf]FF/A"
+local jt_rules_b2 = "[-FFf&ff][+FFf&ff]B"
 
-conifer_tree={
+local conifer_tree={
 	axiom="FFFAF[&&-F][&&+F][&&---F][&&+++F]Fff",
 	rules_a=nil,
 	rules_b=nil,
@@ -189,15 +170,15 @@ conifer_tree={
 	thin_trunks=true
 }
 
-ct_rules_a1 = "FF[FF][&&-FBF][&&+FBF][&&---FBF][&&+++FBF]F/A"
-ct_rules_b1 = "[-FBf][+FBf]"
+local ct_rules_a1 = "FF[FF][&&-FBF][&&+FBF][&&---FBF][&&+++FBF]F/A"
+local ct_rules_b1 = "[-FBf][+FBf]"
 
-ct_rules_a2 = "FF[FF][&&-FBF][&&+FBF][&&---FBF][&&+++FBF]F/A"
-ct_rules_b2 = "[-fB][+fB]"
+local ct_rules_a2 = "FF[FF][&&-FBF][&&+FBF][&&---FBF][&&+++FBF]F/A"
+local ct_rules_b2 = "[-fB][+fB]"
 
 -- Code that actually spawns the trees!
 
-function grow_jungletree(pos, noise)
+function moretrees:grow_jungletree(pos, noise)
 	local r1 = math.random(2)
 	local r2 = math.random(3)
 	if r1 == 1 then
@@ -235,7 +216,7 @@ function grow_jungletree(pos, noise)
 	minetest.env:spawn_tree(pos,jungle_tree)
 end
 
-function grow_conifer(pos, noise)
+function moretrees:grow_conifer(pos, noise)
 	if math.random(2) == 1 then
 		conifer_tree["leaves"]="conifers:leaves"
 	else
@@ -449,3 +430,6 @@ minetest.register_node(":conifers:sapling", {
 	sounds = default.node_sound_defaults(),
 })
 
+dofile(minetest.get_modpath("moretrees").."/crafts.lua")
+
+print("[Moretrees] Loaded (2013-01-18)")
