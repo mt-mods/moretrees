@@ -6,7 +6,7 @@ moretrees.mytree_biome = {
 	surface = "default:dirt_with_grass",	-- must grow on these nodes only
 	avoid_nodes = {"default:tree"},		-- avoid spawning near these
 	avoid_radius = 5,			-- Keep this much room around the above avoid items
-	rarity = 100,				-- tree rarity:  math.random(1,100) > this    (higher = more rare)
+	rarity = 50,				-- tree rarity:  math.random(1,100) > this    (higher = more rare)
 	seed_diff = 12345,			-- perlin seed-diff for "generally able to grow plants here" control
 	neighbors = "default:dirt_with_grass",	-- this node must be adjacent to the node being spawned on
 	ncount = 8,				-- and there must be this many of them
