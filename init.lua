@@ -94,6 +94,7 @@ plantslib:grow_plants(sapling_interval,sapling_chance,"jungletree:sapling",nil,n
 -- Code to spawn a birch tree
 
 function moretrees:grow_birch(pos)
+	minetest.env:remove_node(pos)
 	if math.random(1,2) == 1 then
 		minetest.env:spawn_tree(pos, moretrees.birch_model1)
 	else
@@ -104,6 +105,7 @@ end
 -- Code to spawn a spruce tree
 
 function moretrees:grow_spruce(pos)
+	minetest.env:remove_node(pos)
 	if math.random(1,2) == 1 then
 		minetest.env:spawn_tree(pos, moretrees.spruce_model1)
 	else
