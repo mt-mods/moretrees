@@ -61,19 +61,15 @@ plantslib:register_generate_plant(moretrees.beech_biome, moretrees.beech_model)
 
 -- sapling growth setup
 
-local sapling_interval = 500
-local sapling_chance = 10
+local sapling_interval = 1
+local sapling_chance = 1
 
 for i in ipairs(simple_trees) do
 	local tree_name = trees[i][1]
 	local tree_model = tree_name.."_model"
-	dbg(dump(moretrees[tree_model]))
+	local tree_biome = tree_name.."_biome"
 
-	if tree_model == "palm_model" then
-		grow_nodes = {"default:sand"}
-	else
-		grow_nodes = {"default:dirt_with_grass"}
-	end
+	plantslib:dbg(dump(moretrees[tree_biome].surface))
 	
 	plantslib:grow_plants(
 		sapling_interval,
@@ -81,7 +77,7 @@ for i in ipairs(simple_trees) do
 		"moretrees:"..tree_name.."_sapling",
 		nil,
 		nil,
-		grow_nodes,
+		moretrees[tree_biome].surface,
 		nil,
 		nil,
 		nil,
