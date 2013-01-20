@@ -61,12 +61,13 @@ plantslib:register_generate_plant(moretrees.beech_biome, moretrees.beech_model)
 
 -- sapling growth setup
 
-local sapling_interval = 1
-local sapling_chance = 1
+local sapling_interval = 500
+local sapling_chance = 10
+
 for i in ipairs(simple_trees) do
 	local tree_name = trees[i][1]
 	local tree_model = tree_name.."_model"
-	print(dump(moretrees[tree_model]))
+	dbg(dump(moretrees[tree_model]))
 	
 	plantslib:grow_plants(
 		sapling_interval,
