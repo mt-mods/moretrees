@@ -1,4 +1,4 @@
--- More trees!
+-- More trees!  2013-01-20
 --
 -- This mod adds more types of trees to the game
 --
@@ -6,7 +6,7 @@
 -- and bas080's jungle trees mod.
 --
 -- Brought together into one mod and made L-systems compatible by Vanessa
--- Ezekowitz.  Thrown together on 2013-01-09 :-)
+-- Ezekowitz.
 --
 -- Conifers and Jungle tree axioms/rules by Vanessa Ezekowitz, with the 
 -- latter having been tweaked by RealBadAngel, most others written by
