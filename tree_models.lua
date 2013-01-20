@@ -118,7 +118,7 @@ moretrees.spruce_model1={
 	random_level=0,
 	trunk_type="crossed",
 	thin_branches=true,
-	fruit="moretrees:cone",
+	fruit="moretrees:spruce_cone",
 	fruit_chance=8
 }
 
@@ -134,7 +134,7 @@ moretrees.spruce_model2={
 	random_level=0,
 	trunk_type="crossed",
 	thin_branches=true,
-	fruit="moretrees:cone",
+	fruit="moretrees:spruce_cone",
 	fruit_chance=8
 }
 
