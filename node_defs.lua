@@ -11,6 +11,16 @@ leaves = {
 	{"rubber_tree",		"Rubber Tree Leaves"},
 }
 
+moretrees.avoidnodes = {}
+
+table.insert(moretrees.avoidnodes, "default:jungletree")
+table.insert(moretrees.avoidnodes, "jungletree:leaves_red")
+table.insert(moretrees.avoidnodes, "jungletree:leaves_green")
+table.insert(moretrees.avoidnodes, "jungletree:leaves_yellow")
+table.insert(moretrees.avoidnodes, "conifers:trunk")
+table.insert(moretrees.avoidnodes, "conifers:leaves")
+table.insert(moretrees.avoidnodes, "conifers:leaves_special")
+
 for i in ipairs(leaves) do
 	local name = leaves[i]
 	minetest.register_node("moretrees:"..leaves[i][1].."_leaves", {
@@ -22,6 +32,7 @@ for i in ipairs(leaves) do
 		groups = {tree=1, snappy=3, flammable=2},
 		sounds = default.node_sound_leaves_defaults(),
 	})
+	table.insert(moretrees.avoidnodes, "moretrees:"..leaves[i][1].."_leaves")
 	end
 	
 trees = {
@@ -39,13 +50,6 @@ trees = {
 
 simple_trees = { "beech", "apple_tree", "oak", "sequoia", "palm", "pine", "willow", "rubber_tree"}
 
-moretrees.avoidnodes = {}
-
-table.insert(moretrees.avoidnodes, "default:jungletree")
-table.insert(moretrees.avoidnodes, "jungletree:sapling")
-table.insert(moretrees.avoidnodes, "conifers:trunk")
-table.insert(moretrees.avoidnodes, "conifers:sapling")
-
 for i in ipairs(trees) do
 	local treename = trees[i][1]
 	local treedesc = trees[i][2]
@@ -54,7 +58,6 @@ for i in ipairs(trees) do
 	local selbox = trees[i][5]
 
 	table.insert(moretrees.avoidnodes, "moretrees:"..treename.."_trunk")
-	table.insert(moretrees.avoidnodes, "moretrees:"..treename.."_sapling")
 
 	minetest.register_node("moretrees:"..treename.."_trunk", {
 		description = treedesc.." Trunk",
