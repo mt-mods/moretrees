@@ -68,6 +68,12 @@ for i in ipairs(simple_trees) do
 	local tree_name = trees[i][1]
 	local tree_model = tree_name.."_model"
 	dbg(dump(moretrees[tree_model]))
+
+	if tree_model="palm_model" then
+		grow_nodes = {"default:sand"}
+	else
+		grow_nodes = {"default:dirt_with_grass"}
+	end
 	
 	plantslib:grow_plants(
 		sapling_interval,
@@ -75,7 +81,7 @@ for i in ipairs(simple_trees) do
 		"moretrees:"..tree_name.."_sapling",
 		nil,
 		nil,
-		nil,
+		grow_nodes,
 		nil,
 		nil,
 		nil,
