@@ -37,6 +37,8 @@ trees = {
 	{"rubber_tree",	"Rubber Tree",	nil,		nil,		nil				},
 }
 
+simple_trees = { "beech", "apple_tree", "oak", "sequoia", "palm", "pine", "willow", "rubber_tree"}
+
 moretrees.avoidnodes = {}
 
 table.insert(moretrees.avoidnodes, "default:jungletree")

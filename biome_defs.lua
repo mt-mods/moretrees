@@ -47,13 +47,13 @@ moretrees.palm_biome = {
 moretrees.apple_tree_biome = {
 	surface = "default:dirt_with_grass",
 	avoid_nodes = moretrees.avoidnodes,
-	avoid_radius = 15,
+	avoid_radius = 10,
 	seed_diff = 331,
 	min_elevation = 1,
 	max_elevation = 10,
 	temp_min = 0.1,
 	temp_max = -0.15,
-	rarity = 50,
+	rarity = 75,
 }
 
 moretrees.oak_biome = {
@@ -117,20 +117,20 @@ moretrees.pine_biome = {
 moretrees.willow_biome = {
 	surface = "default:dirt_with_grass",
 	avoid_nodes = moretrees.avoidnodes,
-	avoid_radius = 20,
+	avoid_radius = 10,
 	seed_diff = 337,
 	min_elevation = -5,
 	max_elevation = 5,
 	near_nodes = {"default:water_source"},
 	near_nodes_size = 15,
 	near_nodes_count = 5,
-	rarity = 50,
+	rarity = 75,
 }
 
 moretrees.rubber_tree_biome = {
 	surface = "default:dirt_with_grass",
 	avoid_nodes = moretrees.avoidnodes,
-	avoid_radius = 20,
+	avoid_radius = 10,
 	seed_diff = 338,
 	min_elevation = -5,
 	max_elevation = 5,
@@ -138,7 +138,7 @@ moretrees.rubber_tree_biome = {
 	near_nodes_size = 15,
 	near_nodes_count = 10,
 	temp_min = -0.15,
-	rarity = 50,
+	rarity = 75,
 }
 
 

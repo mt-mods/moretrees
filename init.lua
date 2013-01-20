@@ -34,6 +34,8 @@ dofile(minetest.get_modpath("moretrees").."/node_defs.lua")
 dofile(minetest.get_modpath("moretrees").."/tree_models.lua")
 dofile(minetest.get_modpath("moretrees").."/biome_defs.lua")
 
+-- tree spawning setup
+
 plantslib:register_generate_plant(moretrees.apple_tree_biome, moretrees.apple_tree_model)
 plantslib:register_generate_plant(moretrees.oak_biome, moretrees.oak_model)
 plantslib:register_generate_plant(moretrees.sequoia_biome, moretrees.sequoia_model)
@@ -56,6 +58,37 @@ minetest.register_alias("mapgen_tree", "air")
 minetest.register_alias("mapgen_leaves", "air")
 plantslib:register_generate_plant(moretrees.beech_biome, moretrees.beech_model)
 ]]--
+
+-- sapling growth setup
+
+local sapling_interval = 1
+local sapling_chance = 1
+for i in ipairs(simple_trees) do
+	local tree_name = trees[i][1]
+	local tree_model = tree_name.."_model"
+	print(dump(moretrees[tree_model]))
+	
+	plantslib:grow_plants(
+		sapling_interval,
+		sapling_chance,
+		"moretrees:"..tree_name.."_sapling",
+		nil,
+		nil,
+		nil,
+		nil,
+		nil,
+		nil,
+		nil,
+		nil,
+		moretrees[tree_model],
+		nil
+	)
+end
+
+plantslib:grow_plants(sapling_interval,sapling_chance,"moretrees:birch_sapling",nil,nil,nil,nil,nil,nil,nil,nil,"moretrees:grow_birch",nil)
+plantslib:grow_plants(sapling_interval,sapling_chance,"moretrees:spruce_sapling",nil,nil,nil,nil,nil,nil,nil,nil,"moretrees:grow_spruce",nil)
+plantslib:grow_plants(sapling_interval,sapling_chance,"conifers:sapling",nil,nil,nil,nil,nil,nil,nil,nil,"moretrees:grow_conifer",nil)
+plantslib:grow_plants(sapling_interval,sapling_chance,"jungletree:sapling",nil,nil,nil,nil,nil,nil,nil,nil,"moretrees:grow_jungletree",nil)
 
 -- Code to spawn a birch tree
 
