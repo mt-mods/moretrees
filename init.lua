@@ -69,7 +69,7 @@ for i in ipairs(simple_trees) do
 	local tree_model = tree_name.."_model"
 	dbg(dump(moretrees[tree_model]))
 
-	if tree_model="palm_model" then
+	if tree_model == "palm_model" then
 		grow_nodes = {"default:sand"}
 	else
 		grow_nodes = {"default:dirt_with_grass"}
