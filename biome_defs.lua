@@ -2,7 +2,7 @@
 
 -- Example biome definition:
 
-mytree_biome = {
+moretrees.mytree_biome = {
 	surface = "default:dirt_with_grass",	-- must grow on these nodes only
 	avoid_nodes = {"default:tree"},		-- avoid spawning near these
 	avoid_radius = 12,			-- Keep this much room around the above avoid items
@@ -20,27 +20,11 @@ mytree_biome = {
 }
 ]]--
 
-moretrees.jungletree_biome = {
-	surface = "default:dirt_with_grass",
-	avoid_nodes = moretrees.avoidnodes,
-	avoid_radius = 12,
-	seed_diff = 329,
-	min_elevation = -5,
-	max_elevation = 10,
-	near_nodes = {"default:water_source"},
-	near_nodes_size = 15,
-	near_nodes_count = 10,
---	temp_min = 0.05,
-}
-
-moretrees.conifer_biome = {
+moretrees.beech_biome = {
 	surface = "default:dirt_with_grass",
 	avoid_nodes = moretrees.avoidnodes,
 	avoid_radius = 10,
-	seed_diff = 359,
-	min_elevation = 25,
-	temp_min = 0.9,
-	temp_max = 0.3,
+	seed_diff = 2,
 }
 
 moretrees.palm_biome = {
@@ -57,7 +41,7 @@ moretrees.palm_biome = {
 	temp_max = -0.15,
 }
 
-moretrees.apple_biome = {
+moretrees.apple_tree_biome = {
 	surface = "default:dirt_with_grass",
 	avoid_nodes = moretrees.avoidnodes,
 	avoid_radius = 15,
@@ -133,7 +117,7 @@ moretrees.willow_biome = {
 	near_nodes_count = 5,
 }
 
-moretrees.rubber_biome = {
+moretrees.rubber_tree_biome = {
 	surface = "default:dirt_with_grass",
 	avoid_nodes = moretrees.avoidnodes,
 	avoid_radius = 20,
@@ -146,3 +130,26 @@ moretrees.rubber_biome = {
 	temp_min = -0.15,
 }
 
+
+moretrees.jungletree_biome = {
+	surface = "default:dirt_with_grass",
+	avoid_nodes = moretrees.avoidnodes,
+	avoid_radius = 12,
+	seed_diff = 329,
+	min_elevation = -5,
+	max_elevation = 10,
+	near_nodes = {"default:water_source"},
+	near_nodes_size = 15,
+	near_nodes_count = 10,
+--	temp_min = 0.05,
+}
+
+moretrees.conifer_biome = {
+	surface = "default:dirt_with_grass",
+	avoid_nodes = moretrees.avoidnodes,
+	avoid_radius = 10,
+	seed_diff = 359,
+	min_elevation = 25,
+	temp_min = 0.9,
+	temp_max = 0.3,
+}

@@ -34,20 +34,50 @@ dofile(minetest.get_modpath("moretrees").."/node_defs.lua")
 dofile(minetest.get_modpath("moretrees").."/tree_models.lua")
 dofile(minetest.get_modpath("moretrees").."/biome_defs.lua")
 
+plantslib:register_generate_plant(moretrees.apple_tree_biome, moretrees.apple_tree_model)
+plantslib:register_generate_plant(moretrees.oak_biome, moretrees.oak_model)
+plantslib:register_generate_plant(moretrees.sequoia_biome, moretrees.sequoia_model)
+plantslib:register_generate_plant(moretrees.palm_biome, moretrees.palm_model)
+plantslib:register_generate_plant(moretrees.pine_biome, moretrees.pine_model)
+plantslib:register_generate_plant(moretrees.rubber_tree_biome, moretrees.rubber_tree_model)
+plantslib:register_generate_plant(moretrees.willow_biome, moretrees.willow_model)
+
+plantslib:register_generate_plant(moretrees.birch_biome, "moretrees:grow_birch")
+plantslib:register_generate_plant(moretrees.spruce_biome, "moretrees:grow_spruce")
 plantslib:register_generate_plant(moretrees.jungletree_biome, "moretrees:grow_jungletree")
 plantslib:register_generate_plant(moretrees.conifer_biome, "moretrees:grow_conifer")
 
---plantslib:register_generate_plant(moretrees.palm_biome, moretrees.palm_model)
+-- These three lines replace default trees with beech
+-- Enable them if you want but be warned - due to serious bugs in the speed
+-- of the engine's map generator/loader, doing so will slow it WAY down.
 
---------------------------
--- Other stuff
---
--- for backward compatibility with previous mods/code, jungle trees and
--- firs ("conifers") L-Systems definitions are established separately.
---
---------------------------
+--[[
+minetest.register_alias("mapgen_tree", "air")
+minetest.register_alias("mapgen_leaves", "air")
+plantslib:register_generate_plant(moretrees.beech_biome, moretrees.beech_model)
+]]--
 
--- Code that spawns jungle trees and firs ("conifers")
+-- Code to spawn a birch tree
+
+function moretrees:grow_birch(pos)
+	if math.random(1,2) == 1 then
+		minetest.env:spawn_tree(pos, moretrees.birch_model1)
+	else
+		minetest.env:spawn_tree(pos, moretrees.birch_model2)
+	end
+end
+
+-- Code to spawn a spruce tree
+
+function moretrees:grow_spruce(pos)
+	if math.random(1,2) == 1 then
+		minetest.env:spawn_tree(pos, moretrees.spruce_model1)
+	else
+		minetest.env:spawn_tree(pos, moretrees.spruce_model2)
+	end
+end
+
+-- Code that spawns jungle trees and firs ("conifer")
 
 moretrees.jt_axiom1 = "FFFA"
 moretrees.jt_rules_a1 = "FFF[&&-FBf[&&&Ff]^^^Ff][&&+FBFf[&&&FFf]^^^Ff][&&---FBFf[&&&Ff]^^^Ff][&&+++FBFf[&&&Ff]^^^Ff]F/A"
