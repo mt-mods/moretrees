@@ -5,7 +5,8 @@
 moretrees.mytree_biome = {
 	surface = "default:dirt_with_grass",	-- must grow on these nodes only
 	avoid_nodes = {"default:tree"},		-- avoid spawning near these
-	avoid_radius = 12,			-- Keep this much room around the above avoid items
+	avoid_radius = 5,			-- Keep this much room around the above avoid items
+	rarity = 100,				-- tree rarity:  math.random(1,100) > this    (higher = more rare)
 	seed_diff = 12345,			-- perlin seed-diff for "generally able to grow plants here" control
 	neighbors = "default:dirt_with_grass",	-- this node must be adjacent to the node being spawned on
 	ncount = 8,				-- and there must be this many of them
@@ -25,6 +26,7 @@ moretrees.beech_biome = {
 	avoid_nodes = moretrees.avoidnodes,
 	avoid_radius = 10,
 	seed_diff = 2,
+	rarity = 50,
 }
 
 moretrees.palm_biome = {
@@ -39,6 +41,7 @@ moretrees.palm_biome = {
 	near_nodes_count = 10,
 	temp_min = 0.15,
 	temp_max = -0.15,
+	rarity = 50,
 }
 
 moretrees.apple_tree_biome = {
@@ -50,6 +53,7 @@ moretrees.apple_tree_biome = {
 	max_elevation = 10,
 	temp_min = 0.1,
 	temp_max = -0.15,
+	rarity = 50,
 }
 
 moretrees.oak_biome = {
@@ -61,6 +65,7 @@ moretrees.oak_biome = {
 	max_elevation = 10,
 	temp_min = 0.4,
 	temp_max = 0.2,
+	rarity = 50,
 }
 
 moretrees.sequoia_biome = {
@@ -72,6 +77,7 @@ moretrees.sequoia_biome = {
 	max_elevation = 10,
 	temp_min = 1,
 	temp_max = -0.4,
+	rarity = 50,
 }
 
 moretrees.birch_biome = {
@@ -83,6 +89,7 @@ moretrees.birch_biome = {
 	max_elevation = 15,
 	temp_min = 0.9,
 	temp_max = 0.3,
+	rarity = 50,
 }
 
 moretrees.spruce_biome = {
@@ -93,6 +100,7 @@ moretrees.spruce_biome = {
 	min_elevation = 20,
 	temp_min = 0.9,
 	temp_max = 0.7,
+	rarity = 50,
 }
 
 moretrees.pine_biome = {
@@ -103,6 +111,7 @@ moretrees.pine_biome = {
 	near_nodes = {"default:water_source"},
 	near_nodes_size = 15,
 	near_nodes_count = 5,
+	rarity = 50,
 }
 
 moretrees.willow_biome = {
@@ -115,6 +124,7 @@ moretrees.willow_biome = {
 	near_nodes = {"default:water_source"},
 	near_nodes_size = 15,
 	near_nodes_count = 5,
+	rarity = 50,
 }
 
 moretrees.rubber_tree_biome = {
@@ -128,6 +138,7 @@ moretrees.rubber_tree_biome = {
 	near_nodes_size = 15,
 	near_nodes_count = 10,
 	temp_min = -0.15,
+	rarity = 50,
 }
 
 
@@ -142,6 +153,7 @@ moretrees.jungletree_biome = {
 	near_nodes_size = 15,
 	near_nodes_count = 10,
 --	temp_min = 0.05,
+	rarity = 50,
 }
 
 moretrees.conifer_biome = {
@@ -152,4 +164,5 @@ moretrees.conifer_biome = {
 	min_elevation = 25,
 	temp_min = 0.9,
 	temp_max = 0.3,
+	rarity = 50,
 }
