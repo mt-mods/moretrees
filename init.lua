@@ -53,16 +53,16 @@ plantslib:register_generate_plant(moretrees.conifer_biome, "moretrees:grow_conif
 -- Enable them if you want but be warned - due to serious bugs in the speed
 -- of the engine's map generator/loader, doing so will slow it WAY down.
 
---[[
+
 minetest.register_alias("mapgen_tree", "air")
 minetest.register_alias("mapgen_leaves", "air")
 plantslib:register_generate_plant(moretrees.beech_biome, moretrees.beech_model)
-]]--
+
 
 -- sapling growth setup
 
-local sapling_interval = 1
-local sapling_chance = 1
+local sapling_interval = 500
+local sapling_chance = 10
 
 for i in ipairs(simple_trees) do
 	local tree_name = trees[i][1]
