@@ -27,6 +27,7 @@ moretrees.beech_biome = {
 	avoid_radius = 10,
 	seed_diff = 2,
 	rarity = 50,
+	max_count = 15,
 }
 
 moretrees.palm_biome = {
@@ -42,6 +43,7 @@ moretrees.palm_biome = {
 	temp_min = 0.15,
 	temp_max = -0.15,
 	rarity = 50,
+	max_count = 10,
 }
 
 moretrees.apple_tree_biome = {
@@ -54,6 +56,7 @@ moretrees.apple_tree_biome = {
 	temp_min = 0.1,
 	temp_max = -0.15,
 	rarity = 75,
+	max_count = 5,
 }
 
 moretrees.oak_biome = {
@@ -66,6 +69,7 @@ moretrees.oak_biome = {
 	temp_min = 0.4,
 	temp_max = 0.2,
 	rarity = 50,
+	max_count = 5,
 }
 
 moretrees.sequoia_biome = {
@@ -78,6 +82,7 @@ moretrees.sequoia_biome = {
 	temp_min = 1,
 	temp_max = -0.4,
 	rarity = 50,
+	max_count = 15,
 }
 
 moretrees.birch_biome = {
@@ -90,6 +95,7 @@ moretrees.birch_biome = {
 	temp_min = 0.9,
 	temp_max = 0.3,
 	rarity = 50,
+	max_count = 10,
 }
 
 moretrees.spruce_biome = {
@@ -101,6 +107,7 @@ moretrees.spruce_biome = {
 	temp_min = 0.9,
 	temp_max = 0.7,
 	rarity = 50,
+	max_count = 5,
 }
 
 moretrees.pine_biome = {
@@ -112,6 +119,7 @@ moretrees.pine_biome = {
 	near_nodes_size = 15,
 	near_nodes_count = 5,
 	rarity = 50,
+	max_count = 10,
 }
 
 moretrees.willow_biome = {
@@ -125,6 +133,7 @@ moretrees.willow_biome = {
 	near_nodes_size = 15,
 	near_nodes_count = 5,
 	rarity = 75,
+	max_count = 5,
 }
 
 moretrees.rubber_tree_biome = {
@@ -139,6 +148,7 @@ moretrees.rubber_tree_biome = {
 	near_nodes_count = 10,
 	temp_min = -0.15,
 	rarity = 75,
+	max_count = 10,
 }
 
 
@@ -154,6 +164,7 @@ moretrees.jungletree_biome = {
 	near_nodes_count = 10,
 --	temp_min = 0.05,
 	rarity = 50,
+	max_count = 10,
 }
 
 moretrees.fir_biome = {
@@ -165,4 +176,5 @@ moretrees.fir_biome = {
 	temp_min = 0.9,
 	temp_max = 0.3,
 	rarity = 50,
+	max_count = 10,
 }
