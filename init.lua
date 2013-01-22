@@ -173,7 +173,7 @@ function moretrees:grow_fir(pos)
 	if math.random(2) == 1 then
 		moretrees.fir_model.leaves="moretrees:fir_leaves"
 	else
-		moretrees.fir_model.leaves="moretrees:fir_leaves_special"
+		moretrees.fir_model.leaves="moretrees:fir_leaves_bright"
 	end
 	if math.random(2) == 1 then
 		moretrees.fir_model.rules_a = moretrees.ct_rules_a1
