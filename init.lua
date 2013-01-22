@@ -47,7 +47,7 @@ plantslib:register_generate_plant(moretrees.willow_biome, moretrees.willow_model
 plantslib:register_generate_plant(moretrees.birch_biome, "moretrees:grow_birch")
 plantslib:register_generate_plant(moretrees.spruce_biome, "moretrees:grow_spruce")
 plantslib:register_generate_plant(moretrees.jungletree_biome, "moretrees:grow_jungletree")
-plantslib:register_generate_plant(moretrees.conifer_biome, "moretrees:grow_conifer")
+plantslib:register_generate_plant(moretrees.conifer_biome, "moretrees:grow_fir")
 
 -- These three lines replace default trees with beech
 -- Enable them if you want but be warned - due to serious bugs in the speed
@@ -90,7 +90,7 @@ end
 
 plantslib:grow_plants(sapling_interval,sapling_chance,"moretrees:birch_sapling",nil,nil,nil,nil,nil,nil,nil,nil,"moretrees:grow_birch",nil)
 plantslib:grow_plants(sapling_interval,sapling_chance,"moretrees:spruce_sapling",nil,nil,nil,nil,nil,nil,nil,nil,"moretrees:grow_spruce",nil)
-plantslib:grow_plants(sapling_interval,sapling_chance,"moretrees:conifer_sapling",nil,nil,nil,nil,nil,nil,nil,nil,"moretrees:grow_conifer",nil)
+plantslib:grow_plants(sapling_interval,sapling_chance,"moretrees:conifer_sapling",nil,nil,nil,nil,nil,nil,nil,nil,"moretrees:grow_fir",nil)
 plantslib:grow_plants(sapling_interval,sapling_chance,"moretrees:jungletree_sapling",nil,nil,nil,nil,nil,nil,nil,nil,"moretrees:grow_jungletree",nil)
 
 -- Code to spawn a birch tree
@@ -135,9 +135,9 @@ function moretrees:grow_jungletree(pos)
 	local r1 = math.random(2)
 	local r2 = math.random(3)
 	if r1 == 1 then
-		moretrees.jungletree_model.leaves2 = "jungletree:leaves_red"
+		moretrees.jungletree_model.leaves2 = "moretrees:jungletree_leaves_red"
 	else 
-		moretrees.jungletree_model.leaves2 = "jungletree:leaves_yellow"
+		moretrees.jungletree_model.leaves2 = "moretrees:jungletree_leaves_yellow"
 	end
 	moretrees.jungletree_model.leaves2_chance = math.random(25, 75)
 
@@ -169,11 +169,11 @@ function moretrees:grow_jungletree(pos)
 	minetest.env:spawn_tree(pos, moretrees.jungletree_model)
 end
 
-function moretrees:grow_conifer(pos)
+function moretrees:grow_fir(pos)
 	if math.random(2) == 1 then
-		moretrees.conifer_model.leaves="conifers:leaves"
+		moretrees.conifer_model.leaves="moretrees:fir_leaves"
 	else
-		moretrees.conifer_model.leaves="conifers:leaves_special"
+		moretrees.conifer_model.leaves="moretrees:fir_leaves_special"
 	end
 	if math.random(2) == 1 then
 		moretrees.conifer_model.rules_a = moretrees.ct_rules_a1

@@ -18,9 +18,9 @@ table.insert(moretrees.avoidnodes, "moretrees:jungletree_trunk")
 table.insert(moretrees.avoidnodes, "moretrees:jungletree_leaves_red")
 table.insert(moretrees.avoidnodes, "moretrees:jungletree_leaves_green")
 table.insert(moretrees.avoidnodes, "moretrees:jungletree_leaves_yellow")
-table.insert(moretrees.avoidnodes, "moretrees:conifer_trunk")
-table.insert(moretrees.avoidnodes, "moretrees:conifer_leaves")
-table.insert(moretrees.avoidnodes, "moretrees:conifer_leaves_bright")
+table.insert(moretrees.avoidnodes, "moretrees:fir_trunk")
+table.insert(moretrees.avoidnodes, "moretrees:fir_leaves")
+table.insert(moretrees.avoidnodes, "moretrees:fir_leaves_bright")
 
 for i in ipairs(leaves) do
 	local name = leaves[i]
@@ -205,17 +205,17 @@ for color = 1, 3 do
 	})
 end
 
--- Nodes for conifers
+-- Nodes for firs
 
-minetest.register_node("moretrees:conifer_trunk", {
-	description = "Conifer trunk",
+minetest.register_node("moretrees:fir_trunk", {
+	description = "Fir trunk",
 	tile_images = { 
-		"moretrees_conifer_trunktop.png", 
-		"moretrees_conifer_trunktop.png", 
-		"moretrees_conifer_trunk.png", 
-		"moretrees_conifer_trunk.png", 
-		"moretrees_conifer_trunk.png", 
-		"moretrees_conifer_trunk.png" 
+		"moretrees_fir_trunktop.png", 
+		"moretrees_fir_trunktop.png", 
+		"moretrees_fir_trunk.png", 
+		"moretrees_fir_trunk.png", 
+		"moretrees_fir_trunk.png", 
+		"moretrees_fir_trunk.png" 
 	},
 	is_ground_content = true,
 	groups = {
@@ -229,21 +229,16 @@ minetest.register_node("moretrees:conifer_trunk", {
 	sounds = default.node_sound_wood_defaults()
 })
 
-minetest.register_node("moretrees:conifer_trunk_sideways", {
-	description = "Conifer reversed trunk",
+minetest.register_node("moretrees:fir_trunk_sideways", {
+	description = "Fir Trunk (sideways)",
 	tile_images = { 
-		"moretrees_conifer_trunk.png^[transformR90", 
-		"moretrees_conifer_trunk.png^[transformR90",
-		"moretrees_conifer_trunktop.png", 
-		"moretrees_conifer_trunktop.png", 
-		"moretrees_conifer_trunk.png^[transformR90", 
-		"moretrees_conifer_trunk.png^[transformR90" 
+		"moretrees_fir_trunk.png^[transformR90", 
+		"moretrees_fir_trunk.png^[transformR90",
+		"moretrees_fir_trunktop.png", 
+		"moretrees_fir_trunktop.png", 
+		"moretrees_fir_trunk.png^[transformR90", 
+		"moretrees_fir_trunk.png^[transformR90" 
 	},
-	--inventory_image = minetest.inventorycube(
-		--"conifers_trunk.png",
-		--"conifers_trunktop.png",
-		--"conifers_trunk.png"
-	--),
 	paramtype2 = "facedir",
 	material = minetest.digprop_woodlike(1.0),
 
@@ -258,10 +253,10 @@ minetest.register_node("moretrees:conifer_trunk_sideways", {
 	sounds = default.node_sound_wood_defaults()
 })
 
-minetest.register_node("moretrees:conifer_leaves", {
+minetest.register_node("moretrees:fir_leaves", {
 	drawtype = "allfaces_optional",
-	description = "Conifer leaves",
-	tile_images = { "moretrees_conifer_leaves.png" },
+	description = "Fir Leaves",
+	tile_images = { "moretrees_fir_leaves.png" },
 	paramtype = "light",
 	groups = {
 		snappy = 3,
@@ -273,23 +268,23 @@ minetest.register_node("moretrees:conifer_leaves", {
 		items = {
 			{
 				-- player will get sapling with 1/20 chance
-				items = {'conifers:sapling'},
+				items = {'moretrees:fir_sapling'},
 				rarity = 20,
 			},
 			{
 				-- player will get leaves only if he get no saplings,
 				-- this is because max_items is 1
-				items = {'conifers:leaves'},
+				items = {'moretrees:fir_leaves'},
 			}
 		}
 	},
 	sounds = default.node_sound_leaves_defaults()
 })
 
-minetest.register_node("moretrees:conifer_leaves_bright", {
+minetest.register_node("moretrees:fir_leaves_bright", {
 	drawtype = "allfaces_optional",
-	description = "Bright conifer leaves",
-	tile_images = { "moretrees_conifer_leaves_bright.png" },
+	description = "Fir Leaves (Bright)",
+	tile_images = { "moretrees_fir_leaves_bright.png" },
 	paramtype = "light",
 
 	groups = {
@@ -302,23 +297,23 @@ minetest.register_node("moretrees:conifer_leaves_bright", {
 		items = {
 			{
 				-- player will get sapling with 1/20 chance
-				items = {'conifers:sapling'},
+				items = {'moretrees:fir_sapling'},
 				rarity = 20,
 			},
 			{
 				-- player will get leaves only if he get no saplings,
 				-- this is because max_items is 1
-				items = {'conifers:leaves'},
+				items = {'moretrees:fir_leaves'},
 			}
 		}
 	},
 	sounds = default.node_sound_leaves_defaults()
 })
 
-minetest.register_node("moretrees:conifer_sapling", {
-	description = "Conifer sapling",
+minetest.register_node("moretrees:fir_sapling", {
+	description = "Fir sapling",
 	drawtype = "plantlike",
-	tile_images = {"moretrees_conifer_sapling.png"},
+	tile_images = {"moretrees_fir_sapling.png"},
 	paramtype = "light",
 	walkable = false,
 	groups = {
@@ -338,9 +333,15 @@ minetest.register_alias("jungletree:leaves_green", "moretrees:jungletree_leaves_
 minetest.register_alias("jungletree:leaves_red", "moretrees:jungletree_leaves_red")
 minetest.register_alias("jungletree:leaves_yellow", "moretrees:jungletree_leaves_yellow")
 
-minetest.register_alias("conifers:trunk", "moretrees:conifer_trunk")
-minetest.register_alias("conifers:trunk_reversed", "moretrees:conifer_trunk_sideways")
-minetest.register_alias("conifers:leaves", "moretrees:conifer_leaves")
-minetest.register_alias("conifers:leaves_special", "moretrees:conifer_leaves_bright")
-minetest.register_alias("conifers:sapling", "moretrees:conifer_sapling")
+minetest.register_alias("moretrees:conifer_trunk", "moretrees:fir_trunk")
+minetest.register_alias("moretrees:conifer_trunk_sideways", "moretrees:fir_trunk_sideways")
+minetest.register_alias("moretrees:conifer_leaves", "moretrees:fir_leaves")
+minetest.register_alias("moretrees:conifer_leaves_bright", "moretrees:fir_leaves_bright")
+minetest.register_alias("moretrees:conifer_sapling", "moretrees:fir_sapling")
+
+minetest.register_alias("conifers:trunk", "moretrees:fir_trunk")
+minetest.register_alias("conifers:trunk_reversed", "moretrees:fir_trunk_sideways")
+minetest.register_alias("conifers:leaves", "moretrees:fir_leaves")
+minetest.register_alias("conifers:leaves_special", "moretrees:fir_leaves_bright")
+minetest.register_alias("conifers:sapling", "moretrees:fir_sapling")
 

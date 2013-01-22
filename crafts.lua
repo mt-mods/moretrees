@@ -66,31 +66,31 @@ minetest.register_craft({
 ----
 
 minetest.register_craft({
-	output = "conifers:trunk_reversed 2",
+	output = "moretrees:fir_trunk_sideways 2",
 	recipe = {
-		{"conifers:trunk", "conifers:trunk"},
+		{"moretrees:fir_trunk", "fir:trunk"},
 	}
 })
 
 minetest.register_craft({
-	output = "conifers:trunk 2",
+	output = "moretrees:fir_trunk 2",
 	recipe = {
-		{"conifers:trunk_reversed"},
-		{"conifers:trunk_reversed"}
-	}
-})
-
-minetest.register_craft({
-	output = "default:wood 4",
-	recipe = {
-		{"conifers:trunk"}
+		{"moretrees:fir_trunk_sideways"},
+		{"moretrees:fir_trunk_sideways"}
 	}
 })
 
 minetest.register_craft({
 	output = "default:wood 4",
 	recipe = {
-		{"conifers:trunk_reversed"}
+		{"moretrees:fir_trunk"}
+	}
+})
+
+minetest.register_craft({
+	output = "default:wood 4",
+	recipe = {
+		{"moretrees:fir_trunk_sideways"}
 	}
 })
 
