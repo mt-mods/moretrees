@@ -29,10 +29,10 @@
 --
 moretrees = {}
 
-dofile(minetest.get_modpath("moretrees").."/crafts.lua")
 dofile(minetest.get_modpath("moretrees").."/node_defs.lua")
 dofile(minetest.get_modpath("moretrees").."/tree_models.lua")
 dofile(minetest.get_modpath("moretrees").."/biome_defs.lua")
+dofile(minetest.get_modpath("moretrees").."/crafts.lua")
 
 -- tree spawning setup
 
@@ -90,8 +90,8 @@ end
 
 plantslib:grow_plants(sapling_interval,sapling_chance,"moretrees:birch_sapling",nil,nil,nil,nil,nil,nil,nil,nil,"moretrees:grow_birch",nil)
 plantslib:grow_plants(sapling_interval,sapling_chance,"moretrees:spruce_sapling",nil,nil,nil,nil,nil,nil,nil,nil,"moretrees:grow_spruce",nil)
-plantslib:grow_plants(sapling_interval,sapling_chance,"conifers:sapling",nil,nil,nil,nil,nil,nil,nil,nil,"moretrees:grow_conifer",nil)
-plantslib:grow_plants(sapling_interval,sapling_chance,"jungletree:sapling",nil,nil,nil,nil,nil,nil,nil,nil,"moretrees:grow_jungletree",nil)
+plantslib:grow_plants(sapling_interval,sapling_chance,"moretrees:conifer_sapling",nil,nil,nil,nil,nil,nil,nil,nil,"moretrees:grow_conifer",nil)
+plantslib:grow_plants(sapling_interval,sapling_chance,"moretrees:jungletree_sapling",nil,nil,nil,nil,nil,nil,nil,nil,"moretrees:grow_jungletree",nil)
 
 -- Code to spawn a birch tree
 

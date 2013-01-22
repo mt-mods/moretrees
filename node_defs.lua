@@ -14,19 +14,19 @@ leaves = {
 moretrees.avoidnodes = {}
 
 table.insert(moretrees.avoidnodes, "default:jungletree")
-table.insert(moretrees.avoidnodes, "jungletree:leaves_red")
-table.insert(moretrees.avoidnodes, "jungletree:leaves_green")
-table.insert(moretrees.avoidnodes, "jungletree:leaves_yellow")
-table.insert(moretrees.avoidnodes, "conifers:trunk")
-table.insert(moretrees.avoidnodes, "conifers:leaves")
-table.insert(moretrees.avoidnodes, "conifers:leaves_special")
+table.insert(moretrees.avoidnodes, "moretrees:jungletree_trunk")
+table.insert(moretrees.avoidnodes, "moretrees:jungletree_leaves_red")
+table.insert(moretrees.avoidnodes, "moretrees:jungletree_leaves_green")
+table.insert(moretrees.avoidnodes, "moretrees:jungletree_leaves_yellow")
+table.insert(moretrees.avoidnodes, "moretrees:conifer_trunk")
+table.insert(moretrees.avoidnodes, "moretrees:conifer_leaves")
+table.insert(moretrees.avoidnodes, "moretrees:conifer_leaves_bright")
 
 for i in ipairs(leaves) do
 	local name = leaves[i]
 	minetest.register_node("moretrees:"..leaves[i][1].."_leaves", {
 		description = leaves[i][2],
 		drawtype = "allfaces_optional",
-		visual_scale = 1.3,
 		tiles = { "moretrees_"..leaves[i][1].."_leaves.png" },
 		paramtype = "light",
 		groups = {tree=1, snappy=3, flammable=2},
@@ -65,6 +65,21 @@ for i in ipairs(trees) do
 			"moretrees_"..treename.."_top.png",
 			"moretrees_"..treename.."_top.png",
 			"moretrees_"..treename..".png"
+		},
+		is_ground_content = true,
+		groups = {tree=1,snappy=1,choppy=2,oddly_breakable_by_hand=1,flammable=2},
+		sounds = default.node_sound_wood_defaults(),
+	})
+
+	minetest.register_node("moretrees:"..treename.."_trunk_sideways", {
+		description = treedesc.." Trunk (sideways)",
+		tiles = {
+			"moretrees_"..treename..".png^[transformR90",
+			"moretrees_"..treename..".png^[transformR90",
+			"moretrees_"..treename.."_top.png",
+			"moretrees_"..treename.."_top.png",
+			"moretrees_"..treename..".png^[transformR90",
+			"moretrees_"..treename..".png^[transformR90"
 		},
 		is_ground_content = true,
 		groups = {tree=1,snappy=1,choppy=2,oddly_breakable_by_hand=1,flammable=2},
@@ -117,30 +132,58 @@ for i in ipairs(trees) do
 
 end
 
---- For backward compatibility, jungle trees and firs ("conifers") are defined
---- separately.
-
 -- Nodes for jungle trees
 
-minetest.register_node(":jungletree:sapling", {
+minetest.register_node("moretrees:jungletree_sapling", {
 	description = "Jungle Tree Sapling",	
 	drawtype = "plantlike",	
-	visual_scale = 1.0,	
-	tiles = {"jungletree_sapling.png"},	
-	inventory_image = "jungletree_sapling.png",	
-	wield_image = "default_sapling.png",	
+	tiles = {"moretrees_jungletree_sapling.png"},	
 	paramtype = "light",	
 	walkable = false,	
 	groups = {snappy=2,dig_immediate=3,flammable=2},
 })
 
+minetest.register_node("moretrees:jungletree_trunk", {
+	description = "Jungle Tree trunk (sideways)",	
+	tiles = {
+		"default_jungletree_top.png",
+		"default_jungletree_top.png",
+		"default_jungletree.png",
+		"default_jungletree.png",
+		"default_jungletree.png",
+		"default_jungletree.png"
+	},
+	groups = {wood=1,snappy=2,dig_immediate=3,flammable=2},
+})
+
+minetest.register_node("moretrees:jungletree_planks", {
+	description = "Jungle Tree Planks",
+	tiles = {
+		"moretrees_jungletree_wood.png",
+	},
+	groups = {wood=1,snappy=2,dig_immediate=3,flammable=2},
+})
+
+minetest.register_node("moretrees:jungletree_trunk_sideways", {
+	description = "Jungle Tree trunk (sideways)",	
+	tiles = {
+		"default_jungletree.png^[transformR90",
+		"default_jungletree.png^[transformR90",
+		"default_jungletree_top.png",
+		"default_jungletree_top.png",
+		"default_jungletree.png^[transformR90",
+		"default_jungletree.png^[transformR90"
+	},
+	groups = {wood=1,snappy=2,dig_immediate=3,flammable=2},
+})
+
 local leaves = {"green","yellow","red"}
 for color = 1, 3 do
-	local leave_name = ":jungletree:leaves_"..leaves[color]
+	local leave_name = "moretrees:jungletree_leaves_"..leaves[color]
 	minetest.register_node(leave_name, {
 		description = "Jungle Tree Leaves",
 		drawtype = "allfaces_optional",
-		tiles = {"jungletree_leaves_"..leaves[color]..".png"},
+		tiles = {"moretrees_jungletree_leaves_"..leaves[color]..".png"},
 		paramtype = "light",
 		groups = {snappy=3, leafdecay=3, flammable=2},
 		drop = {
@@ -148,13 +191,13 @@ for color = 1, 3 do
 			items = {
 				{
 					-- player will get sapling with 1/20 chance
-					items = {'jungletree:sapling'},
+					items = {'moretrees:jungletree_sapling'},
 					rarity = 20,
 				},
 				{
 					-- player will get leaves only if he get no saplings,
 					-- this is because max_items is 1
-					items = {"jungletree:leaves_"..leaves[color]},
+					items = {"moretrees:jungletree_leaves_"..leaves[color]},
 				}
 			}
 		},
@@ -164,62 +207,61 @@ end
 
 -- Nodes for conifers
 
-minetest.register_node(":conifers:trunk", {
+minetest.register_node("moretrees:conifer_trunk", {
 	description = "Conifer trunk",
 	tile_images = { 
-		"conifers_trunktop.png", 
-		"conifers_trunktop.png", 
-		"conifers_trunk.png", 
-		"conifers_trunk.png", 
-		"conifers_trunk.png", 
-		"conifers_trunk.png" 
+		"moretrees_conifer_trunktop.png", 
+		"moretrees_conifer_trunktop.png", 
+		"moretrees_conifer_trunk.png", 
+		"moretrees_conifer_trunk.png", 
+		"moretrees_conifer_trunk.png", 
+		"moretrees_conifer_trunk.png" 
 	},
-	paramtype = "facedir_simple",
 	is_ground_content = true,
 	groups = {
 		tree = 1,
 		snappy = 2,
 		choppy = 2,
 		oddly_breakable_by_hand = 1,
-		flammable = 2
+		flammable = 2,
+		wood = 1
 	},
 	sounds = default.node_sound_wood_defaults()
 })
 
-minetest.register_node(":conifers:trunk_reversed", {
+minetest.register_node("moretrees:conifer_trunk_sideways", {
 	description = "Conifer reversed trunk",
 	tile_images = { 
-		"conifers_trunk_reversed.png", 
-		"conifers_trunk_reversed.png",
-		"conifers_trunktop.png", 
-		"conifers_trunktop.png", 
-		"conifers_trunk_reversed.png", 
-		"conifers_trunk_reversed.png" 
+		"moretrees_conifer_trunk.png^[transformR90", 
+		"moretrees_conifer_trunk.png^[transformR90",
+		"moretrees_conifer_trunktop.png", 
+		"moretrees_conifer_trunktop.png", 
+		"moretrees_conifer_trunk.png^[transformR90", 
+		"moretrees_conifer_trunk.png^[transformR90" 
 	},
 	--inventory_image = minetest.inventorycube(
 		--"conifers_trunk.png",
 		--"conifers_trunktop.png",
 		--"conifers_trunk.png"
 	--),
-	paramtype = "facedir_simple",
+	paramtype2 = "facedir",
 	material = minetest.digprop_woodlike(1.0),
-	legacy_facedir_simple = true,
-	is_ground_content = true,
+
 	groups = {
 		tree = 1,
 		snappy = 2,
 		choppy = 2,
 		oddly_breakable_by_hand = 1,
-		flammable = 2
+		flammable = 2,
+		wood = 1
 	},
 	sounds = default.node_sound_wood_defaults()
 })
 
-minetest.register_node(":conifers:leaves", {
+minetest.register_node("moretrees:conifer_leaves", {
+	drawtype = "allfaces_optional",
 	description = "Conifer leaves",
-	drawtype = "allfaces_optional",
-	visual_scale = 1.3,
-	tile_images = { "conifers_leaves.png" },
+	tile_images = { "moretrees_conifer_leaves.png" },
 	paramtype = "light",
 	groups = {
 		snappy = 3,
@@ -244,12 +286,12 @@ minetest.register_node(":conifers:leaves", {
 	sounds = default.node_sound_leaves_defaults()
 })
 
-minetest.register_node(":conifers:leaves_special", {
+minetest.register_node("moretrees:conifer_leaves_bright", {
+	drawtype = "allfaces_optional",
 	description = "Bright conifer leaves",
-	drawtype = "allfaces_optional",
-	visual_scale = 1.3,
-	tile_images = { "conifers_leaves_special.png" },
+	tile_images = { "moretrees_conifer_leaves_bright.png" },
 	paramtype = "light",
+
 	groups = {
 		snappy = 3,
 		leafdecay = 3,
@@ -273,13 +315,10 @@ minetest.register_node(":conifers:leaves_special", {
 	sounds = default.node_sound_leaves_defaults()
 })
 
-minetest.register_node(":conifers:sapling", {
+minetest.register_node("moretrees:conifer_sapling", {
 	description = "Conifer sapling",
 	drawtype = "plantlike",
-	visual_scale = 1.0,
-	tile_images = {"conifers_sapling.png"},
-	inventory_image = "conifers_sapling.png",
-	wield_image = "conifers_sapling.png",
+	tile_images = {"moretrees_conifer_sapling.png"},
 	paramtype = "light",
 	walkable = false,
 	groups = {
@@ -289,4 +328,19 @@ minetest.register_node(":conifers:sapling", {
 	},
 	sounds = default.node_sound_defaults(),
 })
+
+
+
+-- Backward compatbility with old mods/nodes:
+
+minetest.register_alias("default:jungletree", "moretrees:jungletree_trunk")
+minetest.register_alias("jungletree:leaves_green", "moretrees:jungletree_leaves_green")
+minetest.register_alias("jungletree:leaves_red", "moretrees:jungletree_leaves_red")
+minetest.register_alias("jungletree:leaves_yellow", "moretrees:jungletree_leaves_yellow")
+
+minetest.register_alias("conifers:trunk", "moretrees:conifer_trunk")
+minetest.register_alias("conifers:trunk_reversed", "moretrees:conifer_trunk_sideways")
+minetest.register_alias("conifers:leaves", "moretrees:conifer_leaves")
+minetest.register_alias("conifers:leaves_special", "moretrees:conifer_leaves_bright")
+minetest.register_alias("conifers:sapling", "moretrees:conifer_sapling")
 
