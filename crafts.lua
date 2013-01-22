@@ -32,7 +32,7 @@ for i in ipairs(simple_trees) do
 	})
 end
 
-----
+---- jungletrees
 
 minetest.register_craft({
 	output = "moretrees:jungletree_trunk_sideways 2",
@@ -63,12 +63,12 @@ minetest.register_craft({
 	}
 })
 
-----
+---- firs
 
 minetest.register_craft({
 	output = "moretrees:fir_trunk_sideways 2",
 	recipe = {
-		{"moretrees:fir_trunk", "fir:trunk"},
+		{"moretrees:fir_trunk", "moretrees:fir_trunk"},
 	}
 })
 
@@ -94,3 +94,64 @@ minetest.register_craft({
 	}
 })
 
+---- spruces
+
+minetest.register_craft({
+	output = "moretrees:spruce_trunk_sideways 2",
+	recipe = {
+		{"moretrees:spruce_trunk", "moretrees:spruce_trunk"},
+	}
+})
+
+minetest.register_craft({
+	output = "moretrees:spruce_trunk 2",
+	recipe = {
+		{"moretrees:spruce_trunk_sideways"},
+		{"moretrees:spruce_trunk_sideways"}
+	}
+})
+
+minetest.register_craft({
+	output = "moretrees:spruce_planks 4",
+	recipe = {
+		{"moretrees:spruce_trunk"}
+	}
+})
+
+minetest.register_craft({
+	output = "moretrees:spruce_planks 4",
+	recipe = {
+		{"moretrees:spruce_trunk_sideways"}
+	}
+})
+
+---- birches
+
+minetest.register_craft({
+	output = "moretrees:birch_trunk_sideways 2",
+	recipe = {
+		{"moretrees:birch_trunk", "moretrees:spruce_trunk"},
+	}
+})
+
+minetest.register_craft({
+	output = "moretrees:birch_trunk 2",
+	recipe = {
+		{"moretrees:birch_trunk_sideways"},
+		{"moretrees:birch_trunk_sideways"}
+	}
+})
+
+minetest.register_craft({
+	output = "moretrees:birch_planks 4",
+	recipe = {
+		{"moretrees:birch_trunk"}
+	}
+})
+
+minetest.register_craft({
+	output = "moretrees:birch_planks 4",
+	recipe = {
+		{"moretrees:birch_trunk_sideways"}
+	}
+})
