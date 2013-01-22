@@ -81,14 +81,14 @@ minetest.register_craft({
 })
 
 minetest.register_craft({
-	output = "default:wood 4",
+	output = "moretrees:fir_planks 4",
 	recipe = {
 		{"moretrees:fir_trunk"}
 	}
 })
 
 minetest.register_craft({
-	output = "default:wood 4",
+	output = "moretrees:fir_planks 4",
 	recipe = {
 		{"moretrees:fir_trunk_sideways"}
 	}

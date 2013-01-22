@@ -251,6 +251,14 @@ minetest.register_node("moretrees:fir_trunk_sideways", {
 	sounds = default.node_sound_wood_defaults()
 })
 
+minetest.register_node("moretrees:fir_planks", {
+	description = "Fir Planks",
+	tiles = {
+		"moretrees_fir_wood.png",
+	},
+	groups = {wood=1,snappy=2,dig_immediate=3,flammable=2},
+})
+
 minetest.register_node("moretrees:fir_leaves", {
 	drawtype = "allfaces_optional",
 	description = "Fir Leaves",
