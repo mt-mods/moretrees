@@ -97,10 +97,8 @@ for i in ipairs(trees) do
 	minetest.register_node("moretrees:"..treename.."_sapling", {
 	description = treedesc.." Sapling",
 	drawtype = "plantlike",
-	visual_scale = 1.0,
 	tiles = {"moretrees_"..treename.."_sapling.png"},
 	inventory_image = "moretrees_"..treename.."_sapling.png",
-	wield_image = "moretrees_"..treename.."_sapling.png",
 	paramtype = "light",
 	walkable = false,
 	selection_box = {
@@ -115,7 +113,6 @@ for i in ipairs(trees) do
 		minetest.register_node("moretrees:"..fruit, {
 			description = fruitdesc,
 			drawtype = "plantlike",
-			visual_scale = 0.8,
 			tiles = { "moretrees_"..fruit..".png" },
 			inventory_image = "moretrees_"..fruit..".png",
 			paramtype = "light",
@@ -138,6 +135,7 @@ minetest.register_node("moretrees:jungletree_sapling", {
 	description = "Jungle Tree Sapling",	
 	drawtype = "plantlike",	
 	tiles = {"moretrees_jungletree_sapling.png"},	
+	inventory_image = "moretrees_jungletree_sapling.png",
 	paramtype = "light",	
 	walkable = false,	
 	groups = {snappy=2,dig_immediate=3,flammable=2},
@@ -314,6 +312,7 @@ minetest.register_node("moretrees:fir_sapling", {
 	description = "Fir sapling",
 	drawtype = "plantlike",
 	tile_images = {"moretrees_fir_sapling.png"},
+	inventory_image = "moretrees_fir_sapling.png",
 	paramtype = "light",
 	walkable = false,
 	groups = {
@@ -327,8 +326,8 @@ minetest.register_node("moretrees:fir_sapling", {
 minetest.register_node("moretrees:fir_cone", {
 	description = "Fir cone",
 	drawtype = "plantlike",
-	visual_scale = 0.8,
 	tiles = {"moretrees_fir_cone.png"},
+	inventory_image = "moretrees_fir_cone.png",
 	paramtype = "light",
 	sunlight_propagates = true,
 	walkable = false,
