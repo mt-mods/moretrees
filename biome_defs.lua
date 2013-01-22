@@ -156,7 +156,7 @@ moretrees.jungletree_biome = {
 	rarity = 50,
 }
 
-moretrees.conifer_biome = {
+moretrees.fir_biome = {
 	surface = "default:dirt_with_grass",
 	avoid_nodes = moretrees.avoidnodes,
 	avoid_radius = 10,

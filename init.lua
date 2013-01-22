@@ -47,7 +47,7 @@ plantslib:register_generate_plant(moretrees.willow_biome, moretrees.willow_model
 plantslib:register_generate_plant(moretrees.birch_biome, "moretrees:grow_birch")
 plantslib:register_generate_plant(moretrees.spruce_biome, "moretrees:grow_spruce")
 plantslib:register_generate_plant(moretrees.jungletree_biome, "moretrees:grow_jungletree")
-plantslib:register_generate_plant(moretrees.conifer_biome, "moretrees:grow_fir")
+plantslib:register_generate_plant(moretrees.fir_biome, "moretrees:grow_fir")
 
 -- These three lines replace default trees with beech
 -- Enable them if you want but be warned - due to serious bugs in the speed
@@ -61,7 +61,7 @@ plantslib:register_generate_plant(moretrees.beech_biome, moretrees.beech_model)
 
 -- sapling growth setup
 
-local sapling_interval = 500
+local sapling_interval = 500    
 local sapling_chance = 10
 
 for i in ipairs(simple_trees) do
@@ -90,7 +90,7 @@ end
 
 plantslib:grow_plants(sapling_interval,sapling_chance,"moretrees:birch_sapling",nil,nil,nil,nil,nil,nil,nil,nil,"moretrees:grow_birch",nil)
 plantslib:grow_plants(sapling_interval,sapling_chance,"moretrees:spruce_sapling",nil,nil,nil,nil,nil,nil,nil,nil,"moretrees:grow_spruce",nil)
-plantslib:grow_plants(sapling_interval,sapling_chance,"moretrees:conifer_sapling",nil,nil,nil,nil,nil,nil,nil,nil,"moretrees:grow_fir",nil)
+plantslib:grow_plants(sapling_interval,sapling_chance,"moretrees:fir_sapling",nil,nil,nil,nil,nil,nil,nil,nil,"moretrees:grow_fir",nil)
 plantslib:grow_plants(sapling_interval,sapling_chance,"moretrees:jungletree_sapling",nil,nil,nil,nil,nil,nil,nil,nil,"moretrees:grow_jungletree",nil)
 
 -- Code to spawn a birch tree
@@ -115,7 +115,7 @@ function moretrees:grow_spruce(pos)
 	end
 end
 
--- Code that spawns jungle trees and firs ("conifer")
+-- Code that spawns jungle trees and firs
 
 moretrees.jt_axiom1 = "FFFA"
 moretrees.jt_rules_a1 = "FFF[&&-FBf[&&&Ff]^^^Ff][&&+FBFf[&&&FFf]^^^Ff][&&---FBFf[&&&Ff]^^^Ff][&&+++FBFf[&&&Ff]^^^Ff]F/A"
@@ -171,16 +171,16 @@ end
 
 function moretrees:grow_fir(pos)
 	if math.random(2) == 1 then
-		moretrees.conifer_model.leaves="moretrees:fir_leaves"
+		moretrees.fir_model.leaves="moretrees:fir_leaves"
 	else
-		moretrees.conifer_model.leaves="moretrees:fir_leaves_special"
+		moretrees.fir_model.leaves="moretrees:fir_leaves_special"
 	end
 	if math.random(2) == 1 then
-		moretrees.conifer_model.rules_a = moretrees.ct_rules_a1
-		moretrees.conifer_model.rules_b = moretrees.ct_rules_b1
+		moretrees.fir_model.rules_a = moretrees.ct_rules_a1
+		moretrees.fir_model.rules_b = moretrees.ct_rules_b1
 	else
-		moretrees.conifer_model.rules_a = moretrees.ct_rules_a2
-		moretrees.conifer_model.rules_b = moretrees.ct_rules_b2
+		moretrees.fir_model.rules_a = moretrees.ct_rules_a2
+		moretrees.fir_model.rules_b = moretrees.ct_rules_b2
 	end
 
 	minetest.env:remove_node(pos)
@@ -188,7 +188,7 @@ function moretrees:grow_fir(pos)
 	for leaf in ipairs(leaves) do
 			minetest.env:remove_node(leaves[leaf])
 	end
-	minetest.env:spawn_tree(pos,moretrees.conifer_model)
+	minetest.env:spawn_tree(pos,moretrees.fir_model)
 end
 
 

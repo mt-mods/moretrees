@@ -194,12 +194,12 @@ moretrees.jungletree_model={
 	iterations=nil,
 	random_level=2,
 	trunk_type=nil,
-	thin_branches=true;
+	thin_branches=true,
 	fruit_chance=15,
 	fruit="vines:vine"
 }
 
-moretrees.conifer_model={
+moretrees.fir_model={
 	axiom="FFFAF[&&-F][&&+F][&&---F][&&+++F]Fff",
 	rules_a=nil,
 	rules_b=nil,
@@ -209,5 +209,7 @@ moretrees.conifer_model={
 	iterations=7,
 	random_level=5,
 	trunk_type="single",
-	thin_branches=true
+	thin_branches=true,
+	fruit="moretrees:fir_cone",
+	fruit_chance=8
 }

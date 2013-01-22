@@ -324,7 +324,21 @@ minetest.register_node("moretrees:fir_sapling", {
 	sounds = default.node_sound_defaults(),
 })
 
-
+minetest.register_node("moretrees:fir_cone", {
+	description = "Fir cone",
+	drawtype = "plantlike",
+	visual_scale = 0.8,
+	tiles = {"moretrees_fir_cone.png"},
+	paramtype = "light",
+	sunlight_propagates = true,
+	walkable = false,
+	groups = {fleshy=3,dig_immediate=3,flammable=2},
+	sounds = default.node_sound_defaults(),
+	selection_box = {
+		type = "fixed",
+			fixed = {-0.2, -0.5, -0.2, 0.2, 0, 0.2}
+		},
+})
 
 -- Backward compatbility with old mods/nodes:
 
