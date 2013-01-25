@@ -89,7 +89,7 @@ moretrees.birch_model2={
 }
 
 moretrees.palm_model={
-	axiom="FFccc&FFFFFdddFA//A//A//A//A//A",
+	axiom="FFcccccc&FFFFFddd[^&&&GR][^///&&&GR][^//////&&&GR][^***&&&GR]FA//A//A//A//A//A",
 	rules_a="[&fb&bbb[++f--&ffff&ff][--f++&ffff&ff]&ffff&bbbb&b]",
 	rules_b="f",
 	rules_c="/",
