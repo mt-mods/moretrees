@@ -10,18 +10,18 @@ table.insert(moretrees.avoidnodes, "moretrees:fir_leaves")
 table.insert(moretrees.avoidnodes, "moretrees:fir_leaves_bright")
 	
 trees = {
-	{"beech",	"Beech",	 4 },
+	{"beech",	"Beech Tree",	 4 },
 	{"apple_tree",	"Apple Tree",	10 },
-	{"oak",		"Oak",		10,	"acorn",	"Acorn",	{-0.2, -0.5, -0.2, 0.2, 0, 0.2}, 0.8 },
-	{"sequoia",	"Sequoia",	 7 },
-	{"birch",	"Birch",	10 },
-	{"palm",	"Palm",		15,	"coconut",	"Coconut",	{-0.2, -0.5, -0.2, 0.2, 0, 0.2}, 1.0 },
-	{"spruce",	"Spruce",	10,	"spruce_cone",	"Spruce Cone",	{-0.2, -0.5, -0.2, 0.2, 0, 0.2}, 0.8 },
-	{"pine",	"Pine",		10,	"pine_cone",	"Pine Cone",	{-0.2, -0.5, -0.2, 0.2, 0, 0.2}, 0.8 },
-	{"willow",	"Willow",	15 },
+	{"oak",		"Oak Tree",	10,	"acorn",	"Acorn",	{-0.2, -0.5, -0.2, 0.2, 0, 0.2}, 0.8 },
+	{"sequoia",	"Giant Sequoia", 7 },
+	{"birch",	"Birch Tree",	10 },
+	{"palm",	"Palm Tree",	15,	"coconut",	"Coconut",	{-0.2, -0.5, -0.2, 0.2, 0, 0.2}, 1.0 },
+	{"spruce",	"Spruce Tree",	10,	"spruce_cone",	"Spruce Cone",	{-0.2, -0.5, -0.2, 0.2, 0, 0.2}, 0.8 },
+	{"pine",	"Pine Tree",	10,	"pine_cone",	"Pine Cone",	{-0.2, -0.5, -0.2, 0.2, 0, 0.2}, 0.8 },
+	{"willow",	"Willow Tree",	15 },
 	{"rubber_tree",	"Rubber Tree",	 7 },
 	{"jungletree",	"Jungle Tree"},
-	{"fir",		"Fir",		15,	"fir_cone",	"Fir Cone",	{-0.2, -0.5, -0.2, 0.2, 0, 0.2}, 0.8 },
+	{"fir",		"Douglas Fir",	15,	"fir_cone",	"Fir Cone",	{-0.2, -0.5, -0.2, 0.2, 0, 0.2}, 0.8 },
 }
 
 simple_trees = { "beech", "apple_tree", "oak", "sequoia", "palm", "pine", "willow", "rubber_tree"}
@@ -36,7 +36,7 @@ for i in ipairs(trees) do
 	local vscale = trees[i][7]
 
 	minetest.register_node("moretrees:"..treename.."_trunk", {
-		description = treedesc.." Tree Trunk",
+		description = treedesc.." Trunk",
 		tiles = {
 			"moretrees_"..treename.."_trunk_top.png",
 			"moretrees_"..treename.."_trunk_top.png",
@@ -48,7 +48,7 @@ for i in ipairs(trees) do
 	})
 
 	minetest.register_node("moretrees:"..treename.."_trunk_sideways", {
-		description = "Sideways "..treedesc.." Tree Trunk",
+		description = "Sideways "..treedesc.." Trunk",
 		tiles = {
 			"moretrees_"..treename.."_trunk.png^[transformR90",
 			"moretrees_"..treename.."_trunk.png^[transformR90",
@@ -71,7 +71,7 @@ for i in ipairs(trees) do
 	})
 
 	minetest.register_node("moretrees:"..treename.."_sapling", {
-	description = treedesc.." Tree Sapling",
+	description = treedesc.." Sapling",
 	drawtype = "plantlike",
 	tiles = {"moretrees_"..treename.."_sapling.png"},
 	inventory_image = "moretrees_"..treename.."_sapling.png",
@@ -111,7 +111,7 @@ for i in ipairs(trees) do
 
 	if treename ~= "jungletree" then
 		minetest.register_node("moretrees:"..treename.."_leaves", {
-			description = treedesc.." Tree Leaves",
+			description = treedesc.." Leaves",
 			drawtype = "allfaces_optional",
 			tiles = { "moretrees_"..treename.."_leaves.png" },
 			paramtype = "light",
@@ -163,7 +163,7 @@ end
 
 minetest.register_node("moretrees:fir_leaves_bright", {
 	drawtype = "allfaces_optional",
-	description = "Fir Leaves (Bright)",
+	description = "Douglas Fir Leaves (Bright)",
 	tile_images = { "moretrees_fir_leaves_bright.png" },
 	paramtype = "light",
 
