@@ -1,25 +1,3 @@
---[[
-
--- Example biome definition:
-
-moretrees.mytree_biome = {
-	surface = "default:dirt_with_grass",	-- must grow on these nodes only
-	avoid_nodes = {"default:tree"},		-- avoid spawning near these
-	avoid_radius = 5,			-- Keep this much room around the above avoid items
-	rarity = 50,				-- tree rarity:  math.random(1,100) > this    (higher = more rare)
-	seed_diff = 12345,			-- perlin seed-diff for "generally able to grow plants here" control
-	neighbors = "default:dirt_with_grass",	-- this node must be adjacent to the node being spawned on
-	ncount = 8,				-- and there must be this many of them
-	depth = 1,				-- spawning surface must be no deeper than this
-	min_elevation = -5,			-- minimum elevation to spawn on
-	max_elevation = 10,			-- maximum elevation
-	near_nodes = {"default:water_source"},	-- trees will only spawn near these nodes
-	near_nodes_size = 10,			-- within this radius of at least one of them
-	near_nodes_count = 20,			-- there must ne this many of those nodes in the area
-	temp_min = 0.5,				-- minimum allowable temperature (highest temperature map perlin value)
-	temp_max = 0.1,				-- maximum allowable temperature (lowest perlin value)
-}
-]]--
 
 moretrees.beech_biome = {
 	surface = "default:dirt_with_grass",

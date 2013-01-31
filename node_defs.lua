@@ -105,8 +105,8 @@ for i in ipairs(trees) do
 		})
 	end
 
-	-- player will get sapling with 1/20 chance
-	-- player will get leaves only if he get no saplings,
+	-- player will get a sapling with 1/100 chance
+	-- player will get leaves only if he/she gets no saplings,
 	-- this is because max_items is 1
 
 	if treename ~= "jungletree" then
@@ -118,14 +118,10 @@ for i in ipairs(trees) do
 			groups = {tree=1, snappy=3, flammable=2 },
 			sounds = default.node_sound_leaves_defaults(),
 
-			-- player will get sapling with 1/20 chance
-			-- player will get leaves only if he/she gets no
-			-- saplings, because max_items is 1.
-
 			drop = {
 				max_items = 1,
 				items = {
-					{items = {"moretrees:"..treename.."_sapling"}, rarity = 20	},
+					{items = {"moretrees:"..treename.."_sapling"}, rarity = 100 },
 					{items = {"moretrees:"..treename.."_leaves"} }
 				}
 			},
@@ -151,7 +147,7 @@ for color = 1, 3 do
 		drop = {
 			max_items = 1,
 			items = {
-				{items = {'moretrees:jungletree_sapling'}, rarity = 20 },
+				{items = {'moretrees:jungletree_sapling'}, rarity = 100 },
 				{items = {"moretrees:jungletree_leaves_"..jungleleaves[color]} }
 			}
 		},
@@ -171,7 +167,7 @@ minetest.register_node("moretrees:fir_leaves_bright", {
 	drop = {
 		max_items = 1,
 		items = {
-			{items = {'moretrees:fir_sapling'}, rarity = 20 },
+			{items = {'moretrees:fir_sapling'}, rarity = 100 },
 			{items = {'moretrees:fir_leaves'} }
 		}
 	},
