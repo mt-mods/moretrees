@@ -235,10 +235,10 @@ end
 
 -- leaf decay
 
-
 local leafdecay_delay = 2
 local leafdecay_chance = 150
 local leafdecay_radius = 5
+local palms_leafdecay_radius = 8
 
 minetest.register_abm({
 	nodenames = moretrees.leaves_list,
@@ -252,4 +252,15 @@ minetest.register_abm({
 	end
 })
 
+minetest.register_abm({
+	nodenames = "moretrees:palm_leaves",
+	interval = leafdecay_delay,
+	chance = leafdecay_chance,
+	action = function(pos, node, active_object_count, active_object_count_wider)
+		if not minetest.env:find_node_near(pos, palms_leafdecay_radius, moretrees.trunks_list) then
+			minetest.env:remove_node(pos)
+			minetest.env:dig_node(pos)
+		end
+	end
+})
 print("[Moretrees] Loaded (2013-01-18)")

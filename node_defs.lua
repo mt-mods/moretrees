@@ -134,8 +134,11 @@ for i in ipairs(trees) do
 
 	table.insert(moretrees.avoidnodes, "moretrees:"..treename.."_trunk")
 	table.insert(moretrees.avoidnodes, "moretrees:"..treename.."_leaves")
-	table.insert(moretrees.leaves_list, "moretrees:"..treename.."_leaves")
 	table.insert(moretrees.trunks_list, "moretrees:"..treename.."_trunk")
+	if treename ~= "palm" then 
+		table.insert(moretrees.leaves_list, "moretrees:"..treename.."_leaves")
+	end
+
 end
 
 -- Extra leaves for jungle trees:
