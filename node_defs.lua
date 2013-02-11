@@ -60,6 +60,7 @@ for i in ipairs(trees) do
 		is_ground_content = true,
 		groups = {tree=1,snappy=1,choppy=2,oddly_breakable_by_hand=1,flammable=2},
 		sounds = default.node_sound_wood_defaults(),
+		paramtype2 = "facedir",
 	})
 
 	minetest.register_node("moretrees:"..treename.."_planks", {
