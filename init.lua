@@ -64,7 +64,7 @@ plantslib:register_generate_plant(moretrees.beech_biome, moretrees.beech_model)
 local sapling_interval = 500
 local sapling_chance = 20
 
-for i in ipairs(simple_trees) do
+for i in ipairs(moretrees.simple_trees) do
 	local tree_name = trees[i][1]
 	local tree_model = tree_name.."_model"
 	local tree_biome = tree_name.."_biome"
@@ -232,5 +232,24 @@ if CONIFERS_REMOVE_TREES == true then
 		end
 	})
 end
+
+-- leaf decay
+
+
+local leafdecay_delay = 2
+local leafdecay_chance = 150
+local leafdecay_radius = 5
+
+minetest.register_abm({
+	nodenames = moretrees.leaves_list,
+	interval = leafdecay_delay,
+	chance = leafdecay_chance,
+	action = function(pos, node, active_object_count, active_object_count_wider)
+		if not minetest.env:find_node_near(pos, leafdecay_radius, moretrees.trunks_list) then
+			minetest.env:remove_node(pos)
+			minetest.env:dig_node(pos)
+		end
+	end
+})
 
 print("[Moretrees] Loaded (2013-01-18)")

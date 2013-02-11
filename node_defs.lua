@@ -10,30 +10,33 @@ table.insert(moretrees.avoidnodes, "moretrees:fir_leaves")
 table.insert(moretrees.avoidnodes, "moretrees:fir_leaves_bright")
 	
 trees = {
-	{"beech",	"Beech Tree",	 4 },
-	{"apple_tree",	"Apple Tree",	10 },
-	{"oak",		"Oak Tree",	10,	"acorn",	"Acorn",	{-0.2, -0.5, -0.2, 0.2, 0, 0.2}, 0.8 },
-	{"sequoia",	"Giant Sequoia", 7 },
-	{"birch",	"Birch Tree",	10 },
-	{"palm",	"Palm Tree",	15,	"coconut",	"Coconut",	{-0.2, -0.5, -0.2, 0.2, 0, 0.2}, 1.0 },
-	{"spruce",	"Spruce Tree",	10,	"spruce_cone",	"Spruce Cone",	{-0.2, -0.5, -0.2, 0.2, 0, 0.2}, 0.8 },
-	{"pine",	"Pine Tree",	10,	"pine_cone",	"Pine Cone",	{-0.2, -0.5, -0.2, 0.2, 0, 0.2}, 0.8 },
-	{"willow",	"Willow Tree",	15 },
-	{"rubber_tree",	"Rubber Tree",	 7 },
+	{"beech",	"Beech Tree"},
+	{"apple_tree",	"Apple Tree"},
+	{"oak",		"Oak Tree",		"acorn",	"Acorn",	{-0.2, -0.5, -0.2, 0.2, 0, 0.2}, 0.8 },
+	{"sequoia",	"Giant Sequoia"},
+	{"birch",	"Birch Tree"},
+	{"palm",	"Palm Tree",		"coconut",	"Coconut",	{-0.2, -0.5, -0.2, 0.2, 0, 0.2}, 1.0 },
+	{"spruce",	"Spruce Tree",		"spruce_cone",	"Spruce Cone",	{-0.2, -0.5, -0.2, 0.2, 0, 0.2}, 0.8 },
+	{"pine",	"Pine Tree",		"pine_cone",	"Pine Cone",	{-0.2, -0.5, -0.2, 0.2, 0, 0.2}, 0.8 },
+	{"willow",	"Willow Tree"},
+	{"rubber_tree",	"Rubber Tree"},
 	{"jungletree",	"Jungle Tree"},
-	{"fir",		"Douglas Fir",	15,	"fir_cone",	"Fir Cone",	{-0.2, -0.5, -0.2, 0.2, 0, 0.2}, 0.8 },
+	{"fir",		"Douglas Fir",		"fir_cone",	"Fir Cone",	{-0.2, -0.5, -0.2, 0.2, 0, 0.2}, 0.8 },
 }
 
-simple_trees = { "beech", "apple_tree", "oak", "sequoia", "palm", "pine", "willow", "rubber_tree"}
+moretrees.simple_trees = { "beech", "apple_tree", "oak", "sequoia", "palm", "pine", "willow", "rubber_tree"}
+
+moretrees.leaves_list = {}
+moretrees.trunks_list = {}
 
 for i in ipairs(trees) do
 	local treename = trees[i][1]
 	local treedesc = trees[i][2]
-	local leafdecayradius = trees[i][3]  -- future use, not yet implemented.
-	local fruit = trees[i][4]
-	local fruitdesc = trees[i][5]
-	local selbox = trees[i][6]
-	local vscale = trees[i][7]
+	local fruit = trees[i][3]
+	local fruitdesc = trees[i][4]
+	local selbox = trees[i][5]
+	local vscale = trees[i][6]
+
 
 	minetest.register_node("moretrees:"..treename.."_trunk", {
 		description = treedesc.." Trunk",
@@ -101,7 +104,7 @@ for i in ipairs(trees) do
 				type = "fixed",
 					fixed = selbox
 				},
-			groups = {fleshy=3,dig_immediate=3,flammable=2},
+			groups = {fleshy=3,dig_immediate=3,flammable=2, attached_node=1},
 			sounds = default.node_sound_defaults(),
 		})
 	end
@@ -116,7 +119,7 @@ for i in ipairs(trees) do
 			drawtype = "allfaces_optional",
 			tiles = { "moretrees_"..treename.."_leaves.png" },
 			paramtype = "light",
-			groups = {tree=1, snappy=3, flammable=2 },
+			groups = {tree=1, snappy=3, flammable=2},
 			sounds = default.node_sound_leaves_defaults(),
 
 			drop = {
@@ -131,6 +134,8 @@ for i in ipairs(trees) do
 
 	table.insert(moretrees.avoidnodes, "moretrees:"..treename.."_trunk")
 	table.insert(moretrees.avoidnodes, "moretrees:"..treename.."_leaves")
+	table.insert(moretrees.leaves_list, "moretrees:"..treename.."_leaves")
+	table.insert(moretrees.trunks_list, "moretrees:"..treename.."_trunk")
 end
 
 -- Extra leaves for jungle trees:
@@ -154,6 +159,7 @@ for color = 1, 3 do
 		},
 		sounds = default.node_sound_leaves_defaults(),
 	})
+	table.insert(moretrees.leaves_list, "moretrees:jungletree_leaves_"..jungleleaves[color])
 end
 
 -- Extra needles for firs
@@ -174,7 +180,7 @@ minetest.register_node("moretrees:fir_leaves_bright", {
 	},
 	sounds = default.node_sound_leaves_defaults()
 })
-
+table.insert(moretrees.leaves_list, "moretrees:fir_leaves_bright")
 
 
 -- Backward compatbility with old mods/nodes:
