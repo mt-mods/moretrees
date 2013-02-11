@@ -140,6 +140,7 @@ for i in ipairs(trees) do
 	end
 
 end
+table.insert(moretrees.trunks_list, "default:jungletree")
 
 -- Extra leaves for jungle trees:
 
