@@ -186,6 +186,27 @@ minetest.register_node("moretrees:fir_leaves_bright", {
 })
 table.insert(moretrees.leaves_list, "moretrees:fir_leaves_bright")
 
+if moretrees.enable_redefine_apple then
+	minetest.register_node(":default:apple", {
+		description = "Apple",
+		drawtype = "plantlike",
+		visual_scale = 1.0,
+		tiles = {"default_apple.png"},
+		inventory_image = "default_apple.png",
+		paramtype = "light",
+		sunlight_propagates = true,
+		walkable = false,
+		selection_box = {
+			type = "fixed",
+			fixed = {-0.2, -0.5, -0.2, 0.2, 0, 0.2}
+		},
+		groups = {fleshy=3,dig_immediate=3,flammable=2,attached_node=1},
+		on_use = minetest.item_eat(4),
+		sounds = default.node_sound_defaults(),
+	})
+end
+
+
 
 -- Backward compatbility with old mods/nodes:
 

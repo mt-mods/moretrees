@@ -36,6 +36,7 @@ dofile(minetest.get_modpath("moretrees").."/node_defs.lua")
 dofile(minetest.get_modpath("moretrees").."/tree_models.lua")
 dofile(minetest.get_modpath("moretrees").."/biome_defs.lua")
 dofile(minetest.get_modpath("moretrees").."/crafts.lua")
+dofile(minetest.get_modpath("moretrees").."/leafdecay.lua")
 
 -- tree spawning setup
 
@@ -54,9 +55,6 @@ plantslib:register_generate_plant(moretrees.fir_biome, "moretrees:grow_fir")
 
 -- sapling growth
 
-local sapling_interval = 500
-local sapling_chance = 20
-
 for i in ipairs(moretrees.simple_trees) do
 	local tree_name = trees[i][1]
 	local tree_model = tree_name.."_model"
@@ -65,8 +63,8 @@ for i in ipairs(moretrees.simple_trees) do
 	plantslib:dbg(dump(moretrees[tree_biome].surface))
 	
 	plantslib:grow_plants({
-		grow_delay = sapling_interval,
-		grow_chance = sapling_chance,
+		grow_delay = moretrees.sapling_interval,
+		grow_chance = moretrees.sapling_chance,
 		grow_plant = "moretrees:"..tree_name.."_sapling",
 		grow_nodes = moretrees[tree_biome].surface,
 		grow_function = moretrees[tree_model],
@@ -74,32 +72,32 @@ for i in ipairs(moretrees.simple_trees) do
 end
 
 plantslib:grow_plants({
-	grow_delay = sapling_interval,
-	grow_chance = sapling_chance,
+	grow_delay = moretrees.sapling_interval,
+	grow_chance = moretrees.sapling_chance,
 	grow_plant = "moretrees:birch_sapling",
 	grow_nodes = moretrees.birch_biome.surface,
 	grow_function = "moretrees:grow_birch"
 })
 
 plantslib:grow_plants({
-	grow_delay = sapling_interval,
-	grow_chance = sapling_chance,
+	grow_delay = moretrees.sapling_interval,
+	grow_chance = moretrees.sapling_chance,
 	grow_plant = "moretrees:spruce_sapling",
 	grow_nodes = moretrees.spruce_biome.surface,
 	grow_function = "moretrees:grow_spruce"
 })
 
 plantslib:grow_plants({
-	grow_delay = sapling_interval,
-	grow_chance = sapling_chance,
+	grow_delay = moretrees.sapling_interval,
+	grow_chance = moretrees.sapling_chance,
 	grow_plant = "moretrees:fir_sapling",
 	grow_nodes = moretrees.fir_biome.surface,
 	grow_function = "moretrees:grow_fir"
 })
 
 plantslib:grow_plants({
-	grow_delay = sapling_interval,
-	grow_chance = sapling_chance,
+	grow_delay = moretrees.sapling_interval,
+	grow_chance = moretrees.sapling_chance,
 	grow_plant = "moretrees:jungletree_sapling",
 	grow_nodes = moretrees.jungletree_biome.surface,
 	grow_function = "moretrees:grow_jungletree"
@@ -224,51 +222,6 @@ if moretrees.firs_remove_default_trees == true then
 			end
 		end
 	})
-end
-
--- leaf decay
-
-minetest.register_abm({
-	nodenames = moretrees.leaves_list,
-	interval = moretrees.leafdecay_delay,
-	chance = moretrees.leafdecay_chance,
-	action = function(pos, node, active_object_count, active_object_count_wider)
-		if not minetest.env:find_node_near(pos, moretrees.leafdecay_radius, moretrees.trunks_list) then
-			minetest.env:remove_node(pos)
-			minetest.env:dig_node(pos)
-		end
-	end
-})
-
-minetest.register_abm({
-	nodenames = "moretrees:palm_leaves",
-	interval = moretrees.leafdecay_delay,
-	chance = moretrees.leafdecay_chance,
-	action = function(pos, node, active_object_count, active_object_count_wider)
-		if not minetest.env:find_node_near(pos, moretrees.palm_leafdecay_radius, moretrees.trunks_list) then
-			minetest.env:remove_node(pos)
-			minetest.env:dig_node(pos)
-		end
-	end
-})
-
-
-if moretrees.enable_replace_default_trees then
-	minetest.register_alias("mapgen_tree", "air")
-	minetest.register_alias("mapgen_leaves", "air")
-	plantslib:register_generate_plant(moretrees.beech_biome, moretrees.beech_model)
-elseif moretrees.enable_default_leafdecay then
-	minetest.register_abm({
-		nodenames = "default:leaves",
-		interval = moretrees.default_leafdecay_delay,
-		chance = moretrees.default_leafdecay_chance,
-		action = function(pos, node, active_object_count, active_object_count_wider)
-			if not minetest.env:find_node_near(pos, moretrees.default_leafdecay_radius, {"default:tree"}) then
-				minetest.env:remove_node(pos)
-				minetest.env:dig_node(pos)
-			end
-		end
-	})	
 end
 
 print("[Moretrees] Loaded (2013-01-18)")

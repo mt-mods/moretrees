@@ -12,6 +12,11 @@ moretrees.enable_replace_default_trees = false
 
 moretrees.enable_default_leafdecay = false
 
+-- Enable this if you want moretrees to redefine default apples so that they
+-- fall when leaves decay/are dug.
+
+moretrees.enable_redefine_apple = true
+
 -- various settings to configure leaf decay in general.
 
 moretrees.leafdecay_delay = 2
@@ -31,3 +36,7 @@ moretrees.firs_remove_default_trees = false
 moretrees.firs_remove_interval = 2
 moretrees.firs_remove_chance = 150
 
+-- Sapling settings
+
+moretrees.sapling_interval = 500
+moretrees.sapling_chance = 20
