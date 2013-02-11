@@ -27,7 +27,10 @@
 --	
 -- We'll just save this for possible later use ;-)
 --
+
 moretrees = {}
+
+dofile(minetest.get_modpath("moretrees").."/settings.lua")
 
 dofile(minetest.get_modpath("moretrees").."/node_defs.lua")
 dofile(minetest.get_modpath("moretrees").."/tree_models.lua")
@@ -48,16 +51,6 @@ plantslib:register_generate_plant(moretrees.birch_biome, "moretrees:grow_birch")
 plantslib:register_generate_plant(moretrees.spruce_biome, "moretrees:grow_spruce")
 plantslib:register_generate_plant(moretrees.jungletree_biome, "moretrees:grow_jungletree")
 plantslib:register_generate_plant(moretrees.fir_biome, "moretrees:grow_fir")
-
--- These three lines replace default trees with beech
--- Enable them if you want but be warned - due to serious bugs in the speed
--- of the engine's map generator/loader, doing so will slow it WAY down.
-
---[[
-minetest.register_alias("mapgen_tree", "air")
-minetest.register_alias("mapgen_leaves", "air")
-plantslib:register_generate_plant(moretrees.beech_biome, moretrees.beech_model)
-]]--
 
 -- sapling growth
 
@@ -214,14 +207,14 @@ end
 
 -- Should we remove all the trees above the conifers altitude?
 
-if CONIFERS_REMOVE_TREES == true then
+if moretrees.firs_remove_default_trees == true then
 	minetest.register_abm({
 		nodenames = {
 			"default:tree", 
 			"default:leaves"
 		},
-		interval = CONIFERS_RTREES_INTERVAL,
-		chance = CONIFERS_RTREES_CHANCE,
+		interval = moretrees.firs_remove_interval,
+		chance = moretrees.firs_remove_chance,
 		
 		action = function(pos, node, _, _)
 			if minetest.env:get_node({x = pos.x, y = pos.y + 1, z = pos.z}).name == "air"
@@ -235,17 +228,12 @@ end
 
 -- leaf decay
 
-local leafdecay_delay = 2
-local leafdecay_chance = 150
-local leafdecay_radius = 5
-local palms_leafdecay_radius = 8
-
 minetest.register_abm({
 	nodenames = moretrees.leaves_list,
-	interval = leafdecay_delay,
-	chance = leafdecay_chance,
+	interval = moretrees.leafdecay_delay,
+	chance = moretrees.leafdecay_chance,
 	action = function(pos, node, active_object_count, active_object_count_wider)
-		if not minetest.env:find_node_near(pos, leafdecay_radius, moretrees.trunks_list) then
+		if not minetest.env:find_node_near(pos, moretrees.leafdecay_radius, moretrees.trunks_list) then
 			minetest.env:remove_node(pos)
 			minetest.env:dig_node(pos)
 		end
@@ -254,13 +242,33 @@ minetest.register_abm({
 
 minetest.register_abm({
 	nodenames = "moretrees:palm_leaves",
-	interval = leafdecay_delay,
-	chance = leafdecay_chance,
+	interval = moretrees.leafdecay_delay,
+	chance = moretrees.leafdecay_chance,
 	action = function(pos, node, active_object_count, active_object_count_wider)
-		if not minetest.env:find_node_near(pos, palms_leafdecay_radius, moretrees.trunks_list) then
+		if not minetest.env:find_node_near(pos, moretrees.palm_leafdecay_radius, moretrees.trunks_list) then
 			minetest.env:remove_node(pos)
 			minetest.env:dig_node(pos)
 		end
 	end
 })
+
+
+if moretrees.enable_replace_default_trees then
+	minetest.register_alias("mapgen_tree", "air")
+	minetest.register_alias("mapgen_leaves", "air")
+	plantslib:register_generate_plant(moretrees.beech_biome, moretrees.beech_model)
+elseif moretrees.enable_default_leafdecay then
+	minetest.register_abm({
+		nodenames = "default:leaves",
+		interval = moretrees.default_leafdecay_delay,
+		chance = moretrees.default_leafdecay_chance,
+		action = function(pos, node, active_object_count, active_object_count_wider)
+			if not minetest.env:find_node_near(pos, moretrees.default_leafdecay_radius, {"default:tree"}) then
+				minetest.env:remove_node(pos)
+				minetest.env:dig_node(pos)
+			end
+		end
+	})	
+end
+
 print("[Moretrees] Loaded (2013-01-18)")
