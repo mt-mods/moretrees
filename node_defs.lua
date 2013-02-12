@@ -1,15 +1,6 @@
 moretrees.avoidnodes = {}
-
-table.insert(moretrees.avoidnodes, "default:jungletree")
-table.insert(moretrees.avoidnodes, "moretrees:jungletree_trunk")
-table.insert(moretrees.avoidnodes, "moretrees:jungletree_leaves_red")
-table.insert(moretrees.avoidnodes, "moretrees:jungletree_leaves_green")
-table.insert(moretrees.avoidnodes, "moretrees:jungletree_leaves_yellow")
-table.insert(moretrees.avoidnodes, "moretrees:fir_trunk")
-table.insert(moretrees.avoidnodes, "moretrees:fir_leaves")
-table.insert(moretrees.avoidnodes, "moretrees:fir_leaves_bright")
 	
-trees = {
+moretrees.treelist = {
 	{"beech",	"Beech Tree"},
 	{"apple_tree",	"Apple Tree"},
 	{"oak",		"Oak Tree",		"acorn",	"Acorn",	{-0.2, -0.5, -0.2, 0.2, 0, 0.2}, 0.8 },
@@ -24,18 +15,13 @@ trees = {
 	{"fir",		"Douglas Fir",		"fir_cone",	"Fir Cone",	{-0.2, -0.5, -0.2, 0.2, 0, 0.2}, 0.8 },
 }
 
-moretrees.simple_trees = { "beech", "apple_tree", "oak", "sequoia", "palm", "pine", "willow", "rubber_tree"}
-
-moretrees.leaves_list = {}
-moretrees.trunks_list = {}
-
-for i in ipairs(trees) do
-	local treename = trees[i][1]
-	local treedesc = trees[i][2]
-	local fruit = trees[i][3]
-	local fruitdesc = trees[i][4]
-	local selbox = trees[i][5]
-	local vscale = trees[i][6]
+for i in ipairs(moretrees.treelist) do
+	local treename = moretrees.treelist[i][1]
+	local treedesc = moretrees.treelist[i][2]
+	local fruit = moretrees.treelist[i][3]
+	local fruitdesc = moretrees.treelist[i][4]
+	local selbox = moretrees.treelist[i][5]
+	local vscale = moretrees.treelist[i][6]
 
 
 	minetest.register_node("moretrees:"..treename.."_trunk", {
@@ -134,13 +120,7 @@ for i in ipairs(trees) do
 
 	table.insert(moretrees.avoidnodes, "moretrees:"..treename.."_trunk")
 	table.insert(moretrees.avoidnodes, "moretrees:"..treename.."_leaves")
-	table.insert(moretrees.trunks_list, "moretrees:"..treename.."_trunk")
-	if treename ~= "palm" then 
-		table.insert(moretrees.leaves_list, "moretrees:"..treename.."_leaves")
-	end
-
 end
-table.insert(moretrees.trunks_list, "default:jungletree")
 
 -- Extra leaves for jungle trees:
 
@@ -163,7 +143,6 @@ for color = 1, 3 do
 		},
 		sounds = default.node_sound_leaves_defaults(),
 	})
-	table.insert(moretrees.leaves_list, "moretrees:jungletree_leaves_"..jungleleaves[color])
 end
 
 -- Extra needles for firs
@@ -184,7 +163,6 @@ minetest.register_node("moretrees:fir_leaves_bright", {
 	},
 	sounds = default.node_sound_leaves_defaults()
 })
-table.insert(moretrees.leaves_list, "moretrees:fir_leaves_bright")
 
 if moretrees.enable_redefine_apple then
 	minetest.register_node(":default:apple", {
@@ -206,11 +184,24 @@ if moretrees.enable_redefine_apple then
 	})
 end
 
-
+table.insert(moretrees.avoidnodes, "default:jungletree")
+table.insert(moretrees.avoidnodes, "moretrees:jungletree_trunk")
+table.insert(moretrees.avoidnodes, "moretrees:jungletree_leaves_red")
+table.insert(moretrees.avoidnodes, "moretrees:jungletree_leaves_green")
+table.insert(moretrees.avoidnodes, "moretrees:jungletree_leaves_yellow")
+table.insert(moretrees.avoidnodes, "moretrees:fir_trunk")
+table.insert(moretrees.avoidnodes, "moretrees:fir_leaves")
+table.insert(moretrees.avoidnodes, "moretrees:fir_leaves_bright")
 
 -- Backward compatbility with old mods/nodes:
+minetest.registered_items["jungletree"] = nil
+minetest.registered_aliases["jungletree"] = nil
+minetest.registered_items["default:jungletree"] = nil
+minetest.registered_aliases["default:jungletree"] = nil
 
+minetest.register_alias("jungletree", "moretrees:jungletree_trunk")
 minetest.register_alias("default:jungletree", "moretrees:jungletree_trunk")
+
 minetest.register_alias("jungletree:leaves_green", "moretrees:jungletree_leaves_green")
 minetest.register_alias("jungletree:leaves_red", "moretrees:jungletree_leaves_red")
 minetest.register_alias("jungletree:leaves_yellow", "moretrees:jungletree_leaves_yellow")

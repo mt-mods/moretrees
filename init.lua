@@ -1,4 +1,4 @@
--- More trees!  2013-01-20
+-- More trees!  2013-02-11
 --
 -- This mod adds more types of trees to the game
 --
@@ -8,35 +8,27 @@
 -- Brought together into one mod and made L-systems compatible by Vanessa
 -- Ezekowitz.
 --
--- Conifers and Jungle tree axioms/rules by Vanessa Ezekowitz, with the 
--- latter having been tweaked by RealBadAngel, most others written by
--- RealBadAngel.
+-- Firs and Jungle tree axioms/rules by Vanessa Ezekowitz, with the 
+-- latter having been tweaked by RealBadAngel, most other axioms/rules written
+-- by RealBadAngel.
 --
--- License: WTFPL for all parts (code and textures)
---
-
--- snow biomes mod uses this code to make biomes:
---
---	local perlin1 = env:get_perlin(112,3, 0.5, 150)
---	local test = perlin1:get2d({x=pos.x, y=pos.z})
---	if smooth and (test > 0.73 or (test > 0.43 and math.random(0,29) > (0.73 - test) * 100 )) then
---		in_biome = true
---	elseif not smooth and test > 0.53 then
---		in_biome = true
---	end
---	
--- We'll just save this for possible later use ;-)
---
+-- License: WTFPL for all parts (code and textures, including those copied
+-- from the jungletree and conifers mods) except the default jungle tree trunk
+-- texture, which is CC-By-SA.
 
 moretrees = {}
 
-dofile(minetest.get_modpath("moretrees").."/settings.lua")
+-- These first two dofile() calls must precede any others, and must remain in
+-- this order, otherwise variables and node names will get skipped.
 
+dofile(minetest.get_modpath("moretrees").."/settings.lua")
 dofile(minetest.get_modpath("moretrees").."/node_defs.lua")
+
 dofile(minetest.get_modpath("moretrees").."/tree_models.lua")
 dofile(minetest.get_modpath("moretrees").."/biome_defs.lua")
 dofile(minetest.get_modpath("moretrees").."/crafts.lua")
 dofile(minetest.get_modpath("moretrees").."/leafdecay.lua")
+dofile(minetest.get_modpath("moretrees").."/saplings.lua")
 
 -- tree spawning setup
 
@@ -52,56 +44,6 @@ plantslib:register_generate_plant(moretrees.birch_biome, "moretrees:grow_birch")
 plantslib:register_generate_plant(moretrees.spruce_biome, "moretrees:grow_spruce")
 plantslib:register_generate_plant(moretrees.jungletree_biome, "moretrees:grow_jungletree")
 plantslib:register_generate_plant(moretrees.fir_biome, "moretrees:grow_fir")
-
--- sapling growth
-
-for i in ipairs(moretrees.simple_trees) do
-	local tree_name = trees[i][1]
-	local tree_model = tree_name.."_model"
-	local tree_biome = tree_name.."_biome"
-
-	plantslib:dbg(dump(moretrees[tree_biome].surface))
-	
-	plantslib:grow_plants({
-		grow_delay = moretrees.sapling_interval,
-		grow_chance = moretrees.sapling_chance,
-		grow_plant = "moretrees:"..tree_name.."_sapling",
-		grow_nodes = moretrees[tree_biome].surface,
-		grow_function = moretrees[tree_model],
-	})
-end
-
-plantslib:grow_plants({
-	grow_delay = moretrees.sapling_interval,
-	grow_chance = moretrees.sapling_chance,
-	grow_plant = "moretrees:birch_sapling",
-	grow_nodes = moretrees.birch_biome.surface,
-	grow_function = "moretrees:grow_birch"
-})
-
-plantslib:grow_plants({
-	grow_delay = moretrees.sapling_interval,
-	grow_chance = moretrees.sapling_chance,
-	grow_plant = "moretrees:spruce_sapling",
-	grow_nodes = moretrees.spruce_biome.surface,
-	grow_function = "moretrees:grow_spruce"
-})
-
-plantslib:grow_plants({
-	grow_delay = moretrees.sapling_interval,
-	grow_chance = moretrees.sapling_chance,
-	grow_plant = "moretrees:fir_sapling",
-	grow_nodes = moretrees.fir_biome.surface,
-	grow_function = "moretrees:grow_fir"
-})
-
-plantslib:grow_plants({
-	grow_delay = moretrees.sapling_interval,
-	grow_chance = moretrees.sapling_chance,
-	grow_plant = "moretrees:jungletree_sapling",
-	grow_nodes = moretrees.jungletree_biome.surface,
-	grow_function = "moretrees:grow_jungletree"
-})
 
 -- Code to spawn a birch tree
 
@@ -125,7 +67,7 @@ function moretrees:grow_spruce(pos)
 	end
 end
 
--- Code that spawns jungle trees and firs
+-- Code to spawn jungle trees
 
 moretrees.jt_axiom1 = "FFFA"
 moretrees.jt_rules_a1 = "FFF[&&-FBf[&&&Ff]^^^Ff][&&+FBFf[&&&FFf]^^^Ff][&&---FBFf[&&&Ff]^^^Ff][&&+++FBFf[&&&Ff]^^^Ff]F/A"
@@ -179,6 +121,8 @@ function moretrees:grow_jungletree(pos)
 	minetest.env:spawn_tree(pos, moretrees.jungletree_model)
 end
 
+-- code to spawn fir trees (formerly "conifers")
+
 function moretrees:grow_fir(pos)
 	if math.random(2) == 1 then
 		moretrees.fir_model.leaves="moretrees:fir_leaves"
@@ -201,8 +145,6 @@ function moretrees:grow_fir(pos)
 	minetest.env:spawn_tree(pos,moretrees.fir_model)
 end
 
-
-
 -- Should we remove all the trees above the conifers altitude?
 
 if moretrees.firs_remove_default_trees == true then
@@ -224,4 +166,17 @@ if moretrees.firs_remove_default_trees == true then
 	})
 end
 
-print("[Moretrees] Loaded (2013-01-18)")
+-- snow biomes mod uses this code to make biomes:
+--
+--	local perlin1 = env:get_perlin(112,3, 0.5, 150)
+--	local test = perlin1:get2d({x=pos.x, y=pos.z})
+--	if smooth and (test > 0.73 or (test > 0.43 and math.random(0,29) > (0.73 - test) * 100 )) then
+--		in_biome = true
+--	elseif not smooth and test > 0.53 then
+--		in_biome = true
+--	end
+--	
+-- We'll just save this for possible later use ;-)
+--
+
+print("[Moretrees] Loaded (2013-02-11)")
