@@ -105,7 +105,7 @@ for i in ipairs(moretrees.treelist) do
 			drawtype = "allfaces_optional",
 			tiles = { "moretrees_"..treename.."_leaves.png" },
 			paramtype = "light",
-			groups = {tree=1, snappy=3, flammable=2},
+			groups = {snappy=3, flammable=2, leaves=1, moretrees_leaves=1},
 			sounds = default.node_sound_leaves_defaults(),
 
 			drop = {
@@ -133,7 +133,7 @@ for color = 1, 3 do
 		drawtype = "allfaces_optional",
 		tiles = {"moretrees_jungletree_leaves_"..jungleleaves[color]..".png"},
 		paramtype = "light",
-		groups = {snappy=3, flammable=2},
+		groups = {snappy=3, flammable=2, leaves=1, moretrees_leaves=1},
 		drop = {
 			max_items = 1,
 			items = {
@@ -153,7 +153,7 @@ minetest.register_node("moretrees:fir_leaves_bright", {
 	tile_images = { "moretrees_fir_leaves_bright.png" },
 	paramtype = "light",
 
-	groups = {snappy=3, flammable=2 },
+	groups = {snappy=3, flammable=2, leaves=1, moretrees_leaves=1 },
 	drop = {
 		max_items = 1,
 		items = {

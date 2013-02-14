@@ -16,7 +16,7 @@ moretrees.enable_leafdecay = true
 -- you enable this, otherwise you'll have two sets of leaf decay code running
 -- at the same time, which will just waste CPU for no benefit.
 
-moretrees.enable_default_leafdecay = false
+moretrees.enable_default_leafdecay = true
 
 -- Enable this if you want moretrees to redefine default apples so that they
 -- fall when leaves decay/are dug.
