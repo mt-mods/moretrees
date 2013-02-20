@@ -59,8 +59,8 @@ moretrees.sequoia_biome = {
 	max_elevation = 10,
 	temp_min = 1,
 	temp_max = -0.4,
-	rarity = 50,
-	max_count = 15,
+	rarity = 90,
+	max_count = 5,
 }
 
 moretrees.birch_biome = {
@@ -129,19 +129,17 @@ moretrees.rubber_tree_biome = {
 	max_count = 10,
 }
 
-
 moretrees.jungletree_biome = {
 	surface = "default:dirt_with_grass",
 	avoid_nodes = moretrees.avoidnodes,
-	avoid_radius = 12,
+	avoid_radius = 5,
 	seed_diff = 329,
 	min_elevation = -5,
 	max_elevation = 10,
 	near_nodes = {"default:water_source"},
-	near_nodes_size = 15,
-	near_nodes_count = 10,
---	temp_min = 0.05,
-	rarity = 50,
+	near_nodes_size = 20,
+	near_nodes_count = 7,
+	rarity = 10,
 	max_count = 10,
 }
 

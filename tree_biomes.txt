@@ -2,7 +2,7 @@
 		Elevation	Temperature	Nearness to	Nearby	What nodes		Perlin		Avoid
 Tree type	   (m)		(approx., °C)	some node	water	to spawn on		seed diff	radius
 -----------------------------------------------------------------------------------------------------------------------
-jungle tree	- 5 to +10	 above +26	water, 15	  10	dirt_with_grass		329		 7
+jungle tree	- 5 to +10	 n/a		water, 20	  10	dirt_with_grass		329		 5
 fir		 above +25	-20 to +10	  n/a		n/a	dirt_with_grass		359		 8
 palm		- 1 to + 1	+18 to +32	water, 15	  10	sand			330		 5
 apple		+ 1 to +10	+23 to +32	  n/a		n/a	dirt_with grass		331		15

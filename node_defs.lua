@@ -119,7 +119,6 @@ for i in ipairs(moretrees.treelist) do
 	end
 
 	table.insert(moretrees.avoidnodes, "moretrees:"..treename.."_trunk")
-	table.insert(moretrees.avoidnodes, "moretrees:"..treename.."_leaves")
 end
 
 -- Extra leaves for jungle trees:
@@ -186,12 +185,7 @@ end
 
 table.insert(moretrees.avoidnodes, "default:jungletree")
 table.insert(moretrees.avoidnodes, "moretrees:jungletree_trunk")
-table.insert(moretrees.avoidnodes, "moretrees:jungletree_leaves_red")
-table.insert(moretrees.avoidnodes, "moretrees:jungletree_leaves_green")
-table.insert(moretrees.avoidnodes, "moretrees:jungletree_leaves_yellow")
 table.insert(moretrees.avoidnodes, "moretrees:fir_trunk")
-table.insert(moretrees.avoidnodes, "moretrees:fir_leaves")
-table.insert(moretrees.avoidnodes, "moretrees:fir_leaves_bright")
 
 -- Backward compatbility with old mods/nodes:
 minetest.registered_items["jungletree"] = nil
