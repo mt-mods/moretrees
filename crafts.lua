@@ -32,7 +32,19 @@ for i in ipairs(moretrees.treelist) do
 			"moretrees:"..treename.."_trunk_sideways"
 		}
 	})
+
+	minetest.register_craft({
+		type = "fuel",
+		recipe = "moretrees:"..treename.."_sapling",
+		burntime = 10,
+	})
 end
+
+minetest.register_craft({
+	type = "fuel",
+	recipe = "group:moretrees_leaves",
+	burntime = 1,
+})
 
 -- extra crafting in case user has old jungle trees.
 
