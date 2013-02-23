@@ -18,7 +18,7 @@ moretrees.palm_biome = {
 	near_nodes = {"default:water_source"},
 	near_nodes_size = 15,
 	near_nodes_count = 10,
-	temp_min = 0.15,
+	temp_min = 0.25,
 	temp_max = -0.15,
 	rarity = 50,
 	max_count = 10,
@@ -76,30 +76,6 @@ moretrees.birch_biome = {
 	max_count = 10,
 }
 
-moretrees.spruce_biome = {
-	surface = "default:dirt_with_grass",
-	avoid_nodes = moretrees.avoidnodes,
-	avoid_radius = 10,
-	seed_diff = 335,
-	min_elevation = 20,
-	temp_min = 0.9,
-	temp_max = 0.7,
-	rarity = 50,
-	max_count = 5,
-}
-
-moretrees.pine_biome = {
-	surface = "default:dirt_with_grass",
-	avoid_nodes = moretrees.avoidnodes,
-	avoid_radius = 10,
-	seed_diff = 336,
-	near_nodes = {"default:water_source"},
-	near_nodes_size = 15,
-	near_nodes_count = 5,
-	rarity = 50,
-	max_count = 10,
-}
-
 moretrees.willow_biome = {
 	surface = "default:dirt_with_grass",
 	avoid_nodes = moretrees.avoidnodes,
@@ -136,10 +112,35 @@ moretrees.jungletree_biome = {
 	seed_diff = 329,
 	min_elevation = -5,
 	max_elevation = 10,
+	temp_min = 0.25,
 	near_nodes = {"default:water_source"},
 	near_nodes_size = 20,
 	near_nodes_count = 7,
 	rarity = 10,
+	max_count = 10,
+}
+
+moretrees.spruce_biome = {
+	surface = "default:dirt_with_grass",
+	avoid_nodes = moretrees.avoidnodes,
+	avoid_radius = 10,
+	seed_diff = 335,
+	min_elevation = 20,
+	temp_min = 0.9,
+	temp_max = 0.7,
+	rarity = 50,
+	max_count = 5,
+}
+
+moretrees.pine_biome = {
+	surface = "default:dirt_with_grass",
+	avoid_nodes = moretrees.avoidnodes,
+	avoid_radius = 10,
+	seed_diff = 336,
+	near_nodes = {"default:water_source"},
+	near_nodes_size = 15,
+	near_nodes_count = 5,
+	rarity = 50,
 	max_count = 10,
 }
 
@@ -153,4 +154,17 @@ moretrees.fir_biome = {
 	temp_max = 0.3,
 	rarity = 50,
 	max_count = 10,
+}
+
+moretrees.fir_biome_snow = {
+	surface = {"snow:dirt_with_snow", "snow:snow"},
+	below_nodes = {"default:dirt", "default:dirt_with_grass", "snow:dirt_with_snow"},
+	avoid_nodes = moretrees.avoidnodes,
+	avoid_radius = 10,
+	seed_diff = 359,
+	rarity = 50,
+	max_count = 10,
+	check_air = false,
+	delete_above = true,
+	spawn_replace_node = true
 }

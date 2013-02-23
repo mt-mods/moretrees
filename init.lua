@@ -45,6 +45,8 @@ plantslib:register_generate_plant(moretrees.spruce_biome, "moretrees:grow_spruce
 plantslib:register_generate_plant(moretrees.jungletree_biome, "moretrees:grow_jungletree")
 plantslib:register_generate_plant(moretrees.fir_biome, "moretrees:grow_fir")
 
+plantslib:register_generate_plant(moretrees.fir_biome_snow, "moretrees:grow_fir_snow")
+
 -- Code to spawn a birch tree
 
 function moretrees:grow_birch(pos)
@@ -121,7 +123,7 @@ function moretrees:grow_jungletree(pos)
 	minetest.env:spawn_tree(pos, moretrees.jungletree_model)
 end
 
--- code to spawn fir trees (formerly "conifers")
+-- code to spawn fir trees
 
 function moretrees:grow_fir(pos)
 	if math.random(2) == 1 then
@@ -137,6 +139,9 @@ function moretrees:grow_fir(pos)
 		moretrees.fir_model.rules_b = moretrees.ct_rules_b2
 	end
 
+	moretrees.fir_model.iterations = 7
+	moretrees.fir_model.random_level = 5
+
 	minetest.env:remove_node(pos)
 	local leaves = minetest.env:find_nodes_in_area({x = pos.x, y = pos.y, z = pos.z}, {x = pos.x, y = pos.y+5, z = pos.z}, "default:leaves")
 	for leaf in ipairs(leaves) do
@@ -145,38 +150,31 @@ function moretrees:grow_fir(pos)
 	minetest.env:spawn_tree(pos,moretrees.fir_model)
 end
 
--- Should we remove all the trees above the conifers altitude?
+-- same thing, but a smaller version that grows only in snow biomes
 
-if moretrees.firs_remove_default_trees == true then
-	minetest.register_abm({
-		nodenames = {
-			"default:tree", 
-			"default:leaves"
-		},
-		interval = moretrees.firs_remove_interval,
-		chance = moretrees.firs_remove_chance,
-		
-		action = function(pos, node, _, _)
-			if minetest.env:get_node({x = pos.x, y = pos.y + 1, z = pos.z}).name == "air"
-				and pos.y >= CONIFERS_ALTITUDE
-			then
-				minetest.env:add_node(pos , {name = "air"})
-			end
-		end
-	})
+function moretrees:grow_fir_snow(pos)
+	if math.random(2) == 1 then
+		moretrees.fir_model.leaves="moretrees:fir_leaves"
+	else
+		moretrees.fir_model.leaves="moretrees:fir_leaves_bright"
+	end
+	if math.random(2) == 1 then
+		moretrees.fir_model.rules_a = moretrees.ct_rules_a1
+		moretrees.fir_model.rules_b = moretrees.ct_rules_b1
+	else
+		moretrees.fir_model.rules_a = moretrees.ct_rules_a2
+		moretrees.fir_model.rules_b = moretrees.ct_rules_b2
+	end
+
+	moretrees.fir_model.iterations = 2
+	moretrees.fir_model.random_level = 2
+
+	minetest.env:remove_node(pos)
+	local leaves = minetest.env:find_nodes_in_area({x = pos.x, y = pos.y, z = pos.z}, {x = pos.x, y = pos.y+5, z = pos.z}, "default:leaves")
+	for leaf in ipairs(leaves) do
+			minetest.env:remove_node(leaves[leaf])
+	end
+	minetest.env:spawn_tree(pos,moretrees.fir_model)
 end
-
--- snow biomes mod uses this code to make biomes:
---
---	local perlin1 = env:get_perlin(112,3, 0.5, 150)
---	local test = perlin1:get2d({x=pos.x, y=pos.z})
---	if smooth and (test > 0.73 or (test > 0.43 and math.random(0,29) > (0.73 - test) * 100 )) then
---		in_biome = true
---	elseif not smooth and test > 0.53 then
---		in_biome = true
---	end
---	
--- We'll just save this for possible later use ;-)
---
 
 print("[Moretrees] Loaded (2013-02-11)")
