@@ -10,4 +10,4 @@ Ezekowitz.
 
 License:  WTFPL
 
-Dependencies:  plants_lib (or plantlife modpack), default
+Dependencies: <a href="https://github.com/VanessaE/plantlife">plants_lib</a> and default
