@@ -58,6 +58,7 @@ end
 if moretrees.enable_replace_default_trees then
 	minetest.register_alias("mapgen_tree", "air")
 	minetest.register_alias("mapgen_leaves", "air")
+	minetest.register_alias("mapgen_apple", "air")
 	plantslib:register_generate_plant(moretrees.beech_biome, moretrees.beech_model)
 
 elseif moretrees.enable_default_leafdecay then

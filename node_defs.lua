@@ -23,58 +23,65 @@ for i in ipairs(moretrees.treelist) do
 	local selbox = moretrees.treelist[i][5]
 	local vscale = moretrees.treelist[i][6]
 
+	if treename ~= "jungletree" then -- the default game provides jungle tree nodes.
 
-	minetest.register_node("moretrees:"..treename.."_trunk", {
-		description = treedesc.." Trunk",
-		tiles = {
-			"moretrees_"..treename.."_trunk_top.png",
-			"moretrees_"..treename.."_trunk_top.png",
-			"moretrees_"..treename.."_trunk.png"
+		minetest.register_node("moretrees:"..treename.."_trunk", {
+			description = treedesc.." Trunk",
+			tiles = {
+				"moretrees_"..treename.."_trunk_top.png",
+				"moretrees_"..treename.."_trunk_top.png",
+				"moretrees_"..treename.."_trunk.png"
+			},
+			is_ground_content = true,
+			groups = {tree=1,snappy=1,choppy=2,oddly_breakable_by_hand=1,flammable=2},
+			sounds = default.node_sound_wood_defaults(),
+		})
+
+		minetest.register_node("moretrees:"..treename.."_planks", {
+			description = treedesc.." Planks",
+			tiles = {"moretrees_"..treename.."_wood.png"},
+			is_ground_content = true,
+			groups = {snappy=1,choppy=2,oddly_breakable_by_hand=2,flammable=3,wood=1},
+			sounds = default.node_sound_wood_defaults(),
+		})
+
+		minetest.register_node("moretrees:"..treename.."_sapling", {
+		description = treedesc.." Sapling",
+		drawtype = "plantlike",
+		tiles = {"moretrees_"..treename.."_sapling.png"},
+		inventory_image = "moretrees_"..treename.."_sapling.png",
+		paramtype = "light",
+		walkable = false,
+		selection_box = {
+			type = "fixed",
+			fixed = {-0.3, -0.5, -0.3, 0.3, 0.35, 0.3}
 		},
-		is_ground_content = true,
-		groups = {tree=1,snappy=1,choppy=2,oddly_breakable_by_hand=1,flammable=2},
-		sounds = default.node_sound_wood_defaults(),
-	})
-
-	minetest.register_node("moretrees:"..treename.."_trunk_sideways", {
-		description = "Sideways "..treedesc.." Trunk",
-		tiles = {
-			"moretrees_"..treename.."_trunk.png^[transformR90",
-			"moretrees_"..treename.."_trunk.png^[transformR90",
-			"moretrees_"..treename.."_trunk_top.png",
-			"moretrees_"..treename.."_trunk_top.png",
-			"moretrees_"..treename.."_trunk.png^[transformR90",
-			"moretrees_"..treename.."_trunk.png^[transformR90"
-		},
-		is_ground_content = true,
-		groups = {tree=1,snappy=1,choppy=2,oddly_breakable_by_hand=1,flammable=2},
-		sounds = default.node_sound_wood_defaults(),
-		paramtype2 = "facedir",
-	})
-
-	minetest.register_node("moretrees:"..treename.."_planks", {
-		description = treedesc.." Planks",
-		tiles = {"moretrees_"..treename.."_wood.png"},
-		is_ground_content = true,
-		groups = {snappy=1,choppy=2,oddly_breakable_by_hand=2,flammable=3,wood=1},
-		sounds = default.node_sound_wood_defaults(),
-	})
-
-	minetest.register_node("moretrees:"..treename.."_sapling", {
-	description = treedesc.." Sapling",
-	drawtype = "plantlike",
-	tiles = {"moretrees_"..treename.."_sapling.png"},
-	inventory_image = "moretrees_"..treename.."_sapling.png",
-	paramtype = "light",
-	walkable = false,
-	selection_box = {
-		type = "fixed",
-		fixed = {-0.3, -0.5, -0.3, 0.3, 0.35, 0.3}
-	},
-	groups = {snappy=2,dig_immediate=3,flammable=2,attached_node=1},
-	sounds = default.node_sound_defaults(),
-	})
+		groups = {snappy=2,dig_immediate=3,flammable=2,attached_node=1},
+		sounds = default.node_sound_defaults(),
+		})
 	
+		-- player will get a sapling with 1/100 chance
+		-- player will get leaves only if he/she gets no saplings,
+		-- this is because max_items is 1
+
+		minetest.register_node("moretrees:"..treename.."_leaves", {
+			description = treedesc.." Leaves",
+			drawtype = "allfaces_optional",
+			tiles = { "moretrees_"..treename.."_leaves.png" },
+			paramtype = "light",
+			groups = {snappy=3, flammable=2, leaves=1, moretrees_leaves=1},
+			sounds = default.node_sound_leaves_defaults(),
+
+			drop = {
+				max_items = 1,
+				items = {
+					{items = {"moretrees:"..treename.."_sapling"}, rarity = 100 },
+					{items = {"moretrees:"..treename.."_leaves"} }
+				}
+			},
+		})
+	end
+
 	if (fruit ~= nil) then
 		minetest.register_node("moretrees:"..fruit, {
 			description = fruitdesc,
@@ -95,28 +102,21 @@ for i in ipairs(moretrees.treelist) do
 		})
 	end
 
-	-- player will get a sapling with 1/100 chance
-	-- player will get leaves only if he/she gets no saplings,
-	-- this is because max_items is 1
-
-	if treename ~= "jungletree" then
-		minetest.register_node("moretrees:"..treename.."_leaves", {
-			description = treedesc.." Leaves",
-			drawtype = "allfaces_optional",
-			tiles = { "moretrees_"..treename.."_leaves.png" },
-			paramtype = "light",
-			groups = {snappy=3, flammable=2, leaves=1, moretrees_leaves=1},
-			sounds = default.node_sound_leaves_defaults(),
-
-			drop = {
-				max_items = 1,
-				items = {
-					{items = {"moretrees:"..treename.."_sapling"}, rarity = 100 },
-					{items = {"moretrees:"..treename.."_leaves"} }
-				}
-			},
-		})
-	end
+	minetest.register_node("moretrees:"..treename.."_trunk_sideways", {
+		description = "Sideways "..treedesc.." Trunk",
+		tiles = {
+			"moretrees_"..treename.."_trunk.png^[transformR90",
+			"moretrees_"..treename.."_trunk.png^[transformR90",
+			"moretrees_"..treename.."_trunk_top.png",
+			"moretrees_"..treename.."_trunk_top.png",
+			"moretrees_"..treename.."_trunk.png^[transformR90",
+			"moretrees_"..treename.."_trunk.png^[transformR90"
+		},
+		is_ground_content = true,
+		groups = {tree=1,snappy=1,choppy=2,oddly_breakable_by_hand=1,flammable=2},
+		sounds = default.node_sound_wood_defaults(),
+		paramtype2 = "facedir",
+	})
 
 	table.insert(moretrees.avoidnodes, "moretrees:"..treename.."_trunk")
 end
@@ -187,19 +187,18 @@ table.insert(moretrees.avoidnodes, "default:jungletree")
 table.insert(moretrees.avoidnodes, "moretrees:jungletree_trunk")
 table.insert(moretrees.avoidnodes, "moretrees:fir_trunk")
 
--- Backward compatbility with old mods/nodes:
-minetest.registered_items["jungletree"] = nil
-minetest.registered_aliases["jungletree"] = nil
-minetest.registered_items["default:jungletree"] = nil
-minetest.registered_aliases["default:jungletree"] = nil
+-- For compatibility with newly-re-introduced default jungles and related nodes.
 
-minetest.register_alias("jungletree", "moretrees:jungletree_trunk")
-minetest.register_alias("default:jungletree", "moretrees:jungletree_trunk")
+minetest.register_alias("moretrees:jungletree_trunk", "default:jungletree")
+minetest.register_alias("moretrees:jungletree_planks", "default:junglewood")
+minetest.register_alias("moretrees:jungletree_sapling", "default:junglesapling")
+minetest.register_alias("jungletree:sapling", "default:junglesapling")
+
+-- These next ones are for the old jungle trees and conifers mods.
 
 minetest.register_alias("jungletree:leaves_green", "moretrees:jungletree_leaves_green")
 minetest.register_alias("jungletree:leaves_red", "moretrees:jungletree_leaves_red")
 minetest.register_alias("jungletree:leaves_yellow", "moretrees:jungletree_leaves_yellow")
-minetest.register_alias("jungletree:sapling", "moretrees:jungletree_sapling")
 
 minetest.register_alias("moretrees:conifer_trunk", "moretrees:fir_trunk")
 minetest.register_alias("moretrees:conifer_trunk_sideways", "moretrees:fir_trunk_sideways")
