@@ -37,6 +37,22 @@ for i in ipairs(moretrees.treelist) do
 			sounds = default.node_sound_wood_defaults(),
 		})
 
+		minetest.register_node("moretrees:"..treename.."_trunk_sideways", {
+			description = "Sideways "..treedesc.." Trunk",
+			tiles = {
+				"moretrees_"..treename.."_trunk.png^[transformR90",
+				"moretrees_"..treename.."_trunk.png^[transformR90",
+				"moretrees_"..treename.."_trunk_top.png",
+				"moretrees_"..treename.."_trunk_top.png",
+				"moretrees_"..treename.."_trunk.png^[transformR90",
+				"moretrees_"..treename.."_trunk.png^[transformR90"
+			},
+			is_ground_content = true,
+			groups = {tree=1,snappy=1,choppy=2,oddly_breakable_by_hand=1,flammable=2},
+			sounds = default.node_sound_wood_defaults(),
+			paramtype2 = "facedir",
+		})
+
 		minetest.register_node("moretrees:"..treename.."_planks", {
 			description = treedesc.." Planks",
 			tiles = {"moretrees_"..treename.."_wood.png"},
@@ -102,22 +118,6 @@ for i in ipairs(moretrees.treelist) do
 		})
 	end
 
-	minetest.register_node("moretrees:"..treename.."_trunk_sideways", {
-		description = "Sideways "..treedesc.." Trunk",
-		tiles = {
-			"moretrees_"..treename.."_trunk.png^[transformR90",
-			"moretrees_"..treename.."_trunk.png^[transformR90",
-			"moretrees_"..treename.."_trunk_top.png",
-			"moretrees_"..treename.."_trunk_top.png",
-			"moretrees_"..treename.."_trunk.png^[transformR90",
-			"moretrees_"..treename.."_trunk.png^[transformR90"
-		},
-		is_ground_content = true,
-		groups = {tree=1,snappy=1,choppy=2,oddly_breakable_by_hand=1,flammable=2},
-		sounds = default.node_sound_wood_defaults(),
-		paramtype2 = "facedir",
-	})
-
 	table.insert(moretrees.avoidnodes, "moretrees:"..treename.."_trunk")
 end
 
@@ -143,6 +143,24 @@ for color = 1, 3 do
 		sounds = default.node_sound_leaves_defaults(),
 	})
 end
+
+-- sideways jungle tree trunk:
+
+minetest.register_node("moretrees:jungletree_trunk_sideways", {
+	description = "Sideways Jungle Tree Trunk",
+	tiles = {
+		"default_jungletree.png^[transformR90",
+		"default_jungletree.png^[transformR90",
+		"default_jungletree_top.png",
+		"default_jungletree_top.png",
+		"default_jungletree.png^[transformR90",
+		"default_jungletree.png^[transformR90"
+	},
+	is_ground_content = true,
+	groups = {tree=1,snappy=1,choppy=2,oddly_breakable_by_hand=1,flammable=2},
+	sounds = default.node_sound_wood_defaults(),
+	paramtype2 = "facedir",
+})
 
 -- Extra needles for firs
 
