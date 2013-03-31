@@ -6,7 +6,7 @@
 -- leafdecay.lua because of how it interacts with settings related to that
 -- function.
 
-moretrees.enable_replace_default_trees = false
+moretrees.enable_replace_default_trees = true
 
 -- Set this to true to enable leaf decay of all trees except the default ones.
 
