@@ -32,20 +32,50 @@ dofile(minetest.get_modpath("moretrees").."/saplings.lua")
 
 -- tree spawning setup
 
-plantslib:register_generate_plant(moretrees.apple_tree_biome, moretrees.apple_tree_model)
-plantslib:register_generate_plant(moretrees.oak_biome, moretrees.oak_model)
-plantslib:register_generate_plant(moretrees.sequoia_biome, moretrees.sequoia_model)
-plantslib:register_generate_plant(moretrees.palm_biome, moretrees.palm_model)
-plantslib:register_generate_plant(moretrees.pine_biome, moretrees.pine_model)
-plantslib:register_generate_plant(moretrees.rubber_tree_biome, moretrees.rubber_tree_model)
-plantslib:register_generate_plant(moretrees.willow_biome, moretrees.willow_model)
+if moretrees.enable_apple_tree then
+	plantslib:register_generate_plant(moretrees.apple_tree_biome, moretrees.apple_tree_model)
+end
 
-plantslib:register_generate_plant(moretrees.birch_biome, "moretrees:grow_birch")
-plantslib:register_generate_plant(moretrees.spruce_biome, "moretrees:grow_spruce")
-plantslib:register_generate_plant(moretrees.jungletree_biome, "moretrees:grow_jungletree")
-plantslib:register_generate_plant(moretrees.fir_biome, "moretrees:grow_fir")
+if moretrees.enable_oak then
+	plantslib:register_generate_plant(moretrees.oak_biome, moretrees.oak_model)
+end
 
-plantslib:register_generate_plant(moretrees.fir_biome_snow, "moretrees:grow_fir_snow")
+if moretrees.enable_sequoia then
+	plantslib:register_generate_plant(moretrees.sequoia_biome, moretrees.sequoia_model)
+end
+
+if moretrees.enable_palm then
+	plantslib:register_generate_plant(moretrees.palm_biome, moretrees.palm_model)
+end
+
+if moretrees.enable_pine then
+	plantslib:register_generate_plant(moretrees.pine_biome, moretrees.pine_model)
+end
+
+if moretrees.enable_rubber_tree then
+	plantslib:register_generate_plant(moretrees.rubber_tree_biome, moretrees.rubber_tree_model)
+end
+
+if moretrees.enable_willow then
+	plantslib:register_generate_plant(moretrees.willow_biome, moretrees.willow_model)
+end
+
+if moretrees.enable_birch then
+	plantslib:register_generate_plant(moretrees.birch_biome, "moretrees:grow_birch")
+end
+
+if moretrees.enable_spruce then
+	plantslib:register_generate_plant(moretrees.spruce_biome, "moretrees:grow_spruce")
+end
+
+if moretrees.enable_jungle_tree then
+	plantslib:register_generate_plant(moretrees.jungletree_biome, "moretrees:grow_jungletree")
+end
+
+if moretrees.enable_fir then
+	plantslib:register_generate_plant(moretrees.fir_biome, "moretrees:grow_fir")
+	plantslib:register_generate_plant(moretrees.fir_biome_snow, "moretrees:grow_fir_snow")
+end
 
 -- Code to spawn a birch tree
 

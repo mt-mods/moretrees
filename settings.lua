@@ -1,9 +1,22 @@
 -- Global configuration variables
 
--- Enable replacement of default trees with beech if you want but be warned -
--- due to bugs in the speed of the engine's map generator/loader, doing so
--- will slow it WAY down.  Note:  The code that uses this variable is in
--- leafdecay.lua because of how it interacts with settings related to that
+-- Enable the various kinds of trees.
+
+moretrees.enable_apple_tree	= true
+moretrees.enable_oak		= true
+moretrees.enable_sequoia	= true
+moretrees.enable_palm		= true
+moretrees.enable_pine		= true
+moretrees.enable_rubber_tree	= true
+moretrees.enable_willow		= true
+moretrees.enable_birch		= true
+moretrees.enable_spruce		= true
+moretrees.enable_jungle_tree	= true
+moretrees.enable_fir		= true
+
+-- Enable replacement of default trees with moretrees beech.
+-- Note:  The code that uses this variable is in leafdecay.lua
+-- because of how it interacts with settings related to that
 -- function.
 
 moretrees.enable_replace_default_trees = true
