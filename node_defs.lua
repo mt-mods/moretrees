@@ -95,6 +95,57 @@ for i in ipairs(moretrees.treelist) do
 				}
 			},
 		})
+
+		register_stair_slab_panel_micro(
+			"moretrees",
+			treename.."_trunk",
+			"moretrees:"..treename.."_trunk",
+			{ snappy=1,choppy=2,oddly_breakable_by_hand=1,flammable=2, not_in_creative_inventory=1 },
+			{	"moretrees_"..treename.."_trunk_top.png",
+				"moretrees_"..treename.."_trunk_top.png",
+				"moretrees_"..treename.."_trunk.png"
+			},
+			treedesc.." Trunk",
+			treename.."_trunk",
+			"facedir",
+			0
+		)
+
+		register_stair_slab_panel_micro(
+			"moretrees",
+			treename.."_trunk_sideways",
+			"moretrees:"..treename.."_trunk_sideways",
+			{ snappy=1,choppy=2,oddly_breakable_by_hand=1,flammable=2, not_in_creative_inventory=1 },
+			{	"moretrees_"..treename.."_trunk.png^[transformR90",
+				"moretrees_"..treename.."_trunk.png^[transformR90",
+				"moretrees_"..treename.."_trunk_top.png",
+				"moretrees_"..treename.."_trunk_top.png",
+				"moretrees_"..treename.."_trunk.png^[transformR90",
+				"moretrees_"..treename.."_trunk.png^[transformR90"
+			},
+			"Sideways "..treedesc.." Trunk",
+			treename.."_trunk_sideways",
+			"facedir",
+			0
+		)
+
+
+		register_stair_slab_panel_micro(
+			"moretrees",
+			treename.."_planks",
+			"moretrees:"..treename.."_planks",
+			{ snappy=1,choppy=2,oddly_breakable_by_hand=2,flammable=3, not_in_creative_inventory=1 },
+			{ "moretrees_"..treename.."_wood.png" },
+			treedesc.." Planks",
+			treename.."_planks",
+			"facedir",
+			0
+		)
+
+		table.insert(circular_saw.known_stairs, "moretrees:"..treename.."_trunk")
+		table.insert(circular_saw.known_stairs, "moretrees:"..treename.."_trunk_sideways")
+		table.insert(circular_saw.known_stairs, "moretrees:"..treename.."_planks")
+
 	end
 
 	if (fruit ~= nil) then
