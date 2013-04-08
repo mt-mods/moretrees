@@ -44,7 +44,7 @@ moretrees.leafdecay_delay = 2
 moretrees.leafdecay_chance = 200
 moretrees.leafdecay_radius = 5
 
-moretrees.palm_leafdecay_radius = 8
+moretrees.palm_leafdecay_radius = 12
 
 moretrees.default_leafdecay_delay = 3
 moretrees.default_leafdecay_chance = 100

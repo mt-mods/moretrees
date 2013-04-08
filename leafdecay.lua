@@ -11,7 +11,7 @@ if moretrees.enable_leafdecay then
 				action = function(pos, node, active_object_count, active_object_count_wider)
 					if not minetest.env:find_node_near(pos, moretrees.leafdecay_radius, "moretrees:"..treename.."_trunk") then
 						minetest.env:remove_node(pos)
-						minetest.env:dig_node(pos)
+						nodeupdate(pos)
 					end
 				end
 			})
@@ -25,7 +25,7 @@ if moretrees.enable_leafdecay then
 		action = function(pos, node, active_object_count, active_object_count_wider)
 			if not minetest.env:find_node_near(pos, moretrees.leafdecay_radius, {"default:jungletree", "moretrees:jungletree_trunk"}) then
 				minetest.env:remove_node(pos)
-				minetest.env:dig_node(pos)
+				nodeupdate(pos)
 			end
 		end
 	})
@@ -37,7 +37,7 @@ if moretrees.enable_leafdecay then
 		action = function(pos, node, active_object_count, active_object_count_wider)
 			if not minetest.env:find_node_near(pos, moretrees.leafdecay_radius, "moretrees:fir_trunk") then
 				minetest.env:remove_node(pos)
-				minetest.env:dig_node(pos)
+				nodeupdate(pos)
 			end
 		end
 	})
@@ -49,19 +49,13 @@ if moretrees.enable_leafdecay then
 		action = function(pos, node, active_object_count, active_object_count_wider)
 			if not minetest.env:find_node_near(pos, moretrees.palm_leafdecay_radius, "moretrees:palm_trunk") then
 				minetest.env:remove_node(pos)
-				minetest.env:dig_node(pos)
+				nodeupdate(pos)
 			end
 		end
 	})
 end
 
-if moretrees.enable_replace_default_trees then
-	minetest.register_alias("mapgen_tree", "air")
-	minetest.register_alias("mapgen_leaves", "air")
-	minetest.register_alias("mapgen_apple", "air")
-	plantslib:register_generate_plant(moretrees.beech_biome, moretrees.beech_model)
-
-elseif moretrees.enable_default_leafdecay then
+if moretrees.enable_default_leafdecay then
 	minetest.register_abm({
 		nodenames = "default:leaves",
 		interval = moretrees.default_leafdecay_delay,
@@ -69,7 +63,7 @@ elseif moretrees.enable_default_leafdecay then
 		action = function(pos, node, active_object_count, active_object_count_wider)
 			if not minetest.env:find_node_near(pos, moretrees.default_leafdecay_radius, {"default:tree"}) then
 				minetest.env:remove_node(pos)
-				minetest.env:dig_node(pos)
+				nodeupdate(pos)
 			end
 		end
 	})	

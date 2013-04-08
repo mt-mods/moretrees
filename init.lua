@@ -1,4 +1,4 @@
--- More trees!  2013-02-11
+-- More trees!  2013-04-07
 --
 -- This mod adds more types of trees to the game
 --
@@ -18,17 +18,20 @@
 
 moretrees = {}
 
--- These first two dofile() calls must precede any others, and must remain in
--- this order, otherwise variables and node names will get skipped.
-
 dofile(minetest.get_modpath("moretrees").."/settings.lua")
 dofile(minetest.get_modpath("moretrees").."/node_defs.lua")
-
 dofile(minetest.get_modpath("moretrees").."/tree_models.lua")
 dofile(minetest.get_modpath("moretrees").."/biome_defs.lua")
 dofile(minetest.get_modpath("moretrees").."/crafts.lua")
 dofile(minetest.get_modpath("moretrees").."/leafdecay.lua")
 dofile(minetest.get_modpath("moretrees").."/saplings.lua")
+
+if moretrees.enable_replace_default_trees then
+	minetest.register_alias("mapgen_tree",   "air")
+	minetest.register_alias("mapgen_leaves", "air")
+	minetest.register_alias("mapgen_apple",  "air")
+	plantslib:register_generate_plant(moretrees.beech_biome, moretrees.beech_model)
+end
 
 -- tree spawning setup
 
