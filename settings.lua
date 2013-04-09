@@ -13,13 +13,7 @@ moretrees.enable_birch		= true
 moretrees.enable_spruce		= true
 moretrees.enable_jungle_tree	= true
 moretrees.enable_fir		= true
-
--- Enable replacement of default trees with moretrees beech.
--- Note:  The code that uses this variable is in leafdecay.lua
--- because of how it interacts with settings related to that
--- function.
-
-moretrees.enable_replace_default_trees = true
+moretrees.enable_beech		= false
 
 -- Set this to true to enable leaf decay of all trees except the default ones.
 

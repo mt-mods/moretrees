@@ -2,10 +2,10 @@
 moretrees.beech_biome = {
 	surface = "default:dirt_with_grass",
 	avoid_nodes = moretrees.avoidnodes,
-	avoid_radius = 10,
+	avoid_radius = 8,
 	seed_diff = 2,
 	rarity = 50,
-	max_count = 15,
+	max_count = 20,
 }
 
 moretrees.palm_biome = {

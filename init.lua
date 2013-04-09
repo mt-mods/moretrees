@@ -19,21 +19,18 @@
 moretrees = {}
 
 dofile(minetest.get_modpath("moretrees").."/settings.lua")
-dofile(minetest.get_modpath("moretrees").."/node_defs.lua")
 dofile(minetest.get_modpath("moretrees").."/tree_models.lua")
 dofile(minetest.get_modpath("moretrees").."/biome_defs.lua")
+dofile(minetest.get_modpath("moretrees").."/node_defs.lua")
+dofile(minetest.get_modpath("moretrees").."/saplings.lua")
 dofile(minetest.get_modpath("moretrees").."/crafts.lua")
 dofile(minetest.get_modpath("moretrees").."/leafdecay.lua")
-dofile(minetest.get_modpath("moretrees").."/saplings.lua")
-
-if moretrees.enable_replace_default_trees then
-	minetest.register_alias("mapgen_tree",   "air")
-	minetest.register_alias("mapgen_leaves", "air")
-	minetest.register_alias("mapgen_apple",  "air")
-	plantslib:register_generate_plant(moretrees.beech_biome, moretrees.beech_model)
-end
 
 -- tree spawning setup
+
+if moretrees.enable_beech then
+	plantslib:register_generate_plant(moretrees.beech_biome, moretrees.beech_model)
+end
 
 if moretrees.enable_apple_tree then
 	plantslib:register_generate_plant(moretrees.apple_tree_biome, moretrees.apple_tree_model)

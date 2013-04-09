@@ -1,6 +1,7 @@
 moretrees.avoidnodes = {}
 	
 moretrees.treelist = {
+	{"beech",	"Beech Tree"},
 	{"apple_tree",	"Apple Tree"},
 	{"oak",		"Oak Tree",		"acorn",	"Acorn",	{-0.2, -0.5, -0.2, 0.2, 0, 0.2}, 0.8 },
 	{"sequoia",	"Giant Sequoia"},
@@ -200,91 +201,12 @@ if moretrees.enable_redefine_apple then
 	})
 end
 
-if moretrees.enable_replace_default_trees then
-
-	minetest.register_node(":default:tree", {
-		description = "Beech Trunk",
-		tiles = {"moretrees_beech_trunk_top.png", "moretrees_beech_trunk_top.png", "moretrees_beech_trunk.png"},
-		groups = {tree=1,choppy=2,oddly_breakable_by_hand=1,flammable=2},
-		sounds = default.node_sound_wood_defaults(),
-	})
-
-	minetest.register_node(":default:leaves", {
-		description = "Beech Leaves",
-		drawtype = "allfaces_optional",
-		visual_scale = 1.3,
-		tiles = {"moretrees_beech_leaves.png"},
-		paramtype = "light",
-		groups = {snappy=3, leafdecay=3, flammable=2, leaves=1},
-		drop = {
-			max_items = 1,
-			items = {
-				{
-					-- player will get sapling with 1/20 chance
-					items = {'default:sapling'},
-					rarity = 20,
-				},
-				{
-					-- player will get leaves only if he get no saplings,
-					-- this is because max_items is 1
-					items = {'default:leaves'},
-				}
-			}
-		},
-		sounds = default.node_sound_leaves_defaults(),
-	})
-
-	minetest.register_node(":default:wood", {
-		description = "Beech Planks",
-		tiles = {"moretrees_beech_wood.png"},
-		groups = {choppy=2,oddly_breakable_by_hand=2,flammable=3,wood=1},
-		sounds = default.node_sound_wood_defaults(),
-	})
-
-	minetest.register_node(":default:sapling", {
-		description = "Beech Sapling",
-		drawtype = "plantlike",
-		visual_scale = 1.0,
-		tiles = {"moretrees_beech_sapling.png"},
-		inventory_image = "moretrees_beech_sapling.png",
-		wield_image = "moretrees_beech_sapling.png",
-		paramtype = "light",
-		walkable = false,
-		selection_box = {
-			type = "fixed",
-			fixed = {-0.3, -0.5, -0.3, 0.3, 0.35, 0.3}
-		},
-		groups = {snappy=2,dig_immediate=3,flammable=2,attached_node=1},
-		sounds = default.node_sound_defaults(),
-	})
-end
-
-minetest.register_node("moretrees:beech_trunk_sideways", {
-	description = "Sideways Beech Trunk",
-	tiles = {
-		"moretrees_beech_trunk.png^[transformR90",
-		"moretrees_beech_trunk.png^[transformR90",
-		"moretrees_beech_trunk_top.png",
-		"moretrees_beech_trunk_top.png",
-		"moretrees_beech_trunk.png^[transformR90",
-		"moretrees_beech_trunk.png^[transformR90"
-	},
-	is_ground_content = true,
-	groups = {tree=1,snappy=1,choppy=2,oddly_breakable_by_hand=1,flammable=2},
-	sounds = default.node_sound_wood_defaults(),
-	paramtype2 = "facedir",
-})
-
 table.insert(moretrees.avoidnodes, "default:jungletree")
 table.insert(moretrees.avoidnodes, "moretrees:jungletree_trunk")
 table.insert(moretrees.avoidnodes, "moretrees:fir_trunk")
+table.insert(moretrees.avoidnodes, "default:tree")
 
 -- For compatibility with old nodes and recently-changed nodes.
-
-minetest.register_alias("moretrees:beech_trunk",  "default:tree")
-minetest.register_alias("moretrees:beech_leaves", "default:leaves")
-minetest.register_alias("moretrees:beech_planks", "default:wood")
-minetest.register_alias("moretrees:beech_sapling", "default:sapling") 
 
 minetest.register_alias("moretrees:jungletree_trunk", "default:jungletree")
 minetest.register_alias("moretrees:jungletree_planks", "default:junglewood")
