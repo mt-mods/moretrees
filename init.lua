@@ -18,13 +18,35 @@
 
 moretrees = {}
 
-dofile(minetest.get_modpath("moretrees").."/settings.lua")
-dofile(minetest.get_modpath("moretrees").."/tree_models.lua")
-dofile(minetest.get_modpath("moretrees").."/biome_defs.lua")
-dofile(minetest.get_modpath("moretrees").."/node_defs.lua")
-dofile(minetest.get_modpath("moretrees").."/saplings.lua")
-dofile(minetest.get_modpath("moretrees").."/crafts.lua")
-dofile(minetest.get_modpath("moretrees").."/leafdecay.lua")
+-- If the config file is not found in the world directory, copy the default
+-- settings to that location and read them in.
+
+local worldpath=minetest.get_worldpath()
+local modpath=minetest.get_modpath("moretrees")
+
+if io.open(worldpath.."/moretrees_settings.txt","r") == nil then
+
+	dofile(modpath.."/default_settings.txt")
+
+	io.input(modpath.."/default_settings.txt")
+	io.output(worldpath.."/moretrees_settings.txt")
+
+	local size = 2^13      -- good buffer size (8K)
+	while true do
+		local block = io.read(size)
+		if not block then break end
+		io.write(block)
+	end
+end
+
+dofile(worldpath.."/moretrees_settings.txt")
+
+dofile(modpath.."/tree_models.lua")
+dofile(modpath.."/biome_defs.lua")
+dofile(modpath.."/node_defs.lua")
+dofile(modpath.."/saplings.lua")
+dofile(modpath.."/crafts.lua")
+dofile(modpath.."/leafdecay.lua")
 
 -- tree spawning setup
 
