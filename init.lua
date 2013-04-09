@@ -37,9 +37,10 @@ if io.open(worldpath.."/moretrees_settings.txt","r") == nil then
 		if not block then break end
 		io.write(block)
 	end
-end
 
-dofile(worldpath.."/moretrees_settings.txt")
+else
+	dofile(worldpath.."/moretrees_settings.txt")
+end
 
 dofile(modpath.."/tree_models.lua")
 dofile(modpath.."/biome_defs.lua")
