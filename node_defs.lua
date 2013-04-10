@@ -208,6 +208,9 @@ table.insert(moretrees.avoidnodes, "default:tree")
 
 -- For compatibility with old nodes and recently-changed nodes.
 
+minetest.register_alias("technic:rubber_tree_full", "moretrees:rubber_tree_trunk")
+minetest.register_alias("technic:rubber_leaves", "moretrees:rubber_tree_leaves")
+
 minetest.register_alias("moretrees:jungletree_trunk", "default:jungletree")
 minetest.register_alias("moretrees:jungletree_planks", "default:junglewood")
 minetest.register_alias("moretrees:jungletree_sapling", "default:junglesapling")
