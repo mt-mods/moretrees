@@ -206,10 +206,48 @@ table.insert(moretrees.avoidnodes, "moretrees:jungletree_trunk")
 table.insert(moretrees.avoidnodes, "moretrees:fir_trunk")
 table.insert(moretrees.avoidnodes, "default:tree")
 
+
+-- "empty" (tapped) rubber tree nodes
+
+minetest.register_node("moretrees:rubber_tree_trunk_empty", {
+	description = "Rubber Tree Trunk (Empty)",
+	tiles = {
+		"moretrees_rubber_tree_trunk_top.png",
+		"moretrees_rubber_tree_trunk_top.png",
+		"moretrees_rubber_tree_trunk_empty.png"
+	},
+	is_ground_content = true,
+	groups = {tree=1,snappy=1,choppy=2,oddly_breakable_by_hand=1,flammable=2},
+	sounds = default.node_sound_wood_defaults(),
+})
+
+minetest.register_node("moretrees:rubber_tree_trunk_empty_sideways", {
+	description = "Sideways Rubber Tree Trunk (Empty)",
+	tiles = {
+		"moretrees_rubber_tree_trunk_empty.png^[transformR90",
+		"moretrees_rubber_tree_trunk_empty.png^[transformR90",
+		"moretrees_rubber_tree_trunk_top.png",
+		"moretrees_rubber_tree_trunk_top.png",
+		"moretrees_rubber_tree_trunk_empty.png^[transformR90",
+		"moretrees_rubber_tree_trunk_empty.png^[transformR90"
+	},
+	is_ground_content = true,
+	groups = {tree=1,snappy=1,choppy=2,oddly_breakable_by_hand=1,flammable=2},
+	sounds = default.node_sound_wood_defaults(),
+	paramtype2 = "facedir",
+})
+
+
 -- For compatibility with old nodes and recently-changed nodes.
 
-minetest.register_alias("technic:rubber_tree_full", "moretrees:rubber_tree_trunk")
-minetest.register_alias("technic:rubber_leaves", "moretrees:rubber_tree_leaves")
+minetest.register_alias("technic:rubber_tree_full",      "moretrees:rubber_tree_trunk")
+minetest.register_alias("farming_plus:rubber_tree_full", "moretrees:rubber_tree_trunk")
+
+minetest.register_alias("technic:rubber_leaves",      "moretrees:rubber_tree_leaves")
+minetest.register_alias("farming_plus:rubber_leaves", "moretrees:rubber_tree_leaves")
+
+minetest.register_alias("farming_plus:rubber_sapling", "moretrees:rubber_tree_sapling")
+minetest.register_alias("technic:rubber_tree_sapling", "moretrees:rubber_tree_sapling")
 
 minetest.register_alias("moretrees:jungletree_trunk", "default:jungletree")
 minetest.register_alias("moretrees:jungletree_planks", "default:junglewood")
