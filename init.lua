@@ -42,6 +42,18 @@ else
 	dofile(worldpath.."/moretrees_settings.txt")
 end
 
+moretrees.cutting_tools = {
+	"default:axe_bronze",
+	"default:axe_diamond",
+	"default:axe_mese",
+	"default:axe_steel",
+	"glooptest:axe_alatro",
+	"glooptest:axe_arol",
+	"moreores:axe_mithril",
+	"moreores:axe_silver",
+	"titanium:axe",
+}
+
 dofile(modpath.."/tree_models.lua")
 dofile(modpath.."/biome_defs.lua")
 dofile(modpath.."/node_defs.lua")

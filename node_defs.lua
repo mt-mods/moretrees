@@ -144,24 +144,6 @@ for color = 1, 3 do
 	})
 end
 
--- sideways jungle tree trunk:
-
-minetest.register_node("moretrees:jungletree_trunk_sideways", {
-	description = "Sideways Jungle Tree Trunk",
-	tiles = {
-		"default_jungletree.png^[transformR90",
-		"default_jungletree.png^[transformR90",
-		"default_jungletree_top.png",
-		"default_jungletree_top.png",
-		"default_jungletree.png^[transformR90",
-		"default_jungletree.png^[transformR90"
-	},
-	is_ground_content = true,
-	groups = {tree=1,snappy=1,choppy=2,oddly_breakable_by_hand=1,flammable=2},
-	sounds = default.node_sound_wood_defaults(),
-	paramtype2 = "facedir",
-})
-
 -- Extra needles for firs
 
 minetest.register_node("moretrees:fir_leaves_bright", {
@@ -205,7 +187,6 @@ table.insert(moretrees.avoidnodes, "default:jungletree")
 table.insert(moretrees.avoidnodes, "moretrees:jungletree_trunk")
 table.insert(moretrees.avoidnodes, "moretrees:fir_trunk")
 table.insert(moretrees.avoidnodes, "default:tree")
-
 
 -- "empty" (tapped) rubber tree nodes
 
@@ -253,6 +234,8 @@ minetest.register_alias("moretrees:jungletree_trunk", "default:jungletree")
 minetest.register_alias("moretrees:jungletree_planks", "default:junglewood")
 minetest.register_alias("moretrees:jungletree_sapling", "default:junglesapling")
 minetest.register_alias("jungletree:sapling", "default:junglesapling")
+
+minetest.register_alias("moretrees:jungletree_trunk_sideways", "moreblocks:horizontal_jungle_tree")
 
 minetest.register_alias("jungletree:leaves_green", "moretrees:jungletree_leaves_green")
 minetest.register_alias("jungletree:leaves_red", "moretrees:jungletree_leaves_red")
