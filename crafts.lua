@@ -46,20 +46,104 @@ minetest.register_craft({
 	burntime = 1,
 })
 
--- extra crafting in case user has old jungle trees.
+-- Food recipes!
+
+minetest.register_craftitem("moretrees:coconut_milk", {
+	description = "Coconut Milk",
+	inventory_image = "moretrees_coconut_milk_inv.png",
+	wield_image = "moretrees_coconut_milk.png",
+	on_use = minetest.item_eat(2),
+})
+
+minetest.register_craftitem("moretrees:raw_coconut", {
+	description = "Raw Coconut",
+	inventory_image = "moretrees_raw_coconut.png",
+	on_use = minetest.item_eat(4),
+})
+
+minetest.register_craftitem("moretrees:acorn_muffin_batter", {
+	description = "Acorn Muffin batter",
+	inventory_image = "moretrees_acorn_muffin_batter.png",
+})
+
+minetest.register_craftitem("moretrees:acorn_muffin", {
+	description = "Acorn Muffin",
+	inventory_image = "moretrees_acorn_muffin.png",
+	on_use = minetest.item_eat(4),
+})
+
+minetest.register_craftitem("moretrees:spruce_nuts", {
+	description = "Roasted Spruce Cone Nuts",
+	inventory_image = "moretrees_spruce_nuts.png",
+	on_use = minetest.item_eat(1),
+})
+
+minetest.register_craftitem("moretrees:pine_nuts", {
+	description = "Roasted Pine Cone Nuts",
+	inventory_image = "moretrees_pine_nuts.png",
+	on_use = minetest.item_eat(1),
+})
+
+minetest.register_craftitem("moretrees:fir_nuts", {
+	description = "Roasted Fir Cone Nuts",
+	inventory_image = "moretrees_fir_nuts.png",
+	on_use = minetest.item_eat(1),
+})
+
+for i in ipairs(moretrees.cutting_tools) do
+	local tool = moretrees.cutting_tools[i]
+	minetest.register_craft({
+		type = "shapeless",
+		output = "moretrees:coconut_milk",
+		recipe = {
+			"moretrees:coconut",
+			"vessels:drinking_glass",
+			tool
+		},
+		replacements = {
+			{ "moretrees:coconut", "moretrees:raw_coconut" },
+			{ tool, tool }
+		}
+	})
+end
 
 minetest.register_craft({
-	output = "moretrees:jungletree_trunk_sideways 2",
+	type = "shapeless",
+	output = "moretrees:acorn_muffin_batter",
 	recipe = {
-		{"default:jungletree", "default:jungletree"},
+		"moretrees:acorn",
+		"moretrees:acorn",
+		"moretrees:acorn",
+		"moretrees:acorn",
+		"moretrees:coconut_milk",
+	},
+	replacements = {
+		{ "moretrees:coconut_milk", "vessels:drinking_glass" }
 	}
 })
 
 minetest.register_craft({
-	output = "moretrees:jungletree_planks 4",
-	recipe = {
-		{"default:jungletree"}
-	}
+	type = "cooking",
+	output = "moretrees:acorn_muffin 4",
+	recipe = "moretrees:acorn_muffin_batter",
+})
+
+minetest.register_craft({
+	type = "cooking",
+	output = "moretrees:spruce_nuts 4",
+	recipe = "moretrees:spruce_cone",
+})
+
+minetest.register_craft({
+	type = "cooking",
+	output = "moretrees:pine_nuts 4",
+	recipe = "moretrees:pine_cone",
+})
+
+minetest.register_craft({
+	type = "cooking",
+	output = "moretrees:fir_nuts 4",
+	recipe = "moretrees:fir_cone",
 })
 
 
