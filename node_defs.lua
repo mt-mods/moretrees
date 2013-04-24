@@ -15,6 +15,10 @@ moretrees.treelist = {
 	{"fir",		"Douglas Fir",		"fir_cone",	"Fir Cone",	{-0.2, -0.5, -0.2, 0.2, 0, 0.2}, 0.8 },
 }
 
+local dirs1 = { 21, 20, 23, 22, 21 }
+local dirs2 = { 12, 9, 18, 7, 12 }
+local dirs3 = { 14, 11, 16, 5, 14 }
+
 for i in ipairs(moretrees.treelist) do
 	local treename = moretrees.treelist[i][1]
 	local treedesc = moretrees.treelist[i][2]
@@ -32,25 +36,10 @@ for i in ipairs(moretrees.treelist) do
 				"moretrees_"..treename.."_trunk_top.png",
 				"moretrees_"..treename.."_trunk.png"
 			},
-			is_ground_content = true,
-			groups = {tree=1,snappy=1,choppy=2,oddly_breakable_by_hand=1,flammable=2},
-			sounds = default.node_sound_wood_defaults(),
-		})
-
-		minetest.register_node("moretrees:"..treename.."_trunk_sideways", {
-			description = "Sideways "..treedesc.." Trunk",
-			tiles = {
-				"moretrees_"..treename.."_trunk.png^[transformR90",
-				"moretrees_"..treename.."_trunk.png^[transformR90",
-				"moretrees_"..treename.."_trunk_top.png",
-				"moretrees_"..treename.."_trunk_top.png",
-				"moretrees_"..treename.."_trunk.png^[transformR90",
-				"moretrees_"..treename.."_trunk.png^[transformR90"
-			},
-			is_ground_content = true,
-			groups = {tree=1,snappy=1,choppy=2,oddly_breakable_by_hand=1,flammable=2},
-			sounds = default.node_sound_wood_defaults(),
 			paramtype2 = "facedir",
+			is_ground_content = true,
+			groups = {tree=1,snappy=1,choppy=2,oddly_breakable_by_hand=1,flammable=2},
+			sounds = default.node_sound_wood_defaults(),
 		})
 
 		minetest.register_node("moretrees:"..treename.."_planks", {
@@ -62,18 +51,18 @@ for i in ipairs(moretrees.treelist) do
 		})
 
 		minetest.register_node("moretrees:"..treename.."_sapling", {
-		description = treedesc.." Sapling",
-		drawtype = "plantlike",
-		tiles = {"moretrees_"..treename.."_sapling.png"},
-		inventory_image = "moretrees_"..treename.."_sapling.png",
-		paramtype = "light",
-		walkable = false,
-		selection_box = {
-			type = "fixed",
-			fixed = {-0.3, -0.5, -0.3, 0.3, 0.35, 0.3}
-		},
-		groups = {snappy=2,dig_immediate=3,flammable=2,attached_node=1},
-		sounds = default.node_sound_defaults(),
+			description = treedesc.." Sapling",
+			drawtype = "plantlike",
+			tiles = {"moretrees_"..treename.."_sapling.png"},
+			inventory_image = "moretrees_"..treename.."_sapling.png",
+			paramtype = "light",
+			walkable = false,
+			selection_box = {
+				type = "fixed",
+				fixed = {-0.3, -0.5, -0.3, 0.3, 0.35, 0.3}
+			},
+			groups = {snappy=2,dig_immediate=3,flammable=2,attached_node=1},
+			sounds = default.node_sound_defaults(),
 		})
 	
 		-- player will get a sapling with 1/100 chance
@@ -108,28 +97,8 @@ for i in ipairs(moretrees.treelist) do
 			},
 			treedesc.." Trunk",
 			treename.."_trunk",
-			"facedir",
 			0
 		)
-
-		register_stair_slab_panel_micro(
-			"moretrees",
-			treename.."_trunk_sideways",
-			"moretrees:"..treename.."_trunk_sideways",
-			{ snappy=1,choppy=2,oddly_breakable_by_hand=1,flammable=2, not_in_creative_inventory=1 },
-			{	"moretrees_"..treename.."_trunk.png^[transformR90",
-				"moretrees_"..treename.."_trunk.png^[transformR90",
-				"moretrees_"..treename.."_trunk_top.png",
-				"moretrees_"..treename.."_trunk_top.png",
-				"moretrees_"..treename.."_trunk.png^[transformR90",
-				"moretrees_"..treename.."_trunk.png^[transformR90"
-			},
-			"Sideways "..treedesc.." Trunk",
-			treename.."_trunk_sideways",
-			"facedir",
-			0
-		)
-
 
 		register_stair_slab_panel_micro(
 			"moretrees",
@@ -139,12 +108,10 @@ for i in ipairs(moretrees.treelist) do
 			{ "moretrees_"..treename.."_wood.png" },
 			treedesc.." Planks",
 			treename.."_planks",
-			"facedir",
 			0
 		)
 
 		table.insert(circular_saw.known_stairs, "moretrees:"..treename.."_trunk")
-		table.insert(circular_saw.known_stairs, "moretrees:"..treename.."_trunk_sideways")
 		table.insert(circular_saw.known_stairs, "moretrees:"..treename.."_planks")
 
 	end
@@ -168,6 +135,17 @@ for i in ipairs(moretrees.treelist) do
 			sounds = default.node_sound_defaults(),
 		})
 	end
+
+	minetest.register_abm({
+		nodenames = { "moretrees:"..treename.."_trunk_sideways" },
+		interval = 1,
+		chance = 1,
+		action = function(pos, node, active_object_count, active_object_count_wider)
+			local fdir = node.param2 or 0
+				nfdir = dirs2[fdir+1]
+			minetest.env:add_node(pos, {name = "moretrees:"..treename.."_trunk", param2 = nfdir})
+		end,
+	})
 
 	table.insert(moretrees.avoidnodes, "moretrees:"..treename.."_trunk")
 end
