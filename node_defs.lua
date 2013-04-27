@@ -229,24 +229,19 @@ minetest.register_node("moretrees:rubber_tree_trunk_empty", {
 	is_ground_content = true,
 	groups = {tree=1,snappy=1,choppy=2,oddly_breakable_by_hand=1,flammable=2},
 	sounds = default.node_sound_wood_defaults(),
-})
-
-minetest.register_node("moretrees:rubber_tree_trunk_empty_sideways", {
-	description = "Sideways Rubber Tree Trunk (Empty)",
-	tiles = {
-		"moretrees_rubber_tree_trunk_empty.png^[transformR90",
-		"moretrees_rubber_tree_trunk_empty.png^[transformR90",
-		"moretrees_rubber_tree_trunk_top.png",
-		"moretrees_rubber_tree_trunk_top.png",
-		"moretrees_rubber_tree_trunk_empty.png^[transformR90",
-		"moretrees_rubber_tree_trunk_empty.png^[transformR90"
-	},
-	is_ground_content = true,
-	groups = {tree=1,snappy=1,choppy=2,oddly_breakable_by_hand=1,flammable=2},
-	sounds = default.node_sound_wood_defaults(),
 	paramtype2 = "facedir",
 })
 
+minetest.register_abm({
+	nodenames = { "moretrees:rubber_tree_trunk_empty_sideways" },
+	interval = 1,
+	chance = 1,
+	action = function(pos, node, active_object_count, active_object_count_wider)
+		local fdir = node.param2 or 0
+			nfdir = dirs2[fdir+1]
+		minetest.env:add_node(pos, {name = "moretrees:rubber_tree_trunk_empty", param2 = nfdir})
+	end,
+})
 
 -- For compatibility with old nodes and recently-changed nodes.
 
