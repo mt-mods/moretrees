@@ -115,22 +115,22 @@ end
 -- Code to spawn a birch tree
 
 function moretrees:grow_birch(pos)
-	minetest.env:remove_node(pos)
+	minetest.remove_node(pos)
 	if math.random(1,2) == 1 then
-		minetest.env:spawn_tree(pos, moretrees.birch_model1)
+		minetest.spawn_tree(pos, moretrees.birch_model1)
 	else
-		minetest.env:spawn_tree(pos, moretrees.birch_model2)
+		minetest.spawn_tree(pos, moretrees.birch_model2)
 	end
 end
 
 -- Code to spawn a spruce tree
 
 function moretrees:grow_spruce(pos)
-	minetest.env:remove_node(pos)
+	minetest.remove_node(pos)
 	if math.random(1,2) == 1 then
-		minetest.env:spawn_tree(pos, moretrees.spruce_model1)
+		minetest.spawn_tree(pos, moretrees.spruce_model1)
 	else
-		minetest.env:spawn_tree(pos, moretrees.spruce_model2)
+		minetest.spawn_tree(pos, moretrees.spruce_model2)
 	end
 end
 
@@ -180,12 +180,12 @@ function moretrees:grow_jungletree(pos)
 		moretrees.jungletree_model.rules_b = moretrees.jt_rules_b2
 	end
 
-	minetest.env:remove_node(pos)
-	local leaves = minetest.env:find_nodes_in_area({x = pos.x-1, y = pos.y, z = pos.z-1}, {x = pos.x+1, y = pos.y+10, z = pos.z+1}, "default:leaves")
+	minetest.remove_node(pos)
+	local leaves = minetest.find_nodes_in_area({x = pos.x-1, y = pos.y, z = pos.z-1}, {x = pos.x+1, y = pos.y+10, z = pos.z+1}, "default:leaves")
 	for leaf in ipairs(leaves) do
-			minetest.env:remove_node(leaves[leaf])
+			minetest.remove_node(leaves[leaf])
 	end
-	minetest.env:spawn_tree(pos, moretrees.jungletree_model)
+	minetest.spawn_tree(pos, moretrees.jungletree_model)
 end
 
 -- code to spawn fir trees
@@ -207,12 +207,12 @@ function moretrees:grow_fir(pos)
 	moretrees.fir_model.iterations = 7
 	moretrees.fir_model.random_level = 5
 
-	minetest.env:remove_node(pos)
-	local leaves = minetest.env:find_nodes_in_area({x = pos.x, y = pos.y, z = pos.z}, {x = pos.x, y = pos.y+5, z = pos.z}, "default:leaves")
+	minetest.remove_node(pos)
+	local leaves = minetest.find_nodes_in_area({x = pos.x, y = pos.y, z = pos.z}, {x = pos.x, y = pos.y+5, z = pos.z}, "default:leaves")
 	for leaf in ipairs(leaves) do
-			minetest.env:remove_node(leaves[leaf])
+			minetest.remove_node(leaves[leaf])
 	end
-	minetest.env:spawn_tree(pos,moretrees.fir_model)
+	minetest.spawn_tree(pos,moretrees.fir_model)
 end
 
 -- same thing, but a smaller version that grows only in snow biomes
@@ -234,12 +234,12 @@ function moretrees:grow_fir_snow(pos)
 	moretrees.fir_model.iterations = 2
 	moretrees.fir_model.random_level = 2
 
-	minetest.env:remove_node(pos)
-	local leaves = minetest.env:find_nodes_in_area({x = pos.x, y = pos.y, z = pos.z}, {x = pos.x, y = pos.y+5, z = pos.z}, "default:leaves")
+	minetest.remove_node(pos)
+	local leaves = minetest.find_nodes_in_area({x = pos.x, y = pos.y, z = pos.z}, {x = pos.x, y = pos.y+5, z = pos.z}, "default:leaves")
 	for leaf in ipairs(leaves) do
-			minetest.env:remove_node(leaves[leaf])
+			minetest.remove_node(leaves[leaf])
 	end
-	minetest.env:spawn_tree(pos,moretrees.fir_model)
+	minetest.spawn_tree(pos,moretrees.fir_model)
 end
 
 print("[Moretrees] Loaded (2013-02-11)")
