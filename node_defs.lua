@@ -86,11 +86,11 @@ for i in ipairs(moretrees.treelist) do
 			},
 		})
 
-		register_stair_slab_panel_micro(
+		register_stair(
 			"moretrees",
 			treename.."_trunk",
 			"moretrees:"..treename.."_trunk",
-			{ snappy=1,choppy=2,oddly_breakable_by_hand=1,flammable=2, not_in_creative_inventory=1 },
+			{ snappy=1,choppy=2,oddly_breakable_by_hand=1,flammable=2, not_in_creative_inventory=1, tree_stair=1 },
 			{	"moretrees_"..treename.."_trunk_top.png",
 				"moretrees_"..treename.."_trunk_top.png",
 				"moretrees_"..treename.."_trunk.png"
@@ -100,16 +100,92 @@ for i in ipairs(moretrees.treelist) do
 			0
 		)
 
-		register_stair_slab_panel_micro(
+		register_slab(
+			"moretrees",
+			treename.."_trunk",
+			"moretrees:"..treename.."_trunk",
+			{ snappy=1,choppy=2,oddly_breakable_by_hand=1,flammable=2, not_in_creative_inventory=1, tree_slab=1 },
+			{	"moretrees_"..treename.."_trunk_top.png",
+				"moretrees_"..treename.."_trunk_top.png",
+				"moretrees_"..treename.."_trunk.png"
+			},
+			treedesc.." Trunk",
+			treename.."_trunk",
+			0
+		)
+
+		register_panel(
+			"moretrees",
+			treename.."_trunk",
+			"moretrees:"..treename.."_trunk",
+			{ snappy=1,choppy=2,oddly_breakable_by_hand=1,flammable=2, not_in_creative_inventory=1, tree_panel=1 },
+			{	"moretrees_"..treename.."_trunk_top.png",
+				"moretrees_"..treename.."_trunk_top.png",
+				"moretrees_"..treename.."_trunk.png"
+			},
+			treedesc.." Trunk",
+			treename.."_trunk",
+			0
+		)
+
+		register_micro(
+			"moretrees",
+			treename.."_trunk",
+			"moretrees:"..treename.."_trunk",
+			{ snappy=1,choppy=2,oddly_breakable_by_hand=1,flammable=2, not_in_creative_inventory=1, tree_micro=1 },
+			{	"moretrees_"..treename.."_trunk_top.png",
+				"moretrees_"..treename.."_trunk_top.png",
+				"moretrees_"..treename.."_trunk.png"
+			},
+			treedesc.." Trunk",
+			treename.."_trunk",
+			0
+		)
+
+		register_stair(
 			"moretrees",
 			treename.."_planks",
 			"moretrees:"..treename.."_planks",
-			{ snappy=1,choppy=2,oddly_breakable_by_hand=2,flammable=3, not_in_creative_inventory=1 },
+			{ snappy=1,choppy=2,oddly_breakable_by_hand=2,flammable=3, not_in_creative_inventory=1, wood_stair=1 },
 			{ "moretrees_"..treename.."_wood.png" },
 			treedesc.." Planks",
 			treename.."_planks",
 			0
 		)
+
+		register_slab(
+			"moretrees",
+			treename.."_planks",
+			"moretrees:"..treename.."_planks",
+			{ snappy=1,choppy=2,oddly_breakable_by_hand=2,flammable=3, not_in_creative_inventory=1, wood_slab=1 },
+			{ "moretrees_"..treename.."_wood.png" },
+			treedesc.." Planks",
+			treename.."_planks",
+			0
+		)
+
+		register_panel(
+			"moretrees",
+			treename.."_planks",
+			"moretrees:"..treename.."_planks",
+			{ snappy=1,choppy=2,oddly_breakable_by_hand=2,flammable=3, not_in_creative_inventory=1, wood_panel=1 },
+			{ "moretrees_"..treename.."_wood.png" },
+			treedesc.." Planks",
+			treename.."_planks",
+			0
+		)
+
+		register_micro(
+			"moretrees",
+			treename.."_planks",
+			"moretrees:"..treename.."_planks",
+			{ snappy=1,choppy=2,oddly_breakable_by_hand=2,flammable=3, not_in_creative_inventory=1, wood_micro=1 },
+			{ "moretrees_"..treename.."_wood.png" },
+			treedesc.." Planks",
+			treename.."_planks",
+			0
+		)
+
 
 		table.insert(circular_saw.known_stairs, "moretrees:"..treename.."_trunk")
 		table.insert(circular_saw.known_stairs, "moretrees:"..treename.."_planks")
