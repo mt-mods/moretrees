@@ -18,15 +18,14 @@
 
 moretrees = {}
 
--- If the config file is not found in the world directory, copy the default
--- settings to that location and read them in.
+-- Read the default config file (and if necessary, copy it to the world folder).
 
 local worldpath=minetest.get_worldpath()
 local modpath=minetest.get_modpath("moretrees")
 
-if io.open(worldpath.."/moretrees_settings.txt","r") == nil then
+dofile(modpath.."/default_settings.txt")
 
-	dofile(modpath.."/default_settings.txt")
+if io.open(worldpath.."/moretrees_settings.txt","r") == nil then
 
 	io.input(modpath.."/default_settings.txt")
 	io.output(worldpath.."/moretrees_settings.txt")
@@ -34,7 +33,10 @@ if io.open(worldpath.."/moretrees_settings.txt","r") == nil then
 	local size = 2^13      -- good buffer size (8K)
 	while true do
 		local block = io.read(size)
-		if not block then break end
+		if not block then
+			io.close()
+			break
+		end
 		io.write(block)
 	end
 
