@@ -15,6 +15,13 @@ moretrees.enable_jungle_tree		= true
 moretrees.enable_fir			= true
 moretrees.enable_beech			= false
 
+-- set this to true to make moretrees spawn saplings at mapgen time instead
+-- of fully-grown trees, which will grow into full trees very quickly.  This will
+-- greatly reduce mapgen lag, at the expense of having to wait several seconds for
+-- the trees to grow via an ABM.
+
+moretrees.spawn_saplings		= true
+
 -- Set this to true to allow usage of the stairsplus mod in moreblocks
 
 moretrees.enable_stairsplus		= true

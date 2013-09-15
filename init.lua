@@ -57,61 +57,92 @@ moretrees.cutting_tools = {
 }
 
 dofile(modpath.."/tree_models.lua")
-dofile(modpath.."/biome_defs.lua")
 dofile(modpath.."/node_defs.lua")
+dofile(modpath.."/biome_defs.lua")
 dofile(modpath.."/saplings.lua")
 dofile(modpath.."/crafts.lua")
 dofile(modpath.."/leafdecay.lua")
 
 -- tree spawning setup
 
+if moretrees.spawn_saplings then
+	moretrees.spawn_beech_object = "moretrees:beech_sapling_ongen"
+	moretrees.spawn_apple_tree_object = "moretrees:apple_tree_sapling_ongen"
+	moretrees.spawn_oak_object = "moretrees:oak_sapling_ongen"
+	moretrees.spawn_sequoia_object = "moretrees:sequoia_sapling_ongen"
+	moretrees.spawn_palm_object = "moretrees:palm_sapling_ongen"
+	moretrees.spawn_pine_object = "moretrees:pine_sapling_ongen"
+	moretrees.spawn_rubber_tree_object = "moretrees:rubber_tree_sapling_ongen"
+	moretrees.spawn_willow_object = "moretrees:willow_sapling_ongen"
+	moretrees.spawn_birch_object = "moretrees:birch_sapling_ongen"
+	moretrees.spawn_spruce_object = "moretrees:spruce_sapling_ongen"
+	moretrees.spawn_jungletree_object = "moretrees:jungletree_sapling_ongen"
+	moretrees.spawn_fir_object = "moretrees:fir_sapling_ongen"
+	moretrees.spawn_fir_snow_object = "snow:sapling_pine"
+else
+	moretrees.spawn_beech_object = moretrees.beech_model
+	moretrees.spawn_apple_tree_object = moretrees.apple_tree_model
+	moretrees.spawn_oak_object = moretrees.oak_model
+	moretrees.spawn_sequoia_object = moretrees.sequoia_model
+	moretrees.spawn_palm_object = moretrees.palm_model
+	moretrees.spawn_pine_object = moretrees.pine_model
+	moretrees.spawn_rubber_tree_object = moretrees.rubber_tree_model
+	moretrees.spawn_willow_object = moretrees.willow_model
+	moretrees.spawn_birch_object = "moretrees:grow_birch"
+	moretrees.spawn_spruce_object = "moretrees:grow_spruce"
+	moretrees.spawn_jungletree_object = "moretrees:grow_jungletree"
+	moretrees.spawn_fir_object = "moretrees:grow_fir"
+	moretrees.spawn_fir_snow_object = "moretrees:grow_fir_snow"
+end
+
+
 if moretrees.enable_beech then
-	plantslib:register_generate_plant(moretrees.beech_biome, moretrees.beech_model)
+	plantslib:register_generate_plant(moretrees.beech_biome, moretrees.spawn_beech_object)
 end
 
 if moretrees.enable_apple_tree then
-	plantslib:register_generate_plant(moretrees.apple_tree_biome, moretrees.apple_tree_model)
+	plantslib:register_generate_plant(moretrees.apple_tree_biome, moretrees.spawn_apple_tree_object)
 end
 
 if moretrees.enable_oak then
-	plantslib:register_generate_plant(moretrees.oak_biome, moretrees.oak_model)
+	plantslib:register_generate_plant(moretrees.oak_biome, moretrees.spawn_oak_object)
 end
 
 if moretrees.enable_sequoia then
-	plantslib:register_generate_plant(moretrees.sequoia_biome, moretrees.sequoia_model)
+	plantslib:register_generate_plant(moretrees.sequoia_biome, moretrees.spawn_sequoia_object)
 end
 
 if moretrees.enable_palm then
-	plantslib:register_generate_plant(moretrees.palm_biome, moretrees.palm_model)
+	plantslib:register_generate_plant(moretrees.palm_biome, moretrees.spawn_palm_object)
 end
 
 if moretrees.enable_pine then
-	plantslib:register_generate_plant(moretrees.pine_biome, moretrees.pine_model)
+	plantslib:register_generate_plant(moretrees.pine_biome, moretrees.spawn_pine_object)
 end
 
 if moretrees.enable_rubber_tree then
-	plantslib:register_generate_plant(moretrees.rubber_tree_biome, moretrees.rubber_tree_model)
+	plantslib:register_generate_plant(moretrees.rubber_tree_biome, moretrees.spawn_rubber_tree_object)
 end
 
 if moretrees.enable_willow then
-	plantslib:register_generate_plant(moretrees.willow_biome, moretrees.willow_model)
+	plantslib:register_generate_plant(moretrees.willow_biome, moretrees.spawn_willow_object)
 end
 
 if moretrees.enable_birch then
-	plantslib:register_generate_plant(moretrees.birch_biome, "moretrees:grow_birch")
+	plantslib:register_generate_plant(moretrees.birch_biome, moretrees.spawn_birch_object)
 end
 
 if moretrees.enable_spruce then
-	plantslib:register_generate_plant(moretrees.spruce_biome, "moretrees:grow_spruce")
+	plantslib:register_generate_plant(moretrees.spruce_biome, moretrees.spawn_spruce_object)
 end
 
 if moretrees.enable_jungle_tree then
-	plantslib:register_generate_plant(moretrees.jungletree_biome, "moretrees:grow_jungletree")
+	plantslib:register_generate_plant(moretrees.jungletree_biome, moretrees.spawn_jungletree_object)
 end
 
 if moretrees.enable_fir then
-	plantslib:register_generate_plant(moretrees.fir_biome, "moretrees:grow_fir")
-	plantslib:register_generate_plant(moretrees.fir_biome_snow, "moretrees:grow_fir_snow")
+	plantslib:register_generate_plant(moretrees.fir_biome, moretrees.spawn_fir_object)
+	plantslib:register_generate_plant(moretrees.fir_biome_snow, moretrees.spawn_fir_snow_object)
 end
 
 -- Code to spawn a birch tree
