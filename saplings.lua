@@ -36,8 +36,8 @@ plantslib:grow_plants({
 })
 
 plantslib:grow_plants({
-	grow_delay = moretrees.sapling_interval,
-	grow_chance = moretrees.sapling_chance,
+	grow_delay = 2,
+	grow_chance = 30,
 	grow_plant = "moretrees:birch_sapling_ongen",
 	grow_nodes = moretrees.birch_biome.surface,
 	grow_function = "moretrees:grow_birch"
@@ -52,8 +52,8 @@ plantslib:grow_plants({
 })
 
 plantslib:grow_plants({
-	grow_delay = moretrees.sapling_interval,
-	grow_chance = moretrees.sapling_chance,
+	grow_delay = 2,
+	grow_chance = 30,
 	grow_plant = "moretrees:spruce_sapling_ongen",
 	grow_nodes = moretrees.spruce_biome.surface,
 	grow_function = "moretrees:grow_spruce"
@@ -68,8 +68,8 @@ plantslib:grow_plants({
 })
 
 plantslib:grow_plants({
-	grow_delay = moretrees.sapling_interval,
-	grow_chance = moretrees.sapling_chance,
+	grow_delay = 2,
+	grow_chance = 30,
 	grow_plant = "moretrees:fir_sapling_ongen",
 	grow_nodes = moretrees.fir_biome.surface,
 	grow_function = "moretrees:grow_fir"
@@ -84,8 +84,8 @@ plantslib:grow_plants({
 })
 
 plantslib:grow_plants({
-	grow_delay = moretrees.sapling_interval,
-	grow_chance = moretrees.sapling_chance,
+	grow_delay = 2,
+	grow_chance = 30,
 	grow_plant = "moretrees:jungletree_sapling_ongen",
 	grow_nodes = moretrees.jungletree_biome.surface,
 	grow_function = "moretrees:grow_jungletree"
