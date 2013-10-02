@@ -85,6 +85,13 @@ for i in ipairs(moretrees.treelist) do
 		-- player will get leaves only if he/she gets no saplings,
 		-- this is because max_items is 1
 
+
+		local droprarity = 100
+
+		if treename ~= "palm" then
+			droprarity = 20
+		end
+
 		minetest.register_node("moretrees:"..treename.."_leaves", {
 			description = treedesc.." Leaves",
 			drawtype = "allfaces_optional",
@@ -96,7 +103,7 @@ for i in ipairs(moretrees.treelist) do
 			drop = {
 				max_items = 1,
 				items = {
-					{items = {"moretrees:"..treename.."_sapling"}, rarity = 100 },
+					{items = {"moretrees:"..treename.."_sapling"}, rarity = droprarity },
 					{items = {"moretrees:"..treename.."_leaves"} }
 				}
 			},

@@ -46,13 +46,13 @@ moretrees.enable_redefine_apple		= true
 -- various settings to configure leaf decay in general.
 
 moretrees.leafdecay_delay		= 2
-moretrees.leafdecay_chance		= 200
+moretrees.leafdecay_chance		= 100
 moretrees.leafdecay_radius		= 5
 
-moretrees.palm_leafdecay_radius		= 12
+moretrees.palm_leafdecay_radius		= 15
 
 moretrees.default_leafdecay_delay	= 3
-moretrees.default_leafdecay_chance	= 100
+moretrees.default_leafdecay_chance	= 50
 moretrees.default_leafdecay_radius	= 4
 
 -- Change these settings if you want default trees to be gradually cut down
