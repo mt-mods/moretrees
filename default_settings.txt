@@ -38,16 +38,24 @@ moretrees.enable_leafdecay		= true
 
 moretrees.enable_default_leafdecay	= true
 
+-- Enable this one for default *jungle* leaves
+
+moretrees.enable_default_jungle_leafdecay	= true
+
 -- Enable this if you want moretrees to redefine default apples so that they
 -- fall when leaves decay/are dug.
 
 moretrees.enable_redefine_apple		= true
 
--- various settings to configure leaf decay in general.
+-- various settings to configure default and default-jungle leaf decay.
 
 moretrees.leafdecay_delay		= 2
 moretrees.leafdecay_chance		= 100
 moretrees.leafdecay_radius		= 5
+
+moretrees.default_jungle_leafdecay_delay = 2
+moretrees.default_jungle_leafdecay_chance = 100
+moretrees.default_jungle_leafdecay_radius = 5
 
 moretrees.palm_leafdecay_radius		= 15
 
