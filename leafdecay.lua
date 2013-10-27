@@ -9,6 +9,21 @@ function clone_node(name)
 	return node2
 end
 
+-- this function is based on the default leafdecay code
+local process_drops = function(pos, name)
+	local drops = minetest.get_node_drops(name)
+	for _,dropitem in ipairs(drops) do
+		if dropitem ~= name then
+			local newpos = {
+						x=pos.x + math.random(0, 0.5),
+						y=pos.y + math.random(0, 0.5),
+						z=pos.z + math.random(0, 0.5)
+					}
+			minetest.add_item(newpos, dropitem)
+		end
+	end
+end
+
 if moretrees.enable_leafdecay then
 	for i in ipairs(moretrees.treelist) do
 		local treename = moretrees.treelist[i][1]
@@ -20,6 +35,7 @@ if moretrees.enable_leafdecay then
 				action = function(pos, node, active_object_count, active_object_count_wider)
 					if minetest.find_node_near(pos, moretrees.leafdecay_radius, "moretrees:"..treename.."_trunk") then return end
 					if minetest.find_node_near(pos, moretrees.leafdecay_radius, "ignore") then return end
+					process_drops(pos, node.name)
 					minetest.remove_node(pos)
 					nodeupdate(pos)
 				end
@@ -34,6 +50,7 @@ if moretrees.enable_leafdecay then
 		action = function(pos, node, active_object_count, active_object_count_wider)
 			if minetest.find_node_near(pos, moretrees.leafdecay_radius, {"default:jungletree", "moretrees:jungletree_trunk"}) then return end
 			if minetest.find_node_near(pos, moretrees.leafdecay_radius, "ignore") then return end
+			process_drops(pos, node.name)
 			minetest.remove_node(pos)
 			nodeupdate(pos)
 		end
@@ -46,6 +63,7 @@ if moretrees.enable_leafdecay then
 		action = function(pos, node, active_object_count, active_object_count_wider)
 			if minetest.find_node_near(pos, moretrees.leafdecay_radius, "moretrees:fir_trunk") then return end
 			if minetest.find_node_near(pos, moretrees.leafdecay_radius, "ignore") then return end
+				process_drops(pos, node.name)
 				minetest.remove_node(pos)
 				nodeupdate(pos)
 		end
@@ -58,6 +76,7 @@ if moretrees.enable_leafdecay then
 		action = function(pos, node, active_object_count, active_object_count_wider)
 			if minetest.find_node_near(pos, moretrees.palm_leafdecay_radius, "moretrees:palm_trunk") then return end
 			if minetest.find_node_near(pos, moretrees.palm_leafdecay_radius, "ignore") then return end
+				process_drops(pos, node.name)
 				minetest.remove_node(pos)
 				nodeupdate(pos)
 		end
@@ -77,6 +96,7 @@ if moretrees.enable_default_leafdecay then
 		action = function(pos, node, active_object_count, active_object_count_wider)
 			if minetest.find_node_near(pos, moretrees.default_leafdecay_radius, "default:tree") then return end
 			if minetest.find_node_near(pos, moretrees.default_leafdecay_radius, "ignore") then return end
+			process_drops(pos, node.name)
 			minetest.remove_node(pos)
 			nodeupdate(pos)
 		end
@@ -96,6 +116,7 @@ if moretrees.enable_default_jungle_leafdecay then
 		action = function(pos, node, active_object_count, active_object_count_wider)
 			if minetest.find_node_near(pos, moretrees.default_jungle_leafdecay_radius, "default:jungletree") then return end
 			if minetest.find_node_near(pos, moretrees.default_jungle_leafdecay_radius, "ignore") then return end
+			process_drops(pos, node.name)
 			minetest.remove_node(pos)
 			nodeupdate(pos)
 		end
