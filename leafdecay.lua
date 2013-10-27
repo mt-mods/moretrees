@@ -15,9 +15,9 @@ local process_drops = function(pos, name)
 	for _,dropitem in ipairs(drops) do
 		if dropitem ~= name then
 			local newpos = {
-						x=pos.x + math.random(0, 0.5),
-						y=pos.y + math.random(0, 0.5),
-						z=pos.z + math.random(0, 0.5)
+						x=pos.x + math.random() - 0.5,
+						y=pos.y + math.random() - 0.5,
+						z=pos.z + math.random() - 0.5
 					}
 			minetest.add_item(newpos, dropitem)
 		end
