@@ -40,6 +40,14 @@ for i in ipairs(moretrees.treelist) do
 			is_ground_content = true,
 			groups = {tree=1,snappy=1,choppy=2,oddly_breakable_by_hand=1,flammable=2},
 			sounds = default.node_sound_wood_defaults(),
+			on_place = function(itemstack, placer, pointed_thing)
+				local keys=placer:get_player_control()
+				local pos = pointed_thing.under
+				if not moretrees:node_is_owned(pos, placer) then
+					minetest.rotate_and_place(itemstack, placer, pointed_thing,
+						moretrees.expect_infinite_stacks, { invert_wall = keys.sneak })
+				end
+			end
 		})
 
 		minetest.register_node("moretrees:"..treename.."_planks", {
@@ -378,6 +386,14 @@ minetest.register_node("moretrees:rubber_tree_trunk_empty", {
 	groups = {tree=1,snappy=1,choppy=2,oddly_breakable_by_hand=1,flammable=2},
 	sounds = default.node_sound_wood_defaults(),
 	paramtype2 = "facedir",
+	on_place = function(itemstack, placer, pointed_thing)
+		local keys=placer:get_player_control()
+		local pos = pointed_thing.under
+		if not moretrees:node_is_owned(pos, placer) then
+			minetest.rotate_and_place(itemstack, placer, pointed_thing,
+				moretrees.expect_infinite_stacks, { invert_wall = keys.sneak })
+		end
+	end
 })
 
 minetest.register_abm({

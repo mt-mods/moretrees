@@ -44,6 +44,27 @@ else
 	dofile(worldpath.."/moretrees_settings.txt")
 end
 
+-- Boilerplate to support localized strings if intllib mod is installed.
+
+local S
+if moretrees.intllib_modpath then
+    dofile(moretrees.intllib_modpath.."/intllib.lua")
+    S = intllib.Getter(minetest.get_current_modname())
+else
+    S = function ( s ) return s end
+end
+moretrees.gettext = S
+
+-- infinite stacks checking
+
+if minetest.get_modpath("unified_inventory") or not minetest.setting_getbool("creative_mode") then
+	moretrees.expect_infinite_stacks = false
+else
+	moretrees.expect_infinite_stacks = true
+end
+
+-- tables, load other files
+
 moretrees.cutting_tools = {
 	"default:axe_bronze",
 	"default:axe_diamond",
@@ -56,6 +77,7 @@ moretrees.cutting_tools = {
 	"titanium:axe",
 }
 
+dofile(modpath.."/ownership.lua")
 dofile(modpath.."/tree_models.lua")
 dofile(modpath.."/node_defs.lua")
 dofile(modpath.."/biome_defs.lua")
