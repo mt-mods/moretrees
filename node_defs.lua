@@ -47,6 +47,7 @@ for i in ipairs(moretrees.treelist) do
 					minetest.rotate_and_place(itemstack, placer, pointed_thing,
 						moretrees.expect_infinite_stacks, { invert_wall = keys.sneak })
 				end
+				return itemstack
 			end
 		})
 
