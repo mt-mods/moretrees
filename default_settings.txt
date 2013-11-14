@@ -26,6 +26,12 @@ moretrees.spawn_saplings		= true
 
 moretrees.enable_stairsplus		= true
 
+-- Set this to false if you don't like the plantlike drawtype for leaves
+-- (this is done to improve peoples' framerates without resorting to making 
+-- leaf nodes opaque).  Affects default leaves and default jungle leaves also.
+
+moretrees.plantlike_leaves		= true
+
 -- Set this to true to enable leaf decay of all trees except the default ones.
 
 moretrees.enable_leafdecay		= true

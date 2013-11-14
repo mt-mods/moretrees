@@ -19,6 +19,35 @@ local dirs1 = { 21, 20, 23, 22, 21 }
 local dirs2 = { 12, 9, 18, 7, 12 }
 local dirs3 = { 14, 11, 16, 5, 14 }
 
+moretrees_new_leaves_drawtype = "allfaces_optional"
+moretrees_new_leaves_visual_scale = 1.0
+moretrees_new_leaves_extension = ".png"
+
+if moretrees.plantlike_leaves then
+	moretrees_new_leaves_drawtype = "plantlike"
+	moretrees_new_leaves_visual_scale = 1.189
+	moretrees_new_leaves_extension = "_plantlike.png"
+end
+
+new_default_leaves = moretrees:clone_node("default:leaves")
+	if moretrees.enable_default_leafdecay then
+		new_default_leaves.groups = {snappy=3, flammable=2, leaves=1}
+	end
+	new_default_leaves.drawtype = moretrees_new_leaves_drawtype
+	new_default_leaves.visual_scale = moretrees_new_leaves_visual_scale
+	new_default_leaves.tiles = {"default_leaves"..moretrees_new_leaves_extension}
+	minetest.register_node(":default:leaves", new_default_leaves)
+
+new_default_jungle_leaves = clone_node("default:jungleleaves")
+	if moretrees.enable_default_jungle_leafdecay then
+	new_default_jungle_leaves.groups = {snappy=3, flammable=2, leaves=1}
+	end
+	new_default_jungle_leaves = moretrees:clone_node("default:jungleleaves")
+	new_default_jungle_leaves.drawtype = moretrees_new_leaves_drawtype
+	new_default_jungle_leaves.visual_scale = moretrees_new_leaves_visual_scale
+	new_default_jungle_leaves.tiles = {"default_jungleleaves"..moretrees_new_leaves_extension}
+	minetest.register_node(":default:jungleleaves", new_default_jungle_leaves)
+
 for i in ipairs(moretrees.treelist) do
 	local treename = moretrees.treelist[i][1]
 	local treedesc = moretrees.treelist[i][2]
@@ -103,8 +132,9 @@ for i in ipairs(moretrees.treelist) do
 
 		minetest.register_node("moretrees:"..treename.."_leaves", {
 			description = treedesc.." Leaves",
-			drawtype = "allfaces_optional",
-			tiles = { "moretrees_"..treename.."_leaves.png" },
+			drawtype = moretrees_new_leaves_drawtype,
+			visual_scale = moretrees_new_leaves_visual_scale,
+			tiles = { "moretrees_"..treename.."_leaves"..moretrees_new_leaves_extension },
 			paramtype = "light",
 			groups = {snappy=3, flammable=2, leaves=1, moretrees_leaves=1},
 			sounds = default.node_sound_leaves_defaults(),
@@ -308,8 +338,9 @@ for color = 1, 3 do
 	local leave_name = "moretrees:jungletree_leaves_"..jungleleaves[color]
 	minetest.register_node(leave_name, {
 		description = "Jungle Tree Leaves ("..jungleleavesnames[color]..")",
-		drawtype = "allfaces_optional",
-		tiles = {"moretrees_jungletree_leaves_"..jungleleaves[color]..".png"},
+		drawtype = moretrees_new_leaves_drawtype,
+		visual_scale = moretrees_new_leaves_visual_scale,
+		tiles = {"moretrees_jungletree_leaves_"..jungleleaves[color]..moretrees_new_leaves_extension},
 		paramtype = "light",
 		groups = {snappy=3, flammable=2, leaves=1, moretrees_leaves=1},
 		drop = {
@@ -326,9 +357,10 @@ end
 -- Extra needles for firs
 
 minetest.register_node("moretrees:fir_leaves_bright", {
-	drawtype = "allfaces_optional",
+	drawtype = moretrees_new_leaves_drawtype,
+	visual_scale = moretrees_new_leaves_visual_scale,
 	description = "Douglas Fir Leaves (Bright)",
-	tile_images = { "moretrees_fir_leaves_bright.png" },
+	tile_images = { "moretrees_fir_leaves_bright"..moretrees_new_leaves_extension },
 	paramtype = "light",
 
 	groups = {snappy=3, flammable=2, leaves=1, moretrees_leaves=1 },

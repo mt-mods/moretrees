@@ -1,14 +1,5 @@
 -- leaf decay
 
-function clone_node(name)
-	node2={}
-	node=minetest.registered_nodes[name]
-	for k,v in pairs(node) do
-		node2[k]=v
-	end
-	return node2
-end
-
 -- this function is based on the default leafdecay code
 local process_drops = function(pos, name)
 	local drops = minetest.get_node_drops(name)
@@ -85,10 +76,6 @@ end
 
 if moretrees.enable_default_leafdecay then
 
-	new_default_leaves = clone_node("default:leaves")
-	new_default_leaves.groups = {snappy=3, flammable=2, leaves=1}
-	minetest.register_node(":default:leaves", new_default_leaves)
-
 	minetest.register_abm({
 		nodenames = "default:leaves",
 		interval = moretrees.default_leafdecay_delay,
@@ -104,10 +91,6 @@ if moretrees.enable_default_leafdecay then
 end
 
 if moretrees.enable_default_jungle_leafdecay then
-
-	new_default_jungle_leaves = clone_node("default:jungleleaves")
-	new_default_jungle_leaves.groups = {snappy=3, flammable=2, leaves=1}
-	minetest.register_node(":default:jungleleaves", new_default_jungle_leaves)
 
 	minetest.register_abm({
 		nodenames = "default:jungleleaves",
