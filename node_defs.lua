@@ -38,7 +38,7 @@ new_default_leaves = moretrees:clone_node("default:leaves")
 	new_default_leaves.tiles = {"default_leaves"..moretrees_new_leaves_extension}
 	minetest.register_node(":default:leaves", new_default_leaves)
 
-new_default_jungle_leaves = clone_node("default:jungleleaves")
+new_default_jungle_leaves = moretrees:clone_node("default:jungleleaves")
 	if moretrees.enable_default_jungle_leafdecay then
 	new_default_jungle_leaves.groups = {snappy=3, flammable=2, leaves=1}
 	end
