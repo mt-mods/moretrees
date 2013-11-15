@@ -39,7 +39,6 @@ if io.open(worldpath.."/moretrees_settings.txt","r") == nil then
 		end
 		io.write(block)
 	end
-	io.close()
 else
 	dofile(worldpath.."/moretrees_settings.txt")
 end
