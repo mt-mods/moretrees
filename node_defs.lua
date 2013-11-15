@@ -33,6 +33,9 @@ new_default_leaves = moretrees:clone_node("default:leaves")
 	if moretrees.enable_default_leafdecay then
 		new_default_leaves.groups = {snappy=3, flammable=2, leaves=1}
 	end
+	if moretrees.plantlike_leaves then
+		new_default_leaves.inventory_image = minetest.inventorycube("default_leaves.png")
+	end
 	new_default_leaves.drawtype = moretrees_new_leaves_drawtype
 	new_default_leaves.visual_scale = moretrees_new_leaves_visual_scale
 	new_default_leaves.tiles = {"default_leaves"..moretrees_new_leaves_extension}
@@ -40,9 +43,11 @@ new_default_leaves = moretrees:clone_node("default:leaves")
 
 new_default_jungle_leaves = moretrees:clone_node("default:jungleleaves")
 	if moretrees.enable_default_jungle_leafdecay then
-	new_default_jungle_leaves.groups = {snappy=3, flammable=2, leaves=1}
+		new_default_jungle_leaves.groups = {snappy=3, flammable=2, leaves=1}
 	end
-	new_default_jungle_leaves = moretrees:clone_node("default:jungleleaves")
+	if moretrees.plantlike_leaves then
+		new_default_jungle_leaves.inventory_image = minetest.inventorycube("default_jungleleaves.png")
+	end
 	new_default_jungle_leaves.drawtype = moretrees_new_leaves_drawtype
 	new_default_jungle_leaves.visual_scale = moretrees_new_leaves_visual_scale
 	new_default_jungle_leaves.tiles = {"default_jungleleaves"..moretrees_new_leaves_extension}
@@ -130,11 +135,17 @@ for i in ipairs(moretrees.treelist) do
 			droprarity = 20
 		end
 
+		moretrees_render_inventory_image = nil
+		if moretrees.plantlike_leaves then
+			moretrees_render_inventory_image = minetest.inventorycube
+		end
+
 		minetest.register_node("moretrees:"..treename.."_leaves", {
 			description = treedesc.." Leaves",
 			drawtype = moretrees_new_leaves_drawtype,
 			visual_scale = moretrees_new_leaves_visual_scale,
 			tiles = { "moretrees_"..treename.."_leaves"..moretrees_new_leaves_extension },
+			inventory_image = moretrees_render_inventory_image("moretrees_"..treename.."_leaves.png"),
 			paramtype = "light",
 			groups = {snappy=3, flammable=2, leaves=1, moretrees_leaves=1},
 			sounds = default.node_sound_leaves_defaults(),
@@ -341,6 +352,7 @@ for color = 1, 3 do
 		drawtype = moretrees_new_leaves_drawtype,
 		visual_scale = moretrees_new_leaves_visual_scale,
 		tiles = {"moretrees_jungletree_leaves_"..jungleleaves[color]..moretrees_new_leaves_extension},
+		inventory_image = moretrees_render_inventory_image("moretrees_jungletree_leaves_"..jungleleaves[color]..".png"),
 		paramtype = "light",
 		groups = {snappy=3, flammable=2, leaves=1, moretrees_leaves=1},
 		drop = {
@@ -360,9 +372,9 @@ minetest.register_node("moretrees:fir_leaves_bright", {
 	drawtype = moretrees_new_leaves_drawtype,
 	visual_scale = moretrees_new_leaves_visual_scale,
 	description = "Douglas Fir Leaves (Bright)",
-	tile_images = { "moretrees_fir_leaves_bright"..moretrees_new_leaves_extension },
+	tiles = { "moretrees_fir_leaves_bright"..moretrees_new_leaves_extension },
+	inventory_image = moretrees_render_inventory_image("moretrees_fir_leaves_bright.png"),
 	paramtype = "light",
-
 	groups = {snappy=3, flammable=2, leaves=1, moretrees_leaves=1 },
 	drop = {
 		max_items = 1,
