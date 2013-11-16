@@ -135,9 +135,9 @@ for i in ipairs(moretrees.treelist) do
 			droprarity = 20
 		end
 
-		moretrees_render_inventory_image = nil
+		moretrees_leaves_inventory_image = nil
 		if moretrees.plantlike_leaves then
-			moretrees_render_inventory_image = minetest.inventorycube
+			moretrees_leaves_inventory_image = minetest.inventorycube("moretrees_"..treename.."_leaves.png")
 		end
 
 		minetest.register_node("moretrees:"..treename.."_leaves", {
@@ -145,7 +145,7 @@ for i in ipairs(moretrees.treelist) do
 			drawtype = moretrees_new_leaves_drawtype,
 			visual_scale = moretrees_new_leaves_visual_scale,
 			tiles = { "moretrees_"..treename.."_leaves"..moretrees_new_leaves_extension },
-			inventory_image = moretrees_render_inventory_image("moretrees_"..treename.."_leaves.png"),
+			inventory_image = moretrees_leaves_inventory_image,
 			paramtype = "light",
 			groups = {snappy=3, flammable=2, leaves=1, moretrees_leaves=1},
 			sounds = default.node_sound_leaves_defaults(),
@@ -347,12 +347,18 @@ local jungleleaves = {"green","yellow","red"}
 local jungleleavesnames = {"Green", "Yellow", "Red"}
 for color = 1, 3 do
 	local leave_name = "moretrees:jungletree_leaves_"..jungleleaves[color]
+
+	moretrees_leaves_inventory_image = nil
+	if moretrees.plantlike_leaves then
+		moretrees_leaves_inventory_image = minetest.inventorycube("moretrees_jungletree_leaves_"..jungleleaves[color]..".png")
+	end
+
 	minetest.register_node(leave_name, {
 		description = "Jungle Tree Leaves ("..jungleleavesnames[color]..")",
 		drawtype = moretrees_new_leaves_drawtype,
 		visual_scale = moretrees_new_leaves_visual_scale,
 		tiles = {"moretrees_jungletree_leaves_"..jungleleaves[color]..moretrees_new_leaves_extension},
-		inventory_image = moretrees_render_inventory_image("moretrees_jungletree_leaves_"..jungleleaves[color]..".png"),
+		inventory_image = moretrees_leaves_inventory_image,
 		paramtype = "light",
 		groups = {snappy=3, flammable=2, leaves=1, moretrees_leaves=1},
 		drop = {
@@ -368,12 +374,17 @@ end
 
 -- Extra needles for firs
 
+moretrees_leaves_inventory_image = nil
+if moretrees.plantlike_leaves then
+	moretrees_leaves_inventory_image = minetest.inventorycube("moretrees_fir_leaves_bright.png")
+end
+
 minetest.register_node("moretrees:fir_leaves_bright", {
 	drawtype = moretrees_new_leaves_drawtype,
 	visual_scale = moretrees_new_leaves_visual_scale,
 	description = "Douglas Fir Leaves (Bright)",
 	tiles = { "moretrees_fir_leaves_bright"..moretrees_new_leaves_extension },
-	inventory_image = moretrees_render_inventory_image("moretrees_fir_leaves_bright.png"),
+	inventory_image = moretrees_leaves_inventory_image,
 	paramtype = "light",
 	groups = {snappy=3, flammable=2, leaves=1, moretrees_leaves=1 },
 	drop = {
