@@ -136,8 +136,11 @@ for i in ipairs(moretrees.treelist) do
 		end
 
 		moretrees_leaves_inventory_image = nil
+		moretrees_waving_leaves = nil
+
 		if moretrees.plantlike_leaves then
 			moretrees_leaves_inventory_image = minetest.inventorycube("moretrees_"..treename.."_leaves.png")
+			moretrees_waving_leaves = "waving"
 		end
 
 		minetest.register_node("moretrees:"..treename.."_leaves", {
@@ -147,6 +150,7 @@ for i in ipairs(moretrees.treelist) do
 			tiles = { "moretrees_"..treename.."_leaves"..moretrees_new_leaves_extension },
 			inventory_image = moretrees_leaves_inventory_image,
 			paramtype = "light",
+			paramtype2 = moretrees_waving_leaves,
 			groups = {snappy=3, flammable=2, leaves=1, moretrees_leaves=1},
 			sounds = default.node_sound_leaves_defaults(),
 
@@ -349,8 +353,10 @@ for color = 1, 3 do
 	local leave_name = "moretrees:jungletree_leaves_"..jungleleaves[color]
 
 	moretrees_leaves_inventory_image = nil
+	moretrees_waving_leaves = nil
 	if moretrees.plantlike_leaves then
 		moretrees_leaves_inventory_image = minetest.inventorycube("moretrees_jungletree_leaves_"..jungleleaves[color]..".png")
+		moretrees_waving_leaves = "waving"
 	end
 
 	minetest.register_node(leave_name, {
@@ -360,6 +366,7 @@ for color = 1, 3 do
 		tiles = {"moretrees_jungletree_leaves_"..jungleleaves[color]..moretrees_new_leaves_extension},
 		inventory_image = moretrees_leaves_inventory_image,
 		paramtype = "light",
+		paramtype2 = moretrees_waving_leaves,
 		groups = {snappy=3, flammable=2, leaves=1, moretrees_leaves=1},
 		drop = {
 			max_items = 1,
@@ -375,8 +382,10 @@ end
 -- Extra needles for firs
 
 moretrees_leaves_inventory_image = nil
+moretrees_waving_leaves = nil
 if moretrees.plantlike_leaves then
 	moretrees_leaves_inventory_image = minetest.inventorycube("moretrees_fir_leaves_bright.png")
+	moretrees_waving_leaves = "waving"
 end
 
 minetest.register_node("moretrees:fir_leaves_bright", {
@@ -386,6 +395,7 @@ minetest.register_node("moretrees:fir_leaves_bright", {
 	tiles = { "moretrees_fir_leaves_bright"..moretrees_new_leaves_extension },
 	inventory_image = moretrees_leaves_inventory_image,
 	paramtype = "light",
+	paramtype2 = moretrees_waving_leaves,
 	groups = {snappy=3, flammable=2, leaves=1, moretrees_leaves=1 },
 	drop = {
 		max_items = 1,
