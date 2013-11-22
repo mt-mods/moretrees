@@ -30,11 +30,13 @@ if moretrees.plantlike_leaves then
 end
 
 new_default_leaves = moretrees:clone_node("default:leaves")
+	new_default_leaves.paramtype2 = "waving"
 	if moretrees.enable_default_leafdecay then
 		new_default_leaves.groups = {snappy=3, flammable=2, leaves=1}
 	end
 	if moretrees.plantlike_leaves then
 		new_default_leaves.inventory_image = minetest.inventorycube("default_leaves.png")
+		new_default_leaves.paramtype2 = nil
 	end
 	new_default_leaves.drawtype = moretrees_new_leaves_drawtype
 	new_default_leaves.visual_scale = moretrees_new_leaves_visual_scale
@@ -42,11 +44,13 @@ new_default_leaves = moretrees:clone_node("default:leaves")
 	minetest.register_node(":default:leaves", new_default_leaves)
 
 new_default_jungle_leaves = moretrees:clone_node("default:jungleleaves")
+	new_default_jungle_leaves.paramtype2 = "waving"
 	if moretrees.enable_default_jungle_leafdecay then
 		new_default_jungle_leaves.groups = {snappy=3, flammable=2, leaves=1}
 	end
 	if moretrees.plantlike_leaves then
 		new_default_jungle_leaves.inventory_image = minetest.inventorycube("default_jungleleaves.png")
+		new_default_jungle_leaves.paramtype2 = nil
 	end
 	new_default_jungle_leaves.drawtype = moretrees_new_leaves_drawtype
 	new_default_jungle_leaves.visual_scale = moretrees_new_leaves_visual_scale
@@ -99,6 +103,7 @@ for i in ipairs(moretrees.treelist) do
 			tiles = {"moretrees_"..treename.."_sapling.png"},
 			inventory_image = "moretrees_"..treename.."_sapling.png",
 			paramtype = "light",
+			paramtype2 = "waving",
 			walkable = false,
 			selection_box = {
 				type = "fixed",
@@ -114,6 +119,7 @@ for i in ipairs(moretrees.treelist) do
 			tiles = {"moretrees_"..treename.."_sapling.png"},
 			inventory_image = "moretrees_"..treename.."_sapling.png",
 			paramtype = "light",
+			paramtype2 = "waving",
 			walkable = false,
 			selection_box = {
 				type = "fixed",
@@ -136,11 +142,11 @@ for i in ipairs(moretrees.treelist) do
 		end
 
 		moretrees_leaves_inventory_image = nil
-		moretrees_waving_leaves = nil
+		moretrees_waving_leaves = "waving"
 
 		if moretrees.plantlike_leaves then
 			moretrees_leaves_inventory_image = minetest.inventorycube("moretrees_"..treename.."_leaves.png")
-			moretrees_waving_leaves = "waving"
+			moretrees_waving_leaves = nil
 		end
 
 		minetest.register_node("moretrees:"..treename.."_leaves", {
@@ -320,6 +326,7 @@ minetest.register_node("moretrees:jungletree_sapling", {
         inventory_image = "default_junglesapling.png",
         wield_image = "default_junglesapling.png",
         paramtype = "light",
+		paramtype2 = "waving",
         walkable = false,
         selection_box = {
                 type = "fixed",
@@ -337,6 +344,7 @@ minetest.register_node("moretrees:jungletree_sapling_ongen", {
         inventory_image = "default_junglesapling.png",
         wield_image = "default_junglesapling.png",
         paramtype = "light",
+		paramtype2 = "waving",
         walkable = false,
         selection_box = {
                 type = "fixed",
@@ -353,10 +361,10 @@ for color = 1, 3 do
 	local leave_name = "moretrees:jungletree_leaves_"..jungleleaves[color]
 
 	moretrees_leaves_inventory_image = nil
-	moretrees_waving_leaves = nil
+	moretrees_waving_leaves = "waving"
 	if moretrees.plantlike_leaves then
 		moretrees_leaves_inventory_image = minetest.inventorycube("moretrees_jungletree_leaves_"..jungleleaves[color]..".png")
-		moretrees_waving_leaves = "waving"
+		moretrees_waving_leaves = nil
 	end
 
 	minetest.register_node(leave_name, {
@@ -382,10 +390,10 @@ end
 -- Extra needles for firs
 
 moretrees_leaves_inventory_image = nil
-moretrees_waving_leaves = nil
+moretrees_waving_leaves = "waving"
 if moretrees.plantlike_leaves then
 	moretrees_leaves_inventory_image = minetest.inventorycube("moretrees_fir_leaves_bright.png")
-	moretrees_waving_leaves = "waving"
+	moretrees_waving_leaves = nil
 end
 
 minetest.register_node("moretrees:fir_leaves_bright", {
