@@ -19,43 +19,42 @@ local dirs1 = { 21, 20, 23, 22, 21 }
 local dirs2 = { 12, 9, 18, 7, 12 }
 local dirs3 = { 14, 11, 16, 5, 14 }
 
-moretrees_new_leaves_drawtype = "allfaces_optional"
-moretrees_new_leaves_visual_scale = 1.0
-moretrees_new_leaves_extension = ".png"
-
-if moretrees.plantlike_leaves then
+if moretrees.plantlike_leaves then 
 	moretrees_new_leaves_drawtype = "plantlike"
-	moretrees_new_leaves_visual_scale = 1.189
 	moretrees_new_leaves_extension = "_plantlike.png"
+	moretrees_plantlike_leaves_visual_scale = 1.189
+else
+	moretrees_new_leaves_drawtype = "allfaces_optional"
+	moretrees_new_leaves_extension = ".png"
 end
 
 new_default_leaves = moretrees:clone_node("default:leaves")
-	new_default_leaves.paramtype2 = "waving"
 	if moretrees.enable_default_leafdecay then
 		new_default_leaves.groups = {snappy=3, flammable=2, leaves=1}
 	end
 	if moretrees.plantlike_leaves then
 		new_default_leaves.inventory_image = minetest.inventorycube("default_leaves.png")
-		new_default_leaves.paramtype2 = nil
+		new_default_leaves.drawtype = "plantlike"
+		new_default_leaves.visual_scale = moretrees_plantlike_leaves_visual_scale
+		new_default_leaves.tiles = {"default_leaves_plantlike.png"}
 	end
-	new_default_leaves.drawtype = moretrees_new_leaves_drawtype
-	new_default_leaves.visual_scale = moretrees_new_leaves_visual_scale
-	new_default_leaves.tiles = {"default_leaves"..moretrees_new_leaves_extension}
-	minetest.register_node(":default:leaves", new_default_leaves)
+	if moretrees.enable_default_leafdecay or moretrees.plantlike_leaves then
+		minetest.register_node(":default:leaves", new_default_leaves)
+	end
 
-new_default_jungle_leaves = moretrees:clone_node("default:jungleleaves")
-	new_default_jungle_leaves.paramtype2 = "waving"
-	if moretrees.enable_default_jungle_leafdecay then
-		new_default_jungle_leaves.groups = {snappy=3, flammable=2, leaves=1}
+new_default_jungleleaves = moretrees:clone_node("default:jungleleaves")
+	if moretrees.enable_default_leafdecay then
+		new_default_jungleleaves.groups = {snappy=3, flammable=2, leaves=1}
 	end
 	if moretrees.plantlike_leaves then
-		new_default_jungle_leaves.inventory_image = minetest.inventorycube("default_jungleleaves.png")
-		new_default_jungle_leaves.paramtype2 = nil
+		new_default_jungleleaves.inventory_image = minetest.inventorycube("default_jungleleaves.png")
+		new_default_jungleleaves.drawtype = "plantlike"
+		new_default_jungleleaves.visual_scale = moretrees_plantlike_leaves_visual_scale
+		new_default_jungleleaves.tiles = {"default_jungleleaves_plantlike.png"}
 	end
-	new_default_jungle_leaves.drawtype = moretrees_new_leaves_drawtype
-	new_default_jungle_leaves.visual_scale = moretrees_new_leaves_visual_scale
-	new_default_jungle_leaves.tiles = {"default_jungleleaves"..moretrees_new_leaves_extension}
-	minetest.register_node(":default:jungleleaves", new_default_jungle_leaves)
+	if moretrees.enable_default_leafdecay or moretrees.plantlike_leaves then
+		minetest.register_node(":default:jungleleaves", new_default_jungleleaves)
+	end
 
 for i in ipairs(moretrees.treelist) do
 	local treename = moretrees.treelist[i][1]
@@ -142,21 +141,18 @@ for i in ipairs(moretrees.treelist) do
 		end
 
 		moretrees_leaves_inventory_image = nil
-		moretrees_waving_leaves = "waving"
 
 		if moretrees.plantlike_leaves then
 			moretrees_leaves_inventory_image = minetest.inventorycube("moretrees_"..treename.."_leaves.png")
-			moretrees_waving_leaves = nil
 		end
 
 		minetest.register_node("moretrees:"..treename.."_leaves", {
 			description = treedesc.." Leaves",
 			drawtype = moretrees_new_leaves_drawtype,
-			visual_scale = moretrees_new_leaves_visual_scale,
+			visual_scale = moretrees_plantlike_leaves_visual_scale,
 			tiles = { "moretrees_"..treename.."_leaves"..moretrees_new_leaves_extension },
 			inventory_image = moretrees_leaves_inventory_image,
 			paramtype = "light",
-			paramtype2 = moretrees_waving_leaves,
 			groups = {snappy=3, flammable=2, leaves=1, moretrees_leaves=1},
 			sounds = default.node_sound_leaves_defaults(),
 
@@ -361,20 +357,17 @@ for color = 1, 3 do
 	local leave_name = "moretrees:jungletree_leaves_"..jungleleaves[color]
 
 	moretrees_leaves_inventory_image = nil
-	moretrees_waving_leaves = "waving"
 	if moretrees.plantlike_leaves then
 		moretrees_leaves_inventory_image = minetest.inventorycube("moretrees_jungletree_leaves_"..jungleleaves[color]..".png")
-		moretrees_waving_leaves = nil
 	end
 
 	minetest.register_node(leave_name, {
 		description = "Jungle Tree Leaves ("..jungleleavesnames[color]..")",
 		drawtype = moretrees_new_leaves_drawtype,
-		visual_scale = moretrees_new_leaves_visual_scale,
+		visual_scale = moretrees_plantlike_leaves_visual_scale,
 		tiles = {"moretrees_jungletree_leaves_"..jungleleaves[color]..moretrees_new_leaves_extension},
 		inventory_image = moretrees_leaves_inventory_image,
 		paramtype = "light",
-		paramtype2 = moretrees_waving_leaves,
 		groups = {snappy=3, flammable=2, leaves=1, moretrees_leaves=1},
 		drop = {
 			max_items = 1,
@@ -390,20 +383,17 @@ end
 -- Extra needles for firs
 
 moretrees_leaves_inventory_image = nil
-moretrees_waving_leaves = "waving"
 if moretrees.plantlike_leaves then
 	moretrees_leaves_inventory_image = minetest.inventorycube("moretrees_fir_leaves_bright.png")
-	moretrees_waving_leaves = nil
 end
 
 minetest.register_node("moretrees:fir_leaves_bright", {
 	drawtype = moretrees_new_leaves_drawtype,
-	visual_scale = moretrees_new_leaves_visual_scale,
+	visual_scale = moretrees_plantlike_leaves_visual_scale,
 	description = "Douglas Fir Leaves (Bright)",
 	tiles = { "moretrees_fir_leaves_bright"..moretrees_new_leaves_extension },
 	inventory_image = moretrees_leaves_inventory_image,
 	paramtype = "light",
-	paramtype2 = moretrees_waving_leaves,
 	groups = {snappy=3, flammable=2, leaves=1, moretrees_leaves=1 },
 	drop = {
 		max_items = 1,
@@ -498,3 +488,8 @@ minetest.register_alias("conifers:leaves", "moretrees:fir_leaves")
 minetest.register_alias("conifers:leaves_special", "moretrees:fir_leaves_bright")
 minetest.register_alias("conifers:sapling", "moretrees:fir_sapling")
 
+
+print("default:jungleleaves")
+print("---")
+print(dump(minetest.registered_nodes["default:jungleleaves"]))
+print("---------------------------------------------------------------------")
