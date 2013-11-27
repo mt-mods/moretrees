@@ -3,13 +3,6 @@ for i in ipairs(moretrees.treelist) do
 	treename = moretrees.treelist[i][1]
 
 	minetest.register_craft({
-		output = "moretrees:"..treename.."_trunk_sideways 2",
-		recipe = {
-			{"moretrees:"..treename.."_trunk", "moretrees:"..treename.."_trunk"}
-		}
-	})
-
-	minetest.register_craft({
 		output = "moretrees:"..treename.."_trunk 2",
 		recipe = {
 			{"moretrees:"..treename.."_trunk_sideways"},
@@ -39,6 +32,14 @@ for i in ipairs(moretrees.treelist) do
 		burntime = 10,
 	})
 end
+
+minetest.register_craft({
+	type = "shapeless",
+	output = "moretrees:rubber_tree_planks 4",
+	recipe = {
+		"moretrees:rubber_tree_trunk_empty"
+	}
+})
 
 minetest.register_craft({
 	type = "fuel",
