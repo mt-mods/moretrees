@@ -451,10 +451,12 @@ minetest.register_node("moretrees:rubber_tree_trunk_empty", {
 		if not moretrees:node_is_owned(pos, placer) then
 			minetest.rotate_and_place(itemstack, placer, pointed_thing,
 				moretrees.expect_infinite_stacks, { invert_wall = keys.sneak })
-			local meta = minetest.get_meta(pos)
-			meta:set_int("placed", 1)
 		end
 		return itemstack
+	end,
+	after_place_node = function(pos, placer, itemstack),
+ 			local meta = minetest.get_meta(pos)
+			meta:set_int("placed", 1)
 	end
 })
 
