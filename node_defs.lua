@@ -454,7 +454,7 @@ minetest.register_node("moretrees:rubber_tree_trunk_empty", {
 		end
 		return itemstack
 	end,
-	after_place_node = function(pos, placer, itemstack),
+	after_place_node = function(pos, placer, itemstack)
  			local meta = minetest.get_meta(pos)
 			meta:set_int("placed", 1)
 	end
