@@ -37,6 +37,8 @@ new_default_leaves = moretrees:clone_node("default:leaves")
 		new_default_leaves.drawtype = "plantlike"
 		new_default_leaves.visual_scale = moretrees_plantlike_leaves_visual_scale
 		new_default_leaves.tiles = {"default_leaves_plantlike.png"}
+	else
+		new_default_leaves.waving = 1
 	end
 	if moretrees.enable_default_leafdecay or moretrees.plantlike_leaves then
 		minetest.register_node(":default:leaves", new_default_leaves)
@@ -51,6 +53,8 @@ new_default_jungleleaves = moretrees:clone_node("default:jungleleaves")
 		new_default_jungleleaves.drawtype = "plantlike"
 		new_default_jungleleaves.visual_scale = moretrees_plantlike_leaves_visual_scale
 		new_default_jungleleaves.tiles = {"default_jungleleaves_plantlike.png"}
+	else
+		new_default_jungleleaves.waving = 1
 	end
 	if moretrees.enable_default_leafdecay or moretrees.plantlike_leaves then
 		minetest.register_node(":default:jungleleaves", new_default_jungleleaves)
@@ -144,11 +148,14 @@ for i in ipairs(moretrees.treelist) do
 
 		if moretrees.plantlike_leaves then
 			moretrees_leaves_inventory_image = minetest.inventorycube("moretrees_"..treename.."_leaves.png")
+		else
+			moretrees_new_leaves_waving = 1
 		end
 
 		minetest.register_node("moretrees:"..treename.."_leaves", {
 			description = treedesc.." Leaves",
 			drawtype = moretrees_new_leaves_drawtype,
+			waving = moretrees_new_leaves_waving,
 			visual_scale = moretrees_plantlike_leaves_visual_scale,
 			tiles = { "moretrees_"..treename.."_leaves"..moretrees_new_leaves_extension },
 			inventory_image = moretrees_leaves_inventory_image,
@@ -364,6 +371,7 @@ for color = 1, 3 do
 	minetest.register_node(leave_name, {
 		description = "Jungle Tree Leaves ("..jungleleavesnames[color]..")",
 		drawtype = moretrees_new_leaves_drawtype,
+		waving = moretrees_new_leaves_waving,
 		visual_scale = moretrees_plantlike_leaves_visual_scale,
 		tiles = {"moretrees_jungletree_leaves_"..jungleleaves[color]..moretrees_new_leaves_extension},
 		inventory_image = moretrees_leaves_inventory_image,
@@ -389,6 +397,7 @@ end
 
 minetest.register_node("moretrees:fir_leaves_bright", {
 	drawtype = moretrees_new_leaves_drawtype,
+	waving = moretrees_new_leaves_waving,
 	visual_scale = moretrees_plantlike_leaves_visual_scale,
 	description = "Douglas Fir Leaves (Bright)",
 	tiles = { "moretrees_fir_leaves_bright"..moretrees_new_leaves_extension },
@@ -488,8 +497,3 @@ minetest.register_alias("conifers:leaves", "moretrees:fir_leaves")
 minetest.register_alias("conifers:leaves_special", "moretrees:fir_leaves_bright")
 minetest.register_alias("conifers:sapling", "moretrees:fir_sapling")
 
-
-print("default:jungleleaves")
-print("---")
-print(dump(minetest.registered_nodes["default:jungleleaves"]))
-print("---------------------------------------------------------------------")
