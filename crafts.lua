@@ -1,6 +1,6 @@
 
 for i in ipairs(moretrees.treelist) do
-	treename = moretrees.treelist[i][1]
+	local treename = moretrees.treelist[i][1]
 
 	minetest.register_craft({
 		output = "moretrees:"..treename.."_trunk 2",

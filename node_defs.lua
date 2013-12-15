@@ -19,16 +19,17 @@ local dirs1 = { 21, 20, 23, 22, 21 }
 local dirs2 = { 12, 9, 18, 7, 12 }
 local dirs3 = { 14, 11, 16, 5, 14 }
 
+local moretrees_new_leaves_drawtype = "allfaces_optional"
+local moretrees_new_leaves_extension = ".png"
+local moretrees_plantlike_leaves_visual_scale = 1
+
 if moretrees.plantlike_leaves then 
 	moretrees_new_leaves_drawtype = "plantlike"
 	moretrees_new_leaves_extension = "_plantlike.png"
 	moretrees_plantlike_leaves_visual_scale = 1.189
-else
-	moretrees_new_leaves_drawtype = "allfaces_optional"
-	moretrees_new_leaves_extension = ".png"
 end
 
-new_default_leaves = moretrees:clone_node("default:leaves")
+local new_default_leaves = moretrees:clone_node("default:leaves")
 	if moretrees.enable_default_leafdecay then
 		new_default_leaves.groups = {snappy=3, flammable=2, leaves=1}
 	end
@@ -44,7 +45,7 @@ new_default_leaves = moretrees:clone_node("default:leaves")
 		minetest.register_node(":default:leaves", new_default_leaves)
 	end
 
-new_default_jungleleaves = moretrees:clone_node("default:jungleleaves")
+local new_default_jungleleaves = moretrees:clone_node("default:jungleleaves")
 	if moretrees.enable_default_leafdecay then
 		new_default_jungleleaves.groups = {snappy=3, flammable=2, leaves=1}
 	end
@@ -144,7 +145,8 @@ for i in ipairs(moretrees.treelist) do
 			droprarity = 20
 		end
 
-		moretrees_leaves_inventory_image = nil
+		local moretrees_leaves_inventory_image = nil
+		local moretrees_new_leaves_waving = nil
 
 		if moretrees.plantlike_leaves then
 			moretrees_leaves_inventory_image = minetest.inventorycube("moretrees_"..treename.."_leaves.png")
@@ -280,7 +282,7 @@ for i in ipairs(moretrees.treelist) do
 		end
 	end
 
-	if (fruit ~= nil) then
+	if fruit then
 		minetest.register_node("moretrees:"..fruit, {
 			description = fruitdesc,
 			drawtype = "plantlike",
@@ -363,7 +365,8 @@ local jungleleavesnames = {"Green", "Yellow", "Red"}
 for color = 1, 3 do
 	local leave_name = "moretrees:jungletree_leaves_"..jungleleaves[color]
 
-	moretrees_leaves_inventory_image = nil
+	local moretrees_leaves_inventory_image = nil
+
 	if moretrees.plantlike_leaves then
 		moretrees_leaves_inventory_image = minetest.inventorycube("moretrees_jungletree_leaves_"..jungleleaves[color]..".png")
 	end
@@ -390,7 +393,8 @@ end
 
 -- Extra needles for firs
 
-moretrees_leaves_inventory_image = nil
+local moretrees_leaves_inventory_image = nil
+
 if moretrees.plantlike_leaves then
 	moretrees_leaves_inventory_image = minetest.inventorycube("moretrees_fir_leaves_bright.png")
 end
@@ -415,9 +419,9 @@ minetest.register_node("moretrees:fir_leaves_bright", {
 })
 
 if moretrees.enable_redefine_apple then
-	new_default_apple = moretrees:clone_node("default:apple")
+	local new_default_apple = moretrees:clone_node("default:apple")
 		new_default_apple.groups.attached_node = 1
-		minetest.register_node(":default:apple", new_default_apple)
+	minetest.register_node(":default:apple", new_default_apple)
 end
 
 table.insert(moretrees.avoidnodes, "default:jungletree")
