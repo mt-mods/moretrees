@@ -369,6 +369,8 @@ for color = 1, 3 do
 
 	if moretrees.plantlike_leaves then
 		moretrees_leaves_inventory_image = minetest.inventorycube("moretrees_jungletree_leaves_"..jungleleaves[color]..".png")
+	else
+		moretrees_new_leaves_waving = 1
 	end
 
 	minetest.register_node(leave_name, {
