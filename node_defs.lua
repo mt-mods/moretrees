@@ -141,7 +141,7 @@ for i in ipairs(moretrees.treelist) do
 
 		local droprarity = 100
 
-		if treename ~= "palm" then
+		if treename == "palm" then
 			droprarity = 20
 		end
 
