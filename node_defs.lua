@@ -113,7 +113,7 @@ for i in ipairs(moretrees.treelist) do
 				type = "fixed",
 				fixed = {-0.3, -0.5, -0.3, 0.3, 0.35, 0.3}
 			},
-			groups = {snappy=2,dig_immediate=3,flammable=2,attached_node=1},
+			groups = {snappy=2,dig_immediate=3,flammable=2,attached_node=1,sapling=1},
 			sounds = default.node_sound_defaults(),
 		})
 	
@@ -129,7 +129,7 @@ for i in ipairs(moretrees.treelist) do
 				type = "fixed",
 				fixed = {-0.3, -0.5, -0.3, 0.3, 0.35, 0.3}
 			},
-			groups = {snappy=2,dig_immediate=3,flammable=2,attached_node=1,not_in_creative_inventory=1},
+			groups = {snappy=2,dig_immediate=3,flammable=2,attached_node=1,not_in_creative_inventory=1,sapling=1},
 			sounds = default.node_sound_defaults(),
 			drop = "moretrees:"..treename.."_sapling"
 		})
@@ -337,7 +337,7 @@ minetest.register_node("moretrees:jungletree_sapling", {
                 type = "fixed",
                 fixed = {-0.3, -0.5, -0.3, 0.3, 0.35, 0.3}
         },
-        groups = {snappy=2,dig_immediate=3,flammable=2,attached_node=1},
+        groups = {snappy=2,dig_immediate=3,flammable=2,attached_node=1,sapling=1},
         sounds = default.node_sound_leaves_defaults(),
 })
 
@@ -355,7 +355,7 @@ minetest.register_node("moretrees:jungletree_sapling_ongen", {
                 type = "fixed",
                 fixed = {-0.3, -0.5, -0.3, 0.3, 0.35, 0.3}
         },
-        groups = {snappy=2,dig_immediate=3,flammable=2,attached_node=1,not_in_creative_inventory=1},
+        groups = {snappy=2,dig_immediate=3,flammable=2,attached_node=1,not_in_creative_inventory=1,sapling=1},
         sounds = default.node_sound_leaves_defaults(),
 	drop = "moretrees:jungletree_sapling"
 })
