@@ -87,7 +87,6 @@ moretrees.cutting_tools = {
 	"titanium:axe",
 }
 
-dofile(modpath.."/ownership.lua")
 dofile(modpath.."/tree_models.lua")
 dofile(modpath.."/node_defs.lua")
 dofile(modpath.."/biome_defs.lua")
