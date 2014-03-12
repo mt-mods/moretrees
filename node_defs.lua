@@ -1,3 +1,12 @@
+-- Boilerplate to support localized strings if intllib mod is installed.
+local S
+if (minetest.get_modpath("intllib")) then
+  dofile(minetest.get_modpath("intllib").."/intllib.lua")
+  S = intllib.Getter(minetest.get_current_modname())
+else
+  S = function ( s ) return s end
+end
+
 moretrees.avoidnodes = {}
 	
 moretrees.treelist = {
@@ -72,7 +81,7 @@ for i in ipairs(moretrees.treelist) do
 	if treename ~= "jungletree" then -- the default game provides jungle tree trunk/planks nodes.
 
 		minetest.register_node("moretrees:"..treename.."_trunk", {
-			description = treedesc.." Trunk",
+			description = S(treedesc.." Trunk"),
 			tiles = {
 				"moretrees_"..treename.."_trunk_top.png",
 				"moretrees_"..treename.."_trunk_top.png",
@@ -86,7 +95,7 @@ for i in ipairs(moretrees.treelist) do
 		})
 
 		minetest.register_node("moretrees:"..treename.."_planks", {
-			description = treedesc.." Planks",
+			description = S(treedesc.." Planks"),
 			tiles = {"moretrees_"..treename.."_wood.png"},
 			is_ground_content = true,
 			groups = {snappy=1,choppy=2,oddly_breakable_by_hand=2,flammable=3,wood=1},
@@ -94,7 +103,7 @@ for i in ipairs(moretrees.treelist) do
 		})
 
 		minetest.register_node("moretrees:"..treename.."_sapling", {
-			description = treedesc.." Sapling",
+			description = S(treedesc.." Sapling"),
 			drawtype = "plantlike",
 			tiles = {"moretrees_"..treename.."_sapling.png"},
 			inventory_image = "moretrees_"..treename.."_sapling.png",
@@ -110,7 +119,7 @@ for i in ipairs(moretrees.treelist) do
 		})
 	
 		minetest.register_node("moretrees:"..treename.."_sapling_ongen", {
-			description = treedesc.." Sapling",
+			description = S(treedesc.." Sapling"),
 			drawtype = "plantlike",
 			tiles = {"moretrees_"..treename.."_sapling.png"},
 			inventory_image = "moretrees_"..treename.."_sapling.png",
@@ -147,7 +156,7 @@ for i in ipairs(moretrees.treelist) do
 		end
 
 		minetest.register_node("moretrees:"..treename.."_leaves", {
-			description = treedesc.." Leaves",
+			description = S(treedesc.." Leaves"),
 			drawtype = moretrees_new_leaves_drawtype,
 			waving = moretrees_new_leaves_waving,
 			visual_scale = moretrees_plantlike_leaves_visual_scale,
@@ -276,7 +285,7 @@ for i in ipairs(moretrees.treelist) do
 
 	if fruit then
 		minetest.register_node("moretrees:"..fruit, {
-			description = fruitdesc,
+			description = S(fruitdesc),
 			drawtype = "plantlike",
 			tiles = { "moretrees_"..fruit..".png" },
 			inventory_image = "moretrees_"..fruit..".png^[transformR180",
@@ -316,7 +325,7 @@ end
 -- Extra nodes for jungle trees:
 
 minetest.register_node("moretrees:jungletree_sapling", {
-        description = "Jungle Sapling",
+        description = S("Jungle Sapling"),
         drawtype = "plantlike",
         visual_scale = 1.0,
         tiles = {"default_junglesapling.png"},
@@ -334,7 +343,7 @@ minetest.register_node("moretrees:jungletree_sapling", {
 })
 
 minetest.register_node("moretrees:jungletree_sapling_ongen", {
-        description = "Jungle Sapling",
+        description = S("Jungle Sapling"),
         drawtype = "plantlike",
         visual_scale = 1.0,
         tiles = {"default_junglesapling.png"},
@@ -366,7 +375,7 @@ for color = 1, 3 do
 	end
 
 	minetest.register_node(leave_name, {
-		description = "Jungle Tree Leaves ("..jungleleavesnames[color]..")",
+		description = S("Jungle Tree Leaves ("..jungleleavesnames[color]..")"),
 		drawtype = moretrees_new_leaves_drawtype,
 		waving = moretrees_new_leaves_waving,
 		visual_scale = moretrees_plantlike_leaves_visual_scale,
@@ -397,7 +406,7 @@ minetest.register_node("moretrees:fir_leaves_bright", {
 	drawtype = moretrees_new_leaves_drawtype,
 	waving = moretrees_new_leaves_waving,
 	visual_scale = moretrees_plantlike_leaves_visual_scale,
-	description = "Douglas Fir Leaves (Bright)",
+	description = S("Douglas Fir Leaves (Bright)"),
 	tiles = { "moretrees_fir_leaves_bright"..moretrees_new_leaves_extension },
 	inventory_image = moretrees_leaves_inventory_image,
 	paramtype = "light",
@@ -433,7 +442,7 @@ end
 -- "empty" (tapped) rubber tree nodes
 
 minetest.register_node("moretrees:rubber_tree_trunk_empty", {
-	description = "Rubber Tree Trunk (Empty)",
+	description = S("Rubber Tree Trunk (Empty)"),
 	tiles = {
 		"moretrees_rubber_tree_trunk_top.png",
 		"moretrees_rubber_tree_trunk_top.png",
