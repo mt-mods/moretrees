@@ -1,3 +1,11 @@
+-- Boilerplate to support localized strings if intllib mod is installed.
+local S
+if (minetest.get_modpath("intllib")) then
+  dofile(minetest.get_modpath("intllib").."/intllib.lua")
+  S = intllib.Getter(minetest.get_current_modname())
+else
+  S = function ( s ) return s end
+end
 
 for i in ipairs(moretrees.treelist) do
 	local treename = moretrees.treelist[i][1]
@@ -50,43 +58,43 @@ minetest.register_craft({
 -- Food recipes!
 
 minetest.register_craftitem("moretrees:coconut_milk", {
-	description = "Coconut Milk",
+	description = S("Coconut Milk"),
 	inventory_image = "moretrees_coconut_milk_inv.png",
 	wield_image = "moretrees_coconut_milk.png",
 	on_use = minetest.item_eat(2),
 })
 
 minetest.register_craftitem("moretrees:raw_coconut", {
-	description = "Raw Coconut",
+	description = S("Raw Coconut"),
 	inventory_image = "moretrees_raw_coconut.png",
 	on_use = minetest.item_eat(4),
 })
 
 minetest.register_craftitem("moretrees:acorn_muffin_batter", {
-	description = "Acorn Muffin batter",
+	description = S("Acorn Muffin batter"),
 	inventory_image = "moretrees_acorn_muffin_batter.png",
 })
 
 minetest.register_craftitem("moretrees:acorn_muffin", {
-	description = "Acorn Muffin",
+	description = S("Acorn Muffin"),
 	inventory_image = "moretrees_acorn_muffin.png",
 	on_use = minetest.item_eat(4),
 })
 
 minetest.register_craftitem("moretrees:spruce_nuts", {
-	description = "Roasted Spruce Cone Nuts",
+	description = S("Roasted Spruce Cone Nuts"),
 	inventory_image = "moretrees_spruce_nuts.png",
 	on_use = minetest.item_eat(1),
 })
 
 minetest.register_craftitem("moretrees:pine_nuts", {
-	description = "Roasted Pine Cone Nuts",
+	description = S("Roasted Pine Cone Nuts"),
 	inventory_image = "moretrees_pine_nuts.png",
 	on_use = minetest.item_eat(1),
 })
 
 minetest.register_craftitem("moretrees:fir_nuts", {
-	description = "Roasted Fir Cone Nuts",
+	description = S("Roasted Fir Cone Nuts"),
 	inventory_image = "moretrees_fir_nuts.png",
 	on_use = minetest.item_eat(1),
 })
