@@ -186,7 +186,7 @@ for i in ipairs(moretrees.treelist) do
 					"moretrees_"..treename.."_trunk_top.png",
 					"moretrees_"..treename.."_trunk.png"
 				},
-				treedesc.." Trunk",
+				S(treedesc.." Trunk"),
 				treename.."_trunk",
 				0
 			)
@@ -200,7 +200,7 @@ for i in ipairs(moretrees.treelist) do
 					"moretrees_"..treename.."_trunk_top.png",
 					"moretrees_"..treename.."_trunk.png"
 				},
-				treedesc.." Trunk",
+				S(treedesc.." Trunk"),
 				treename.."_trunk",
 				0
 			)
@@ -214,7 +214,7 @@ for i in ipairs(moretrees.treelist) do
 					"moretrees_"..treename.."_trunk_top.png",
 					"moretrees_"..treename.."_trunk.png"
 				},
-				treedesc.." Trunk",
+				S(treedesc.." Trunk"),
 				treename.."_trunk",
 				0
 			)
@@ -228,7 +228,7 @@ for i in ipairs(moretrees.treelist) do
 					"moretrees_"..treename.."_trunk_top.png",
 					"moretrees_"..treename.."_trunk.png"
 				},
-				treedesc.." Trunk",
+				S(treedesc.." Trunk"),
 				treename.."_trunk",
 				0
 			)
@@ -239,7 +239,7 @@ for i in ipairs(moretrees.treelist) do
 				"moretrees:"..treename.."_planks",
 				{ snappy=1,choppy=2,oddly_breakable_by_hand=2,flammable=3, not_in_creative_inventory=1, wood_stair=1 },
 				{ "moretrees_"..treename.."_wood.png" },
-				treedesc.." Planks",
+				S(treedesc.." Planks"),
 				treename.."_planks",
 				0
 			)
@@ -250,7 +250,7 @@ for i in ipairs(moretrees.treelist) do
 				"moretrees:"..treename.."_planks",
 				{ snappy=1,choppy=2,oddly_breakable_by_hand=2,flammable=3, not_in_creative_inventory=1, wood_slab=1 },
 				{ "moretrees_"..treename.."_wood.png" },
-				treedesc.." Planks",
+				S(treedesc.." Planks"),
 				treename.."_planks",
 				0
 			)
@@ -261,7 +261,7 @@ for i in ipairs(moretrees.treelist) do
 				"moretrees:"..treename.."_planks",
 				{ snappy=1,choppy=2,oddly_breakable_by_hand=2,flammable=3, not_in_creative_inventory=1, wood_panel=1 },
 				{ "moretrees_"..treename.."_wood.png" },
-				treedesc.." Planks",
+				S(treedesc.." Planks"),
 				treename.."_planks",
 				0
 			)
@@ -272,7 +272,7 @@ for i in ipairs(moretrees.treelist) do
 				"moretrees:"..treename.."_planks",
 				{ snappy=1,choppy=2,oddly_breakable_by_hand=2,flammable=3, not_in_creative_inventory=1, wood_micro=1 },
 				{ "moretrees_"..treename.."_wood.png" },
-				treedesc.." Planks",
+				S(treedesc.." Planks"),
 				treename.."_planks",
 				0
 			)
