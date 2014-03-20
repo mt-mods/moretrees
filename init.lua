@@ -44,15 +44,13 @@ else
 end
 
 -- Boilerplate to support localized strings if intllib mod is installed.
-
 local S
-if moretrees.intllib_modpath then
-    dofile(moretrees.intllib_modpath.."/intllib.lua")
-    S = intllib.Getter(minetest.get_current_modname())
+if (minetest.get_modpath("intllib")) then
+  dofile(minetest.get_modpath("intllib").."/intllib.lua")
+  S = intllib.Getter(minetest.get_current_modname())
 else
-    S = function ( s ) return s end
+  S = function ( s ) return s end
 end
-moretrees.gettext = S
 
 -- infinite stacks checking
 
@@ -306,4 +304,4 @@ function moretrees:grow_fir_snow(pos)
 	minetest.spawn_tree(pos,moretrees.fir_model)
 end
 
-print("[Moretrees] Loaded (2013-02-11)")
+print(S("[Moretrees] Loaded (2013-02-11)"))
