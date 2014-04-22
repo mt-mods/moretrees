@@ -483,6 +483,8 @@ minetest.register_alias("technic:rubber_tree_sapling", "moretrees:rubber_tree_sa
 
 minetest.register_alias("default:junglesapling","moretrees:jungletree_sapling")
 minetest.register_alias("moretrees:jungletree_trunk_sideways", "moreblocks:horizontal_jungle_tree")
+minetest.register_alias("moretrees:jungletree_trunk", "default:jungletree")
+minetest.register_alias("moretrees:jungletree_planks", "default:junglewood")
 
 minetest.register_alias("jungletree:leaves_green", "moretrees:jungletree_leaves_green")
 minetest.register_alias("jungletree:leaves_red", "moretrees:jungletree_leaves_red")
