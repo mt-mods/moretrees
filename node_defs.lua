@@ -341,7 +341,7 @@ minetest.register_node("moretrees:fir_leaves_bright", {
 		max_items = 1,
 		items = {
 			{items = {'moretrees:fir_sapling'}, rarity = 100 },
-			{items = {'moretrees:fir_leaves'} }
+			{items = {'moretrees:fir_leaves_bright'} }
 		}
 	},
 	sounds = default.node_sound_leaves_defaults()
