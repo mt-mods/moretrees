@@ -80,3 +80,8 @@ moretrees.firs_remove_chance		= 150
 
 moretrees.sapling_interval		= 500
 moretrees.sapling_chance		= 20
+
+-- If this variable is set to true, drop leaves out as entities during leaf
+-- decay, rather than just disappearing them.
+
+moretrees.decay_leaves_as_items = true

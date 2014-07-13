@@ -4,7 +4,8 @@
 local process_drops = function(pos, name)
 	local drops = minetest.get_node_drops(name)
 	for _,dropitem in ipairs(drops) do
-		if dropitem ~= name then
+		if dropitem ~= name
+		  or (string.find(name, "leaves") and moretrees.decay_leaves_as_items) then
 			local newpos = {
 						x=pos.x + math.random() - 0.5,
 						y=pos.y + math.random() - 0.5,
