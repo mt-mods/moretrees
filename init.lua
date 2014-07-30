@@ -60,17 +60,6 @@ else
 	moretrees.expect_infinite_stacks = true
 end
 
--- node clone, for redefining stuff
-
-function moretrees:clone_node(name)
-	node2={}
-	node=minetest.registered_nodes[name]
-	for k,v in pairs(node) do
-		node2[k]=v
-	end
-	return node2
-end
-
 -- tables, load other files
 
 moretrees.cutting_tools = {

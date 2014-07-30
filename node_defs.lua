@@ -38,37 +38,45 @@ if moretrees.plantlike_leaves then
 	moretrees_plantlike_leaves_visual_scale = 1.189
 end
 
-local new_default_leaves = moretrees:clone_node("default:leaves")
-	if moretrees.enable_default_leafdecay then
-		new_default_leaves.groups = {snappy=3, flammable=2, leaves=1}
-	end
-	if moretrees.plantlike_leaves then
-		new_default_leaves.inventory_image = minetest.inventorycube("default_leaves.png")
-		new_default_leaves.drawtype = "plantlike"
-		new_default_leaves.visual_scale = moretrees_plantlike_leaves_visual_scale
-		new_default_leaves.tiles = {"default_leaves_plantlike.png"}
-	else
-		new_default_leaves.waving = 1
-	end
-	if moretrees.enable_default_leafdecay or moretrees.plantlike_leaves then
-		minetest.register_node(":default:leaves", new_default_leaves)
-	end
+-- redefine default leaves to handle plantlike and/or leaf decay options
 
-local new_default_jungleleaves = moretrees:clone_node("default:jungleleaves")
-	if moretrees.enable_default_leafdecay then
-		new_default_jungleleaves.groups = {snappy=3, flammable=2, leaves=1}
-	end
-	if moretrees.plantlike_leaves then
-		new_default_jungleleaves.inventory_image = minetest.inventorycube("default_jungleleaves.png")
-		new_default_jungleleaves.drawtype = "plantlike"
-		new_default_jungleleaves.visual_scale = moretrees_plantlike_leaves_visual_scale
-		new_default_jungleleaves.tiles = {"default_jungleleaves_plantlike.png"}
-	else
-		new_default_jungleleaves.waving = 1
-	end
-	if moretrees.enable_default_leafdecay or moretrees.plantlike_leaves then
-		minetest.register_node(":default:jungleleaves", new_default_jungleleaves)
-	end
+if moretrees.enable_default_leafdecay then
+	minetest.override_item("default:leaves", {
+		groups = { snappy = 3, flammable = 2, leaves = 1 }
+	})
+end
+if moretrees.plantlike_leaves then
+	minetest.override_item("default:leaves", {
+		inventory_image = minetest.inventorycube("default_leaves.png"),
+		drawtype = "plantlike",
+		visual_scale = 1.189,
+		tiles = { "default_leaves_plantlike.png" }
+	})
+else
+	minetest.override_item("default:leaves", {
+		waving = 1
+	})
+end
+
+-- redefine default jungle leaves for same
+
+if moretrees.enable_default_leafdecay then
+	minetest.override_item("default:jungleleaves", {
+		groups = { snappy = 3, flammable = 2, leaves = 1 }
+	})
+end
+if moretrees.plantlike_leaves then
+	minetest.override_item("default:jungleleaves", {
+		inventory_image = minetest.inventorycube("default_jungleleaves.png"),
+		drawtype = "plantlike",
+		visual_scale = 1.189,
+		tiles = { "default_jungleleaves_plantlike.png" }
+	})
+else
+	minetest.override_item("default:jungleleaves", {
+		waving = 1
+	})
+end
 
 for i in ipairs(moretrees.treelist) do
 	local treename = moretrees.treelist[i][1]
@@ -348,9 +356,9 @@ minetest.register_node("moretrees:fir_leaves_bright", {
 })
 
 if moretrees.enable_redefine_apple then
-	local new_default_apple = moretrees:clone_node("default:apple")
-		new_default_apple.groups.attached_node = 1
-	minetest.register_node(":default:apple", new_default_apple)
+	minetest.override_item("default:apple",
+		{groups = { fleshy=3, dig_immediate=3, flammable=2, leafdecay=3, leafdecay_drop=1, attached_node = 1}
+	})
 end
 
 table.insert(moretrees.avoidnodes, "default:jungletree")
