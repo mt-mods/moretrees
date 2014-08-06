@@ -408,6 +408,7 @@ minetest.register_abm({
 
 minetest.register_alias("technic:rubber_tree_full",      "moretrees:rubber_tree_trunk")
 minetest.register_alias("farming_plus:rubber_tree_full", "moretrees:rubber_tree_trunk")
+minetest.register_alias("farming:rubber_tree_full", "moretrees:rubber_tree_trunk")
 
 minetest.register_alias("technic:rubber_leaves",      "moretrees:rubber_tree_leaves")
 minetest.register_alias("farming_plus:rubber_leaves", "moretrees:rubber_tree_leaves")
