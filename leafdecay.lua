@@ -19,7 +19,7 @@ end
 if moretrees.enable_leafdecay then
 	for i in ipairs(moretrees.treelist) do
 		local treename = moretrees.treelist[i][1]
-		if treename ~= "jungletree" and treename ~= "fir" then
+		if treename ~= "jungletree" and treename ~= "fir" and treename ~= "palm" then
 			minetest.register_abm({
 				nodenames = "moretrees:"..treename.."_leaves",
 				interval = moretrees.leafdecay_delay,
