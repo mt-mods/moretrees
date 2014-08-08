@@ -25,8 +25,7 @@ if moretrees.enable_leafdecay then
 				interval = moretrees.leafdecay_delay,
 				chance = moretrees.leafdecay_chance,
 				action = function(pos, node, active_object_count, active_object_count_wider)
-					if minetest.find_node_near(pos, moretrees.leafdecay_radius, "moretrees:"..treename.."_trunk") then return end
-					if minetest.find_node_near(pos, moretrees.leafdecay_radius, "ignore") then return end
+					if minetest.find_node_near(pos, moretrees.leafdecay_radius, { "ignore", "moretrees:"..treename.."_trunk" }) then return end
 					process_drops(pos, node.name)
 					minetest.remove_node(pos)
 					nodeupdate(pos)
@@ -40,8 +39,7 @@ if moretrees.enable_leafdecay then
 		interval = moretrees.leafdecay_delay,
 		chance = moretrees.leafdecay_chance,
 		action = function(pos, node, active_object_count, active_object_count_wider)
-			if minetest.find_node_near(pos, moretrees.leafdecay_radius, {"default:jungletree", "moretrees:jungletree_trunk"}) then return end
-			if minetest.find_node_near(pos, moretrees.leafdecay_radius, "ignore") then return end
+			if minetest.find_node_near(pos, moretrees.leafdecay_radius, {"ignore", "default:jungletree", "moretrees:jungletree_trunk"}) then return end
 			process_drops(pos, node.name)
 			minetest.remove_node(pos)
 			nodeupdate(pos)
@@ -53,8 +51,7 @@ if moretrees.enable_leafdecay then
 		interval = moretrees.leafdecay_delay,
 		chance = moretrees.leafdecay_chance,
 		action = function(pos, node, active_object_count, active_object_count_wider)
-			if minetest.find_node_near(pos, moretrees.leafdecay_radius, "moretrees:fir_trunk") then return end
-			if minetest.find_node_near(pos, moretrees.leafdecay_radius, "ignore") then return end
+			if minetest.find_node_near(pos, moretrees.leafdecay_radius, { "ignore", "moretrees:fir_trunk" }) then return end
 				process_drops(pos, node.name)
 				minetest.remove_node(pos)
 				nodeupdate(pos)
@@ -66,8 +63,7 @@ if moretrees.enable_leafdecay then
 		interval = moretrees.leafdecay_delay,
 		chance = moretrees.leafdecay_chance,
 		action = function(pos, node, active_object_count, active_object_count_wider)
-			if minetest.find_node_near(pos, moretrees.palm_leafdecay_radius, "moretrees:palm_trunk") then return end
-			if minetest.find_node_near(pos, moretrees.palm_leafdecay_radius, "ignore") then return end
+			if minetest.find_node_near(pos, moretrees.palm_leafdecay_radius, { "ignore", "moretrees:palm_trunk" }) then return end
 				process_drops(pos, node.name)
 				minetest.remove_node(pos)
 				nodeupdate(pos)
@@ -82,8 +78,7 @@ if moretrees.enable_default_leafdecay then
 		interval = moretrees.default_leafdecay_delay,
 		chance = moretrees.default_leafdecay_chance,
 		action = function(pos, node, active_object_count, active_object_count_wider)
-			if minetest.find_node_near(pos, moretrees.default_leafdecay_radius, "default:tree") then return end
-			if minetest.find_node_near(pos, moretrees.default_leafdecay_radius, "ignore") then return end
+			if minetest.find_node_near(pos, moretrees.default_leafdecay_radius, { "ignore", "default:tree" }) then return end
 			process_drops(pos, node.name)
 			minetest.remove_node(pos)
 			nodeupdate(pos)
@@ -98,8 +93,7 @@ if moretrees.enable_default_jungle_leafdecay then
 		interval = moretrees.default_jungle_leafdecay_delay,
 		chance = moretrees.default_jungle_leafdecay_chance,
 		action = function(pos, node, active_object_count, active_object_count_wider)
-			if minetest.find_node_near(pos, moretrees.default_jungle_leafdecay_radius, "default:jungletree") then return end
-			if minetest.find_node_near(pos, moretrees.default_jungle_leafdecay_radius, "ignore") then return end
+			if minetest.find_node_near(pos, moretrees.default_jungle_leafdecay_radius, { "ignore", "default:jungletree" }) then return end
 			process_drops(pos, node.name)
 			minetest.remove_node(pos)
 			nodeupdate(pos)
