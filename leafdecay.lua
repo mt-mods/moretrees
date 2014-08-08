@@ -52,9 +52,9 @@ if moretrees.enable_leafdecay then
 		chance = moretrees.leafdecay_chance,
 		action = function(pos, node, active_object_count, active_object_count_wider)
 			if minetest.find_node_near(pos, moretrees.leafdecay_radius, { "ignore", "moretrees:fir_trunk" }) then return end
-				process_drops(pos, node.name)
-				minetest.remove_node(pos)
-				nodeupdate(pos)
+			process_drops(pos, node.name)
+			minetest.remove_node(pos)
+			nodeupdate(pos)
 		end
 	})
 
@@ -64,9 +64,9 @@ if moretrees.enable_leafdecay then
 		chance = moretrees.leafdecay_chance,
 		action = function(pos, node, active_object_count, active_object_count_wider)
 			if minetest.find_node_near(pos, moretrees.palm_leafdecay_radius, { "ignore", "moretrees:palm_trunk" }) then return end
-				process_drops(pos, node.name)
-				minetest.remove_node(pos)
-				nodeupdate(pos)
+			process_drops(pos, node.name)
+			minetest.remove_node(pos)
+			nodeupdate(pos)
 		end
 	})
 end
