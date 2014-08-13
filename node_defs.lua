@@ -387,10 +387,6 @@ minetest.register_node("moretrees:rubber_tree_trunk_empty", {
 	sounds = default.node_sound_wood_defaults(),
 	paramtype2 = "facedir",
 	on_place = minetest.rotate_node,
-	after_place_node = function(pos, placer, itemstack)
- 			local meta = minetest.get_meta(pos)
-			meta:set_int("placed", 1)
-	end
 })
 
 minetest.register_abm({
