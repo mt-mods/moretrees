@@ -160,7 +160,9 @@ end
 
 if moretrees.enable_fir then
 	plantslib:register_generate_plant(moretrees.fir_biome, moretrees.spawn_fir_object)
-	plantslib:register_generate_plant(moretrees.fir_biome_snow, moretrees.spawn_fir_snow_object)
+	if minetest.get_modpath("snow") then
+		plantslib:register_generate_plant(moretrees.fir_biome_snow, moretrees.spawn_fir_snow_object)
+	end
 end
 
 -- Code to spawn a birch tree
