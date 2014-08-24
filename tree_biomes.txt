@@ -13,7 +13,11 @@ birch		+10 to +15	-20 to +10	  n/a		n/a	dirt_with grass		334		 5
 spruce		 above +20	-20 to +10	  n/a		n/a	dirt_with grass		335		10
 pine		    n/a		    n/a		water, 15	   5	dirt_with grass		336		10
 willow		- 5 to + 5	    n/a		water, 15	   5	dirt_with grass		337		20
+acacia		    n/a		    n/a		  n/a		n/a	dirt_with_grass,
+									desert_sand		n/a		15
 rubber		- 5 to + 5	 above +32	water, 15	  10	dirt_with_grass		338		20
 
 beech (default)	    n/a		    n/a		  n/a		n/a	dirt_with_grass		2		10
 
+Notes:  acacia trees depend on humidity as their primary control, and they don't use the fertile ground option.  They grow near
+the edges of a desert biome, occasionally into the grass beyond.
