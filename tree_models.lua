@@ -9,8 +9,8 @@ moretrees.beech_model={
 	angle=30,
 	iterations=2,
 	random_level=0,
-	trunk_type="single";
-	thin_branches=true;
+	trunk_type="single",
+	thin_branches=true
 }
 
 moretrees.apple_tree_model={
@@ -23,7 +23,7 @@ moretrees.apple_tree_model={
 	iterations=2,
 	random_level=0,
 	trunk_type="single",
-	thin_branches=true;
+	thin_branches=true,
 	fruit="default:apple",
 	fruit_chance=15,
 }
@@ -37,8 +37,8 @@ moretrees.oak_model={
 	angle=30,
 	iterations=5,
 	random_level=2,
-	trunk_type="crossed";
-	thin_branches=false;
+	trunk_type="crossed",
+	thin_branches=false,
 	fruit="moretrees:acorn",
 	fruit_chance=3,
 }
@@ -167,6 +167,37 @@ moretrees.willow_model={
 	random_level=0,
 	trunk_type="crossed",
 	thin_branches=true
+}
+
+moretrees.acacia_model={
+	axiom="FFFFFFccccA",
+	rules_a = "[B]//[B]//[B]//[B]",
+	rules_b = "&TTTT&TT^^G&&----GGGGGG++GGG++"	-- line up with the "canvas" edge
+			.."fffffffGG++G++"					-- first layer, drawn in a zig-zag raster pattern
+			.."Gffffffff--G--"
+			.."ffffffffG++G++"
+			.."fffffffff--G--"
+			.."fffffffff++G++"
+			.."fffffffff--G--"
+			.."ffffffffG++G++"
+			.."Gffffffff--G--"
+			.."fffffffGG"
+			.."^^G&&----GGGGGGG++GGGGGG++"		-- re-align to second layer canvas edge
+			.."ffffGGG++G++"					-- second layer
+			.."GGfffff--G--"
+			.."ffffffG++G++"
+			.."fffffff--G--"
+			.."ffffffG++G++"
+			.."GGfffff--G--"
+			.."ffffGGG",
+	rules_c = "/",
+	trunk="moretrees:acacia_trunk",
+	leaves="moretrees:acacia_leaves",
+	angle=45,
+	iterations=3,
+	random_level=0,
+	trunk_type="single",
+	thin_branches=true,
 }
 
 moretrees.rubber_tree_model={

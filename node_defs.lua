@@ -10,18 +10,19 @@ end
 moretrees.avoidnodes = {}
 	
 moretrees.treelist = {
-	{"beech",	"Beech Tree"},
+	{"beech",		"Beech Tree"},
 	{"apple_tree",	"Apple Tree"},
-	{"oak",		"Oak Tree",		"acorn",	"Acorn",	{-0.2, -0.5, -0.2, 0.2, 0, 0.2}, 0.8 },
-	{"sequoia",	"Giant Sequoia"},
-	{"birch",	"Birch Tree"},
-	{"palm",	"Palm Tree",		"coconut",	"Coconut",	{-0.2, -0.5, -0.2, 0.2, 0, 0.2}, 1.0 },
-	{"spruce",	"Spruce Tree",		"spruce_cone",	"Spruce Cone",	{-0.2, -0.5, -0.2, 0.2, 0, 0.2}, 0.8 },
-	{"pine",	"Pine Tree",		"pine_cone",	"Pine Cone",	{-0.2, -0.5, -0.2, 0.2, 0, 0.2}, 0.8 },
-	{"willow",	"Willow Tree"},
+	{"oak",			"Oak Tree",			"acorn",		"Acorn",		{-0.2, -0.5, -0.2, 0.2, 0, 0.2}, 0.8 },
+	{"sequoia",		"Giant Sequoia"},
+	{"birch",		"Birch Tree"},
+	{"palm",		"Palm Tree",		"coconut",		"Coconut",		{-0.2, -0.5, -0.2, 0.2, 0, 0.2}, 1.0 },
+	{"spruce",		"Spruce Tree",		"spruce_cone",	"Spruce Cone",	{-0.2, -0.5, -0.2, 0.2, 0, 0.2}, 0.8 },
+	{"pine",		"Pine Tree",		"pine_cone",	"Pine Cone",	{-0.2, -0.5, -0.2, 0.2, 0, 0.2}, 0.8 },
+	{"willow",		"Willow Tree"},
+	{"acacia",		"Acacia Tree"},
 	{"rubber_tree",	"Rubber Tree"},
 	{"jungletree",	"Jungle Tree"},
-	{"fir",		"Douglas Fir",		"fir_cone",	"Fir Cone",	{-0.2, -0.5, -0.2, 0.2, 0, 0.2}, 0.8 },
+	{"fir",			"Douglas Fir",		"fir_cone",		"Fir Cone",		{-0.2, -0.5, -0.2, 0.2, 0, 0.2}, 0.8 },
 }
 
 local dirs1 = { 21, 20, 23, 22, 21 }
