@@ -17,7 +17,18 @@ acacia		    n/a		    n/a		  n/a		n/a	dirt_with_grass,
 									desert_sand		n/a		15
 rubber		- 5 to + 5	 above +32	water, 15	  10	dirt_with_grass		338		20
 
-beech (default)	    n/a		    n/a		  n/a		n/a	dirt_with_grass		2		10
+beech		    n/a		    n/a		  n/a		n/a	dirt_with_grass		2		10
 
-Notes:  acacia trees depend on humidity as their primary control, and they don't use the fertile ground option.  They grow near
-the edges of a desert biome, occasionally into the grass beyond.
+
+Notes:
+------
+
+Beech trees are meant to replace default trees, but are themselves disabled by default.  They grow in the same areas
+as the default ones do, and under the same conditions.
+
+Acacia trees depend on humidity as their primary control, and they don't use the fertile ground option. They grow near
+the edges of a desert biome, occasionally into the grass beyond, and anywhere else on desert sand or dirt with grass,
+where the humidity is low (but not bone dry).
+
+Fir trees appear in a snow biome only with older versions of SPlizard's Snow Biomes mod.  In more recent versions,
+these trees will not grow, due to an engine bug.
