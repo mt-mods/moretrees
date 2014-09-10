@@ -86,8 +86,22 @@ if moretrees.enable_default_leafdecay then
 	})	
 end
 
-if moretrees.enable_default_jungle_leafdecay then
+-- Decay apple tree blossoms from nature_classic mod 
+if minetest.get_modpath("nature_classic") then
+	minetest.register_abm({
+		nodenames = "moretrees:apple_blossoms",
+		interval = moretrees.default_leafdecay_delay,
+		chance = moretrees.default_leafdecay_chance,
+		action = function(pos, node, active_object_count, active_object_count_wider)
+		if minetest.find_node_near(pos, moretrees.leafdecay_radius, { "ignore", "moretrees:apple_tree_trunk" }) then return end
+			process_drops(pos, "moretrees:apple_tree_leaves")
+			minetest.remove_node(pos)
+			nodeupdate(pos)
+		end
+	})
+end
 
+if moretrees.enable_default_jungle_leafdecay then
 	minetest.register_abm({
 		nodenames = "default:jungleleaves",
 		interval = moretrees.default_jungle_leafdecay_delay,
