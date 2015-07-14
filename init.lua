@@ -239,6 +239,8 @@ function moretrees:grow_jungletree(pos)
 		moretrees.jungletree_model.rules_b = moretrees.jt_rules_b2
 	end
 
+	moretrees.jungletree_model.enable_unique_ids = true
+
 	minetest.remove_node(pos)
 	local leaves = minetest.find_nodes_in_area({x = pos.x-1, y = pos.y, z = pos.z-1}, {x = pos.x+1, y = pos.y+10, z = pos.z+1}, "default:leaves")
 	for leaf in ipairs(leaves) do
@@ -263,6 +265,7 @@ function moretrees:grow_fir(pos)
 		moretrees.fir_model.rules_b = moretrees.ct_rules_b2
 	end
 
+	moretrees.fir_model.enable_unique_ids = true
 	moretrees.fir_model.iterations = 7
 	moretrees.fir_model.random_level = 5
 
@@ -290,6 +293,7 @@ function moretrees:grow_fir_snow(pos)
 		moretrees.fir_model.rules_b = moretrees.ct_rules_b2
 	end
 
+	moretrees.fir_model.enable_unique_ids = true
 	moretrees.fir_model.iterations = 2
 	moretrees.fir_model.random_level = 2
 
@@ -300,5 +304,9 @@ function moretrees:grow_fir_snow(pos)
 	end
 	minetest.spawn_tree(pos,moretrees.fir_model)
 end
+
+minetest.register_on_punchnode(function(pos, node, puncher, pointed_thing)
+	print(dump(node.name)..": param1 = "..dump(node.param1)..", param2 = "..dump(node.param2))
+end)
 
 print(S("[Moretrees] Loaded (2013-02-11)"))

@@ -10,7 +10,8 @@ moretrees.beech_model={
 	iterations=2,
 	random_level=0,
 	trunk_type="single",
-	thin_branches=true
+	thin_branches=true,
+	enable_unique_ids = true,
 }
 
 moretrees.apple_tree_model={
@@ -26,6 +27,7 @@ moretrees.apple_tree_model={
 	thin_branches=true,
 	fruit="default:apple",
 	fruit_chance=15,
+	enable_unique_ids = true,
 }
 
 moretrees.oak_model={
@@ -41,6 +43,7 @@ moretrees.oak_model={
 	thin_branches=false,
 	fruit="moretrees:acorn",
 	fruit_chance=3,
+	enable_unique_ids = true,
 }
 
 moretrees.sequoia_model={
@@ -55,7 +58,8 @@ moretrees.sequoia_model={
 	iterations=2,
 	random_level=0,
 	trunk_type="crossed",
-	thin_branches=true
+	thin_branches=true,
+	enable_unique_ids = true,
 }
 
 moretrees.birch_model1={
@@ -70,7 +74,8 @@ moretrees.birch_model1={
 	iterations=2,
 	random_level=0,
 	trunk_type="single",
-	thin_branches=true
+	thin_branches=true,
+	enable_unique_ids = true,
 }
 
 moretrees.birch_model2={
@@ -85,7 +90,8 @@ moretrees.birch_model2={
 	iterations=2,
 	random_level=0,
 	trunk_type="single",
-	thin_branches=true
+	thin_branches=true,
+	enable_unique_ids = true,
 }
 
 moretrees.palm_model={
@@ -102,7 +108,8 @@ moretrees.palm_model={
 	trunk_type="single",
 	thin_branches=true,
 	fruit="moretrees:coconut",
-	fruit_chance=0
+	fruit_chance=0,
+	enable_unique_ids = true,
 }
 
 moretrees.spruce_model1={
@@ -119,7 +126,8 @@ moretrees.spruce_model1={
 	trunk_type="crossed",
 	thin_branches=true,
 	fruit="moretrees:spruce_cone",
-	fruit_chance=8
+	fruit_chance=8,
+	enable_unique_ids = true,
 }
 
 moretrees.spruce_model2={
@@ -135,7 +143,8 @@ moretrees.spruce_model2={
 	trunk_type="crossed",
 	thin_branches=true,
 	fruit="moretrees:spruce_cone",
-	fruit_chance=8
+	fruit_chance=8,
+	enable_unique_ids = true,
 }
 
 moretrees.pine_model={
@@ -152,7 +161,8 @@ moretrees.pine_model={
 	trunk_type="single",
 	thin_branches=true,
 	fruit="moretrees:pine_cone",
-	fruit_chance=8
+	fruit_chance=8,
+	enable_unique_ids = true,
 }
 
 moretrees.willow_model={
@@ -166,7 +176,8 @@ moretrees.willow_model={
 	iterations=2,
 	random_level=0,
 	trunk_type="crossed",
-	thin_branches=true
+	thin_branches=true,
+	enable_unique_ids = true,
 }
 
 moretrees.acacia_model={
@@ -198,6 +209,7 @@ moretrees.acacia_model={
 	random_level=0,
 	trunk_type="single",
 	thin_branches=true,
+	enable_unique_ids = true,
 }
 
 moretrees.rubber_tree_model={
@@ -210,7 +222,8 @@ moretrees.rubber_tree_model={
 	iterations=3,
 	random_level=1,
 	trunk_type="double",
-	thin_branches=true
+	thin_branches=true,
+	enable_unique_ids = true,
 }
 
 moretrees.jungletree_model={
@@ -227,7 +240,8 @@ moretrees.jungletree_model={
 	trunk_type=nil,
 	thin_branches=true,
 	fruit_chance=15,
-	fruit="vines:vine"
+	fruit="vines:vine",
+	enable_unique_ids = true,
 }
 
 moretrees.fir_model={
@@ -242,5 +256,6 @@ moretrees.fir_model={
 	trunk_type="single",
 	thin_branches=true,
 	fruit="moretrees:fir_cone",
-	fruit_chance=8
+	fruit_chance=8,
+	enable_unique_ids = true,
 }

@@ -106,7 +106,6 @@ for i in ipairs(moretrees.treelist) do
 			tiles = {"moretrees_"..treename.."_sapling.png"},
 			inventory_image = "moretrees_"..treename.."_sapling.png",
 			paramtype = "light",
-			paramtype2 = "waving",
 			walkable = false,
 			selection_box = {
 				type = "fixed",
@@ -122,7 +121,6 @@ for i in ipairs(moretrees.treelist) do
 			tiles = {"moretrees_"..treename.."_sapling.png"},
 			inventory_image = "moretrees_"..treename.."_sapling.png",
 			paramtype = "light",
-			paramtype2 = "waving",
 			walkable = false,
 			selection_box = {
 				type = "fixed",
@@ -215,9 +213,8 @@ for i in ipairs(moretrees.treelist) do
 			inventory_image = "moretrees_"..fruit..".png^[transformR180",
 			wield_image = "moretrees_"..fruit..".png^[transformR180",
 			visual_scale = vscale,
-			paramtype = "light",
-			sunlight_propagates = true,
 			walkable = false,
+			paramtype = "light",
 			selection_box = {
 				type = "fixed",
 					fixed = selbox
@@ -241,47 +238,45 @@ for i in ipairs(moretrees.treelist) do
 	table.insert(moretrees.avoidnodes, "moretrees:"..treename.."_trunk")
 
 	if moretrees.spawn_saplings then
-			table.insert(moretrees.avoidnodes, "moretrees:"..treename.."_sapling")
-			table.insert(moretrees.avoidnodes, "moretrees:"..treename.."_sapling_ongen")
+		table.insert(moretrees.avoidnodes, "moretrees:"..treename.."_sapling")
+		table.insert(moretrees.avoidnodes, "moretrees:"..treename.."_sapling_ongen")
 	end
 end
 
 -- Extra nodes for jungle trees:
 
 minetest.register_node("moretrees:jungletree_sapling", {
-        description = S("Jungle Sapling"),
-        drawtype = "plantlike",
-        visual_scale = 1.0,
-        tiles = {"default_junglesapling.png"},
-        inventory_image = "default_junglesapling.png",
-        wield_image = "default_junglesapling.png",
-        paramtype = "light",
-		paramtype2 = "waving",
-        walkable = false,
-        selection_box = {
-                type = "fixed",
-                fixed = {-0.3, -0.5, -0.3, 0.3, 0.35, 0.3}
-        },
-        groups = {snappy=2,dig_immediate=3,flammable=2,attached_node=1,sapling=1},
-        sounds = default.node_sound_leaves_defaults(),
+	description = S("Jungle Sapling"),
+	drawtype = "plantlike",
+	visual_scale = 1.0,
+	tiles = {"default_junglesapling.png"},
+	inventory_image = "default_junglesapling.png",
+	wield_image = "default_junglesapling.png",
+	paramtype = "light",
+	walkable = false,
+	selection_box = {
+		type = "fixed",
+		fixed = {-0.3, -0.5, -0.3, 0.3, 0.35, 0.3}
+	},
+	groups = {snappy=2,dig_immediate=3,flammable=2,attached_node=1,sapling=1},
+	sounds = default.node_sound_leaves_defaults(),
 })
 
 minetest.register_node("moretrees:jungletree_sapling_ongen", {
-        description = S("Jungle Sapling"),
-        drawtype = "plantlike",
-        visual_scale = 1.0,
-        tiles = {"default_junglesapling.png"},
-        inventory_image = "default_junglesapling.png",
-        wield_image = "default_junglesapling.png",
-        paramtype = "light",
-		paramtype2 = "waving",
-        walkable = false,
-        selection_box = {
-                type = "fixed",
-                fixed = {-0.3, -0.5, -0.3, 0.3, 0.35, 0.3}
-        },
-        groups = {snappy=2,dig_immediate=3,flammable=2,attached_node=1,not_in_creative_inventory=1,sapling=1},
-        sounds = default.node_sound_leaves_defaults(),
+	description = S("Jungle Sapling"),
+	drawtype = "plantlike",
+	visual_scale = 1.0,
+	tiles = {"default_junglesapling.png"},
+	inventory_image = "default_junglesapling.png",
+	wield_image = "default_junglesapling.png",
+	paramtype = "light",
+	walkable = false,
+	selection_box = {
+		type = "fixed",
+		fixed = {-0.3, -0.5, -0.3, 0.3, 0.35, 0.3}
+	},
+	groups = {snappy=2,dig_immediate=3,flammable=2,attached_node=1,not_in_creative_inventory=1,sapling=1},
+	sounds = default.node_sound_leaves_defaults(),
 	drop = "moretrees:jungletree_sapling"
 })
 
@@ -357,10 +352,10 @@ table.insert(moretrees.avoidnodes, "moretrees:fir_trunk")
 table.insert(moretrees.avoidnodes, "default:tree")
 
 if moretrees.spawn_saplings then
-		table.insert(moretrees.avoidnodes, "snow:sapling_pine")
-		table.insert(moretrees.avoidnodes, "default:junglesapling")
-		table.insert(moretrees.avoidnodes, "moretrees:jungle_tree_sapling")
-		table.insert(moretrees.avoidnodes, "moretrees:jungle_tree_sapling_ongen")
+	table.insert(moretrees.avoidnodes, "snow:sapling_pine")
+	table.insert(moretrees.avoidnodes, "default:junglesapling")
+	table.insert(moretrees.avoidnodes, "moretrees:jungle_tree_sapling")
+	table.insert(moretrees.avoidnodes, "moretrees:jungle_tree_sapling_ongen")
 end
 
 -- "empty" (tapped) rubber tree nodes
