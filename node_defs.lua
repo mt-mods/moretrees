@@ -76,7 +76,9 @@ for i in ipairs(moretrees.treelist) do
 	local selbox = moretrees.treelist[i][5]
 	local vscale = moretrees.treelist[i][6]
 
-	if treename ~= "jungletree" then -- the default game provides jungle tree trunk/planks nodes.
+	if treename ~= "jungletree"  -- the default game provides jungle tree, acacia, and pine trunk/planks nodes.
+		and treename ~= "acacia"
+		and treename ~= "pine" then
 
 		minetest.register_node("moretrees:"..treename.."_trunk", {
 			description = S(treedesc.." Trunk"),
@@ -451,3 +453,12 @@ minetest.register_alias("conifers:leaves", "moretrees:fir_leaves")
 minetest.register_alias("conifers:leaves_special", "moretrees:fir_leaves_bright")
 minetest.register_alias("conifers:sapling", "moretrees:fir_sapling")
 
+minetest.register_alias("moretrees:acacia_trunk", "default:acacia_tree")
+minetest.register_alias("moretrees:acacia_planks", "default:acacia_wood")
+minetest.register_alias("moretrees:acacia_sapling", "default:acacia_sapling")
+minetest.register_alias("moretrees:acacia_leaves", "default:acacia_leaves")
+
+minetest.register_alias("moretrees:pine_trunk", "default:pinetree")
+minetest.register_alias("moretrees:pine_planks", "default:pinewood")
+minetest.register_alias("moretrees:pine_sapling", "default:pine_sapling")
+minetest.register_alias("moretrees:pine_leaves", "default:pine_needles")
