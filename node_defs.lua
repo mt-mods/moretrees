@@ -173,37 +173,63 @@ for i in ipairs(moretrees.treelist) do
 			},
 		})
 
-		if minetest.get_modpath("moreblocks") and moretrees.enable_stairsplus then
+		if moretrees.enable_stairs then
+			if minetest.get_modpath("moreblocks") then
 
---			stairsplus:register_all(modname, subname, recipeitem, {fields})
+	--			stairsplus:register_all(modname, subname, recipeitem, {fields})
 
-			stairsplus:register_all(
-				"moretrees",
-				treename.."_trunk",
-				"moretrees:"..treename.."_trunk", 
-				{
-					groups = { snappy=1, choppy=2, oddly_breakable_by_hand=1, flammable=2, not_in_creative_inventory=1 },
-					tiles =	{
-						"moretrees_"..treename.."_trunk_top.png",
+				stairsplus:register_all(
+					"moretrees",
+					treename.."_trunk",
+					"moretrees:"..treename.."_trunk", 
+					{
+						groups = { snappy=1, choppy=2, oddly_breakable_by_hand=1, flammable=2, not_in_creative_inventory=1 },
+						tiles =	{
+							"moretrees_"..treename.."_trunk_top.png",
+							"moretrees_"..treename.."_trunk_top.png",
+							"moretrees_"..treename.."_trunk.png"
+						},
+						description = S(treedesc.." Trunk"),
+						drop = treename.."_trunk",
+					}
+				)
+
+				stairsplus:register_all(
+					"moretrees",
+					treename.."_planks",
+					"moretrees:"..treename.."_planks",
+					{
+						groups = { snappy=1, choppy=2, oddly_breakable_by_hand=2, flammable=3, not_in_creative_inventory=1 },
+						tiles = { "moretrees_"..treename.."_wood.png" },
+						description = S(treedesc.." Planks"),
+						drop = treename.."_planks",
+					}
+				)
+			elseif minetest.get_modpath("stairs") then
+				stairs.register_stair_and_slab(
+					"moretrees_"..treename.."_trunk",
+					"moretrees:"..treename.."_trunk",
+					{ snappy=1, choppy=2, oddly_breakable_by_hand=1, flammable=2 },
+					{	"moretrees_"..treename.."_trunk_top.png",
 						"moretrees_"..treename.."_trunk_top.png",
 						"moretrees_"..treename.."_trunk.png"
 					},
-					description = S(treedesc.." Trunk"),
-					drop = treename.."_trunk",
-				}
-			)
+					S(treedesc.." Trunk Stair"),
+					S(treedesc.." Trunk Slab"),
+					default.node_sound_wood_defaults()
+				)
 
-			stairsplus:register_all(
-				"moretrees",
-				treename.."_planks",
-				"moretrees:"..treename.."_planks",
-				{
- 					groups = { snappy=1, choppy=2, oddly_breakable_by_hand=2, flammable=3, not_in_creative_inventory=1 },
-					tiles = { "moretrees_"..treename.."_wood.png" },
-					description = S(treedesc.." Planks"),
-					drop = treename.."_planks",
-				}
-			)
+				stairs.register_stair_and_slab(
+					"moretrees_"..treename.."_planks",
+					"moretrees:"..treename.."_planks",
+					{ snappy=1, choppy=2, oddly_breakable_by_hand=2, flammable=3 },
+					{ "moretrees_"..treename.."_wood.png" },
+					S(treedesc.." Planks Stair"),
+					S(treedesc.." Planks Slab"),
+					default.node_sound_wood_defaults()
+				)
+
+			end
 		end
 	end
 
