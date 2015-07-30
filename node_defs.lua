@@ -374,9 +374,9 @@ minetest.register_node("moretrees:fir_leaves_bright", {
 })
 
 if moretrees.enable_redefine_apple then
-	minetest.override_item("default:apple",
-		{groups = { fleshy=3, dig_immediate=3, flammable=2, leafdecay=3, leafdecay_drop=1, attached_node = 1}
-	})
+	local appledef = moretrees.clone_node("default:apple")
+	appledef.groups.attached_node = 1
+	minetest.register_node(":default:apple", appledef)
 end
 
 table.insert(moretrees.avoidnodes, "default:jungletree")

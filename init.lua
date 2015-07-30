@@ -52,6 +52,17 @@ else
 end
 moretrees.intllib = S
 
+-- clone node
+
+function moretrees.clone_node(name)
+	local node2 = {}
+	local node = minetest.registered_nodes[name]
+	for k,v in pairs(node) do
+		node2[k]=v
+	end
+	return node2
+end
+
 -- infinite stacks checking
 
 if minetest.get_modpath("unified_inventory") or not minetest.setting_getbool("creative_mode") then
