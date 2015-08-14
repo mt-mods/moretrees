@@ -383,6 +383,12 @@ minetest.register_abm({
 	end,
 })
 
+-- To get Moretrees to generate its own jungle trees among the default mapgen
+-- we need our own copy of that node, which moretrees will match against.
+
+local jungle_tree = moretrees.clone_node("default:jungletree")
+minetest.register_node("moretrees:jungletree_trunk", jungle_tree)
+
 -- For compatibility with old nodes, recently-changed nodes, and default nodes
 
 minetest.register_alias("technic:rubber_tree_full",				"moretrees:rubber_tree_trunk")
@@ -411,7 +417,6 @@ minetest.register_alias("conifers:sapling",						"moretrees:fir_sapling")
 
 minetest.register_alias("moretrees:jungletree_sapling",			"default:junglesapling")
 minetest.register_alias("moretrees:jungletree_trunk_sideways",	"moreblocks:horizontal_jungle_tree")
-minetest.register_alias("moretrees:jungletree_trunk",			"default:jungletree")
 minetest.register_alias("moretrees:jungletree_planks",			"default:junglewood")
 minetest.register_alias("moretrees:jungletree_leaves_green",	"default:jungletree_leaves")
 
