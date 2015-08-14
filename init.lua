@@ -13,8 +13,7 @@
 -- by RealBadAngel.
 --
 -- License: WTFPL for all parts (code and textures, including those copied
--- from the jungletree and conifers mods) except the default jungle tree trunk
--- texture, which is CC-By-SA.
+-- from the the old jungletree and conifers mods).
 
 moretrees = {}
 
