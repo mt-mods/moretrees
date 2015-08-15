@@ -66,11 +66,14 @@ for i in ipairs(moretrees.treelist) do
 	local fruitdesc = moretrees.treelist[i][4]
 	local selbox = moretrees.treelist[i][5]
 	local vscale = moretrees.treelist[i][6]
-	local saptext = moretrees.treelist[i][7] or "moretrees_"..treename.."_sapling.png"
+
+	local saptex = moretrees.treelist[i][7]
 
 	if treename ~= "jungletree"  -- the default game provides jungle tree, acacia, and pine trunk/planks nodes.
 		and treename ~= "acacia"
 		and treename ~= "pine" then
+
+		saptex = "moretrees_"..treename.."_sapling.png"
 
 		minetest.register_node("moretrees:"..treename.."_trunk", {
 			description = S(treedesc.." Trunk"),
@@ -214,8 +217,8 @@ for i in ipairs(moretrees.treelist) do
 	minetest.register_node("moretrees:"..treename.."_sapling_ongen", {
 		description = S(treedesc.." Sapling"),
 		drawtype = "plantlike",
-		tiles = {saptext},
-		inventory_image = saptext,
+		tiles = {saptex},
+		inventory_image = saptex,
 		paramtype = "light",
 		paramtype2 = "waving",
 		walkable = false,
@@ -290,7 +293,7 @@ for color = 1, #jungleleaves do
 		tiles = {"moretrees_jungletree_leaves_"..jungleleaves[color]..".png"},
 		inventory_image = moretrees_leaves_inventory_image,
 		paramtype = "light",
-		groups = {snappy = 3, flammable = 2, leaves = 1, moretrees_leaves = 1, leafdecay = 3 },
+		groups = {snappy = 3, flammable = 2, leaves = 1, moretrees_leaves = 1, leafdecay = moretrees.leafdecay_radius },
 		drop = {
 			max_items = 1,
 			items = {
@@ -318,7 +321,7 @@ minetest.register_node("moretrees:fir_leaves_bright", {
 	tiles = { "moretrees_fir_leaves_bright.png" },
 	inventory_image = moretrees_leaves_inventory_image,
 	paramtype = "light",
-	groups = {snappy = 3, flammable = 2, leaves = 1, moretrees_leaves = 1, leafdecay = 3 },
+	groups = {snappy = 3, flammable = 2, leaves = 1, moretrees_leaves = 1, leafdecay = moretrees.leafdecay_radius },
 	drop = {
 		max_items = 1,
 		items = {
