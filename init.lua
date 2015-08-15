@@ -89,7 +89,6 @@ dofile(modpath.."/node_defs.lua")
 dofile(modpath.."/biome_defs.lua")
 dofile(modpath.."/saplings.lua")
 dofile(modpath.."/crafts.lua")
-dofile(modpath.."/leafdecay.lua")
 
 -- tree spawning setup
 
