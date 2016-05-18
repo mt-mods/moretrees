@@ -6,6 +6,7 @@ moretrees.enable_apple_tree		= true
 moretrees.enable_oak			= true
 moretrees.enable_sequoia		= true
 moretrees.enable_palm			= true
+moretrees.enable_date_palm		= true
 moretrees.enable_cedar			= true
 moretrees.enable_rubber_tree	= true
 moretrees.enable_willow			= true
@@ -56,6 +57,30 @@ moretrees.palm_leafdecay_radius		= 10
 moretrees.firs_remove_default_trees	= false
 moretrees.firs_remove_interval		= 2
 moretrees.firs_remove_chance		= 150
+
+-- Date palm settings
+
+moretrees.dates_regrow			= true
+moretrees.dates_female_percent		= 57		-- Ratio of female to male trees - tune this to improve # of generated trees that actually bear fruit
+							-- ~57% gives near optimal results for groups of 3 random trees, while it is only slightly suboptimal
+							-- for groups of 2 and 4 random trees (~2% less fruit than optimal).
+							-- Optimal values per group size: 2: 50%, 3: 57.78%, 4: 63%, 5: 66.9%, 6: 69.9%, [...], 12: 79.8%
+							-- So 57% is optimal for small groups of trees. As larger groups have more female palms anyway, a
+							-- less than optimal proportion of female to male trees is not a problem.
+moretrees.dates_pollination_distance	= 120
+moretrees.dates_blossom_search_time_treshold = 1000	-- If average male blossom search time exceeds this, start limiting the search load.
+moretrees.dates_blossom_search_iload = 10		-- Inverse fraction of CPU time that male blossom searching search may consume.
+							-- As searching a large area (radius: dates_pollination_distance/3 per attempt) can cause lag,
+							-- this limits the search frequency server-wide so that the impact on server lag is minimised
+							-- For personal servers, this can be set lower, or even to 1 or 0 (0 disables load limiting).
+							-- Obtain the current average search time using /dates_stats
+moretrees.dates_flower_interval		= 59
+moretrees.dates_flower_chance		= 181
+moretrees.dates_grow_interval		= 2 * moretrees.dates_flower_interval * moretrees.dates_flower_chance
+							-- As date palms have a high yield, don't grow dates too fast
+							-- The actual interval will vary randomly between 67% and 133% of this value.
+							-- 2 * 59 * 181 ~ 6 hours. So by default flowers become dates in about one (human) day.
+moretrees.dates_item_drop_ichance	= 10 		-- inverse probability of ripe dates dropping as items (instead of disappearing)
 
 -- Sapling settings
 

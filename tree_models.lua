@@ -105,6 +105,31 @@ moretrees.palm_model={
 	fruit_chance=0
 }
 
+-- Dates can't be generated as fruit, because there is no support for the
+-- special (male and female) fruit trunks that allow dates to regrow at the
+-- correct position in the tree.
+-- So, a generic fruit trunk is spawned. An ABM will convert it to a male
+-- or female fruit trunk, and generate the actual dates.
+moretrees.date_palm_model={
+	axiom="TTTTddddddddddccccccccccRT[TGGGGT]"..
+		"ccccc[&&a]ccccc[&&a]ccccc[&&a]ccccc[&&a]ccccc[&&a]ccccc[&&a]"..
+		"GGccccc[&a]ccccc[&a]ccccc[&a]ccccc[&a]ccccc[&a]ccccc[&a]"..
+		"GGccccc[a]ccccc[a]ccccc[a]ccccc[a]ccccc[a]ccccc[a]",
+	rules_a="Gffb&bbb[++f--&ffff&ff][--f++&ffff&ff]&ff&ff&bb&bb&bb",
+	rules_b="f",
+	rules_c="/",
+	rules_d="F",
+	trunk="moretrees:date_palm_trunk",
+	leaves="moretrees:date_palm_leaves",
+	angle=18,
+	iterations=1,
+	random_level=0,
+	trunk_type="single",
+	thin_branches=false,
+	fruit="moretrees:date_palm_fruit_trunk",
+	fruit_chance=0
+}
+
 moretrees.spruce_model1={
 	axiom="FFFFFAFFFFFFBFFFFFFCFFFFFFDFFFFFF[&&&F^^FF][&&&++F^^FF][&&&++++F^^FF][&&&++++++F^^FF][&&&--F^^FF][&&&----F^^FF][FFFFf]",
 	rules_a="[&&&FFFFFF^^FFF][&&&++FFFFFF^^FFF][&&&++++FFFFFF^^FFF][&&&++++++FFFFFF^^FFF][&&&--FFFFFF^^FFF][&&&----FFFFFF^^FFF]",

@@ -4,6 +4,13 @@ Minetest mod moretrees
 All source code:
 	© 2013, Vanessa Ezekowitz <vanessaezekowitz@gmail.com>
 	Published under the terms and conditions of the WTFPL.
+Date palm code (date_palm.lua)
+	© 2016, Rogier <rogier777@gmail.com>
+	Published under the terms and conditions of the WTFPL.
+All date palm textures:
+	© 2016, Rogier <rogier777@gmail.com>
+	Published under the terms and conditions of CC-BY-SA-3.0 Unported.
+	- Three of the date palm textures are modifications of existing moretrees textures
 All sapling textures (textures/*_sapling.png):
 	© 2013, Tim Huppertz <mitroman@naturalnet.de>
 	Published under the terms and conditions of CC-BY-SA-3.0 Unported.

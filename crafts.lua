@@ -63,6 +63,12 @@ minetest.register_craftitem("moretrees:raw_coconut", {
 	on_use = minetest.item_eat(4),
 })
 
+minetest.register_craftitem("moretrees:date", {
+	description = S("Date"),
+	inventory_image = "moretrees_date.png",
+	on_use = minetest.item_eat(1),
+})
+
 minetest.register_craftitem("moretrees:acorn_muffin_batter", {
 	description = S("Acorn Muffin batter"),
 	inventory_image = "moretrees_acorn_muffin_batter.png",

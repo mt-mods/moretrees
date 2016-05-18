@@ -73,6 +73,7 @@ moretrees.cutting_tools = {
 
 dofile(modpath.."/tree_models.lua")
 dofile(modpath.."/node_defs.lua")
+dofile(modpath.."/date_palm.lua")
 dofile(modpath.."/biome_defs.lua")
 dofile(modpath.."/saplings.lua")
 dofile(modpath.."/crafts.lua")
@@ -85,6 +86,7 @@ if moretrees.spawn_saplings then
 	moretrees.spawn_oak_object = "moretrees:oak_sapling_ongen"
 	moretrees.spawn_sequoia_object = "moretrees:sequoia_sapling_ongen"
 	moretrees.spawn_palm_object = "moretrees:palm_sapling_ongen"
+	moretrees.spawn_date_palm_object = "moretrees:date_palm_sapling_ongen"
 	moretrees.spawn_cedar_object = "moretrees:cedar_sapling_ongen"
 	moretrees.spawn_rubber_tree_object = "moretrees:rubber_tree_sapling_ongen"
 	moretrees.spawn_willow_object = "moretrees:willow_sapling_ongen"
@@ -100,6 +102,7 @@ else
 	moretrees.spawn_oak_object = moretrees.oak_model
 	moretrees.spawn_sequoia_object = moretrees.sequoia_model
 	moretrees.spawn_palm_object = moretrees.palm_model
+	moretrees.spawn_date_palm_object = moretrees.date_palm_model
 	moretrees.spawn_cedar_object = moretrees.cedar_model
 	moretrees.spawn_rubber_tree_object = moretrees.rubber_tree_model
 	moretrees.spawn_willow_object = moretrees.willow_model
@@ -129,6 +132,11 @@ end
 
 if moretrees.enable_palm then
 	biome_lib:register_generate_plant(moretrees.palm_biome, moretrees.spawn_palm_object)
+end
+
+if moretrees.enable_date_palm then
+	biome_lib:register_generate_plant(moretrees.date_palm_biome, moretrees.spawn_date_palm_object)
+	biome_lib:register_generate_plant(moretrees.date_palm_biome_2, moretrees.spawn_date_palm_object)
 end
 
 if moretrees.enable_cedar then
