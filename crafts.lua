@@ -80,9 +80,9 @@ minetest.register_craftitem("moretrees:spruce_nuts", {
 	on_use = minetest.item_eat(1),
 })
 
-minetest.register_craftitem("moretrees:pine_nuts", {
-	description = S("Roasted Pine Cone Nuts"),
-	inventory_image = "moretrees_pine_nuts.png",
+minetest.register_craftitem("moretrees:cedar_nuts", {
+	description = S("Roasted Cedar Cone Nuts"),
+	inventory_image = "moretrees_cedar_nuts.png",
 	on_use = minetest.item_eat(1),
 })
 
@@ -138,8 +138,8 @@ minetest.register_craft({
 
 minetest.register_craft({
 	type = "cooking",
-	output = "moretrees:pine_nuts 4",
-	recipe = "moretrees:pine_cone",
+	output = "moretrees:cedar_nuts 4",
+	recipe = "moretrees:cedar_cone",
 })
 
 minetest.register_craft({
