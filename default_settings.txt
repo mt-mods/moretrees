@@ -58,6 +58,21 @@ moretrees.firs_remove_default_trees	= false
 moretrees.firs_remove_interval		= 2
 moretrees.firs_remove_chance		= 150
 
+-- Cocos palm settings
+
+moretrees.coconuts_regrow		= true
+moretrees.coconuts_convert_existing_palms = true	-- Converting existing palm trees will make coconuts regrow on them as well
+							-- Else, they will only regrow on newly-spawned palms
+							-- However, conversion is not an exact science, and although an attempt is
+							-- made to detect whether a trunk belongs to an actual palm, some coconut trunks
+							-- and some coconuts may be incorrectly converted.
+moretrees.coconut_flower_interval	= 59
+moretrees.coconut_flower_chance		= 67
+moretrees.coconut_grow_interval		= 2 * moretrees.coconut_flower_interval * moretrees.coconut_flower_chance
+							-- Actual interval will randomly vary between 67% and 133% of this value
+							-- 2 * 59 * 67 ~ 2 hours. So flowers become coconuts in about 6 hours
+moretrees.coconut_item_drop_ichance	= 10 		-- inverse probability of ripe coconuts dropping as items (instead of disappearing)
+
 -- Date palm settings
 
 moretrees.dates_regrow			= true

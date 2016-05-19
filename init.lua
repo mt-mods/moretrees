@@ -74,6 +74,7 @@ moretrees.cutting_tools = {
 dofile(modpath.."/tree_models.lua")
 dofile(modpath.."/node_defs.lua")
 dofile(modpath.."/date_palm.lua")
+dofile(modpath.."/cocos_palm.lua")
 dofile(modpath.."/biome_defs.lua")
 dofile(modpath.."/saplings.lua")
 dofile(modpath.."/crafts.lua")

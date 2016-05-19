@@ -8,7 +8,7 @@ moretrees.treelist = {
 	{"oak",			"Oak Tree",			"acorn",		"Acorn",		{-0.2, -0.5, -0.2, 0.2, 0, 0.2},	0.8 },
 	{"sequoia",		"Giant Sequoia"},
 	{"birch",		"Birch Tree"},
-	{"palm",		"Palm Tree",		"coconut",		"Coconut",		{-0.2, -0.5, -0.2, 0.2, 0, 0.2},	1.0 },
+	{"palm",		"Palm Tree",		"palm_fruit_trunk_gen",		"Palm Tree",		{-0.2, -0.5, -0.2, 0.2, 0, 0.2},	1.0 },
 	{"date_palm",		"Date Palm Tree",	"date_palm_fruit_trunk",	"Date Palm Tree",		{0, 0, 0, 0, 0, 0},	0.0 },
 	{"spruce",		"Spruce Tree",		"spruce_cone",	"Spruce Cone",	{-0.2, -0.5, -0.2, 0.2, 0, 0.2},	0.8 },
 	{"cedar",		"Cedar Tree",		"cedar_cone",	"Cedar Cone",	{-0.2, -0.5, -0.2, 0.2, 0, 0.2}, 0.8 },
