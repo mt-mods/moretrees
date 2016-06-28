@@ -75,7 +75,22 @@ moretrees.coconut_item_drop_ichance	= 10 		-- inverse probability of ripe coconu
 
 -- Date palm settings
 
-moretrees.dates_regrow			= true
+-- Suggested configuration alternatives:
+-- - Dates grow only when pollinated:
+--   - Set dates_regrow_pollinated to true
+--   - Set dates_regrow_unpollinated_percent to 0
+-- - Disable pollination:
+--   - Set dates_regrow_pollinated to false
+--   - Set dates_regrow_unpollinated_percent to some larger positive value, e.g. 95
+-- - Dates grow, but more and faster if male flowers are nearby
+--   - Set dates_regrow_pollinated to true
+--   - Set dates_regrow_unpollinated_percent to some small positive value, e.g. 33
+--   - Optional but recommended: Reduce the pollination distance, e.g. to 30
+
+moretrees.dates_regrow_pollinated	= true		-- Enable pollination. If enabled, male trees are required for dates to grow.
+							-- If disabled, dates_regrow_unpollinated_percent must be non-zero for dates to regrow.
+moretrees.dates_regrow_unpollinated_percent	= 0	-- Percentage of female dates becoming dates without being pollinated.
+							-- If 0, dates_regrow_pollinated must be enabled for dates to grow.
 moretrees.dates_female_percent		= 57		-- Ratio of female to male trees - tune this to improve # of generated trees that actually bear fruit
 							-- ~57% gives near optimal results for groups of 3 random trees, while it is only slightly suboptimal
 							-- for groups of 2 and 4 random trees (~2% less fruit than optimal).

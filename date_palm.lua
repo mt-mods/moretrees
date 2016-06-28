@@ -22,6 +22,15 @@ local flowers_wither_ichance = 3
 
 -- implementation
 
+local dates_regrow_prob
+if moretrees.dates_regrow_unpollinated_percent <= 0 then
+	dates_regrow_prob = 0
+elseif moretrees.dates_regrow_unpollinated_percent >= 100 then
+	dates_regrow_prob = 1
+else
+	dates_regrow_prob = 1 - math.pow(moretrees.dates_regrow_unpollinated_percent/100, 1/flowers_wither_ichance)
+end
+
 -- Make the date palm fruit trunk a real trunk (it is generated as a fruit)
 local trunk = minetest.registered_nodes["moretrees:date_palm_trunk"]
 local ftrunk = {}
@@ -91,7 +100,7 @@ local date_regrow_abm_spec = {
 		end
 	end
 }
-if moretrees.dates_regrow then
+if moretrees.dates_regrow_pollinated or moretrees.dates_regrow_unpollinated_percent > 0 then
 	minetest.register_abm(date_regrow_abm_spec)
 end
 
@@ -517,7 +526,8 @@ local dates_growfn = function(pos, elapsed)
 	local action
 	if not node then
 		return
-	elseif not moretrees.dates_regrow then
+	elseif not moretrees.dates_regrow_pollinated and dates_regrow_prob == 0 then
+		-- Regrowing of dates is disabled.
 		if string.find(node.name, "moretrees:dates_f") then
 			minetest.swap_node(pos, {name="moretrees:dates_f4"})
 		elseif string.find(node.name, "moretrees:dates_m") then
@@ -526,7 +536,11 @@ local dates_growfn = function(pos, elapsed)
 			minetest.remove_node(pos)
 		end
 		return
-	elseif node.name == "moretrees:dates_f0" and find_male_blossom(pos) then
+	elseif node.name == "moretrees:dates_f0" and math.random(100) <= 100 * dates_regrow_prob then
+		-- Dates grow unpollinated
+		minetest.swap_node(pos, {name="moretrees:dates_f1"})
+		action = "nopollinate"
+	elseif node.name == "moretrees:dates_f0" and moretrees.dates_regrow_pollinated and find_male_blossom(pos) then
 		-- Pollinate flowers
 		minetest.swap_node(pos, {name="moretrees:dates_f1"})
 		action = "pollinate"
@@ -614,13 +628,13 @@ local dates_growfn_profiling = function(pos, elapsed)
 		local sum = 0
 		local count = 0
 		if sect_search_stats.count > 0 and stat.pollinate and stat.pollinate.count > 0 then
-			print(string.format("\t%-10s: %6d (%4.1f%%): %6dus (%d..%d)",
+			print(string.format("\t%-12s: %6d (%4.1f%%): %6dus (%d..%d)",
 				"search", sect_search_stats.count,
 				100*sect_search_stats.count/stat.pollinate.count,
 				sect_search_stats.sum/sect_search_stats.count,
 				sect_search_stats.min, sect_search_stats.max))
 		else
-			print(string.format("\t%-10s: %6d (%4.1f%%): %6dus (%d..%d)",
+			print(string.format("\t%-12s: %6d (%4.1f%%): %6dus (%d..%d)",
 				"search", sect_search_stats.count,
 				0, 0, 0, 0))
 		end
@@ -628,13 +642,13 @@ local dates_growfn_profiling = function(pos, elapsed)
 			if action ~= "count" then
 				count = count + data.count
 				sum = sum + data.sum
-				print(string.format("\t%-10s: %6d (%4.1f%%): %6dus (%d..%d)",
+				print(string.format("\t%-12s: %6d (%4.1f%%): %6dus (%d..%d)",
 					action, data.count,
 					100*data.count/stat.count, data.sum/data.count,
 					data.min, data.max))
 			end
 		end
-		print(string.format("\t%-10s: %6d ( 100%%): %6dus",
+		print(string.format("\t%-12s: %6d ( 100%%): %6dus",
 			"TOTAL", count, sum/count))
 	end
 end
@@ -696,14 +710,15 @@ for _,suffix in ipairs({"f0", "f1", "f2", "f3", "f4", "m0", "fn", "n"}) do
 			fixed = {-0.3, -0.3, -0.3, 0.3, 3.5, 0.3}
 		},
 		on_timer = dates_growfn,
-		on_construct = moretrees.dates_regrow and dates_starttimer,
+		on_construct = (moretrees.dates_regrow_pollinated or moretrees.dates_regrow_unpollinated_percent > 0)
+				and dates_starttimer,
 
 	}
 	minetest.register_node("moretrees:dates_"..suffix, datedef)
 end
 
 -- If regrowing was previously disabled, but is enabled now, make sure timers are started for existing dates
-if moretrees.dates_regrow then
+if moretrees.dates_regrow_pollinated or moretrees.dates_regrow_unpollinated_percent > 0 then
 	local spec = {
 		name = "moretrees:restart_dates_regrow_timer",
 		nodenames = "group:moretrees_dates",
