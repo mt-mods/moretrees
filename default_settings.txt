@@ -15,6 +15,7 @@ moretrees.enable_birch			= true
 moretrees.enable_spruce			= true
 moretrees.enable_jungle_tree	= true
 moretrees.enable_fir			= true
+moretrees.enable_poplar			= true
 moretrees.enable_beech			= false
 
 -- set this to true to make moretrees spawn saplings at mapgen time instead
