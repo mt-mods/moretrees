@@ -285,11 +285,11 @@ end
 local function dates_print_search_stats(log)
 	local stats
 	if sect_search_stats.count > 0 then
-		stats = string.format("Male date tree searching stats: count: %d/%d:  average: %d µs  (%d..%d)",
+		stats = string.format("Male date tree searching stats: searches: %d/%d:  average: %d µs  (%d..%d)",
 			sect_search_stats.count, sect_search_stats.count + sect_search_stats.skip,
 			sect_search_stats.sum/sect_search_stats.count, sect_search_stats.min, sect_search_stats.max)
 	else
-		stats = string.format("Male date tree searching stats: (not yet available)")
+		stats = string.format("Male date tree searching stats: searches: 0/0:  average: (no searches yet)")
 	end
 	if log then
 		minetest.log("action", "[moretrees] " .. stats)

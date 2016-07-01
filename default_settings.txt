@@ -79,13 +79,20 @@ moretrees.coconut_item_drop_ichance	= 10 		-- inverse probability of ripe coconu
 -- - Dates grow only when pollinated:
 --   - Set dates_regrow_pollinated to true
 --   - Set dates_regrow_unpollinated_percent to 0
--- - Disable pollination:
+-- - Dates grow without pollination. Pollination disabled:
 --   - Set dates_regrow_pollinated to false
 --   - Set dates_regrow_unpollinated_percent to some larger positive value, e.g. 95
 -- - Dates grow, but more and faster if male flowers are nearby
 --   - Set dates_regrow_pollinated to true
 --   - Set dates_regrow_unpollinated_percent to some small positive value, e.g. 33
 --   - Optional but recommended: Reduce the pollination distance, e.g. to 30
+
+-- Note that it should not be necessary to disable pollination for performance
+-- reasons. A lot of effort has gone into ensuring that date growing will not cause lag.
+--
+-- If lag is suspected, use the chat command '/dates_stats' to obtain the male dates
+-- search time, as well as the counts of total number of searches requested and the
+-- number of searches actually performed.
 
 moretrees.dates_regrow_pollinated	= true		-- Enable pollination. If enabled, male trees are required for dates to grow.
 							-- If disabled, dates_regrow_unpollinated_percent must be non-zero for dates to regrow.
@@ -98,7 +105,7 @@ moretrees.dates_female_percent		= 57		-- Ratio of female to male trees - tune th
 							-- So 57% is optimal for small groups of trees. As larger groups have more female palms anyway, a
 							-- less than optimal proportion of female to male trees is not a problem.
 moretrees.dates_pollination_distance	= 120
-moretrees.dates_blossom_search_time_treshold = 1000	-- If average male blossom search time exceeds this, start limiting the search load.
+moretrees.dates_blossom_search_time_treshold = 1000	-- If average male blossom search time (in microseconds) exceeds this, start limiting the search load.
 moretrees.dates_blossom_search_iload = 10		-- Inverse fraction of CPU time that male blossom searching search may consume.
 							-- As searching a large area (radius: dates_pollination_distance/3 per attempt) can cause lag,
 							-- this limits the search frequency server-wide so that the impact on server lag is minimised
