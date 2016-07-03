@@ -88,8 +88,13 @@ moretrees.birch_model2={
 	thin_branches=true
 }
 
+-- Coconuts can't be generated as fruit, because there is no support for the
+-- special fruit trunks that allow coconuts to regrow at the correct position
+-- in the tree.
+-- So, a placeholder fruit trunk is spawned. An ABM will convert it to the final
+-- fruit trunk, and generate the actual coconuts.
 moretrees.palm_model={
-	axiom="FFcccccc&FFFFFddd[^&&&GR][^///&&&GR][^//////&&&GR][^***&&&GR]FA//A//A//A//A//A",
+	axiom="FFcccccc&FFFFFdddRA//A//A//A//A//A",
 	rules_a="[&fb&bbb[++f--&ffff&ff][--f++&ffff&ff]&ffff&bbbb&b]",
 	rules_b="f",
 	rules_c="/",
@@ -101,7 +106,32 @@ moretrees.palm_model={
 	random_level=0,
 	trunk_type="single",
 	thin_branches=true,
-	fruit="moretrees:coconut",
+	fruit="moretrees:palm_fruit_trunk_gen",
+	fruit_chance=0
+}
+
+-- Dates can't be generated as fruit, because there is no support for the
+-- special (male and female) fruit trunks that allow dates to regrow at the
+-- correct position in the tree.
+-- So, a generic fruit trunk is spawned. An ABM will convert it to a male
+-- or female fruit trunk, and generate the actual dates.
+moretrees.date_palm_model={
+	axiom="TTTTddddddddddccccccccccRT[TGGGGT]"..
+		"ccccc[&&a]ccccc[&&a]ccccc[&&a]ccccc[&&a]ccccc[&&a]ccccc[&&a]"..
+		"GGccccc[&a]ccccc[&a]ccccc[&a]ccccc[&a]ccccc[&a]ccccc[&a]"..
+		"GGccccc[a]ccccc[a]ccccc[a]ccccc[a]ccccc[a]ccccc[a]",
+	rules_a="Gffb&bbb[++f--&ffff&ff][--f++&ffff&ff]&ff&ff&bb&bb&bb",
+	rules_b="f",
+	rules_c="/",
+	rules_d="F",
+	trunk="moretrees:date_palm_trunk",
+	leaves="moretrees:date_palm_leaves",
+	angle=18,
+	iterations=1,
+	random_level=0,
+	trunk_type="single",
+	thin_branches=false,
+	fruit="moretrees:date_palm_fruit_trunk",
 	fruit_chance=0
 }
 

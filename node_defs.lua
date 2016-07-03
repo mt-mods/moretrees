@@ -8,7 +8,8 @@ moretrees.treelist = {
 	{"oak",			"Oak Tree",			"acorn",		"Acorn",		{-0.2, -0.5, -0.2, 0.2, 0, 0.2},	0.8 },
 	{"sequoia",		"Giant Sequoia"},
 	{"birch",		"Birch Tree"},
-	{"palm",		"Palm Tree",		"coconut",		"Coconut",		{-0.2, -0.5, -0.2, 0.2, 0, 0.2},	1.0 },
+	{"palm",		"Palm Tree",		"palm_fruit_trunk_gen",		"Palm Tree",		{-0.2, -0.5, -0.2, 0.2, 0, 0.2},	1.0 },
+	{"date_palm",		"Date Palm Tree",	"date_palm_fruit_trunk",	"Date Palm Tree",		{0, 0, 0, 0, 0, 0},	0.0 },
 	{"spruce",		"Spruce Tree",		"spruce_cone",	"Spruce Cone",	{-0.2, -0.5, -0.2, 0.2, 0, 0.2},	0.8 },
 	{"cedar",		"Cedar Tree",		"cedar_cone",	"Cedar Cone",	{-0.2, -0.5, -0.2, 0.2, 0, 0.2}, 0.8 },
 	{"willow",		"Willow Tree"},
@@ -122,6 +123,8 @@ for i in ipairs(moretrees.treelist) do
 
 		if treename == "palm" then
 			droprarity = 20
+			decay = moretrees.palm_leafdecay_radius
+		elseif treename == "date_palm" then
 			decay = moretrees.palm_leafdecay_radius
 		end
 
@@ -430,3 +433,5 @@ minetest.register_alias("moretrees:pine_sapling",				"moretrees:cedar_sapling")
 minetest.register_alias("moretrees:pine_leaves",				"moretrees:cedar_leaves")
 minetest.register_alias("moretrees:pine_cone",					"moretrees:cedar_cone")
 minetest.register_alias("moretrees:pine_nuts",					"moretrees:cedar_nuts")
+
+minetest.register_alias("moretrees:dates",					"moretrees:dates_f4")
