@@ -18,6 +18,7 @@ willow		- 5 to + 5	    n/a		water, 15	   5	dirt_with grass		337		20
 acacia		    n/a		    n/a		  n/a		n/a	dirt_with_grass,
 									desert_sand		n/a		15
 rubber		- 5 to + 5	 above +32	water, 15	  10	dirt_with_grass		338		20
+poplar		    n/a		-10 to +26	water, 15h,5v	   1	dirt_with_grass		341,342,343	10
 
 beech		    n/a		    n/a		  n/a		n/a	dirt_with_grass		2		10
 

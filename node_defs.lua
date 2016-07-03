@@ -12,6 +12,8 @@ moretrees.treelist = {
 	{"date_palm",		"Date Palm Tree",	"date_palm_fruit_trunk",	"Date Palm Tree",		{0, 0, 0, 0, 0, 0},	0.0 },
 	{"spruce",		"Spruce Tree",		"spruce_cone",	"Spruce Cone",	{-0.2, -0.5, -0.2, 0.2, 0, 0.2},	0.8 },
 	{"cedar",		"Cedar Tree",		"cedar_cone",	"Cedar Cone",	{-0.2, -0.5, -0.2, 0.2, 0, 0.2}, 0.8 },
+	{"poplar",		"Poplar Tree"},
+	{"poplar_small",	"Poplar Tree"},
 	{"willow",		"Willow Tree"},
 	{"rubber_tree",	"Rubber Tree"},
 	{"fir",			"Douglas Fir",		"fir_cone",		"Fir Cone",		{-0.2, -0.5, -0.2, 0.2, 0, 0.2},	0.8 },
@@ -72,6 +74,7 @@ for i in ipairs(moretrees.treelist) do
 
 	if treename ~= "jungletree"  -- the default game provides jungle tree, acacia, and pine trunk/planks nodes.
 		and treename ~= "acacia"
+		and treename ~= "poplar_small"
 		and treename ~= "pine" then
 
 		saptex = "moretrees_"..treename.."_sapling.png"
@@ -272,6 +275,43 @@ for i in ipairs(moretrees.treelist) do
 			table.insert(moretrees.avoidnodes, "moretrees:"..treename.."_sapling_ongen")
 	end
 end
+
+-- Add small poplar saplings
+
+local poplar_sapling = minetest.registered_nodes["moretrees:poplar_sapling"]
+local poplar_sapling_ongen = minetest.registered_nodes["moretrees:poplar_sapling_ongen"]
+local poplar_small_sapling = {}
+local poplar_small_sapling_ongen = {}
+for k,v in pairs(poplar_sapling) do
+	poplar_small_sapling[k] = v
+end
+for k,v in pairs(poplar_sapling_ongen) do
+	poplar_small_sapling_ongen[k] = v
+end
+poplar_small_sapling.tiles = {"moretrees_poplar_small_sapling.png"}
+poplar_small_sapling.inventory_image = "moretrees_poplar_small_sapling.png"
+poplar_small_sapling_ongen.tiles_ongen = {"moretrees_poplar_small_sapling.png"}
+poplar_small_sapling_ongen.inventory_image_ongen = "moretrees_poplar_small_sapling.png"
+poplar_small_sapling_ongen.drop = "moretrees:poplar_small_sapling"
+minetest.register_node("moretrees:poplar_small_sapling", poplar_small_sapling)
+minetest.register_node("moretrees:poplar_small_sapling_ongen", poplar_small_sapling_ongen)
+if moretrees.spawn_saplings then
+	table.insert(moretrees.avoidnodes, "moretrees:poplar_sapling")
+	table.insert(moretrees.avoidnodes, "moretrees:poplar_small_sapling_ongen")
+end
+
+local poplar_leaves_drop = minetest.registered_nodes["moretrees:poplar_leaves"].drop
+minetest.override_item("moretrees:poplar_leaves", {
+	drop = {
+		max_items = poplar_leaves_drop.maxitems,
+		items = {
+			{items = {"moretrees:poplar_sapling"}, rarity = 1.33 * poplar_leaves_drop.items[1].rarity },
+			{items = {"moretrees:poplar_small_sapling"}, rarity = 1.33 * poplar_leaves_drop.items[1].rarity },
+			{items = {"moretrees:poplar_leaves"} }
+		}
+	}
+})
+
 
 -- Extra nodes for jungle trees:
 

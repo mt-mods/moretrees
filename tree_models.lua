@@ -43,6 +43,37 @@ moretrees.oak_model={
 	fruit_chance=3,
 }
 
+moretrees.poplar_model={
+	axiom="TTTaaBCCCCCCCCCCCcccBBB[[f]&&G++f++Gf++Gf++Gf++G--]G[[f]&&G++f++Gf++Gf++Gf++G--]Gff",
+	rules_a="T",
+	rules_b="[[T]&&G++f++ff++ff++ff++f--]G",
+	rules_c="[[T]&&G++f++ff++ff++ff++f--G++[d]G[d]G++G[d]G[d]G[d]G++G[d]G[d]G[d]G++G[d]G[d]G[d]G++G[d]G]G",
+	rules_d="f",
+	trunk="air",
+	trunk="moretrees:poplar_trunk",
+	leaves="moretrees:poplar_leaves",
+	angle=45,
+	iterations=0,
+	random_level=0,
+	trunk_type="single",
+	thin_branches=false,
+}
+
+moretrees.poplar_small_model={
+	axiom="TT[T]BCCCCccBBff",
+	rules_a="T",
+	rules_b="[[f]&&G++f++Gf++Gf++Gf++G--]G",
+	rules_c="[[T]&&G++f++[d]Gf++[d]Gf++[d]Gf++[d]G--]G",
+	rules_d="f",
+	trunk="moretrees:poplar_trunk",
+	leaves="moretrees:poplar_leaves",
+	angle=45,
+	iterations=0,
+	random_level=0,
+	trunk_type="single",
+	thin_branches=false,
+}
+
 moretrees.sequoia_model={
 	axiom="FFFFFFFFFFddccA///cccFddcFA///ddFcFA/cFFddFcdBddd/A/ccdcddd/ccAddddcFBcccAccFdFcFBcccc/BFdFFcFFdcccc/B",
 	rules_a="[&&&GGF[++^FFdd][--&Fddd]//Fdd[+^Fd][--&Fdd]]////[&&&GGF[++^FFdd][--&Fddd]//Fdd[+^Fd][--&Fdd]]////[&&&GGF[++^FFdd][--&Fddd]//Fdd[+^Fd][--&Fdd]]",

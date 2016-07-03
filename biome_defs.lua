@@ -196,6 +196,97 @@ moretrees.cedar_biome = {
 	max_count = 10,
 }
 
+
+-- Poplar requires a lot of water.
+moretrees.poplar_biome = {
+	surface = "default:dirt_with_grass",
+	avoid_nodes = moretrees.avoidnodes,
+	avoid_radius = 6,
+	seed_diff = 341,
+	min_elevation = 0,
+	max_elevation = 50,
+	near_nodes = {"default:water_source"},
+	near_nodes_size = 15,
+	near_nodes_vertical = 5,
+	near_nodes_count = 1,
+	humidity_min = -0.7,
+	humidity_max = -1,
+	rarity = 50,
+	max_count = 15,
+}
+
+-- The humidity requirement it quite restrictive (apparently).
+-- Spawn an occasional poplar elsewhere.
+moretrees.poplar_biome_2 = {
+	surface = "default:dirt_with_grass",
+	avoid_nodes = moretrees.avoidnodes,
+	avoid_radius = 6,
+	seed_diff = 341,
+	min_elevation = 0,
+	max_elevation = 50,
+	near_nodes = {"default:water_source"},
+	near_nodes_size = 15,
+	near_nodes_vertical = 4,
+	near_nodes_count = 10,
+	humidity_min = 0.1,
+	humidity_max = -0.6,
+	rarity = 50,
+	max_count = 1,
+}
+
+-- Subterranean lakes provide enough water for poplars to grow
+moretrees.poplar_biome_3 = {
+	surface = "default:dirt_with_grass",
+	avoid_nodes = moretrees.avoidnodes,
+	avoid_radius = 6,
+	seed_diff = 342,
+	min_elevation = 0,
+	max_elevation = 50,
+	near_nodes = {"default:water_source"},
+	near_nodes_size = 1,
+	near_nodes_vertical = 25,
+	near_nodes_count = 1,
+	humidity_min = -0.5,
+	humidity_max = -1,
+	rarity = 0,
+	max_count = 30,
+}
+
+moretrees.poplar_small_biome = {
+	surface = "default:dirt_with_grass",
+	avoid_nodes = moretrees.avoidnodes,
+	avoid_radius = 4,
+	seed_diff = 343,
+	min_elevation = 0,
+	max_elevation = 50,
+	near_nodes = {"default:water_source"},
+	near_nodes_size = 10,
+	near_nodes_vertical = 5,
+	near_nodes_count = 1,
+	humidity_min = -0.7,
+	humidity_max = -1,
+	rarity = 50,
+	max_count = 10,
+}
+
+moretrees.poplar_small_biome_2 = {
+	surface = "default:dirt_with_grass",
+	avoid_nodes = moretrees.avoidnodes,
+	avoid_radius = 4,
+	seed_diff = 343,
+	min_elevation = 0,
+	max_elevation = 50,
+	near_nodes = {"default:water_source"},
+	near_nodes_size = 10,
+	near_nodes_vertical = 4,
+	near_nodes_count = 5,
+	humidity_min = 0.1,
+	humidity_max = -0.6,
+	rarity = 50,
+	max_count = 3,
+}
+
+
 moretrees.fir_biome = {
 	surface = "default:dirt_with_grass",
 	avoid_nodes = moretrees.avoidnodes,

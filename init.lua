@@ -97,6 +97,8 @@ if moretrees.spawn_saplings then
 	moretrees.spawn_jungletree_object = "moretrees:jungletree_sapling_ongen"
 	moretrees.spawn_fir_object = "moretrees:fir_sapling_ongen"
 	moretrees.spawn_fir_snow_object = "snow:sapling_pine"
+	moretrees.spawn_poplar_object = "moretrees:poplar_sapling_ongen"
+	moretrees.spawn_poplar_small_object = "moretrees:poplar_small_sapling_ongen"
 else
 	moretrees.spawn_beech_object = moretrees.beech_model
 	moretrees.spawn_apple_tree_object = moretrees.apple_tree_model
@@ -113,6 +115,8 @@ else
 	moretrees.spawn_jungletree_object = "moretrees.grow_jungletree"
 	moretrees.spawn_fir_object = "moretrees.grow_fir"
 	moretrees.spawn_fir_snow_object = "moretrees.grow_fir_snow"
+	moretrees.spawn_poplar_object = moretrees.poplar_model
+	moretrees.spawn_poplar_small_object = moretrees.poplar_small_model
 end
 
 if moretrees.enable_beech then
@@ -173,6 +177,14 @@ if moretrees.enable_fir then
 	if minetest.get_modpath("snow") then
 		biome_lib:register_generate_plant(moretrees.fir_biome_snow, moretrees.spawn_fir_snow_object)
 	end
+end
+
+if moretrees.enable_poplar then
+	biome_lib:register_generate_plant(moretrees.poplar_biome, moretrees.spawn_poplar_object)
+	biome_lib:register_generate_plant(moretrees.poplar_biome_2, moretrees.spawn_poplar_object)
+	biome_lib:register_generate_plant(moretrees.poplar_biome_3, moretrees.spawn_poplar_object)
+	biome_lib:register_generate_plant(moretrees.poplar_small_biome, moretrees.spawn_poplar_small_object)
+	biome_lib:register_generate_plant(moretrees.poplar_small_biome_2, moretrees.spawn_poplar_small_object)
 end
 
 -- Code to spawn a birch tree
