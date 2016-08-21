@@ -473,5 +473,6 @@ minetest.register_alias("moretrees:pine_sapling",				"moretrees:cedar_sapling")
 minetest.register_alias("moretrees:pine_leaves",				"moretrees:cedar_leaves")
 minetest.register_alias("moretrees:pine_cone",					"moretrees:cedar_cone")
 minetest.register_alias("moretrees:pine_nuts",					"moretrees:cedar_nuts")
+minetest.register_alias("moretrees:pine_sapling_ongen",			"moretrees:cedar_sapling_ongen")
 
 minetest.register_alias("moretrees:dates",					"moretrees:dates_f4")
