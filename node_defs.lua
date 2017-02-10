@@ -31,7 +31,7 @@ local moretrees_plantlike_leaves_visual_scale = 1
 
 if moretrees.plantlike_leaves then 
 	moretrees_new_leaves_drawtype = "plantlike"
-	moretrees_plantlike_leaves_visual_scale = 1.189
+	moretrees_plantlike_leaves_visual_scale = math.sqrt(2)
 end
 
 -- redefine default leaves to handle plantlike and/or leaf decay options
@@ -40,7 +40,7 @@ if moretrees.plantlike_leaves then
 	minetest.override_item("default:leaves", {
 		inventory_image = minetest.inventorycube("default_leaves.png"),
 		drawtype = "plantlike",
-		visual_scale = 1.189
+		visual_scale = math.sqrt(2)
 	})
 else
 	minetest.override_item("default:leaves", {
@@ -54,7 +54,7 @@ if moretrees.plantlike_leaves then
 	minetest.override_item("default:jungleleaves", {
 		inventory_image = minetest.inventorycube("default_jungleleaves.png"),
 		drawtype = "plantlike",
-		visual_scale = 1.189
+		visual_scale = math.sqrt(2)
 	})
 else
 	minetest.override_item("default:jungleleaves", {
