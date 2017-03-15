@@ -101,7 +101,7 @@ for i in ipairs(moretrees.treelist) do
 				"moretrees_"..treename.."_trunk.png"
 			},
 			paramtype2 = "facedir",
-			is_ground_content = true,
+			is_ground_content = false,
 			groups = {tree=1,snappy=1,choppy=2,oddly_breakable_by_hand=1,flammable=2},
 			sounds = default.node_sound_wood_defaults(),
 			on_place = minetest.rotate_node,
@@ -110,7 +110,7 @@ for i in ipairs(moretrees.treelist) do
 		minetest.register_node("moretrees:"..treename.."_planks", {
 			description = S(treedesc.." Planks"),
 			tiles = {"moretrees_"..treename.."_wood.png"},
-			is_ground_content = true,
+			is_ground_content = false,
 			groups = {snappy=1,choppy=2,oddly_breakable_by_hand=2,flammable=3,wood=1},
 			sounds = default.node_sound_wood_defaults(),
 		})
@@ -123,6 +123,7 @@ for i in ipairs(moretrees.treelist) do
 			paramtype = "light",
 			paramtype2 = "waving",
 			walkable = false,
+			is_ground_content = true,
 			selection_box = {
 				type = "fixed",
 				fixed = {-0.3, -0.5, -0.3, 0.3, 0.35, 0.3}
@@ -148,6 +149,7 @@ for i in ipairs(moretrees.treelist) do
 			tiles = { "moretrees_"..treename.."_leaves.png" },
 			inventory_image = moretrees_leaves_inventory_image,
 			paramtype = "light",
+			is_ground_content = false,
 			groups = {snappy = 3, flammable = 2, leaves = 1, moretrees_leaves = 1, leafdecay = 1},
 			sounds = default.node_sound_leaves_defaults(),
 
@@ -228,6 +230,7 @@ for i in ipairs(moretrees.treelist) do
 		paramtype = "light",
 		paramtype2 = "waving",
 		walkable = false,
+		is_ground_content = true,
 		selection_box = {
 			type = "fixed",
 			fixed = {-0.3, -0.5, -0.3, 0.3, 0.35, 0.3}
@@ -249,6 +252,7 @@ for i in ipairs(moretrees.treelist) do
 			visual_scale = vscale,
 			paramtype = "light",
 			sunlight_propagates = true,
+			is_ground_content = false,
 			walkable = false,
 			selection_box = {
 				type = "fixed",
@@ -308,9 +312,12 @@ for k,v in pairs(poplar_sapling_ongen) do
 end
 poplar_small_sapling.tiles = {"moretrees_poplar_small_sapling.png"}
 poplar_small_sapling.inventory_image = "moretrees_poplar_small_sapling.png"
+poplar_small_sapling.is_ground_content = true
 poplar_small_sapling_ongen.tiles_ongen = {"moretrees_poplar_small_sapling.png"}
 poplar_small_sapling_ongen.inventory_image_ongen = "moretrees_poplar_small_sapling.png"
 poplar_small_sapling_ongen.drop = "moretrees:poplar_small_sapling"
+poplar_small_sapling_ongen.is_ground_content = true
+
 minetest.register_node("moretrees:poplar_small_sapling", poplar_small_sapling)
 minetest.register_node("moretrees:poplar_small_sapling_ongen", poplar_small_sapling_ongen)
 if moretrees.spawn_saplings then
@@ -354,6 +361,7 @@ for color = 1, #jungleleaves do
 		tiles = {"moretrees_jungletree_leaves_"..jungleleaves[color]..".png"},
 		inventory_image = moretrees_leaves_inventory_image,
 		paramtype = "light",
+		is_ground_content = false,
 		groups = {snappy = 3, flammable = 2, leaves = 1, moretrees_leaves = 1, leafdecay = moretrees.leafdecay_radius },
 		drop = {
 			max_items = 1,
@@ -382,6 +390,7 @@ minetest.register_node("moretrees:fir_leaves_bright", {
 	tiles = { "moretrees_fir_leaves_bright.png" },
 	inventory_image = moretrees_leaves_inventory_image,
 	paramtype = "light",
+	is_ground_content = false,
 	groups = {snappy = 3, flammable = 2, leaves = 1, moretrees_leaves = 1, leafdecay = moretrees.leafdecay_radius },
 	drop = {
 		max_items = 1,
@@ -425,6 +434,7 @@ minetest.register_node("moretrees:rubber_tree_trunk_empty", {
 	groups = {tree=1,snappy=1,choppy=2,oddly_breakable_by_hand=1,flammable=2},
 	sounds = default.node_sound_wood_defaults(),
 	paramtype2 = "facedir",
+	is_ground_content = false,
 	on_place = minetest.rotate_node,
 })
 
