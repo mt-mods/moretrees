@@ -72,6 +72,20 @@ for i in ipairs(moretrees.treelist) do
 
 	local saptex = moretrees.treelist[i][7]
 
+	-- player will get a sapling with 1/100 chance
+	-- player will get leaves only if he/she gets no saplings,
+	-- this is because max_items is 1
+
+	local droprarity = 100
+	local decay = moretrees.leafdecay_radius
+
+	if treename == "palm" then
+		droprarity = 20
+		decay = moretrees.palm_leafdecay_radius
+	elseif treename == "date_palm" then
+		decay = moretrees.palm_leafdecay_radius
+	end
+
 	if treename ~= "jungletree"  -- the default game provides jungle tree, acacia, and pine trunk/planks nodes.
 		and treename ~= "acacia"
 		and treename ~= "poplar_small"
@@ -116,20 +130,6 @@ for i in ipairs(moretrees.treelist) do
 			groups = {snappy=2,dig_immediate=3,flammable=2,attached_node=1,sapling=1},
 			sounds = default.node_sound_defaults(),
 		})
-	
-		-- player will get a sapling with 1/100 chance
-		-- player will get leaves only if he/she gets no saplings,
-		-- this is because max_items is 1
-
-		local droprarity = 100
-		local decay = moretrees.leafdecay_radius
-
-		if treename == "palm" then
-			droprarity = 20
-			decay = moretrees.palm_leafdecay_radius
-		elseif treename == "date_palm" then
-			decay = moretrees.palm_leafdecay_radius
-		end
 
 		local moretrees_leaves_inventory_image = nil
 		local moretrees_new_leaves_waving = nil
@@ -148,7 +148,7 @@ for i in ipairs(moretrees.treelist) do
 			tiles = { "moretrees_"..treename.."_leaves.png" },
 			inventory_image = moretrees_leaves_inventory_image,
 			paramtype = "light",
-			groups = {snappy = 3, flammable = 2, leaves = 1, moretrees_leaves = 1, leafdecay = decay},
+			groups = {snappy = 3, flammable = 2, leaves = 1, moretrees_leaves = 1, leafdecay = 1},
 			sounds = default.node_sound_leaves_defaults(),
 
 			drop = {
@@ -237,8 +237,10 @@ for i in ipairs(moretrees.treelist) do
 		drop = "moretrees:"..treename.."_sapling"
 	})
 
+	local fruitname = nil
 	if fruit then
-		minetest.register_node("moretrees:"..fruit, {
+		fruitname = "moretrees:"..fruit
+		minetest.register_node(fruitname, {
 			description = S(fruitdesc),
 			drawtype = "plantlike",
 			tiles = { "moretrees_"..fruit..".png" },
@@ -252,9 +254,25 @@ for i in ipairs(moretrees.treelist) do
 				type = "fixed",
 					fixed = selbox
 				},
-			groups = {fleshy=3,dig_immediate=3,flammable=2, attached_node=1},
+			groups = {fleshy=3,dig_immediate=3,flammable=2, attached_node=1, leafdecay = 1, leafdecay_drop = 1},
 			sounds = default.node_sound_defaults(),
 		})
+	end
+
+	if treename ~= "jungletree"
+		and treename ~= "acacia"
+		and treename ~= "poplar_small"
+		and treename ~= "pine" then
+			print("called default.register_leafdecay for:")
+			print("moretrees:"..treename.."_trunk")
+			print("moretrees:"..treename.."_leaves")
+			if fruitname then print(fruitname) end
+			print("radius = "..decay)
+			default.register_leafdecay({
+				trunks = { "moretrees:"..treename.."_trunk" },
+				leaves = { "moretrees:"..treename.."_leaves", fruitname },
+				radius = decay,
+			})
 	end
 
 	minetest.register_abm({
