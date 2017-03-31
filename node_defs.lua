@@ -337,7 +337,6 @@ minetest.override_item("moretrees:poplar_leaves", {
 	}
 })
 
-
 -- Extra nodes for jungle trees:
 
 local jungleleaves = {"yellow","red"}
@@ -362,7 +361,7 @@ for color = 1, #jungleleaves do
 		inventory_image = moretrees_leaves_inventory_image,
 		paramtype = "light",
 		is_ground_content = false,
-		groups = {snappy = 3, flammable = 2, leaves = 1, moretrees_leaves = 1, leafdecay = moretrees.leafdecay_radius },
+		groups = {snappy = 3, flammable = 2, leaves = 1, moretrees_leaves = 1, leafdecay = 3 },
 		drop = {
 			max_items = 1,
 			items = {
@@ -373,6 +372,18 @@ for color = 1, #jungleleaves do
 		sounds = default.node_sound_leaves_defaults(),
 	})
 end
+
+-- To get Moretrees to generate its own jungle trees among the default mapgen
+-- we need our own copy of that node, which moretrees will match against.
+
+local jungle_tree = table.copy(minetest.registered_nodes["default:jungletree"])
+minetest.register_node("moretrees:jungletree_trunk", jungle_tree)
+
+default.register_leafdecay({
+	trunks = { "default:jungletree", "moretrees:jungletree_trunk" },
+	leaves = { "default:jungleleaves", "moretrees:jungletree_leaves_yellow", "moretrees:jungletree_leaves_red" },
+	radius = moretrees.leafdecay_radius,
+})
 
 -- Extra needles for firs
 
@@ -391,7 +402,7 @@ minetest.register_node("moretrees:fir_leaves_bright", {
 	inventory_image = moretrees_leaves_inventory_image,
 	paramtype = "light",
 	is_ground_content = false,
-	groups = {snappy = 3, flammable = 2, leaves = 1, moretrees_leaves = 1, leafdecay = moretrees.leafdecay_radius },
+	groups = {snappy = 3, flammable = 2, leaves = 1, moretrees_leaves = 1, leafdecay = 3 },
 	drop = {
 		max_items = 1,
 		items = {
@@ -401,6 +412,13 @@ minetest.register_node("moretrees:fir_leaves_bright", {
 	},
 	sounds = default.node_sound_leaves_defaults()
 })
+
+default.register_leafdecay({
+	trunks = { "moretrees:fir_trunk" },
+		leaves = { "moretrees:fir_leaves", "moretrees:fir_leaves_bright" },
+	radius = moretrees.leafdecay_radius,
+})
+
 
 if moretrees.enable_redefine_apple then
 	local appledef = moretrees.clone_node("default:apple")
@@ -448,12 +466,6 @@ minetest.register_abm({
 		minetest.add_node(pos, {name = "moretrees:rubber_tree_trunk_empty", param2 = nfdir})
 	end,
 })
-
--- To get Moretrees to generate its own jungle trees among the default mapgen
--- we need our own copy of that node, which moretrees will match against.
-
-local jungle_tree = moretrees.clone_node("default:jungletree")
-minetest.register_node("moretrees:jungletree_trunk", jungle_tree)
 
 -- For compatibility with old nodes, recently-changed nodes, and default nodes
 
