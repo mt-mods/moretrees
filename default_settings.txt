@@ -20,9 +20,10 @@ moretrees.enable_beech			= false
 
 -- set this to true to make moretrees spawn saplings at mapgen time instead
 -- of fully-grown trees, which will grow into full trees after a very short
--- delay.  This reduces mapgen lag in some situations.
+-- delay.  This reduces mapgen lag in some situations, and fixes situations
+-- where the mapgen conflicts with the tree generator.
 
-moretrees.spawn_saplings		= false
+moretrees.spawn_saplings		= true
 
 -- Set this to true to allow defining stairs/slabs/etc.  If Moreblocks is
 -- installed, this will use that mod's Stairs Plus component.  Otherwise, it 
