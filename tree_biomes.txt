@@ -15,8 +15,6 @@ birch		+10 to +15	-20 to +10	  n/a		n/a	dirt_with grass		334		 5
 spruce		 above +20	-20 to +10	  n/a		n/a	dirt_with grass		335		10
 cedar		    n/a		    n/a		water, 15	   5	dirt_with grass		336		10
 willow		- 5 to + 5	    n/a		water, 15	   5	dirt_with grass		337		20
-acacia		    n/a		    n/a		  n/a		n/a	dirt_with_grass,
-									desert_sand		n/a		15
 rubber		- 5 to + 5	 above +32	water, 15	  10	dirt_with_grass		338		20
 poplar		    n/a		-10 to +26	water, 15h,5v	   1	dirt_with_grass		341,342,343	10
 
@@ -28,10 +26,6 @@ Notes:
 
 Beech trees are meant to replace default trees, but are themselves disabled by default.  They grow in the same areas
 as the default ones do, and under the same conditions.
-
-Acacia trees depend on humidity as their primary control, and they don't use the fertile ground option. They grow near
-the edges of a desert biome, occasionally into the grass beyond, and anywhere else on desert sand or dirt with grass,
-where the humidity is low (but not bone dry).
 
 Fir trees appear in a snow biome only with older versions of SPlizard's Snow Biomes mod.  In more recent versions,
 these trees will not grow, due to an engine bug.

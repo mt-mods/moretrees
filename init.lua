@@ -91,7 +91,6 @@ if moretrees.spawn_saplings then
 	moretrees.spawn_cedar_object = "moretrees:cedar_sapling_ongen"
 	moretrees.spawn_rubber_tree_object = "moretrees:rubber_tree_sapling_ongen"
 	moretrees.spawn_willow_object = "moretrees:willow_sapling_ongen"
-	moretrees.spawn_acacia_object = "moretrees:acacia_sapling_ongen"
 	moretrees.spawn_birch_object = "moretrees:birch_sapling_ongen"
 	moretrees.spawn_spruce_object = "moretrees:spruce_sapling_ongen"
 	moretrees.spawn_jungletree_object = "moretrees:jungletree_sapling_ongen"
@@ -109,7 +108,6 @@ else
 	moretrees.spawn_cedar_object = moretrees.cedar_model
 	moretrees.spawn_rubber_tree_object = moretrees.rubber_tree_model
 	moretrees.spawn_willow_object = moretrees.willow_model
-	moretrees.spawn_acacia_object = moretrees.acacia_model
 	moretrees.spawn_birch_object = "moretrees.grow_birch"
 	moretrees.spawn_spruce_object = "moretrees.grow_spruce"
 	moretrees.spawn_jungletree_object = "moretrees.grow_jungletree"
@@ -154,10 +152,6 @@ end
 
 if moretrees.enable_willow then
 	biome_lib:register_generate_plant(moretrees.willow_biome, moretrees.spawn_willow_object)
-end
-
-if moretrees.enable_acacia then
-	biome_lib:register_generate_plant(moretrees.acacia_biome, moretrees.spawn_acacia_object)
 end
 
 if moretrees.enable_birch then

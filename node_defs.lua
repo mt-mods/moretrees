@@ -19,7 +19,6 @@ moretrees.treelist = {
 	{"fir",			"Douglas Fir",		"fir_cone",		"Fir Cone",		{-0.2, -0.5, -0.2, 0.2, 0, 0.2},	0.8 },
 
 	{"jungletree",	"Jungle Tree",		nil,			nil,			nil,								nil, "default_junglesapling.png"  },
-	{"acacia",		"Acacia Tree",		nil,			nil,			nil,								nil, "default_acacia_sapling.png" },
 }
 
 local dirs1 = { 21, 20, 23, 22, 21 }
@@ -86,8 +85,7 @@ for i in ipairs(moretrees.treelist) do
 		decay = moretrees.palm_leafdecay_radius
 	end
 
-	if treename ~= "jungletree"  -- the default game provides jungle tree, acacia, and pine trunk/planks nodes.
-		and treename ~= "acacia"
+	if treename ~= "jungletree"  -- the default game provides jungle tree and pine trunk/planks nodes.
 		and treename ~= "poplar_small"
 		and treename ~= "pine" then
 
@@ -264,7 +262,6 @@ for i in ipairs(moretrees.treelist) do
 	end
 
 	if treename ~= "jungletree"
-		and treename ~= "acacia"
 		and treename ~= "poplar_small"
 		and treename ~= "pine" then
 			print("called default.register_leafdecay for:")
@@ -436,7 +433,6 @@ if moretrees.spawn_saplings then
 		table.insert(moretrees.avoidnodes, "snow:sapling_pine")
 		table.insert(moretrees.avoidnodes, "default:junglesapling")
 		table.insert(moretrees.avoidnodes, "default:pine_sapling")
-		table.insert(moretrees.avoidnodes, "default:acacia_sapling")
 end
 
 -- "empty" (tapped) rubber tree nodes

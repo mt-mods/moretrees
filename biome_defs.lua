@@ -124,18 +124,6 @@ moretrees.willow_biome = {
 	max_count = 5,
 }
 
-moretrees.acacia_biome = {
-	surface = { "default:dirt_with_grass", "default:dirt_with_dry_grass", "default:desert_sand" },
-	avoid_nodes = moretrees.avoidnodes,
-	avoid_radius = 15,
-	seed_diff = 1,
-	rarity = 50,
-	max_count = 15,
-	plantlife_limit = -1,
-	humidity_min = 0.3,
-	humidity_max = 0,
-}
-
 moretrees.rubber_tree_biome = {
 	surface = "default:dirt_with_grass",
 	avoid_nodes = moretrees.avoidnodes,

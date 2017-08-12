@@ -230,37 +230,6 @@ moretrees.willow_model={
 	thin_branches=true
 }
 
-moretrees.acacia_model={
-	axiom="FFFFFFccccA",
-	rules_a = "[B]//[B]//[B]//[B]",
-	rules_b = "&TTTT&TT^^G&&----GGGGGG++GGG++"	-- line up with the "canvas" edge
-			.."fffffffGG++G++"					-- first layer, drawn in a zig-zag raster pattern
-			.."Gffffffff--G--"
-			.."ffffffffG++G++"
-			.."fffffffff--G--"
-			.."fffffffff++G++"
-			.."fffffffff--G--"
-			.."ffffffffG++G++"
-			.."Gffffffff--G--"
-			.."fffffffGG"
-			.."^^G&&----GGGGGGG++GGGGGG++"		-- re-align to second layer canvas edge
-			.."ffffGGG++G++"					-- second layer
-			.."GGfffff--G--"
-			.."ffffffG++G++"
-			.."fffffff--G--"
-			.."ffffffG++G++"
-			.."GGfffff--G--"
-			.."ffffGGG",
-	rules_c = "/",
-	trunk="default:acacia_tree",
-	leaves="default:acacia_leaves",
-	angle=45,
-	iterations=3,
-	random_level=0,
-	trunk_type="single",
-	thin_branches=true,
-}
-
 moretrees.rubber_tree_model={
 	axiom="FFFFA",
 	rules_a="[&FFBFA]////[&BFFFA]////[&FBFFA]",

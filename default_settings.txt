@@ -10,7 +10,6 @@ moretrees.enable_date_palm		= true
 moretrees.enable_cedar			= true
 moretrees.enable_rubber_tree	= true
 moretrees.enable_willow			= true
-moretrees.enable_acacia			= true
 moretrees.enable_birch			= true
 moretrees.enable_spruce			= true
 moretrees.enable_jungle_tree	= true
