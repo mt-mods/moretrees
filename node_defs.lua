@@ -40,10 +40,6 @@ if moretrees.plantlike_leaves then
 		drawtype = "plantlike",
 		visual_scale = math.sqrt(2)
 	})
-else
-	minetest.override_item("default:leaves", {
-		waving = 1
-	})
 end
 
 -- redefine default jungle leaves for same
@@ -53,10 +49,6 @@ if moretrees.plantlike_leaves then
 		inventory_image = minetest.inventorycube("default_jungleleaves.png"),
 		drawtype = "plantlike",
 		visual_scale = math.sqrt(2)
-	})
-else
-	minetest.override_item("default:jungleleaves", {
-		waving = 1
 	})
 end
 
