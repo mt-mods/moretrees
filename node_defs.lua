@@ -212,7 +212,7 @@ for i in ipairs(moretrees.treelist) do
 	end
 
 	minetest.register_node("moretrees:"..treename.."_sapling_ongen", {
-		description = S(treedesc.." Sapling"),
+		description = S(treedesc.." Sapling (on-generated)"),
 		drawtype = "plantlike",
 		tiles = {saptex},
 		inventory_image = saptex,
