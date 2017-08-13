@@ -255,11 +255,6 @@ for i in ipairs(moretrees.treelist) do
 	if treename ~= "jungletree"
 		and treename ~= "poplar_small"
 		and treename ~= "pine" then
-			print("called default.register_leafdecay for:")
-			print("moretrees:"..treename.."_trunk")
-			print("moretrees:"..treename.."_leaves")
-			if fruitname then print(fruitname) end
-			print("radius = "..decay)
 			default.register_leafdecay({
 				trunks = { "moretrees:"..treename.."_trunk" },
 				leaves = { "moretrees:"..treename.."_leaves", fruitname },
