@@ -4,26 +4,10 @@ for i in ipairs(moretrees.treelist) do
 	local treename = moretrees.treelist[i][1]
 
 	minetest.register_craft({
-		output = "moretrees:"..treename.."_trunk 2",
-		recipe = {
-			{"moretrees:"..treename.."_trunk_sideways"},
-			{"moretrees:"..treename.."_trunk_sideways"}
-		}
-	})
-
-	minetest.register_craft({
 		type = "shapeless",
 		output = "moretrees:"..treename.."_planks 4",
 		recipe = {
 			"moretrees:"..treename.."_trunk"
-		}
-	})
-
-	minetest.register_craft({
-		type = "shapeless",
-		output = "moretrees:"..treename.."_planks 4",
-		recipe = {
-			"moretrees:"..treename.."_trunk_sideways"
 		}
 	})
 
