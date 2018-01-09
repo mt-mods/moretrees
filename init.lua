@@ -51,8 +51,8 @@ end
 
 -- infinite stacks checking
 
-if minetest.get_modpath"unified_inventory"
-or not minetest.settings:get_bool"creative_mode" then
+if minetest.get_modpath("unified_inventory") or not
+		minetest.settings:get_bool("creative_mode") then
 	moretrees.expect_infinite_stacks = false
 else
 	moretrees.expect_infinite_stacks = true
