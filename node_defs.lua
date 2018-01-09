@@ -1,7 +1,7 @@
 local S = moretrees.intllib
 
 moretrees.avoidnodes = {}
-	
+
 moretrees.treelist = {
 	{"beech",			"Beech Tree"},
 	{"apple_tree",		"Apple Tree"},
@@ -27,7 +27,7 @@ local dirs3 = { 14, 11, 16, 5, 14 }
 local moretrees_new_leaves_drawtype = "allfaces_optional"
 local moretrees_plantlike_leaves_visual_scale = 1
 
-if moretrees.plantlike_leaves then 
+if moretrees.plantlike_leaves then
 	moretrees_new_leaves_drawtype = "plantlike"
 	moretrees_plantlike_leaves_visual_scale = math.sqrt(2)
 end
@@ -159,7 +159,7 @@ for i in ipairs(moretrees.treelist) do
 				stairsplus:register_all(
 					"moretrees",
 					treename.."_trunk",
-					"moretrees:"..treename.."_trunk", 
+					"moretrees:"..treename.."_trunk",
 					{
 						groups = { snappy=1, choppy=2, oddly_breakable_by_hand=1, flammable=2, not_in_creative_inventory=1 },
 						tiles =	{
@@ -479,10 +479,6 @@ minetest.register_alias("moretrees:jungletree_sapling",			"default:junglesapling
 minetest.register_alias("moretrees:jungletree_trunk_sideways",	"moreblocks:horizontal_jungle_tree")
 minetest.register_alias("moretrees:jungletree_planks",			"default:junglewood")
 minetest.register_alias("moretrees:jungletree_leaves_green",	"default:jungleleaves")
-
-minetest.register_alias("jungletree:leaves_green",				"default:jungleleaves")
-minetest.register_alias("jungletree:leaves_red",				"moretrees:jungletree_leaves_red")
-minetest.register_alias("jungletree:leaves_yellow",				"moretrees:jungletree_leaves_yellow")
 
 minetest.register_alias("moretrees:acacia_trunk",				"default:acacia_tree")
 minetest.register_alias("moretrees:acacia_planks",				"default:acacia_wood")
