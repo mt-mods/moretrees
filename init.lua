@@ -185,7 +185,7 @@ end
 -- Code to spawn a birch tree
 
 function moretrees.grow_birch(pos)
-	minetest.remove_node(pos)
+	minetest.swap_node(pos, biome_lib.air)
 	if math.random(1,2) == 1 then
 		minetest.spawn_tree(pos, moretrees.birch_model1)
 	else
@@ -196,7 +196,7 @@ end
 -- Code to spawn a spruce tree
 
 function moretrees.grow_spruce(pos)
-	minetest.remove_node(pos)
+	minetest.swap_node(pos, biome_lib.air)
 	if math.random(1,2) == 1 then
 		minetest.spawn_tree(pos, moretrees.spruce_model1)
 	else
@@ -250,10 +250,10 @@ function moretrees.grow_jungletree(pos)
 		moretrees.jungletree_model.rules_b = moretrees.jt_rules_b2
 	end
 
-	minetest.remove_node(pos)
+	minetest.swap_node(pos, biome_lib.air)
 	local leaves = minetest.find_nodes_in_area({x = pos.x-1, y = pos.y, z = pos.z-1}, {x = pos.x+1, y = pos.y+10, z = pos.z+1}, "default:leaves")
 	for leaf in ipairs(leaves) do
-			minetest.remove_node(leaves[leaf])
+			minetest.swap_node(leaves[leaf], biome_lib.air)
 	end
 	minetest.spawn_tree(pos, moretrees.jungletree_model)
 end
@@ -277,10 +277,10 @@ function moretrees.grow_fir(pos)
 	moretrees.fir_model.iterations = 7
 	moretrees.fir_model.random_level = 5
 
-	minetest.remove_node(pos)
+	minetest.swap_node(pos, biome_lib.air)
 	local leaves = minetest.find_nodes_in_area({x = pos.x, y = pos.y, z = pos.z}, {x = pos.x, y = pos.y+5, z = pos.z}, "default:leaves")
 	for leaf in ipairs(leaves) do
-			minetest.remove_node(leaves[leaf])
+		minetest.swap_node(leaves[leaf], biome_lib.air)
 	end
 	minetest.spawn_tree(pos,moretrees.fir_model)
 end
@@ -304,10 +304,10 @@ function moretrees.grow_fir_snow(pos)
 	moretrees.fir_model.iterations = 2
 	moretrees.fir_model.random_level = 2
 
-	minetest.remove_node(pos)
+	minetest.swap_node(pos, biome_lib.air)
 	local leaves = minetest.find_nodes_in_area({x = pos.x, y = pos.y, z = pos.z}, {x = pos.x, y = pos.y+5, z = pos.z}, "default:leaves")
 	for leaf in ipairs(leaves) do
-			minetest.remove_node(leaves[leaf])
+			minetest.swap_node(leaves[leaf], biome_lib.air)
 	end
 	minetest.spawn_tree(pos,moretrees.fir_model)
 end
