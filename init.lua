@@ -8,12 +8,10 @@
 -- Brought together into one mod and made L-systems compatible by Vanessa
 -- Ezekowitz.
 --
--- Firs and Jungle tree axioms/rules by Vanessa Ezekowitz, with the
+-- Firs and Jungle tree axioms/rules by Vanessa Dannenberg, with the
 -- latter having been tweaked by RealBadAngel, most other axioms/rules written
 -- by RealBadAngel.
 --
--- License: WTFPL for all parts (code and textures, including those copied
--- from the the old jungletree and conifers mods).
 
 moretrees = {}
 

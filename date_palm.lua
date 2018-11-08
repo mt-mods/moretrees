@@ -10,7 +10,6 @@
 -- (e.g. eaten by birds, ...), and a small fraction will drop as items.
 
 -- © 2016, Rogier <rogier777@gmail.com>
--- License: WTFPL
 
 local S = moretrees.intllib
 
