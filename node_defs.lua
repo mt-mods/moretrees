@@ -212,7 +212,7 @@ for i in ipairs(moretrees.treelist) do
 	end
 
 	minetest.register_node("moretrees:"..treename.."_sapling_ongen", {
-		description = S(treedesc.." Sapling (on-generated)"),
+		description = S(treedesc.." Sapling (fast growth)"),
 		drawtype = "plantlike",
 		tiles = {saptex},
 		inventory_image = saptex,
@@ -224,7 +224,7 @@ for i in ipairs(moretrees.treelist) do
 			type = "fixed",
 			fixed = {-0.3, -0.5, -0.3, 0.3, 0.35, 0.3}
 		},
-		groups = {snappy=2,dig_immediate=3,flammable=2,attached_node=1,not_in_creative_inventory=1,sapling=1},
+		groups = {snappy=2,dig_immediate=3,flammable=2,attached_node=1,sapling=1},
 		sounds = default.node_sound_defaults(),
 		drop = "moretrees:"..treename.."_sapling"
 	})
