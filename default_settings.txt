@@ -122,8 +122,8 @@ moretrees.dates_item_drop_ichance	= 10 		-- inverse probability of ripe dates dr
 
 -- Sapling settings
 
-moretrees.sapling_interval		= 500
-moretrees.sapling_chance		= 20
+moretrees.sapling_interval		= 100
+moretrees.sapling_chance		= 5
 
 -- If this variable is set to true, drop leaves out as entities during leaf
 -- decay, rather than just disappearing them.

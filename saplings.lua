@@ -19,7 +19,7 @@ for i in ipairs(moretrees.treelist) do
 		if moretrees.spawn_saplings then
 			biome_lib:grow_plants({
 				grow_delay = 2,
-				grow_chance = 30,
+				grow_chance = 2,
 				grow_plant = "moretrees:"..treename.."_sapling_ongen",
 				grow_nodes = moretrees[tree_biome].surface,
 				grow_function = moretrees[tree_model],
