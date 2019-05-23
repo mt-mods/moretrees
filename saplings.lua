@@ -10,16 +10,28 @@ local dirt_surfaces = {
 	["default:dirt_with_dry_grass"] = true,
 	["default:dirt_with_coniferous_litter"] = true,
 	["default:dirt_with_rainforest_litter"] = true,
-	["default:dirt_with_snow"] = true,
 	["woodsoils:dirt_with_leaves_1"] = true,
 	["woodsoils:dirt_with_leaves_2"] = true,
 	["woodsoils:grass_with_leaves_1"] = true,
 	["woodsoils:grass_with_leaves_2"] = true
 }
 
-local cold_surfaces = "default:dirt_with_snow"
+local conifer_surfaces =  {
+	set = true,
+	["default:dirt"] = true,
+	["default:dirt_with_grass"] = true,
+	["default:dirt_with_dry_grass"] = true,
+	["default:dirt_with_coniferous_litter"] = true,
+	["default:dirt_with_rainforest_litter"] = true,
+	["woodsoils:dirt_with_leaves_1"] = true,
+	["woodsoils:dirt_with_leaves_2"] = true,
+	["woodsoils:grass_with_leaves_1"] = true,
+	["woodsoils:grass_with_leaves_2"] = true,
+	["default:dirt_with_snow"] = true
+}
 
 local sand_surfaces = {
+	set = true,
 	["default:sand"] = true,
 	["default:desert_sand"] = true,
 	["cottages:loam"] = true,
@@ -38,7 +50,7 @@ for i in ipairs(moretrees.treelist) do
 	  or treename == "fir"
 	  or treename == "cedar"
 	  or treename == "pine" then
-		surfaces = cold_surfaces
+		surfaces = conifer_surfaces
 	elseif string.find(treename, "palm") then
 		surfaces = sand_surfaces
 	else
@@ -62,13 +74,11 @@ for i in ipairs(moretrees.treelist) do
 		grow_function = grow_function,
 	})
 
-	if moretrees.spawn_saplings then
-		biome_lib:grow_plants({
-			grow_delay = 2,
-			grow_chance = 1,
-			grow_plant = "moretrees:"..treename.."_sapling_ongen",
-			grow_nodes = moretrees[tree_biome].surface,
-			grow_function = grow_function,
-		})
-	end
+	biome_lib:grow_plants({
+		grow_delay = 2,
+		grow_chance = 1,
+		grow_plant = "moretrees:"..treename.."_sapling_ongen",
+		grow_nodes = surfaces,
+		grow_function = grow_function,
+	})
 end
