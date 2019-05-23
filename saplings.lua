@@ -4,26 +4,25 @@
 -- limited, in the interest of speed.
 
 local dirt_surfaces = {
-	"default:dirt",
-	"default:dirt_with_grass",
-	"default:dirt_with_dry_grass",
-	"default:dirt_with_coniferous_litter",
-	"default:dirt_with_rainforest_litter",
-	"default:dirt_with_snow",
-	"woodsoils:dirt_with_leaves_1",
-	"woodsoils:dirt_with_leaves_2",
-	"woodsoils:grass_with_leaves_1",
-	"woodsoils:grass_with_leaves_2"
+	set = true,
+	["default:dirt"] = true,
+	["default:dirt_with_grass"] = true,
+	["default:dirt_with_dry_grass"] = true,
+	["default:dirt_with_coniferous_litter"] = true,
+	["default:dirt_with_rainforest_litter"] = true,
+	["default:dirt_with_snow"] = true,
+	["woodsoils:dirt_with_leaves_1"] = true,
+	["woodsoils:dirt_with_leaves_2"] = true,
+	["woodsoils:grass_with_leaves_1"] = true,
+	["woodsoils:grass_with_leaves_2"] = true
 }
 
-local cold_surfaces = {
-	"default:dirt_with_snow"
-}
+local cold_surfaces = "default:dirt_with_snow"
 
 local sand_surfaces = {
-	"default:sand",
-	"default:desert_sand",
-	"cottages:loam",
+	["default:sand"] = true,
+	["default:desert_sand"] = true,
+	["cottages:loam"] = true,
 	-- note, no silver sand here.
 	-- too cold for a palm, too... well... sandy for anything else.
 }
