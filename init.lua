@@ -15,6 +15,41 @@
 
 moretrees = {}
 
+minetest.override_item("default:sapling", {
+	description = "Sapling"
+})
+
+minetest.override_item("default:tree", {
+	description = "Tree"
+})
+
+minetest.override_item("default:wood", {
+	description = "Wooden Planks"
+})
+
+minetest.override_item("default:leaves", {
+	description = "Leaves"
+})
+
+minetest.override_item("default:fence_wood", {
+	description = "Wooden Fence"
+})
+
+minetest.override_item("default:fence_rail_wood", {
+	description = "Wooden Fence Rail"
+})
+
+if minetest.get_modpath("doors") then
+	minetest.override_item("doors:gate_wood_closed", {
+		description = "Wooden Fence Gate"
+	})
+
+	minetest.override_item("doors:gate_wood_open", {
+		description = "Wooden Fence Gate"
+	})
+end
+
+
 -- Read the default config file (and if necessary, copy it to the world folder).
 
 local worldpath=minetest.get_worldpath()
