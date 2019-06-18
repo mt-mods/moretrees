@@ -404,7 +404,7 @@ default.register_leafdecay({
 
 
 if moretrees.enable_redefine_apple then
-	local appledef = moretrees.clone_node("default:apple")
+	local appledef = table.copy(minetest.registered_nodes["default:apple"])
 	appledef.groups.attached_node = 1
 	minetest.register_node(":default:apple", appledef)
 end
