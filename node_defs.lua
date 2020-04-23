@@ -119,6 +119,18 @@ for i in ipairs(moretrees.treelist) do
 			},
 			groups = {snappy=2,dig_immediate=3,flammable=2,attached_node=1,sapling=1},
 			sounds = default.node_sound_defaults(),
+			on_place = function(itemstack, placer, pointed_thing)
+				itemstack = default.sapling_on_place(itemstack, placer, pointed_thing,
+					"moretrees:" ..treename.. "_sapling",
+					-- minp, maxp to be checked, relative to sapling pos
+					-- minp_relative.y = 1 because sapling pos has been checked
+					{x = -3, y = 1, z = -3},
+					{x = 3, y = 6, z = 3},
+					-- maximum interval of interior volume check
+					4)
+
+				return itemstack
+			end,
 		})
 
 		local moretrees_leaves_inventory_image = nil
@@ -261,7 +273,19 @@ for i in ipairs(moretrees.treelist) do
 		},
 		groups = {snappy=2,dig_immediate=3,flammable=2,attached_node=1,sapling=1},
 		sounds = default.node_sound_defaults(),
-		drop = "moretrees:"..treename.."_sapling"
+		drop = "moretrees:"..treename.."_sapling",
+		on_place = function(itemstack, placer, pointed_thing)
+				itemstack = default.sapling_on_place(itemstack, placer, pointed_thing,
+					"moretrees:" ..treename.. "_sapling_ongen",
+					-- minp, maxp to be checked, relative to sapling pos
+					-- minp_relative.y = 1 because sapling pos has been checked
+					{x = -3, y = 1, z = -3},
+					{x = 3, y = 6, z = 3},
+					-- maximum interval of interior volume check
+					4)
+
+				return itemstack
+			end,
 	})
 
 	local fruitname = nil
