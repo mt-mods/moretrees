@@ -38,7 +38,8 @@ minetest.register_craftitem("moretrees:coconut_milk", {
 	description = S("Coconut Milk"),
 	inventory_image = "moretrees_coconut_milk_inv.png",
 	wield_image = "moretrees_coconut_milk.png",
-	on_use = minetest.item_eat(2),
+	on_use = minetest.item_eat(2, "vessels:drinking_glass"),
+	groups = {vessel = 1},
 })
 
 minetest.register_craftitem("moretrees:raw_coconut", {
@@ -120,6 +121,7 @@ for i in ipairs(moretrees.cutting_tools) do
 		}
 	})
 end
+
 -- give tool back with wear preserved
 minetest.register_on_craft(function(itemstack, player, old_craft_grid, craft_inv)
 	if (itemstack:get_name() == "moretrees:coconut_milk") then
@@ -127,6 +129,10 @@ minetest.register_on_craft(function(itemstack, player, old_craft_grid, craft_inv
 			-- find tool used to do the craft
 			local ocg_name = j:get_name()
 			if ((ocg_name ~= "") and (ocg_name ~= "moretrees:coconut") and (ocg_name ~= "vessels:drinking_glass")) then
+				-- abort if using cutting board
+				if minetest.get_item_group(ocg_name, "food_cutting_board") == 1 then
+					return
+				end
 				-- create a new tool and set wear
 				local t = ItemStack(ocg_name)
 				local w = j:get_wear()
@@ -148,8 +154,26 @@ minetest.register_on_craft(function(itemstack, player, old_craft_grid, craft_inv
 				craft_inv:add_item("craft", t)
 			end
 		end
-  	end
+	end
 end)
+
+-- coconut milk using food_cutting_board from farming redo
+if minetest.registered_items["farming:cutting_board"] then
+	minetest.register_craft({
+		type = "shapeless",
+		output = "moretrees:coconut_milk",
+		recipe = {
+			"moretrees:coconut",
+			"vessels:drinking_glass",
+			"group:food_cutting_board",
+		},
+		replacements = {
+			{ "moretrees:coconut", "moretrees:raw_coconut" },
+			{ "group:food_cutting_board", "farming:cutting_board" },
+		}
+	})
+end
+
 
 minetest.register_craft({
 	type = "shapeless",
