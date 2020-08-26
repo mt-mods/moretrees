@@ -11,7 +11,7 @@
 
 -- © 2016, Rogier <rogier777@gmail.com>
 
-local S = moretrees.intllib
+local S = minetest.get_translator("moretrees")
 
 -- Some constants
 
