@@ -1,4 +1,4 @@
-local S = moretrees.intllib
+local S = minetest.get_translator("moretrees")
 
 for i in ipairs(moretrees.treelist) do
 	local treename = moretrees.treelist[i][1]
