@@ -327,7 +327,7 @@ for i in ipairs(moretrees.treelist) do
 		chance = 1,
 		action = function(pos, node, active_object_count, active_object_count_wider)
 			local fdir = node.param2 or 0
-				nfdir = dirs2[fdir+1]
+				local nfdir = dirs2[fdir+1]
 			minetest.add_node(pos, {name = "moretrees:"..treename.."_trunk", param2 = nfdir})
 		end,
 	})
@@ -490,7 +490,6 @@ minetest.register_node("moretrees:rubber_tree_trunk_empty", {
 		"moretrees_rubber_tree_trunk_top.png",
 		"moretrees_rubber_tree_trunk_empty.png"
 	},
-	is_ground_content = true,
 	groups = {tree=1,snappy=1,choppy=2,oddly_breakable_by_hand=1,flammable=2},
 	sounds = default.node_sound_wood_defaults(),
 	paramtype2 = "facedir",
@@ -504,7 +503,7 @@ minetest.register_abm({
 	chance = 1,
 	action = function(pos, node, active_object_count, active_object_count_wider)
 		local fdir = node.param2 or 0
-			nfdir = dirs2[fdir+1]
+			local nfdir = dirs2[fdir+1]
 		minetest.add_node(pos, {name = "moretrees:rubber_tree_trunk_empty", param2 = nfdir})
 	end,
 })
