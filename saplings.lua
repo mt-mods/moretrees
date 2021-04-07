@@ -64,7 +64,7 @@ for i in ipairs(moretrees.treelist) do
 		grow_function = "moretrees.grow_"..treename
 	end
 
-	biome_lib:dbg(dump(moretrees[tree_biome].surface))
+	biome_lib.dbg(dump(moretrees[tree_biome].surface), 4)
 
 	biome_lib:grow_plants({
 		grow_delay = moretrees.sapling_interval,
