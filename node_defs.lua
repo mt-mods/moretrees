@@ -292,6 +292,15 @@ for i in ipairs(moretrees.treelist) do
 			sounds = default.node_sound_wood_defaults(),
 		})
 
+		-- Register this wood type with the `wood_types` mod, so all mods can easily use it automatically
+		if minetest.get_modpath("wood_types") then
+			wood_types.register_wood(
+				"moretrees:"..treename.."_planks",
+				treename,
+				moretrees.treedesc[treename].planks,
+				{"moretrees_"..treename.."_wood.png"})
+		end
+
 		minetest.register_node("moretrees:"..treename.."_sapling", {
 			description = moretrees.treedesc[treename].sapling,
 			drawtype = "plantlike",
