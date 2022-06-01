@@ -55,6 +55,7 @@ moretrees.leafdecay_delay		= 2
 moretrees.leafdecay_chance		= 5
 moretrees.leafdecay_radius		= 5
 moretrees.palm_leafdecay_radius		= 10
+moretrees.date_palm_leafdecay_radius	= 14
 
 -- Change these settings if you want default trees to be gradually cut down
 -- above the elevation where firs normally generate.

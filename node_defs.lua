@@ -261,7 +261,7 @@ for i in ipairs(moretrees.treelist) do
 		droprarity = 20
 		decay = moretrees.palm_leafdecay_radius
 	elseif treename == "date_palm" then
-		decay = moretrees.palm_leafdecay_radius
+		decay = moretrees.date_palm_leafdecay_radius
 	end
 
 	if treename ~= "jungletree"  -- the default game provides jungle tree and pine trunk/planks nodes.
