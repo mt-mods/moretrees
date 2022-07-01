@@ -482,6 +482,12 @@ for i in ipairs(moretrees.treelist) do
 				minetest.chat_send_all("can grow")
 				minetest.chat_send_all("grow_" .. treename)
 				--moretrees["grow_" .. treename](pos)
+				if type(moretrees["spawn_" .. treename .. "_object"])=="string" then
+					local split = moretrees["spawn_" .. treename .. "_object"]:split(".")
+					moretrees[split[2]](pos)
+				else
+					minetest.spawn_tree(pos, moretrees["spawn_" .. treename .. "_object"])
+				end
 			else
 				minetest.get_node_timer(pos):start(300)
 			end

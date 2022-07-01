@@ -32,7 +32,7 @@ ftrunk.after_destruct = function(pos, oldnode)
 		-- minetest.dig_node(coconutpos) does not cause nearby coconuts to be dropped :-( ...
 		--minetest.dig_node(coconutpos)
 		local items = minetest.get_node_drops(minetest.get_node(coconutpos).name)
-		minetest.swap_node(coconutpos, biome_lib.air)
+		minetest.swap_node(coconutpos, {name = "air"})
 		for _, itemname in pairs(items) do
 			minetest.add_item(coconutpos, itemname)
 		end
@@ -127,7 +127,7 @@ local coconut_growfn = function(pos, elapsed)
 					minetest.add_item(pos, itemname)
 				end
 			end
-			minetest.swap_node(pos, biome_lib.air)
+			minetest.swap_node(pos, {name = "air"})
 		end
 	else
 		-- Grow coconuts to the next stage

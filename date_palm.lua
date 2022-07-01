@@ -52,7 +52,7 @@ ftrunk.after_destruct = function(pos, oldnode)
 	for _,datespos in pairs(dates) do
 		-- minetest.dig_node(datespos) does not cause nearby dates to be dropped :-( ...
 		local items = minetest.get_node_drops(minetest.get_node(datespos).name)
-		minetest.swap_node(datespos, biome_lib.air)
+		minetest.swap_node(datespos, {name = "air"})
 		for _, itemname in pairs(items) do
 			minetest.add_item(datespos, itemname)
 		end
@@ -547,7 +547,7 @@ local dates_growfn = function(pos, elapsed)
 		elseif string.find(node.name, "moretrees:dates_m") then
 			minetest.swap_node(pos, {name="moretrees:dates_n"})
 		else
-			minetest.swap_node(pos, biome_lib.air)
+			minetest.swap_node(pos, {name = "air"})
 		end
 		return
 	elseif node.name == "moretrees:dates_f0" and math.random(100) <= 100 * dates_regrow_prob then
@@ -587,7 +587,7 @@ local dates_growfn = function(pos, elapsed)
 	elseif string.match(node.name, "n$") then
 		-- Remove stems.
 		if math.random(stems_drop_ichance) == 1 then
-			minetest.swap_node(pos, biome_lib.air)
+			minetest.swap_node(pos, {name = "air"})
 			return "stemdrop"
 		end
 		action = "nostemdrop"
