@@ -245,7 +245,10 @@ function moretrees.grow_jungletree(pos)
 	end
 
 	minetest.swap_node(pos, {name = "air"})
-	local leaves = minetest.find_nodes_in_area({x = pos.x-1, y = pos.y, z = pos.z-1}, {x = pos.x+1, y = pos.y+10, z = pos.z+1}, "default:leaves")
+	local leaves = minetest.find_nodes_in_area(
+		{x = pos.x-1, y = pos.y, z = pos.z-1}, {x = pos.x+1, y = pos.y+10, z = pos.z+1},
+		"default:leaves"
+	)
 	for leaf in ipairs(leaves) do
 			minetest.swap_node(leaves[leaf], {name = "air"})
 	end
@@ -272,7 +275,11 @@ function moretrees.grow_fir(pos)
 	moretrees.fir_model.random_level = 5
 
 	minetest.swap_node(pos, {name = "air"})
-	local leaves = minetest.find_nodes_in_area({x = pos.x, y = pos.y, z = pos.z}, {x = pos.x, y = pos.y+5, z = pos.z}, "default:leaves")
+	local leaves = minetest.find_nodes_in_area(
+		{x = pos.x, y = pos.y, z = pos.z},
+		{x = pos.x, y = pos.y+5, z = pos.z},
+		"default:leaves"
+	)
 	for leaf in ipairs(leaves) do
 		minetest.swap_node(leaves[leaf], {name = "air"})
 	end
@@ -299,7 +306,11 @@ function moretrees.grow_fir_snow(pos)
 	moretrees.fir_model.random_level = 2
 
 	minetest.swap_node(pos, {name = "air"})
-	local leaves = minetest.find_nodes_in_area({x = pos.x, y = pos.y, z = pos.z}, {x = pos.x, y = pos.y+5, z = pos.z}, "default:leaves")
+	local leaves = minetest.find_nodes_in_area(
+		{x = pos.x, y = pos.y, z = pos.z},
+		{x = pos.x, y = pos.y+5, z = pos.z},
+		"default:leaves"
+	)
 	for leaf in ipairs(leaves) do
 			minetest.swap_node(leaves[leaf], {name = "air"})
 	end

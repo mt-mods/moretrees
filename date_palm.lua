@@ -83,7 +83,10 @@ local date_regrow_abm_spec = {
 	interval = moretrees.dates_flower_interval,
 	chance = moretrees.dates_flower_chance,
 	action = function(pos, node, active_object_count, active_object_count_wider)
-		local dates = minetest.find_nodes_in_area({x=pos.x-2, y=pos.y, z=pos.z-2}, {x=pos.x+2, y=pos.y, z=pos.z+2}, "group:moretrees_dates")
+		local dates = minetest.find_nodes_in_area(
+			{x=pos.x-2, y=pos.y, z=pos.z-2}, {x=pos.x+2, y=pos.y, z=pos.z+2},
+			"group:moretrees_dates"
+		)
 
 		-- New blossom interval increases exponentially with number of dates already hanging
 		-- In addition: if more dates are hanging, the chance of picking an empty spot decreases as well...
@@ -228,7 +231,8 @@ local function find_fruit_trunks_near(ftpos, sect)
 	-- Skip the search if it is consuming too much CPU time
 	if sect_search_stats.count > 0 and moretrees.dates_blossom_search_iload > 0
 			and sect_search_stats.sum / sect_search_stats.count > moretrees.dates_blossom_search_time_treshold
-			and t0us - sect_search_stats.last_us < moretrees.dates_blossom_search_iload * (sect_search_stats.sum / sect_search_stats.count) then
+			and t0us - sect_search_stats.last_us < moretrees.dates_blossom_search_iload
+			* (sect_search_stats.sum / sect_search_stats.count) then
 		sect_search_stats.skip = sect_search_stats.skip + 1
 		return nil
 	end
@@ -481,7 +485,10 @@ local function find_male_blossom_with_ftrunk(fbpos,ftpos)
 		end
 		-- Else do a new search
 		if not mpalms.sect[sect_old] then
-			mpalms.sect[sect_old], fpalms_list, all_mpalms_list = find_fruit_trunks_near(ftpos, {x = (sect_old + 4) % 3 - 1, z = (sect_old + 4) / 3 - 1})
+			mpalms.sect[sect_old], fpalms_list, all_mpalms_list = find_fruit_trunks_near(
+				ftpos,
+				{x = (sect_old + 4) % 3 - 1, z = (sect_old + 4) / 3 - 1}
+			)
 			cache_changed = true
 			if sect_old == 0 then
 				-- Save the results if it is sector 0
