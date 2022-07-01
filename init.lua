@@ -91,7 +91,7 @@ dofile(modpath.."/node_defs.lua")
 dofile(modpath.."/date_palm.lua")
 dofile(modpath.."/cocos_palm.lua")
 dofile(modpath.."/biome_defs.lua")
---dofile(modpath.."/saplings.lua")
+dofile(modpath.."/saplings.lua")
 dofile(modpath.."/crafts.lua")
 
 -- tree spawning setup

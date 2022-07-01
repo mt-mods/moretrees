@@ -463,17 +463,29 @@ for i in ipairs(moretrees.treelist) do
 		sounds = default.node_sound_defaults(),
 		drop = "moretrees:"..treename.."_sapling",
 		on_place = function(itemstack, placer, pointed_thing)
-				itemstack = default.sapling_on_place(itemstack, placer, pointed_thing,
-					"moretrees:" ..treename.. "_sapling_ongen",
-					-- minp, maxp to be checked, relative to sapling pos
-					-- minp_relative.y = 1 because sapling pos has been checked
-					{x = -3, y = 1, z = -3},
-					{x = 3, y = 6, z = 3},
-					-- maximum interval of interior volume check
-					4)
+			itemstack = default.sapling_on_place(itemstack, placer, pointed_thing,
+				"moretrees:" ..treename.. "_sapling_ongen",
+				-- minp, maxp to be checked, relative to sapling pos
+				-- minp_relative.y = 1 because sapling pos has been checked
+				{x = -3, y = 1, z = -3},
+				{x = 3, y = 6, z = 3},
+				-- maximum interval of interior volume check
+				4)
 
-				return itemstack
-			end,
+			return itemstack
+		end,
+		on_construct = function(pos)
+			minetest.get_node_timer(pos):start(2)
+		end,
+		on_timer = function(pos, elapsed)
+			if moretrees.can_grow(pos, treename) then
+				minetest.chat_send_all("can grow")
+				minetest.chat_send_all("grow_" .. treename)
+				--moretrees["grow_" .. treename](pos)
+			else
+				minetest.get_node_timer(pos):start(300)
+			end
+		end,
 	})
 
 	local fruitname = nil

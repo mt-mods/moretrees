@@ -39,7 +39,12 @@ local sand_surfaces = {
 	-- too cold for a palm, too... well... sandy for anything else.
 }
 
-for i in ipairs(moretrees.treelist) do
+function moretrees.can_grow(pos, treename)
+	minetest.chat_send_all(treename)
+	return true
+end
+
+--[[ for i in ipairs(moretrees.treelist) do
 	local treename = moretrees.treelist[i][1]
 	local tree_model = treename.."_model"
 	local tree_biome = treename.."_biome"
@@ -81,4 +86,4 @@ for i in ipairs(moretrees.treelist) do
 		grow_nodes = surfaces,
 		grow_function = grow_function,
 	})
-end
+end ]]
