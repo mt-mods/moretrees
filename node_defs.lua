@@ -319,6 +319,23 @@ for i in ipairs(moretrees.treelist) do
 
 				return itemstack
 			end,
+			on_construct = function(pos)
+				minetest.get_node_timer(pos):start(300)
+			end,
+			on_timer = function(pos, elapsed)
+				if moretrees.can_grow(pos, treename) then
+					--moretrees["grow_" .. treename](pos)
+					minetest.set_node(pos, {name="air"})
+					if type(moretrees["spawn_" .. treename .. "_object"])=="string" then
+						local split = moretrees["spawn_" .. treename .. "_object"]:split(".")
+						moretrees[split[2]](pos)
+					else
+						minetest.spawn_tree(pos, moretrees["spawn_" .. treename .. "_object"])
+					end
+				else
+					minetest.get_node_timer(pos):start(300)
+				end
+			end,
 		})
 
 		local moretrees_leaves_inventory_image = nil
