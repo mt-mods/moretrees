@@ -91,7 +91,7 @@ dofile(modpath.."/node_defs.lua")
 dofile(modpath.."/date_palm.lua")
 dofile(modpath.."/cocos_palm.lua")
 dofile(modpath.."/biome_defs.lua")
-dofile(modpath.."/saplings.lua")
+--dofile(modpath.."/saplings.lua")
 dofile(modpath.."/crafts.lua")
 
 -- tree spawning setup
@@ -132,7 +132,7 @@ else
 	moretrees.spawn_poplar_small_object = moretrees.poplar_small_model
 end
 
-if moretrees.enable_beech then
+--[[ if moretrees.enable_beech then
 	biome_lib:register_generate_plant(moretrees.beech_biome, moretrees.spawn_beech_object)
 end
 
@@ -194,7 +194,7 @@ if moretrees.enable_poplar then
 	biome_lib:register_generate_plant(moretrees.poplar_biome_3, moretrees.spawn_poplar_object)
 	biome_lib:register_generate_plant(moretrees.poplar_small_biome, moretrees.spawn_poplar_small_object)
 	biome_lib:register_generate_plant(moretrees.poplar_small_biome_2, moretrees.spawn_poplar_small_object)
-end
+end ]]
 
 -- Code to spawn a birch tree
 
