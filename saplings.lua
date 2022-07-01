@@ -40,8 +40,24 @@ local sand_surfaces = {
 }
 
 function moretrees.can_grow(pos, treename)
-	minetest.chat_send_all(treename)
-	return true
+	local surfaces
+
+	if treename == "spruce"
+	  or treename == "fir"
+	  or treename == "cedar"
+	  or treename == "pine" then
+		surfaces = conifer_surfaces
+	elseif string.find(treename, "palm") then
+		surfaces = sand_surfaces
+	else
+		surfaces = dirt_surfaces
+	end
+
+	if surfaces[minetest.get_node(vector.new(pos.x, pos.y-1, pos.z)).name] then
+		return true
+	else
+		return false
+	end
 end
 
 --[[ for i in ipairs(moretrees.treelist) do
