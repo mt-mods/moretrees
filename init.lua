@@ -205,6 +205,7 @@ moretrees.jt_rules_a1 = "FFF[&&-FBf[&&&Ff]^^^Ff][&&+FBFf[&&&FFf]^^^Ff][&&---FBFf
 moretrees.jt_rules_b1 = "[-Ff&f][+Ff&f]B"
 
 moretrees.jt_axiom2 = "FFFFFA"
+-- luacheck: no max line length
 moretrees.jt_rules_a2 = "FFFFF[&&-FFFBF[&&&FFff]^^^FFf][&&+FFFBFF[&&&FFff]^^^FFf][&&---FFFBFF[&&&FFff]^^^FFf][&&+++FFFBFF[&&&FFff]^^^FFf]FF/A"
 moretrees.jt_rules_b2 = "[-FFf&ff][+FFf&ff]B"
 
