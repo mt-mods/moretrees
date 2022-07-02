@@ -112,69 +112,117 @@ moretrees.spawn_fir_snow_object = "moretrees.grow_fir_snow"
 moretrees.spawn_poplar_object = moretrees.poplar_model
 moretrees.spawn_poplar_small_object = moretrees.poplar_small_model
 
---[[ if moretrees.enable_beech then
-	biome_lib:register_generate_plant(moretrees.beech_biome, moretrees.spawn_beech_object)
+local deco_ids = {}
+
+function translate_biome_defs(def, treename, index)
+	if not index then index = 1 end
+	local deco_def = {
+		name = treename .. "_" .. index,
+		deco_type = "simple",
+		place_on = def.surface,
+		sidelen = 16,
+		fill_ratio = 0.02,
+		--biomes eventually?
+		y_min = def.min_elevation,
+		y_max = def.max_elevation,
+		spawn_by = def.near_nodes,
+		num_spawn_by = def.near_nodes_count,
+		decoration = "moretrees:"..treename.."_sapling_ongen"
+	}
+
+	deco_ids[#deco_ids+1] = treename .. ("_" .. index or "_1")
+
+	return deco_def
+end
+
+if moretrees.enable_beech then
+	minetest.register_decoration(translate_biome_defs(moretrees.beech_biome, "beech"))
 end
 
 if moretrees.enable_apple_tree then
-	biome_lib:register_generate_plant(moretrees.apple_tree_biome, moretrees.spawn_apple_tree_object)
+	minetest.register_decoration(translate_biome_defs(moretrees.apple_tree_biome, "apple_tree"))
 end
 
 if moretrees.enable_oak then
-	biome_lib:register_generate_plant(moretrees.oak_biome, moretrees.spawn_oak_object)
+	minetest.register_decoration(translate_biome_defs(moretrees.oak_biome, "oak"))
 end
 
 if moretrees.enable_sequoia then
-	biome_lib:register_generate_plant(moretrees.sequoia_biome, moretrees.spawn_sequoia_object)
+	minetest.register_decoration(translate_biome_defs(moretrees.sequoia_biome, "sequoia"))
 end
 
 if moretrees.enable_palm then
-	biome_lib:register_generate_plant(moretrees.palm_biome, moretrees.spawn_palm_object)
+	minetest.register_decoration(translate_biome_defs(moretrees.palm_biome, "palm"))
 end
 
 if moretrees.enable_date_palm then
-	biome_lib:register_generate_plant(moretrees.date_palm_biome, moretrees.spawn_date_palm_object)
-	biome_lib:register_generate_plant(moretrees.date_palm_biome_2, moretrees.spawn_date_palm_object)
+	minetest.register_decoration(translate_biome_defs(moretrees.date_palm_biome, "palm", 1))
+	minetest.register_decoration(translate_biome_defs(moretrees.date_palm_biome_2, "palm", 2))
 end
 
 if moretrees.enable_cedar then
-	biome_lib:register_generate_plant(moretrees.cedar_biome, moretrees.spawn_cedar_object)
+	minetest.register_decoration(translate_biome_defs(moretrees.cedar_biome, "cedar"))
 end
 
 if moretrees.enable_rubber_tree then
-	biome_lib:register_generate_plant(moretrees.rubber_tree_biome, moretrees.spawn_rubber_tree_object)
+	minetest.register_decoration(translate_biome_defs(moretrees.rubber_tree_biome, "ruber"))
 end
 
 if moretrees.enable_willow then
-	biome_lib:register_generate_plant(moretrees.willow_biome, moretrees.spawn_willow_object)
+	minetest.register_decoration(translate_biome_defs(moretrees.willow_biome, "willow"))
 end
 
 if moretrees.enable_birch then
-	biome_lib:register_generate_plant(moretrees.birch_biome, moretrees.spawn_birch_object)
+	minetest.register_decoration(translate_biome_defs(moretrees.birch_biome, "birch"))
 end
 
 if moretrees.enable_spruce then
-	biome_lib:register_generate_plant(moretrees.spruce_biome, moretrees.spawn_spruce_object)
+	minetest.register_decoration(translate_biome_defs(moretrees.spruce_biome, "spruce"))
 end
 
 if moretrees.enable_jungle_tree then
-	biome_lib:register_generate_plant(moretrees.jungletree_biome, moretrees.spawn_jungletree_object)
+	minetest.register_decoration(translate_biome_defs(moretrees.jungletree_biome, "jungletree"))
 end
 
 if moretrees.enable_fir then
-	biome_lib:register_generate_plant(moretrees.fir_biome, moretrees.spawn_fir_object)
+	minetest.register_decoration(translate_biome_defs(moretrees.fir_biome, "fir", 1))
 	if minetest.get_modpath("snow") then
-		biome_lib:register_generate_plant(moretrees.fir_biome_snow, moretrees.spawn_fir_snow_object)
+		minetest.register_decoration(translate_biome_defs(moretrees.fir_biome_snow, "fir", 2))
 	end
 end
 
 if moretrees.enable_poplar then
-	biome_lib:register_generate_plant(moretrees.poplar_biome, moretrees.spawn_poplar_object)
-	biome_lib:register_generate_plant(moretrees.poplar_biome_2, moretrees.spawn_poplar_object)
-	biome_lib:register_generate_plant(moretrees.poplar_biome_3, moretrees.spawn_poplar_object)
-	biome_lib:register_generate_plant(moretrees.poplar_small_biome, moretrees.spawn_poplar_small_object)
-	biome_lib:register_generate_plant(moretrees.poplar_small_biome_2, moretrees.spawn_poplar_small_object)
-end ]]
+	minetest.register_decoration(translate_biome_defs(moretrees.poplar_biome, "popular", 1))
+	minetest.register_decoration(translate_biome_defs(moretrees.poplar_biome_2, "popular", 2))
+	minetest.register_decoration(translate_biome_defs(moretrees.poplar_biome_3, "popular", 3))
+	minetest.register_decoration(translate_biome_defs(moretrees.poplar_small_biome, "popular", 4))
+	minetest.register_decoration(translate_biome_defs(moretrees.poplar_small_biome_2, "popular", 5))
+end
+
+for k, v in pairs(deco_ids) do
+	deco_ids[k] = minetest.get_decoration_id(v)
+end
+minetest.set_gen_notify("decoration", deco_ids)
+
+minetest.register_on_generated(function(minp, maxp, blockseed)
+    local g = minetest.get_mapgen_object("gennotify")
+	--minetest.chat_send_all(dump(g))
+    local locations = {}
+	for _, id in pairs(deco_ids) do
+		local deco_locations = g["decoration#" .. id] or {}
+		for _, pos in pairs(deco_locations) do
+			locations[#locations+1] = pos
+		end
+	end
+
+    if #locations == 0 then return end
+    for _, pos in ipairs(locations) do
+		--minetest.chat_send_all("yay")
+        local timer = minetest.get_node_timer({x=pos.x, y=pos.y+1, z=pos.z})
+        timer:start(math.random(2,10))
+		--minetest.set_node(pos, {name="default:stone"})
+    end
+end)
 
 -- Code to spawn a birch tree
 
