@@ -55,7 +55,7 @@ end
 local worldpath=minetest.get_worldpath()
 local modpath=minetest.get_modpath("moretrees")
 
-dofile(modpath.."/default_settings.txt")
+dofile(modpath.."/settings.lua")
 
 if io.open(worldpath.."/moretrees_settings.txt","r") then
 	io.close()
@@ -220,7 +220,7 @@ minetest.register_on_generated(function(minp, maxp, blockseed)
 		--minetest.chat_send_all("yay")
         local timer = minetest.get_node_timer({x=pos.x, y=pos.y+1, z=pos.z})
         timer:start(math.random(2,10))
-		--minetest.set_node(pos, {name="default:stone"})
+		minetest.set_node(pos, {name="default:stone"})
     end
 end)
 
