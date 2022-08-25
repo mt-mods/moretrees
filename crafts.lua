@@ -121,7 +121,7 @@ for i in ipairs(moretrees.cutting_tools) do
 		}
 	})
 end
---[[
+
 -- give tool back with wear preserved
 minetest.register_on_craft(function(itemstack, player, old_craft_grid, craft_inv)
 	if (itemstack:get_name() == "moretrees:coconut_milk") then
@@ -156,7 +156,7 @@ minetest.register_on_craft(function(itemstack, player, old_craft_grid, craft_inv
 		end
 	end
 end)
-]]--
+
 -- coconut milk using food_cutting_board from farming redo
 if minetest.registered_items["farming:cutting_board"] then
 	minetest.register_craft({
