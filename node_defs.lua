@@ -508,7 +508,7 @@ for i in ipairs(moretrees.treelist) do
 				radius = decay,
 			})
 	end
-
+--[[
 	minetest.register_abm({
 		nodenames = { "moretrees:"..treename.."_trunk_sideways" },
 		interval = 1,
@@ -519,7 +519,7 @@ for i in ipairs(moretrees.treelist) do
 			minetest.add_node(pos, {name = "moretrees:"..treename.."_trunk", param2 = nfdir})
 		end,
 	})
-
+]]--
 	table.insert(moretrees.avoidnodes, "moretrees:"..treename.."_trunk")
 
 	if moretrees.spawn_saplings then
@@ -684,7 +684,7 @@ minetest.register_node("moretrees:rubber_tree_trunk_empty", {
 	is_ground_content = false,
 	on_place = minetest.rotate_node,
 })
-
+--[[
 minetest.register_abm({
 	nodenames = { "moretrees:rubber_tree_trunk_empty_sideways" },
 	interval = 1,
@@ -695,7 +695,7 @@ minetest.register_abm({
 		minetest.add_node(pos, {name = "moretrees:rubber_tree_trunk_empty", param2 = nfdir})
 	end,
 })
-
+]]--
 -- For compatibility with old nodes, recently-changed nodes, and default nodes
 
 minetest.register_alias("technic:rubber_tree_full",				"moretrees:rubber_tree_trunk")

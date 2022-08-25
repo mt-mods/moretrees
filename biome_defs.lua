@@ -94,7 +94,7 @@ moretrees.sequoia_biome = {
 	temp_min = 1,
 	temp_max = -0.4,
 	rarity = 90,
-	max_count = 5,
+	max_count = 2,
 }
 
 moretrees.birch_biome = {
@@ -107,7 +107,7 @@ moretrees.birch_biome = {
 	temp_min = 0.9,
 	temp_max = 0.3,
 	rarity = 50,
-	max_count = 10,
+	max_count = 6,
 }
 
 moretrees.willow_biome = {
@@ -169,7 +169,7 @@ moretrees.spruce_biome = {
 	temp_min = 0.9,
 	temp_max = 0.7,
 	rarity = 50,
-	max_count = 5,
+	max_count = 3,
 }
 
 moretrees.cedar_biome = {
