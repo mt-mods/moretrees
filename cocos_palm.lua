@@ -82,8 +82,8 @@ minetest.register_abm({
 	nodenames = { "moretrees:palm_fruit_trunk_gen" },
 	interval = 6,
 	chance = 1,
-	min_y = biome_lib.mapgen_elevation_limit.min,
-	max_y = biome_lib.mapgen_elevation_limit.max,
+	--[[ min_y = biome_lib.mapgen_elevation_limit.min,
+	max_y = biome_lib.mapgen_elevation_limit.max, ]]
 	label = "converts palm trunk to a regular fruit trunk, and spawns some coconuts",
 	action = function(pos, node, active_object_count, active_object_count_wider)
 		minetest.swap_node(pos, {name="moretrees:palm_fruit_trunk"})
