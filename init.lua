@@ -121,7 +121,7 @@ function translate_biome_defs(def, treename, index)
 		deco_type = "simple",
 		place_on = def.place_on or def.surface,
 		sidelen = 16,
-		fill_ratio = def.fill_ratio or 0.005,
+		fill_ratio = def.fill_ratio or 0.001,
 		--biomes eventually?
 		y_min = def.min_elevation,
 		y_max = def.max_elevation,

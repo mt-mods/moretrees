@@ -113,6 +113,7 @@ moretrees.birch_biome = {
 	temp_max = 0.3,
 	rarity = 50,
 	max_count = 10,
+	fill_ratio = 0.001,
 }
 
 moretrees.willow_biome = {
