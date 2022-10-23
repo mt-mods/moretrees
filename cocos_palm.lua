@@ -80,8 +80,11 @@ end
 --  ABM converts the trunk to a regular fruit trunk, and spawns some coconuts)
 minetest.register_abm({
 	nodenames = { "moretrees:palm_fruit_trunk_gen" },
-	interval = 1,
+	interval = 6,
 	chance = 1,
+	min_y = biome_lib.mapgen_elevation_limit.min,
+	max_y = biome_lib.mapgen_elevation_limit.max,
+	label = "converts palm trunk to a regular fruit trunk, and spawns some coconuts",
 	action = function(pos, node, active_object_count, active_object_count_wider)
 		minetest.swap_node(pos, {name="moretrees:palm_fruit_trunk"})
 		local poslist = minetest.find_nodes_in_area(

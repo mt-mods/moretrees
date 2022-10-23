@@ -592,7 +592,7 @@ end
 local poplar_leaves_drop = minetest.registered_nodes["moretrees:poplar_leaves"].drop
 minetest.override_item("moretrees:poplar_leaves", {
 	drop = {
-		max_items = poplar_leaves_drop.maxitems,
+		max_items = poplar_leaves_drop.max_items,
 		items = {
 			{items = {"moretrees:poplar_sapling"}, rarity = 1.33 * poplar_leaves_drop.items[1].rarity },
 			{items = {"moretrees:poplar_small_sapling"}, rarity = 1.33 * poplar_leaves_drop.items[1].rarity },
