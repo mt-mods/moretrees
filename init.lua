@@ -119,9 +119,9 @@ function translate_biome_defs(def, treename, index)
 	local deco_def = {
 		name = treename .. "_" .. index,
 		deco_type = "simple",
-		place_on = def.surface,
+		place_on = def.place_on or def.surface,
 		sidelen = 16,
-		fill_ratio = 0.02,
+		fill_ratio = def.fill_ratio or 0.005,
 		--biomes eventually?
 		y_min = def.min_elevation,
 		y_max = def.max_elevation,
@@ -220,7 +220,7 @@ minetest.register_on_generated(function(minp, maxp, blockseed)
 		--minetest.chat_send_all("yay")
         local timer = minetest.get_node_timer({x=pos.x, y=pos.y+1, z=pos.z})
         timer:start(math.random(2,10))
-		minetest.set_node(pos, {name="default:stone"})
+		--minetest.set_node(pos, {name="default:stone"})
     end
 end)
 
