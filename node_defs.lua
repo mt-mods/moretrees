@@ -5,19 +5,19 @@ moretrees.avoidnodes = {}
 moretrees.treelist = {
 	{"beech",        S("Beech Tree")},
 	{"apple_tree",   S("Apple Tree")},
-	{"oak",          S("Oak Tree"),       "acorn",                 S("Acorn"), {-0.2, -0.5, -0.2, 0.2, 0, 0.2}, 0.8 },
+	{"oak",          S("Oak Tree"),       "acorn",                S("Acorn"), {-0.2, -0.5, -0.2, 0.2, 0, 0.2}, 0.8 },
 	{"sequoia",      S("Giant Sequoia")},
 	{"birch",        S("Birch Tree")},
-	{"palm",         S("Palm Tree"),      "palm_fruit_trunk_gen",  S("Palm Tree"), {-0.2, -0.5, -0.2, 0.2, 0, 0.2}, 1.0 },
-	{"date_palm",    S("Date Palm Tree"), "date_palm_fruit_trunk", S("Date Palm Tree"), {0, 0, 0, 0, 0, 0}, 0.0 },
-	{"spruce",       S("Spruce Tree"),    "spruce_cone",           S("Spruce Cone"), {-0.2, -0.5, -0.2, 0.2, 0, 0.2}, 0.8 },
-	{"cedar",        S("Cedar Tree"),     "cedar_cone",            S("Cedar Cone"), {-0.2, -0.5, -0.2, 0.2, 0, 0.2}, 0.8 },
+	{"palm",         S("Palm Tree"),      "palm_fruit_trunk_gen", S("Palm Tree"), {-0.2, -0.5, -0.2, 0.2, 0, 0.2}, 1.0 },
+	{"date_palm",    S("Date Palm Tree"), "date_palm_fruit_trunk",S("Date Palm Tree"), {0, 0, 0, 0, 0, 0}, 0.0 },
+	{"spruce",       S("Spruce Tree"),    "spruce_cone",          S("Spruce Cone"), {-0.2, -0.5, -0.2, 0.2, 0, 0.2}, 0.8 },
+	{"cedar",        S("Cedar Tree"),     "cedar_cone",           S("Cedar Cone"), {-0.2, -0.5, -0.2, 0.2, 0, 0.2}, 0.8 },
 	{"poplar",       S("Poplar Tree")},
 	{"poplar_small", S("Poplar Tree")},
 	{"willow",       S("Willow Tree")},
 	{"rubber_tree",  S("Rubber Tree")},
-	{"fir",          S("Douglas Fir"),    "fir_cone",              S("Fir Cone"), {-0.2, -0.5, -0.2, 0.2, 0, 0.2}, 0.8 },
-	{"jungletree",   S("Jungle Tree"),     nil,                    nil, nil, nil, "default_junglesapling.png"  },
+	{"fir",          S("Douglas Fir"),    "fir_cone",             S("Fir Cone"), {-0.2, -0.5, -0.2, 0.2, 0, 0.2}, 0.8 },
+	{"jungletree",   S("Jungle Tree"),     nil,                   nil, nil, nil, "default_junglesapling.png"  },
 }
 
 moretrees.treedesc = {
@@ -319,6 +319,23 @@ for i in ipairs(moretrees.treelist) do
 
 				return itemstack
 			end,
+			on_construct = function(pos)
+				minetest.get_node_timer(pos):start(300)
+			end,
+			on_timer = function(pos, elapsed)
+				if moretrees.can_grow(pos, treename) then
+					--moretrees["grow_" .. treename](pos)
+					minetest.set_node(pos, {name="air"})
+					if type(moretrees["spawn_" .. treename .. "_object"])=="string" then
+						local split = moretrees["spawn_" .. treename .. "_object"]:split(".")
+						moretrees[split[2]](pos)
+					else
+						minetest.spawn_tree(pos, moretrees["spawn_" .. treename .. "_object"])
+					end
+				else
+					minetest.get_node_timer(pos):start(300)
+				end
+			end,
 		})
 
 		local moretrees_leaves_inventory_image = nil
@@ -463,17 +480,34 @@ for i in ipairs(moretrees.treelist) do
 		sounds = default.node_sound_defaults(),
 		drop = "moretrees:"..treename.."_sapling",
 		on_place = function(itemstack, placer, pointed_thing)
-				itemstack = default.sapling_on_place(itemstack, placer, pointed_thing,
-					"moretrees:" ..treename.. "_sapling_ongen",
-					-- minp, maxp to be checked, relative to sapling pos
-					-- minp_relative.y = 1 because sapling pos has been checked
-					{x = -3, y = 1, z = -3},
-					{x = 3, y = 6, z = 3},
-					-- maximum interval of interior volume check
-					4)
+			itemstack = default.sapling_on_place(itemstack, placer, pointed_thing,
+				"moretrees:" ..treename.. "_sapling_ongen",
+				-- minp, maxp to be checked, relative to sapling pos
+				-- minp_relative.y = 1 because sapling pos has been checked
+				{x = -3, y = 1, z = -3},
+				{x = 3, y = 6, z = 3},
+				-- maximum interval of interior volume check
+				4)
 
-				return itemstack
-			end,
+			return itemstack
+		end,
+		on_construct = function(pos)
+			minetest.get_node_timer(pos):start(2)
+		end,
+		on_timer = function(pos, elapsed)
+			if moretrees.can_grow(pos, treename) then
+				--moretrees["grow_" .. treename](pos)
+				minetest.set_node(pos, {name="air"})
+				if type(moretrees["spawn_" .. treename .. "_object"])=="string" then
+					local split = moretrees["spawn_" .. treename .. "_object"]:split(".")
+					moretrees[split[2]](pos)
+				else
+					minetest.spawn_tree(pos, moretrees["spawn_" .. treename .. "_object"])
+				end
+			else
+				minetest.get_node_timer(pos):start(300)
+			end
+		end,
 	})
 
 	local fruitname = nil

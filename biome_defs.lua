@@ -69,6 +69,9 @@ moretrees.apple_tree_biome = {
 	temp_max = -0.15,
 	rarity = 75,
 	max_count = 5,
+	place_on = {"default:dirt_with_grass"},
+	biomes = {"deciduous_forest"},
+	fill_ratio = 0.0001,
 }
 
 moretrees.oak_biome = {
@@ -82,6 +85,7 @@ moretrees.oak_biome = {
 	temp_max = 0.2,
 	rarity = 50,
 	max_count = 5,
+	fill_ratio = 0.0003
 }
 
 moretrees.sequoia_biome = {
@@ -95,6 +99,7 @@ moretrees.sequoia_biome = {
 	temp_max = -0.4,
 	rarity = 90,
 	max_count = 5,
+	fill_ratio = 0.0001,
 }
 
 moretrees.birch_biome = {
@@ -108,6 +113,7 @@ moretrees.birch_biome = {
 	temp_max = 0.3,
 	rarity = 50,
 	max_count = 10,
+	fill_ratio = 0.001,
 }
 
 moretrees.willow_biome = {
@@ -145,7 +151,8 @@ moretrees.jungletree_biome = {
 		"default:dirt_with_grass",
 		"woodsoils:dirt_with_leaves_1",
 		"woodsoils:grass_with_leaves_1",
-		"woodsoils:grass_with_leaves_2"
+		"woodsoils:grass_with_leaves_2",
+		"default:dirt_with_rainforest_litter",
 	},
 	avoid_nodes = {"moretrees:jungletree_trunk"},
 	max_count = 12,
@@ -158,6 +165,7 @@ moretrees.jungletree_biome = {
 	near_nodes_vertical = 2,
 	near_nodes_count = 1,
 	plantlife_limit = -0.9,
+	biomes = {"rainforest", "rainforest_swamp"},
 }
 
 moretrees.spruce_biome = {

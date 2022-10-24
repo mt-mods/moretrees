@@ -32,7 +32,7 @@ ftrunk.after_destruct = function(pos, oldnode)
 		-- minetest.dig_node(coconutpos) does not cause nearby coconuts to be dropped :-( ...
 		--minetest.dig_node(coconutpos)
 		local items = minetest.get_node_drops(minetest.get_node(coconutpos).name)
-		minetest.swap_node(coconutpos, biome_lib.air)
+		minetest.swap_node(coconutpos, {name = "air"})
 		for _, itemname in pairs(items) do
 			minetest.add_item(coconutpos, itemname)
 		end
@@ -82,8 +82,8 @@ minetest.register_abm({
 	nodenames = { "moretrees:palm_fruit_trunk_gen" },
 	interval = 6,
 	chance = 1,
-	min_y = biome_lib.mapgen_elevation_limit.min,
-	max_y = biome_lib.mapgen_elevation_limit.max,
+	min_y = -16,
+	max_y = 48,
 	label = "converts palm trunk to a regular fruit trunk, and spawns some coconuts",
 	action = function(pos, node, active_object_count, active_object_count_wider)
 		minetest.swap_node(pos, {name="moretrees:palm_fruit_trunk"})
@@ -130,7 +130,7 @@ local coconut_growfn = function(pos, elapsed)
 					minetest.add_item(pos, itemname)
 				end
 			end
-			minetest.swap_node(pos, biome_lib.air)
+			minetest.swap_node(pos, {name = "air"})
 		end
 	else
 		-- Grow coconuts to the next stage

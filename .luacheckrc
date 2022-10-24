@@ -1,28 +1,25 @@
-std = "lua51+minetest"
 unused_args = false
 allow_defined_top = true
-max_line_length = 999
-max_comment_line_length = 999
 
-stds.minetest = {
-	read_globals = {
-		"minetest",
-		"vector",
-		"VoxelManip",
-		"VoxelArea",
-		"PseudoRandom",
-		"ItemStack",
-		"default",
-		table = {
-			fields = {
-				"copy",
-			},
-		},
-		"dump",
-	}
+exclude_files = {".luacheckrc"}
+
+
+globals = {
+	"minetest",
+	"vector",
+	"VoxelManip",
+	"VoxelArea",
+	"PseudoRandom",
+	"ItemStack",
+	"default",
+	"dump",
+	"moretrees",
 }
 
 read_globals = {
+	string = {fields = {"split"}},
+    table = {fields = {"copy", "getn"}},
+
 	"biome_lib",
 	"stairsplus",
 	"stairs",
