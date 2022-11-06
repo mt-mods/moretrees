@@ -264,9 +264,9 @@ for i in ipairs(moretrees.treelist) do
 		decay = moretrees.date_palm_leafdecay_radius
 	end
 
-	if treename ~= "jungletree"  -- the default game provides jungle tree and pine trunk/planks nodes.
-		and treename ~= "poplar_small"
-		and treename ~= "pine" then
+	-- dont register planks/nodes for trees from default and small varients for trees
+	local split_tn = treename:split("_")
+	if treename ~= "jungletree" and treename ~= "pine" and split_tn[2]~="small" then
 
 		saptex = "moretrees_"..treename.."_sapling.png"
 
@@ -290,52 +290,6 @@ for i in ipairs(moretrees.treelist) do
 			is_ground_content = false,
 			groups = {snappy=1,choppy=2,oddly_breakable_by_hand=2,flammable=3,wood=1},
 			sounds = default.node_sound_wood_defaults(),
-		})
-
-		minetest.register_node("moretrees:"..treename.."_sapling", {
-			description = moretrees.treedesc[treename].sapling,
-			drawtype = "plantlike",
-			tiles = {saptex},
-			inventory_image = saptex,
-			paramtype = "light",
-			paramtype2 = "waving",
-			walkable = false,
-			is_ground_content = true,
-			selection_box = {
-				type = "fixed",
-				fixed = {-0.3, -0.5, -0.3, 0.3, 0.35, 0.3}
-			},
-			groups = {snappy=2,dig_immediate=3,flammable=2,attached_node=1,sapling=1},
-			sounds = default.node_sound_defaults(),
-			on_place = function(itemstack, placer, pointed_thing)
-				itemstack = default.sapling_on_place(itemstack, placer, pointed_thing,
-					"moretrees:" ..treename.. "_sapling",
-					-- minp, maxp to be checked, relative to sapling pos
-					-- minp_relative.y = 1 because sapling pos has been checked
-					{x = -3, y = 1, z = -3},
-					{x = 3, y = 6, z = 3},
-					-- maximum interval of interior volume check
-					4)
-
-				return itemstack
-			end,
-			on_construct = function(pos)
-				minetest.get_node_timer(pos):start(300)
-			end,
-			on_timer = function(pos, elapsed)
-				if moretrees.can_grow(pos, treename) then
-					--moretrees["grow_" .. treename](pos)
-					minetest.set_node(pos, {name="air"})
-					if type(moretrees["spawn_" .. treename .. "_object"])=="string" then
-						local split = moretrees["spawn_" .. treename .. "_object"]:split(".")
-						moretrees[split[2]](pos)
-					else
-						minetest.spawn_tree(pos, moretrees["spawn_" .. treename .. "_object"])
-					end
-				else
-					minetest.get_node_timer(pos):start(300)
-				end
-			end,
 		})
 
 		local moretrees_leaves_inventory_image = nil
@@ -463,11 +417,60 @@ for i in ipairs(moretrees.treelist) do
 		end
 	end
 
+	-- the default game provides jungle tree and pine saplings.
+	if treename~="jungletree" and treename ~= "pine" then
+		minetest.register_node("moretrees:"..treename.."_sapling", {
+			description = moretrees.treedesc[treename].sapling,
+			drawtype = "plantlike",
+			tiles = {split_tn[2] and split_tn[2]=="small" and "moretrees_" .. treename .. "_sapling.png" or saptex},
+			inventory_image = split_tn[2] and split_tn[2]=="small" and "moretrees_" .. treename .. "_sapling.png" or saptex,
+			paramtype = "light",
+			paramtype2 = "waving",
+			walkable = false,
+			is_ground_content = true,
+			selection_box = {
+				type = "fixed",
+				fixed = {-0.3, -0.5, -0.3, 0.3, 0.35, 0.3}
+			},
+			groups = {snappy=2,dig_immediate=3,flammable=2,attached_node=1,sapling=1},
+			sounds = default.node_sound_defaults(),
+			on_place = function(itemstack, placer, pointed_thing)
+				itemstack = default.sapling_on_place(itemstack, placer, pointed_thing,
+					"moretrees:" ..treename.. "_sapling",
+					-- minp, maxp to be checked, relative to sapling pos
+					-- minp_relative.y = 1 because sapling pos has been checked
+					{x = -3, y = 1, z = -3},
+					{x = 3, y = 6, z = 3},
+					-- maximum interval of interior volume check
+					4)
+
+				return itemstack
+			end,
+			on_construct = function(pos)
+				minetest.get_node_timer(pos):start(300)
+			end,
+			on_timer = function(pos, elapsed)
+				if moretrees.can_grow(pos, treename) then
+					--moretrees["grow_" .. treename](pos)
+					minetest.set_node(pos, {name="air"})
+					if type(moretrees["spawn_" .. treename .. "_object"])=="string" then
+						local split = moretrees["spawn_" .. treename .. "_object"]:split(".")
+						moretrees[split[2]](pos)
+					else
+						minetest.spawn_tree(pos, moretrees["spawn_" .. treename .. "_object"])
+					end
+				else
+					minetest.get_node_timer(pos):start(300)
+				end
+			end,
+		})
+	end
+
 	minetest.register_node("moretrees:"..treename.."_sapling_ongen", {
 		description = S("@1 (fast growth)", moretrees.treedesc[treename].sapling),
 		drawtype = "plantlike",
-		tiles = {saptex},
-		inventory_image = saptex,
+		tiles = {split_tn[2] and split_tn[2]=="small" and "moretrees_" .. treename .. "_sapling.png" or saptex,},
+		inventory_image = split_tn[2] and split_tn[2]=="small" and "moretrees_" .. treename .. "_sapling.png" or saptex,
 		paramtype = "light",
 		paramtype2 = "waving",
 		walkable = false,
@@ -562,33 +565,7 @@ for i in ipairs(moretrees.treelist) do
 	end
 end
 
--- Add small poplar saplings
-
-local poplar_sapling = minetest.registered_nodes["moretrees:poplar_sapling"]
-local poplar_sapling_ongen = minetest.registered_nodes["moretrees:poplar_sapling_ongen"]
-local poplar_small_sapling = {}
-local poplar_small_sapling_ongen = {}
-for k,v in pairs(poplar_sapling) do
-	poplar_small_sapling[k] = v
-end
-for k,v in pairs(poplar_sapling_ongen) do
-	poplar_small_sapling_ongen[k] = v
-end
-poplar_small_sapling.tiles = {"moretrees_poplar_small_sapling.png"}
-poplar_small_sapling.inventory_image = "moretrees_poplar_small_sapling.png"
-poplar_small_sapling.is_ground_content = true
-poplar_small_sapling_ongen.tiles_ongen = {"moretrees_poplar_small_sapling.png"}
-poplar_small_sapling_ongen.inventory_image_ongen = "moretrees_poplar_small_sapling.png"
-poplar_small_sapling_ongen.drop = "moretrees:poplar_small_sapling"
-poplar_small_sapling_ongen.is_ground_content = true
-
-minetest.register_node("moretrees:poplar_small_sapling", poplar_small_sapling)
-minetest.register_node("moretrees:poplar_small_sapling_ongen", poplar_small_sapling_ongen)
-if moretrees.spawn_saplings then
-	table.insert(moretrees.avoidnodes, "moretrees:poplar_sapling")
-	table.insert(moretrees.avoidnodes, "moretrees:poplar_small_sapling_ongen")
-end
-
+-- poplar saplings leaves
 local poplar_leaves_drop = minetest.registered_nodes["moretrees:poplar_leaves"].drop
 minetest.override_item("moretrees:poplar_leaves", {
 	drop = {
