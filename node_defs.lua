@@ -292,6 +292,11 @@ for i in ipairs(moretrees.treelist) do
 			sounds = default.node_sound_wood_defaults(),
 		})
 
+		local regular_groups = {snappy=2,dig_immediate=3,flammable=2,attached_node=1,sapling=1}
+		if minetest.settings:get_bool("creative_mode", false) then
+			regular_groups["not_in_creative_inventory"]=1
+		end
+
 		minetest.register_node("moretrees:"..treename.."_sapling", {
 			description = moretrees.treedesc[treename].sapling,
 			drawtype = "plantlike",
@@ -305,7 +310,7 @@ for i in ipairs(moretrees.treelist) do
 				type = "fixed",
 				fixed = {-0.3, -0.5, -0.3, 0.3, 0.35, 0.3}
 			},
-			groups = {snappy=2,dig_immediate=3,flammable=2,attached_node=1,sapling=1},
+			groups = regular_groups,
 			sounds = default.node_sound_defaults(),
 			on_place = function(itemstack, placer, pointed_thing)
 				itemstack = default.sapling_on_place(itemstack, placer, pointed_thing,
@@ -463,6 +468,11 @@ for i in ipairs(moretrees.treelist) do
 		end
 	end
 
+	local ongen_groups = {snappy=2,dig_immediate=3,flammable=2,attached_node=1,sapling=1,not_in_creative_inventory=1}
+	if minetest.settings:get_bool("creative_mode", false) then
+		ongen_groups["not_in_creative_inventory"]=nil
+	end
+
 	minetest.register_node("moretrees:"..treename.."_sapling_ongen", {
 		description = S("@1 (fast growth)", moretrees.treedesc[treename].sapling),
 		drawtype = "plantlike",
@@ -476,7 +486,7 @@ for i in ipairs(moretrees.treelist) do
 			type = "fixed",
 			fixed = {-0.3, -0.5, -0.3, 0.3, 0.35, 0.3}
 		},
-		groups = {snappy=2,dig_immediate=3,flammable=2,attached_node=1,sapling=1},
+		groups = ongen_groups,
 		sounds = default.node_sound_defaults(),
 		drop = "moretrees:"..treename.."_sapling",
 		on_place = function(itemstack, placer, pointed_thing)
