@@ -14,6 +14,7 @@ globals = {
 	"default",
 	"dump",
 	"moretrees",
+	"ethereal",
 }
 
 read_globals = {

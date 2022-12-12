@@ -62,6 +62,20 @@ if io.open(worldpath.."/moretrees_settings.txt","r") then
 	dofile(worldpath.."/moretrees_settings.txt")
 end
 
+-- Validate that if ethereal exists, that it's version is greater than 20220424.
+-- Lower versions of ethereal clear registered biomes and decorations during
+-- initialization which results in lost content from this mod (and others)
+-- depending on where they are in the mod load order.
+minetest.register_on_mods_loaded(function()
+	if minetest.global_exists("ethereal") then
+		local ethereal_ver = tonumber(ethereal.version)
+		if (ethereal_ver and ethereal_ver < 20220424) then
+			error("[moretrees] The version of ethereal detected can result " ..
+				  "in parts of this mod and others disappearing due to mod " ..
+				  "load order. Please update ethereal.");
+		end
+	end
+end)
 
 -- infinite stacks checking
 
