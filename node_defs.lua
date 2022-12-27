@@ -542,6 +542,11 @@ for i in ipairs(moretrees.treelist) do
 				},
 			groups = {fleshy=3,dig_immediate=3,flammable=2, attached_node=1, leafdecay = 1, leafdecay_drop = 1},
 			sounds = default.node_sound_defaults(),
+			after_place_node = function(pos, placer)
+				if placer:is_player() then
+					minetest.set_node(pos, {name = "moretrees:"..fruit, param2 = 1})
+				end
+			end
 		})
 	end
 
