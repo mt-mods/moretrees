@@ -213,14 +213,19 @@ if moretrees.enable_poplar then
 	minetest.register_decoration(translate_biome_defs(moretrees.poplar_small_biome_2, "popular", 5))
 end
 
-for k, v in pairs(deco_ids) do
-	deco_ids[k] = minetest.get_decoration_id(v)
-end
-minetest.set_gen_notify("decoration", deco_ids)
+--[[
+	this is purposefully wrapped in a on mods loaded callback to that it gets the proper ids
+	if other mods clear the registered decorations
+]]
+minetest.register_on_mods_loaded(function()
+	for k, v in pairs(deco_ids) do
+		deco_ids[k] = minetest.get_decoration_id(v)
+	end
+	minetest.set_gen_notify("decoration", deco_ids)
+end)
 
 minetest.register_on_generated(function(minp, maxp, blockseed)
     local g = minetest.get_mapgen_object("gennotify")
-	--minetest.chat_send_all(dump(g))
     local locations = {}
 	for _, id in pairs(deco_ids) do
 		local deco_locations = g["decoration#" .. id] or {}
@@ -231,10 +236,8 @@ minetest.register_on_generated(function(minp, maxp, blockseed)
 
     if #locations == 0 then return end
     for _, pos in ipairs(locations) do
-		--minetest.chat_send_all("yay")
         local timer = minetest.get_node_timer({x=pos.x, y=pos.y+1, z=pos.z})
         timer:start(math.random(2,10))
-		--minetest.set_node(pos, {name="default:stone"})
     end
 end)
 
