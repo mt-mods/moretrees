@@ -226,7 +226,6 @@ end)
 
 minetest.register_on_generated(function(minp, maxp, blockseed)
     local g = minetest.get_mapgen_object("gennotify")
-	--minetest.chat_send_all(dump(g))
     local locations = {}
 	for _, id in pairs(deco_ids) do
 		local deco_locations = g["decoration#" .. id] or {}
@@ -237,11 +236,8 @@ minetest.register_on_generated(function(minp, maxp, blockseed)
 
     if #locations == 0 then return end
     for _, pos in ipairs(locations) do
-		--minetest.chat_send_all("yay")
         local timer = minetest.get_node_timer({x=pos.x, y=pos.y+1, z=pos.z})
         timer:start(math.random(2,10))
-		--minetest.chat_send_all("generated")
-		--minetest.set_node(pos, {name="default:stone"})
     end
 end)
 
