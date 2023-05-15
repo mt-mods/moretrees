@@ -170,8 +170,8 @@ if moretrees.enable_palm then
 end
 
 if moretrees.enable_date_palm then
-	minetest.register_decoration(translate_biome_defs(moretrees.date_palm_biome, "palm", 1))
-	minetest.register_decoration(translate_biome_defs(moretrees.date_palm_biome_2, "palm", 2))
+	minetest.register_decoration(translate_biome_defs(moretrees.date_palm_biome, "date_palm", 1))
+	minetest.register_decoration(translate_biome_defs(moretrees.date_palm_biome_2, "date_palm", 2))
 end
 
 if moretrees.enable_cedar then
@@ -179,7 +179,7 @@ if moretrees.enable_cedar then
 end
 
 if moretrees.enable_rubber_tree then
-	minetest.register_decoration(translate_biome_defs(moretrees.rubber_tree_biome, "ruber"))
+	minetest.register_decoration(translate_biome_defs(moretrees.rubber_tree_biome, "rubber_tree"))
 end
 
 if moretrees.enable_willow then
@@ -206,11 +206,11 @@ if moretrees.enable_fir then
 end
 
 if moretrees.enable_poplar then
-	minetest.register_decoration(translate_biome_defs(moretrees.poplar_biome, "popular", 1))
-	minetest.register_decoration(translate_biome_defs(moretrees.poplar_biome_2, "popular", 2))
-	minetest.register_decoration(translate_biome_defs(moretrees.poplar_biome_3, "popular", 3))
-	minetest.register_decoration(translate_biome_defs(moretrees.poplar_small_biome, "popular", 4))
-	minetest.register_decoration(translate_biome_defs(moretrees.poplar_small_biome_2, "popular", 5))
+	minetest.register_decoration(translate_biome_defs(moretrees.poplar_biome, "poplar", 1))
+	minetest.register_decoration(translate_biome_defs(moretrees.poplar_biome_2, "poplar", 2))
+	minetest.register_decoration(translate_biome_defs(moretrees.poplar_biome_3, "poplar", 3))
+	minetest.register_decoration(translate_biome_defs(moretrees.poplar_small_biome, "poplar_small", 4))
+	minetest.register_decoration(translate_biome_defs(moretrees.poplar_small_biome_2, "poplar_small", 5))
 end
 
 --[[
