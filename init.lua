@@ -383,4 +383,4 @@ function moretrees.grow_fir_snow(pos)
 	minetest.spawn_tree(pos,moretrees.fir_model)
 end
 
-print("[Moretrees] Loaded (2013-02-11)")
+minetest.log("info", "[moretrees] Loading done")
