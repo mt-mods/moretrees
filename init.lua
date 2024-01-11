@@ -388,7 +388,7 @@ if moretrees.grow_legacy_saplings then
 		name = "moretrees:grow_ongen_saplings",
 		label = "Grow legacy ongen saplings",
 		nodenames = { "group:moretrees_ongen" },
-		run_at_every_load = false,
+		run_at_every_load = true,
 		action = function(pos)
 			minetest.log("info", "[moretrees] Starting growth timer for legacy ongen sapling at "..minetest.pos_to_string(pos, 0))
 			minetest.get_node_timer(pos):start(2)
