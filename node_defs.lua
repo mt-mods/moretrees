@@ -471,7 +471,15 @@ for i in ipairs(moretrees.treelist) do
 		})
 	end
 
-	local ongen_groups = {snappy=2,dig_immediate=3,flammable=2,attached_node=1,sapling=1,moretrees_ongen=1,not_in_creative_inventory=1}
+	local ongen_groups = {
+		snappy=2,
+		dig_immediate=3,
+		flammable=2,
+		attached_node=1,
+		sapling=1,
+		moretrees_ongen=1,
+		not_in_creative_inventory=1
+	}
 	if minetest.settings:get_bool("creative_mode", false) then
 		ongen_groups["not_in_creative_inventory"]=nil
 	end

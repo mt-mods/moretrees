@@ -74,7 +74,8 @@ moretrees.dates_item_drop_ichance	= tonumber(stg:get("moretrees.dates_item_drop_
 moretrees.sapling_interval		= 100
 moretrees.sapling_chance		= 5
 
--- Enable this only if you have used an old moretrees version which was using biome_lib and when you notice large areas with ongen saplings that don't grow
+-- Enable this only if you have used an old moretrees version which was using biome_lib
+-- and when you notice large areas with ongen saplings that don't grow
 moretrees.grow_legacy_saplings	= stg:get_bool("moretrees.grow_legacy_saplings", false)
 
 -- If this variable is set to true, drop leaves out as entities during leaf
