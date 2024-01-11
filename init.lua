@@ -383,4 +383,17 @@ function moretrees.grow_fir_snow(pos)
 	minetest.spawn_tree(pos,moretrees.fir_model)
 end
 
+if moretrees.grow_legacy_saplings then
+	minetest.register_lbm({
+		name = "moretrees:grow_ongen_saplings",
+		label = "Grow legacy ongen saplings",
+		nodenames = { "group:moretrees_ongen" },
+		run_at_every_load = false,
+		action = function(pos)
+			minetest.log("info", "[moretrees] Starting growth timer for legacy ongen sapling at "..minetest.pos_to_string(pos, 0))
+			minetest.get_node_timer(pos):start(2)
+		end
+	})
+end
+
 minetest.log("info", "[moretrees] Loading done")
