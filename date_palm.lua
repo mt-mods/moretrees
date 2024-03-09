@@ -723,6 +723,7 @@ for _,suffix in ipairs({"f0", "f1", "f2", "f3", "f4", "m0", "fn", "n"}) do
 		paramtype = "light",
 		sunlight_propagates = true,
 		walkable = false,
+		is_ground_content = false,
 		groups = { fleshy=3, dig_immediate=3, flammable=2, moretrees_dates=1 },
 		inventory_image = "moretrees_dates_"..suffix..".png^[transformR0",
 		wield_image = "moretrees_dates_"..suffix..".png^[transformR90",

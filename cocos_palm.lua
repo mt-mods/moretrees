@@ -177,6 +177,7 @@ for _,suffix in ipairs({"_0", "_1", "_2", "_3", ""}) do
 		paramtype = "light",
 		sunlight_propagates = true,
 		walkable = false,
+		is_ground_content = false,
 		groups = { fleshy=3, dig_immediate=3, flammable=2, moretrees_coconut=coco_group },
 		inventory_image = tile.."^[transformR180",
 		wield_image = tile.."^[transformR180",
