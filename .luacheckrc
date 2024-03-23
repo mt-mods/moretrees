@@ -21,8 +21,8 @@ read_globals = {
 	string = {fields = {"split"}},
     table = {fields = {"copy", "getn"}},
 
-	"biome_lib",
 	"stairsplus",
 	"stairs",
 	"doors",
+	"xcompat",
 }

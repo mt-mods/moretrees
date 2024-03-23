@@ -15,29 +15,31 @@
 
 moretrees = {}
 
-minetest.override_item("default:sapling", {
-	description = "Sapling"
-})
+if minetest.get_modpath("default") then
+	minetest.override_item("default:sapling", {
+		description = "Sapling"
+	})
 
-minetest.override_item("default:tree", {
-	description = "Tree"
-})
+	minetest.override_item("default:tree", {
+		description = "Tree"
+	})
 
-minetest.override_item("default:wood", {
-	description = "Wooden Planks"
-})
+	minetest.override_item("default:wood", {
+		description = "Wooden Planks"
+	})
 
-minetest.override_item("default:leaves", {
-	description = "Leaves"
-})
+	minetest.override_item("default:leaves", {
+		description = "Leaves"
+	})
 
-minetest.override_item("default:fence_wood", {
-	description = "Wooden Fence"
-})
+	minetest.override_item("default:fence_wood", {
+		description = "Wooden Fence"
+	})
 
-minetest.override_item("default:fence_rail_wood", {
-	description = "Wooden Fence Rail"
-})
+	minetest.override_item("default:fence_rail_wood", {
+		description = "Wooden Fence Rail"
+	})
+end
 
 if minetest.get_modpath("doors") then
 	minetest.override_item("doors:gate_wood_closed", {
