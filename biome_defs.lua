@@ -9,7 +9,7 @@ moretrees.beech_biome = {
 }
 
 moretrees.palm_biome = {
-	surface = "default:sand",
+	surface = xcompat.materials.sand,
 	avoid_nodes = moretrees.avoidnodes,
 	avoid_radius = 5,
 	seed_diff = 330,
@@ -25,7 +25,7 @@ moretrees.palm_biome = {
 }
 
 moretrees.date_palm_biome = {
-	surface = "default:desert_sand",
+	surface = xcompat.materials.desert_sand,
 	avoid_nodes = moretrees.avoidnodes,
 	avoid_radius = 10,
 	seed_diff = 339,
@@ -42,7 +42,7 @@ moretrees.date_palm_biome = {
 }
 
 moretrees.date_palm_biome_2 = {
-	surface = "default:desert_sand",
+	surface = xcompat.materials.desert_sand,
 	avoid_nodes = moretrees.avoidnodes,
 	avoid_radius = 10,
 	seed_diff = 340,
