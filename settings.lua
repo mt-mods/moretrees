@@ -19,6 +19,12 @@ moretrees.enable_beech			= stg:get_bool("moretrees.enable_beech", false)
 --spawns tree on mapgen as saplings, legacy setting
 moretrees.spawn_saplings		= stg:get_bool("moretrees.spawn_saplings", true)
 
+--turn on/off plank variants of nodes; if disabled also disables stair and plank
+--variants depending on these planks *as well as the plank crafting recipe*;
+--useful for games that have only one plank type and a generic plank crafting
+--recipe
+moretrees.enable_planks			= stg:get_bool("moretrees.enable_planks", true)
+
 --turn on/off stair varients of nodes via moreblocks or the stair api
 moretrees.enable_stairs			= stg:get_bool("moretrees.enable_stairs", true)
 

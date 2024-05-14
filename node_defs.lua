@@ -284,13 +284,15 @@ for i in ipairs(moretrees.treelist) do
 			on_place = minetest.rotate_node,
 		})
 
-		minetest.register_node("moretrees:"..treename.."_planks", {
-			description = moretrees.treedesc[treename].planks,
-			tiles = {"moretrees_"..treename.."_wood.png"},
-			is_ground_content = false,
-			groups = {snappy=1,choppy=2,oddly_breakable_by_hand=2,flammable=3,wood=1},
-			sounds = default.node_sound_wood_defaults(),
-		})
+		if moretrees.enable_planks then
+			minetest.register_node("moretrees:"..treename.."_planks", {
+				description = moretrees.treedesc[treename].planks,
+				tiles = {"moretrees_"..treename.."_wood.png"},
+				is_ground_content = false,
+				groups = {snappy=1,choppy=2,oddly_breakable_by_hand=2,flammable=3,wood=1},
+				sounds = default.node_sound_wood_defaults(),
+			})
+		end
 
 		local moretrees_leaves_inventory_image = nil
 		local moretrees_new_leaves_waving = nil
@@ -343,17 +345,19 @@ for i in ipairs(moretrees.treelist) do
 					}
 				)
 
-				stairsplus:register_all(
-					"moretrees",
-					treename.."_planks",
-					"moretrees:"..treename.."_planks",
-					{
-						groups = { snappy=1, choppy=2, oddly_breakable_by_hand=2, flammable=3, not_in_creative_inventory=1 },
-						tiles = { "moretrees_"..treename.."_wood.png" },
-						description = moretrees.treedesc[treename].planks,
-						drop = treename.."_planks",
-					}
-				)
+				if moretrees.enable_planks then
+					stairsplus:register_all(
+						"moretrees",
+						treename.."_planks",
+						"moretrees:"..treename.."_planks",
+						{
+							groups = { snappy=1, choppy=2, oddly_breakable_by_hand=2, flammable=3, not_in_creative_inventory=1 },
+							tiles = { "moretrees_"..treename.."_wood.png" },
+							description = moretrees.treedesc[treename].planks,
+							drop = treename.."_planks",
+						}
+					)
+				end
 			elseif minetest.get_modpath("stairs") then
 				stairs.register_stair_and_slab(
 					"moretrees_"..treename.."_trunk",
@@ -368,20 +372,22 @@ for i in ipairs(moretrees.treelist) do
 					default.node_sound_wood_defaults()
 				)
 
-				stairs.register_stair_and_slab(
-					"moretrees_"..treename.."_planks",
-					"moretrees:"..treename.."_planks",
-					{ snappy=1, choppy=2, oddly_breakable_by_hand=2, flammable=3 },
-					{ "moretrees_"..treename.."_wood.png" },
-					moretrees.treedesc[treename].planks_stair,
-					moretrees.treedesc[treename].planks_slab,
-					default.node_sound_wood_defaults()
-				)
+				if moretrees.enable_planks then
+					stairs.register_stair_and_slab(
+						"moretrees_"..treename.."_planks",
+						"moretrees:"..treename.."_planks",
+						{ snappy=1, choppy=2, oddly_breakable_by_hand=2, flammable=3 },
+						{ "moretrees_"..treename.."_wood.png" },
+						moretrees.treedesc[treename].planks_stair,
+						moretrees.treedesc[treename].planks_slab,
+						default.node_sound_wood_defaults()
+					)
+				end
 
 			end
 		end
 
-		if moretrees.enable_fences then
+		if moretrees.enable_planks and moretrees.enable_fences then
 			local planks_name = "moretrees:" .. treename .. "_planks"
 			local planks_tile = "moretrees_" .. treename .. "_wood.png"
 			default.register_fence("moretrees:" .. treename .. "_fence", {
