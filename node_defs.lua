@@ -223,7 +223,7 @@ end
 
 -- redefine default leaves to handle plantlike and/or leaf decay options
 
-if moretrees.plantlike_leaves then
+if minetest.get_modpath("default") and moretrees.plantlike_leaves then
 	minetest.override_item("default:leaves", {
 		inventory_image = minetest.inventorycube("default_leaves.png"),
 		drawtype = "plantlike",
@@ -233,7 +233,7 @@ end
 
 -- redefine default jungle leaves for same
 
-if moretrees.plantlike_leaves then
+if minetest.get_modpath("default") and moretrees.plantlike_leaves then
 	minetest.override_item("default:jungleleaves", {
 		inventory_image = minetest.inventorycube("default_jungleleaves.png"),
 		drawtype = "plantlike",
@@ -626,13 +626,13 @@ for color = 1, #jungleleaves do
 		paramtype = "light",
 		is_ground_content = false,
 		groups = {snappy = 3, flammable = 2, leaves = 1, moretrees_leaves = 1, leafdecay = 3 },
-		drop = {
+		drop = minetest.get_modpath("default") and {
 			max_items = 1,
 			items = {
 				{items = {"default:junglesapling"}, rarity = 100 },
 				{items = {"moretrees:jungletree_leaves_"..jungleleaves[color]} }
 			}
-		},
+		} or nil,
 		sounds = xcompat.sounds.node_sound_leaves_defaults(),
 	})
 end

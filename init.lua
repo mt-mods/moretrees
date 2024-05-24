@@ -94,7 +94,7 @@ moretrees.cutting_tools = {
 	"default:axe_bronze",
 	"default:axe_diamond",
 	"default:axe_mese",
-	"default:axe_steel",
+	xcompat.materials.axe_steel,
 	"glooptest:axe_alatro",
 	"glooptest:axe_arol",
 	"moreores:axe_mithril",
