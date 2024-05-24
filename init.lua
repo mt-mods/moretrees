@@ -91,10 +91,10 @@ end
 -- tables, load other files
 
 moretrees.cutting_tools = {
-	"default:axe_bronze",
-	"default:axe_diamond",
 	"default:axe_mese",
 	xcompat.materials.axe_steel,
+	xcompat.materials.axe_diamond,
+	xcompat.materials.axe_bronze,
 	"glooptest:axe_alatro",
 	"glooptest:axe_arol",
 	"moreores:axe_mithril",
