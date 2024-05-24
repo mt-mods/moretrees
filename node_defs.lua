@@ -2,6 +2,9 @@ local S = minetest.get_translator("moretrees")
 
 moretrees.avoidnodes = {}
 
+local jungle_sapling_texture = minetest.get_modpath("default") and "default_junglesapling.png"
+	or "moretrees_cedar_sapling.png"
+
 moretrees.treelist = {
 	{"beech",        S("Beech Tree")},
 	{"apple_tree",   S("Apple Tree")},
@@ -17,7 +20,7 @@ moretrees.treelist = {
 	{"willow",       S("Willow Tree")},
 	{"rubber_tree",  S("Rubber Tree")},
 	{"fir",          S("Douglas Fir"),    "fir_cone",             S("Fir Cone"), {-0.2, -0.5, -0.2, 0.2, 0, 0.2}, 0.8 },
-	{"jungletree",   S("Jungle Tree"),     nil,                   nil, nil, nil, "default_junglesapling.png"  },
+	{"jungletree",   S("Jungle Tree"),     nil,                   nil, nil, nil, jungle_sapling_texture  },
 }
 
 moretrees.treedesc = {
