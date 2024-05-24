@@ -1,6 +1,6 @@
 
 moretrees.beech_biome = {
-	surface = "default:dirt_with_grass",
+	surface = xcompat.materials.dirt_with_grass,
 	avoid_nodes = moretrees.avoidnodes,
 	avoid_radius = 8,
 	seed_diff = 2,
@@ -15,7 +15,7 @@ moretrees.palm_biome = {
 	seed_diff = 330,
 	min_elevation = -1,
 	max_elevation = 1,
-	near_nodes = {"default:water_source"},
+	near_nodes = {xcompat.materials.water_source},
 	near_nodes_size = 15,
 	near_nodes_count = 10,
 	temp_min = 0.25,
@@ -31,7 +31,7 @@ moretrees.date_palm_biome = {
 	seed_diff = 339,
 	min_elevation = -1,
 	max_elevation = 10,
-	near_nodes = {"default:water_source"},
+	near_nodes = {xcompat.materials.water_source},
 	near_nodes_size = 20,
 	near_nodes_count = 100,
 	near_nodes_vertical = 20,
@@ -48,7 +48,7 @@ moretrees.date_palm_biome_2 = {
 	seed_diff = 340,
 	min_elevation = 11,
 	max_elevation = 30,
-	near_nodes = {"default:water_source"},
+	near_nodes = {xcompat.materials.water_source},
 	near_nodes_size = 1,
 	near_nodes_count = 1,
 	near_nodes_vertical = 30,
@@ -59,7 +59,7 @@ moretrees.date_palm_biome_2 = {
 }
 
 moretrees.apple_tree_biome = {
-	surface = "default:dirt_with_grass",
+	surface = xcompat.materials.dirt_with_grass,
 	avoid_nodes = moretrees.avoidnodes,
 	avoid_radius = 10,
 	seed_diff = 331,
@@ -69,13 +69,13 @@ moretrees.apple_tree_biome = {
 	temp_max = -0.15,
 	rarity = 75,
 	max_count = 5,
-	place_on = {"default:dirt_with_grass"},
+	place_on = {xcompat.materials.dirt_with_grass},
 	biomes = {"deciduous_forest"},
 	fill_ratio = 0.0001,
 }
 
 moretrees.oak_biome = {
-	surface = "default:dirt_with_grass",
+	surface = xcompat.materials.dirt_with_grass,
 	avoid_nodes = moretrees.avoidnodes,
 	avoid_radius = 15,
 	seed_diff = 332,
@@ -89,7 +89,7 @@ moretrees.oak_biome = {
 }
 
 moretrees.sequoia_biome = {
-	surface = "default:dirt_with_grass",
+	surface = xcompat.materials.dirt_with_grass,
 	avoid_nodes = moretrees.avoidnodes,
 	avoid_radius = 10,
 	seed_diff = 333,
@@ -103,7 +103,7 @@ moretrees.sequoia_biome = {
 }
 
 moretrees.birch_biome = {
-	surface = "default:dirt_with_grass",
+	surface = xcompat.materials.dirt_with_grass,
 	avoid_nodes = moretrees.avoidnodes,
 	avoid_radius = 5,
 	seed_diff = 334,
@@ -117,13 +117,13 @@ moretrees.birch_biome = {
 }
 
 moretrees.willow_biome = {
-	surface = "default:dirt_with_grass",
+	surface = xcompat.materials.dirt_with_grass,
 	avoid_nodes = moretrees.avoidnodes,
 	avoid_radius = 10,
 	seed_diff = 337,
 	min_elevation = -5,
 	max_elevation = 5,
-	near_nodes = {"default:water_source"},
+	near_nodes = {xcompat.materials.water_source},
 	near_nodes_size = 15,
 	near_nodes_count = 5,
 	rarity = 75,
@@ -131,13 +131,13 @@ moretrees.willow_biome = {
 }
 
 moretrees.rubber_tree_biome = {
-	surface = "default:dirt_with_grass",
+	surface = xcompat.materials.dirt_with_grass,
 	avoid_nodes = moretrees.avoidnodes,
 	avoid_radius = 10,
 	seed_diff = 338,
 	min_elevation = -5,
 	max_elevation = 5,
-	near_nodes = {"default:water_source"},
+	near_nodes = {xcompat.materials.water_source},
 	near_nodes_size = 15,
 	near_nodes_count = 10,
 	temp_min = -0.15,
@@ -147,8 +147,8 @@ moretrees.rubber_tree_biome = {
 
 moretrees.jungletree_biome = {
 	surface = {
-		"default:dirt",
-		"default:dirt_with_grass",
+		xcompat.materials.dirt,
+		xcompat.materials.dirt_with_grass,
 		"woodsoils:dirt_with_leaves_1",
 		"woodsoils:grass_with_leaves_1",
 		"woodsoils:grass_with_leaves_2",
@@ -169,7 +169,7 @@ moretrees.jungletree_biome = {
 }
 
 moretrees.spruce_biome = {
-	surface = "default:dirt_with_grass",
+	surface = xcompat.materials.dirt_with_grass,
 	avoid_nodes = moretrees.avoidnodes,
 	avoid_radius = 10,
 	seed_diff = 335,
@@ -181,12 +181,12 @@ moretrees.spruce_biome = {
 }
 
 moretrees.cedar_biome = {
-	surface = "default:dirt_with_grass",
+	surface = xcompat.materials.dirt_with_grass,
 	avoid_nodes = moretrees.avoidnodes,
 	avoid_radius = 10,
 	seed_diff = 336,
 	min_elevation = 0,  --Added to solve an issue where cedar trees would sometimes spawn deep underground
-	near_nodes = {"default:water_source"},
+	near_nodes = {xcompat.materials.water_source},
 	near_nodes_size = 15,
 	near_nodes_count = 5,
 	rarity = 50,
@@ -196,13 +196,13 @@ moretrees.cedar_biome = {
 
 -- Poplar requires a lot of water.
 moretrees.poplar_biome = {
-	surface = "default:dirt_with_grass",
+	surface = xcompat.materials.dirt_with_grass,
 	avoid_nodes = moretrees.avoidnodes,
 	avoid_radius = 6,
 	seed_diff = 341,
 	min_elevation = 0,
 	max_elevation = 50,
-	near_nodes = {"default:water_source"},
+	near_nodes = {xcompat.materials.water_source},
 	near_nodes_size = 15,
 	near_nodes_vertical = 5,
 	near_nodes_count = 1,
@@ -215,13 +215,13 @@ moretrees.poplar_biome = {
 -- The humidity requirement it quite restrictive (apparently).
 -- Spawn an occasional poplar elsewhere.
 moretrees.poplar_biome_2 = {
-	surface = "default:dirt_with_grass",
+	surface = xcompat.materials.dirt_with_grass,
 	avoid_nodes = moretrees.avoidnodes,
 	avoid_radius = 6,
 	seed_diff = 341,
 	min_elevation = 0,
 	max_elevation = 50,
-	near_nodes = {"default:water_source"},
+	near_nodes = {xcompat.materials.water_source},
 	near_nodes_size = 15,
 	near_nodes_vertical = 4,
 	near_nodes_count = 10,
@@ -233,13 +233,13 @@ moretrees.poplar_biome_2 = {
 
 -- Subterranean lakes provide enough water for poplars to grow
 moretrees.poplar_biome_3 = {
-	surface = "default:dirt_with_grass",
+	surface = xcompat.materials.dirt_with_grass,
 	avoid_nodes = moretrees.avoidnodes,
 	avoid_radius = 6,
 	seed_diff = 342,
 	min_elevation = 0,
 	max_elevation = 50,
-	near_nodes = {"default:water_source"},
+	near_nodes = {xcompat.materials.water_source},
 	near_nodes_size = 1,
 	near_nodes_vertical = 25,
 	near_nodes_count = 1,
@@ -250,13 +250,13 @@ moretrees.poplar_biome_3 = {
 }
 
 moretrees.poplar_small_biome = {
-	surface = "default:dirt_with_grass",
+	surface = xcompat.materials.dirt_with_grass,
 	avoid_nodes = moretrees.avoidnodes,
 	avoid_radius = 4,
 	seed_diff = 343,
 	min_elevation = 0,
 	max_elevation = 50,
-	near_nodes = {"default:water_source"},
+	near_nodes = {xcompat.materials.water_source},
 	near_nodes_size = 10,
 	near_nodes_vertical = 5,
 	near_nodes_count = 1,
@@ -267,13 +267,13 @@ moretrees.poplar_small_biome = {
 }
 
 moretrees.poplar_small_biome_2 = {
-	surface = "default:dirt_with_grass",
+	surface = xcompat.materials.dirt_with_grass,
 	avoid_nodes = moretrees.avoidnodes,
 	avoid_radius = 4,
 	seed_diff = 343,
 	min_elevation = 0,
 	max_elevation = 50,
-	near_nodes = {"default:water_source"},
+	near_nodes = {xcompat.materials.water_source},
 	near_nodes_size = 10,
 	near_nodes_vertical = 4,
 	near_nodes_count = 5,
@@ -285,7 +285,7 @@ moretrees.poplar_small_biome_2 = {
 
 
 moretrees.fir_biome = {
-	surface = "default:dirt_with_grass",
+	surface = xcompat.materials.dirt_with_grass,
 	avoid_nodes = moretrees.avoidnodes,
 	avoid_radius = 10,
 	seed_diff = 359,
@@ -298,7 +298,7 @@ moretrees.fir_biome = {
 
 moretrees.fir_biome_snow = {
 	surface = {"snow:dirt_with_snow", "snow:snow"},
-	below_nodes = {"default:dirt", "default:dirt_with_grass", "snow:dirt_with_snow"},
+	below_nodes = {xcompat.materials.dirt, xcompat.materials.dirt_with_grass, "snow:dirt_with_snow"},
 	avoid_nodes = moretrees.avoidnodes,
 	avoid_radius = 10,
 	seed_diff = 359,

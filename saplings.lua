@@ -5,8 +5,8 @@
 
 local dirt_surfaces = {
 	set = true,
-	["default:dirt"] = true,
-	["default:dirt_with_grass"] = true,
+	[xcompat.materials.dirt] = true,
+	[xcompat.materials.dirt_with_grass] = true,
 	["default:dirt_with_dry_grass"] = true,
 	["default:dirt_with_coniferous_litter"] = true,
 	["default:dirt_with_rainforest_litter"] = true,
@@ -18,8 +18,8 @@ local dirt_surfaces = {
 
 local conifer_surfaces =  {
 	set = true,
-	["default:dirt"] = true,
-	["default:dirt_with_grass"] = true,
+	[xcompat.materials.dirt] = true,
+	[xcompat.materials.dirt_with_grass] = true,
 	["default:dirt_with_dry_grass"] = true,
 	["default:dirt_with_coniferous_litter"] = true,
 	["default:dirt_with_rainforest_litter"] = true,
