@@ -28,7 +28,7 @@ if minetest.get_modpath("default") then
 		description = "Wooden Planks"
 	})
 
-	minetest.override_item("default:leaves", {
+	minetest.override_item(xcompat.materials.apple_leaves, {
 		description = "Leaves"
 	})
 
@@ -315,7 +315,7 @@ function moretrees.grow_jungletree(pos)
 	minetest.swap_node(pos, {name = "air"})
 	local leaves = minetest.find_nodes_in_area(
 		{x = pos.x-1, y = pos.y, z = pos.z-1}, {x = pos.x+1, y = pos.y+10, z = pos.z+1},
-		"default:leaves"
+		xcompat.materials.apple_leaves
 	)
 	for leaf in ipairs(leaves) do
 			minetest.swap_node(leaves[leaf], {name = "air"})
@@ -346,7 +346,7 @@ function moretrees.grow_fir(pos)
 	local leaves = minetest.find_nodes_in_area(
 		{x = pos.x, y = pos.y, z = pos.z},
 		{x = pos.x, y = pos.y+5, z = pos.z},
-		"default:leaves"
+		xcompat.materials.apple_leaves
 	)
 	for leaf in ipairs(leaves) do
 		minetest.swap_node(leaves[leaf], {name = "air"})
@@ -377,7 +377,7 @@ function moretrees.grow_fir_snow(pos)
 	local leaves = minetest.find_nodes_in_area(
 		{x = pos.x, y = pos.y, z = pos.z},
 		{x = pos.x, y = pos.y+5, z = pos.z},
-		"default:leaves"
+		xcompat.materials.apple_leaves
 	)
 	for leaf in ipairs(leaves) do
 			minetest.swap_node(leaves[leaf], {name = "air"})

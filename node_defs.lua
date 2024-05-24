@@ -224,7 +224,7 @@ end
 -- redefine default leaves to handle plantlike and/or leaf decay options
 
 if minetest.get_modpath("default") and moretrees.plantlike_leaves then
-	minetest.override_item("default:leaves", {
+	minetest.override_item(xcompat.materials.apple_leaves, {
 		inventory_image = minetest.inventorycube("default_leaves.png"),
 		drawtype = "plantlike",
 		visual_scale = math.sqrt(2)
@@ -234,7 +234,7 @@ end
 -- redefine default jungle leaves for same
 
 if minetest.get_modpath("default") and moretrees.plantlike_leaves then
-	minetest.override_item("default:jungleleaves", {
+	minetest.override_item(xcompat.materials.jungle_leaves, {
 		inventory_image = minetest.inventorycube("default_jungleleaves.png"),
 		drawtype = "plantlike",
 		visual_scale = math.sqrt(2)
@@ -647,7 +647,7 @@ if minetest.get_modpath("default") then
 
 	default.register_leafdecay({
 		trunks = { "default:jungletree", "moretrees:jungletree_trunk" },
-		leaves = { "default:jungleleaves", "moretrees:jungletree_leaves_yellow", "moretrees:jungletree_leaves_red" },
+		leaves = { xcompat.materials.jungle_leaves, "moretrees:jungletree_leaves_yellow", "moretrees:jungletree_leaves_red" },
 		radius = moretrees.leafdecay_radius,
 	})
 end
@@ -763,7 +763,7 @@ minetest.register_alias("conifers:sapling",						"moretrees:fir_sapling")
 minetest.register_alias("moretrees:jungletree_sapling",			"default:junglesapling")
 minetest.register_alias("moretrees:jungletree_trunk_sideways",	"moreblocks:horizontal_jungle_tree")
 minetest.register_alias("moretrees:jungletree_planks",			"default:junglewood")
-minetest.register_alias("moretrees:jungletree_leaves_green",	"default:jungleleaves")
+minetest.register_alias("moretrees:jungletree_leaves_green",	xcompat.materials.jungle_leaves)
 
 minetest.register_alias("moretrees:acacia_trunk",				"default:acacia_tree")
 minetest.register_alias("moretrees:acacia_planks",				"default:acacia_wood")

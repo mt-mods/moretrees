@@ -161,9 +161,9 @@ moretrees.jungletree_biome = {
 	seed_diff = 329,
 	min_elevation = 1,
 	near_nodes = minetest.get_modpath("default") and {"default:jungletree"} or nil,
-	near_nodes_size = 6,
-	near_nodes_vertical = 2,
-	near_nodes_count = 1,
+	near_nodes_size = minetest.get_modpath("default") and 6 or nil,
+	near_nodes_vertical = minetest.get_modpath("default") and 2 or nil,
+	near_nodes_count = minetest.get_modpath("default") and 1 or nil,
 	plantlife_limit = -0.9,
 	biomes = {"rainforest", "rainforest_swamp"},
 }
