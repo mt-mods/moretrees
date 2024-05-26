@@ -15,29 +15,31 @@
 
 moretrees = {}
 
-minetest.override_item("default:sapling", {
-	description = "Sapling"
-})
+if minetest.get_modpath("default") then
+	minetest.override_item("default:sapling", {
+		description = "Sapling"
+	})
 
-minetest.override_item("default:tree", {
-	description = "Tree"
-})
+	minetest.override_item("default:tree", {
+		description = "Tree"
+	})
 
-minetest.override_item("default:wood", {
-	description = "Wooden Planks"
-})
+	minetest.override_item("default:wood", {
+		description = "Wooden Planks"
+	})
 
-minetest.override_item("default:leaves", {
-	description = "Leaves"
-})
+	minetest.override_item("default:leaves", {
+		description = "Leaves"
+	})
 
-minetest.override_item("default:fence_wood", {
-	description = "Wooden Fence"
-})
+	minetest.override_item("default:fence_wood", {
+		description = "Wooden Fence"
+	})
 
-minetest.override_item("default:fence_rail_wood", {
-	description = "Wooden Fence Rail"
-})
+	minetest.override_item("default:fence_rail_wood", {
+		description = "Wooden Fence Rail"
+	})
+end
 
 if minetest.get_modpath("doors") then
 	minetest.override_item("doors:gate_wood_closed", {
@@ -89,10 +91,10 @@ end
 -- tables, load other files
 
 moretrees.cutting_tools = {
-	"default:axe_bronze",
-	"default:axe_diamond",
 	"default:axe_mese",
-	"default:axe_steel",
+	xcompat.materials.axe_steel,
+	xcompat.materials.axe_diamond,
+	xcompat.materials.axe_bronze,
 	"glooptest:axe_alatro",
 	"glooptest:axe_arol",
 	"moreores:axe_mithril",
@@ -313,7 +315,7 @@ function moretrees.grow_jungletree(pos)
 	minetest.swap_node(pos, {name = "air"})
 	local leaves = minetest.find_nodes_in_area(
 		{x = pos.x-1, y = pos.y, z = pos.z-1}, {x = pos.x+1, y = pos.y+10, z = pos.z+1},
-		"default:leaves"
+		xcompat.materials.apple_leaves
 	)
 	for leaf in ipairs(leaves) do
 			minetest.swap_node(leaves[leaf], {name = "air"})
@@ -344,7 +346,7 @@ function moretrees.grow_fir(pos)
 	local leaves = minetest.find_nodes_in_area(
 		{x = pos.x, y = pos.y, z = pos.z},
 		{x = pos.x, y = pos.y+5, z = pos.z},
-		"default:leaves"
+		xcompat.materials.apple_leaves
 	)
 	for leaf in ipairs(leaves) do
 		minetest.swap_node(leaves[leaf], {name = "air"})
@@ -375,7 +377,7 @@ function moretrees.grow_fir_snow(pos)
 	local leaves = minetest.find_nodes_in_area(
 		{x = pos.x, y = pos.y, z = pos.z},
 		{x = pos.x, y = pos.y+5, z = pos.z},
-		"default:leaves"
+		xcompat.materials.apple_leaves
 	)
 	for leaf in ipairs(leaves) do
 			minetest.swap_node(leaves[leaf], {name = "air"})

@@ -25,8 +25,8 @@ moretrees.apple_tree_model={
 	random_level=0,
 	trunk_type="single",
 	thin_branches=true,
-	fruit="default:apple",
-	fruit_chance=15,
+	fruit=minetest.get_modpath("default") and "default:apple" or nil,
+	fruit_chance=minetest.get_modpath("default") and 15 or nil,
 }
 
 moretrees.oak_model={
@@ -252,7 +252,7 @@ moretrees.jungletree_model={
 	rules_a=nil,
 	rules_b=nil,
 	trunk="moretrees:jungletree_trunk",
-	leaves="default:jungleleaves",
+	leaves=xcompat.materials.jungle_leaves,
 	leaves2=nil,
 	leaves2_chance=nil,
 	angle=45,
