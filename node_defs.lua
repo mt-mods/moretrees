@@ -287,7 +287,7 @@ for i in ipairs(moretrees.treelist) do
 			on_place = minetest.rotate_node,
 		})
 
-		if xcompat.gameid ~= "voxelgarden" then
+		if moretrees.enable_planks then
 			minetest.register_node("moretrees:"..treename.."_planks", {
 				description = moretrees.treedesc[treename].planks,
 				tiles = {"moretrees_"..treename.."_wood.png"},
@@ -348,7 +348,7 @@ for i in ipairs(moretrees.treelist) do
 					}
 				)
 
-				if xcompat.gameid ~= "voxelgarden" then
+				if moretrees.enable_planks then
 					stairsplus:register_all(
 						"moretrees",
 						treename.."_planks",
@@ -375,7 +375,7 @@ for i in ipairs(moretrees.treelist) do
 					xcompat.sounds.node_sound_wood_defaults()
 				)
 
-				if xcompat.gameid ~= "voxelgarden" then
+				if moretrees.enable_planks then
 					stairs.register_stair_and_slab(
 						"moretrees_"..treename.."_planks",
 						"moretrees:"..treename.."_planks",
@@ -390,7 +390,7 @@ for i in ipairs(moretrees.treelist) do
 			end
 		end
 
-		if minetest.get_modpath("default") and moretrees.enable_fences and xcompat.gameid ~= "voxelgarden" then
+		if minetest.get_modpath("default") and moretrees.enable_fences and moretrees.enable_planks then
 			local planks_name = "moretrees:" .. treename .. "_planks"
 			local planks_tile = "moretrees_" .. treename .. "_wood.png"
 			default.register_fence("moretrees:" .. treename .. "_fence", {

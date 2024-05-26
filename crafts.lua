@@ -3,7 +3,7 @@ local S = minetest.get_translator("moretrees")
 for i in ipairs(moretrees.treelist) do
 	local treename = moretrees.treelist[i][1]
 
-	if xcompat.gameid ~= "voxelgarden" then
+	if moretrees.enable_planks then
 		minetest.register_craft({
 			type = "shapeless",
 			output = "moretrees:"..treename.."_planks 4",

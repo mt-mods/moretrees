@@ -81,3 +81,6 @@ moretrees.grow_legacy_saplings	= stg:get_bool("moretrees.grow_legacy_saplings", 
 -- If this variable is set to true, drop leaves out as entities during leaf
 -- decay, rather than just disappearing them.
 moretrees.decay_leaves_as_items = stg:get_bool("moretrees.decay_leaves_as_items", false)
+
+-- this is an internal setting for games that only have one type of planks
+moretrees.enable_planks = xcompat.gameid ~= "voxelgarden"
