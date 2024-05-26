@@ -28,7 +28,7 @@ if minetest.get_modpath("default") then
 		description = "Wooden Planks"
 	})
 
-	minetest.override_item(xcompat.materials.apple_leaves, {
+	minetest.override_item("default:leaves", {
 		description = "Leaves"
 	})
 
