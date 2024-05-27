@@ -15,12 +15,6 @@ moretrees.leafdecay_radius		= tonumber(stg:get("moretrees.leafdecay_radius")) or
 moretrees.palm_leafdecay_radius		= tonumber(stg:get("moretrees.palm_leafdecay_radius")) or 10
 moretrees.date_palm_leafdecay_radius	= tonumber(stg:get("moretrees.date_palm_leafdecay_radius")) or 14
 
--- Change these settings if you want default trees to be gradually cut down
--- above the elevation where firs normally generate.
-moretrees.firs_remove_default_trees	= stg:get_bool("moretrees.firs_remove_default_trees", false)
-moretrees.firs_remove_interval		= tonumber(stg:get("moretrees.firs_remove_interval")) or 2
-moretrees.firs_remove_chance		= tonumber(stg:get("moretrees.firs_remove_chance")) or 150
-
 -- Cocos palm settings
 moretrees.coconuts_regrow		= stg:get_bool("moretrees.coconuts_regrow", true)
 moretrees.coconuts_convert_existing_palms = stg:get_bool("moretrees.coconuts_convert_existing_palms", true)
