@@ -329,8 +329,6 @@ for i in ipairs(moretrees.treelist) do
 
 		if minetest.get_modpath("moreblocks") then
 
---			stairsplus:register_all(modname, subname, recipeitem, {fields})
-
 			stairsplus:register_all(
 				"moretrees",
 				treename.."_trunk",
