@@ -10,12 +10,7 @@ moretrees.plantlike_leaves		= stg:get_bool("moretrees.plantlike_leaves", false)
 -- fall when leaves decay/are dug.
 moretrees.enable_redefine_apple		= stg:get_bool("moretrees.enable_redefine_apple", true)
 
--- Set this to true to enable leaf decay of all trees except the default ones.
-moretrees.enable_leafdecay		= stg:get_bool("moretrees.enable_leafdecay", true)
-
 -- various related settings to configure leaf decay.
-moretrees.leafdecay_delay		= tonumber(stg:get("moretrees.leafdecay_delay")) or 2
-moretrees.leafdecay_chance		= tonumber(stg:get("moretrees.leafdecay_chance")) or 5
 moretrees.leafdecay_radius		= tonumber(stg:get("moretrees.leafdecay_radius")) or 5
 moretrees.palm_leafdecay_radius		= tonumber(stg:get("moretrees.palm_leafdecay_radius")) or 10
 moretrees.date_palm_leafdecay_radius	= tonumber(stg:get("moretrees.date_palm_leafdecay_radius")) or 14
