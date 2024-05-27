@@ -151,69 +151,28 @@ function translate_biome_defs(def, treename, index)
 	return deco_def
 end
 
-if moretrees.enable_beech then
-	minetest.register_decoration(translate_biome_defs(moretrees.beech_biome, "beech"))
+minetest.register_decoration(translate_biome_defs(moretrees.beech_biome, "beech"))
+minetest.register_decoration(translate_biome_defs(moretrees.apple_tree_biome, "apple_tree"))
+minetest.register_decoration(translate_biome_defs(moretrees.oak_biome, "oak"))
+minetest.register_decoration(translate_biome_defs(moretrees.sequoia_biome, "sequoia"))
+minetest.register_decoration(translate_biome_defs(moretrees.palm_biome, "palm"))
+minetest.register_decoration(translate_biome_defs(moretrees.date_palm_biome, "date_palm", 1))
+minetest.register_decoration(translate_biome_defs(moretrees.date_palm_biome_2, "date_palm", 2))
+minetest.register_decoration(translate_biome_defs(moretrees.cedar_biome, "cedar"))
+minetest.register_decoration(translate_biome_defs(moretrees.rubber_tree_biome, "rubber_tree"))
+minetest.register_decoration(translate_biome_defs(moretrees.willow_biome, "willow"))
+minetest.register_decoration(translate_biome_defs(moretrees.birch_biome, "birch"))
+minetest.register_decoration(translate_biome_defs(moretrees.spruce_biome, "spruce"))
+minetest.register_decoration(translate_biome_defs(moretrees.jungletree_biome, "jungletree"))
+minetest.register_decoration(translate_biome_defs(moretrees.fir_biome, "fir", 1))
+if minetest.get_modpath("snow") then
+	minetest.register_decoration(translate_biome_defs(moretrees.fir_biome_snow, "fir", 2))
 end
-
-if moretrees.enable_apple_tree then
-	minetest.register_decoration(translate_biome_defs(moretrees.apple_tree_biome, "apple_tree"))
-end
-
-if moretrees.enable_oak then
-	minetest.register_decoration(translate_biome_defs(moretrees.oak_biome, "oak"))
-end
-
-if moretrees.enable_sequoia then
-	minetest.register_decoration(translate_biome_defs(moretrees.sequoia_biome, "sequoia"))
-end
-
-if moretrees.enable_palm then
-	minetest.register_decoration(translate_biome_defs(moretrees.palm_biome, "palm"))
-end
-
-if moretrees.enable_date_palm then
-	minetest.register_decoration(translate_biome_defs(moretrees.date_palm_biome, "date_palm", 1))
-	minetest.register_decoration(translate_biome_defs(moretrees.date_palm_biome_2, "date_palm", 2))
-end
-
-if moretrees.enable_cedar then
-	minetest.register_decoration(translate_biome_defs(moretrees.cedar_biome, "cedar"))
-end
-
-if moretrees.enable_rubber_tree then
-	minetest.register_decoration(translate_biome_defs(moretrees.rubber_tree_biome, "rubber_tree"))
-end
-
-if moretrees.enable_willow then
-	minetest.register_decoration(translate_biome_defs(moretrees.willow_biome, "willow"))
-end
-
-if moretrees.enable_birch then
-	minetest.register_decoration(translate_biome_defs(moretrees.birch_biome, "birch"))
-end
-
-if moretrees.enable_spruce then
-	minetest.register_decoration(translate_biome_defs(moretrees.spruce_biome, "spruce"))
-end
-
-if moretrees.enable_jungle_tree then
-	minetest.register_decoration(translate_biome_defs(moretrees.jungletree_biome, "jungletree"))
-end
-
-if moretrees.enable_fir then
-	minetest.register_decoration(translate_biome_defs(moretrees.fir_biome, "fir", 1))
-	if minetest.get_modpath("snow") then
-		minetest.register_decoration(translate_biome_defs(moretrees.fir_biome_snow, "fir", 2))
-	end
-end
-
-if moretrees.enable_poplar then
-	minetest.register_decoration(translate_biome_defs(moretrees.poplar_biome, "poplar", 1))
-	minetest.register_decoration(translate_biome_defs(moretrees.poplar_biome_2, "poplar", 2))
-	minetest.register_decoration(translate_biome_defs(moretrees.poplar_biome_3, "poplar", 3))
-	minetest.register_decoration(translate_biome_defs(moretrees.poplar_small_biome, "poplar_small", 4))
-	minetest.register_decoration(translate_biome_defs(moretrees.poplar_small_biome_2, "poplar_small", 5))
-end
+minetest.register_decoration(translate_biome_defs(moretrees.poplar_biome, "poplar", 1))
+minetest.register_decoration(translate_biome_defs(moretrees.poplar_biome_2, "poplar", 2))
+minetest.register_decoration(translate_biome_defs(moretrees.poplar_biome_3, "poplar", 3))
+minetest.register_decoration(translate_biome_defs(moretrees.poplar_small_biome, "poplar_small", 4))
+minetest.register_decoration(translate_biome_defs(moretrees.poplar_small_biome_2, "poplar_small", 5))
 
 --[[
 	this is purposefully wrapped in a on mods loaded callback to that it gets the proper ids

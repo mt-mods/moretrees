@@ -1,21 +1,5 @@
 local stg = minetest.settings
 
---enable/disable different trees
-moretrees.enable_apple_tree		= stg:get_bool("moretrees.enable_apple_tree", true)
-moretrees.enable_oak			= stg:get_bool("moretrees.enable_oak", true)
-moretrees.enable_sequoia		= stg:get_bool("moretrees.enable_sequoia", true)
-moretrees.enable_palm			= stg:get_bool("moretrees.enable_palm", true)
-moretrees.enable_date_palm		= stg:get_bool("moretrees.enable_date_palm", true)
-moretrees.enable_cedar			= stg:get_bool("moretrees.enable_cedar", true)
-moretrees.enable_rubber_tree	= stg:get_bool("moretrees.enable_rubber_tree", true)
-moretrees.enable_willow			= stg:get_bool("moretrees.enable_willow", true)
-moretrees.enable_birch			= stg:get_bool("moretrees.enable_birch", true)
-moretrees.enable_spruce			= stg:get_bool("moretrees.enable_spruce", true)
-moretrees.enable_jungle_tree	= stg:get_bool("moretrees.enable_jungle_tree", true)
-moretrees.enable_fir			= stg:get_bool("moretrees.enable_fir", true)
-moretrees.enable_poplar			= stg:get_bool("moretrees.enable_poplar", true)
-moretrees.enable_beech			= stg:get_bool("moretrees.enable_beech", false)
-
 --spawns tree on mapgen as saplings, legacy setting
 moretrees.spawn_saplings		= stg:get_bool("moretrees.spawn_saplings", true)
 
