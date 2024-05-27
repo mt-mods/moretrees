@@ -3,12 +3,6 @@ local stg = minetest.settings
 --spawns tree on mapgen as saplings, legacy setting
 moretrees.spawn_saplings		= stg:get_bool("moretrees.spawn_saplings", true)
 
---turn on/off stair varients of nodes via moreblocks or the stair api
-moretrees.enable_stairs			= stg:get_bool("moretrees.enable_stairs", true)
-
--- If this variable is set to true, register fences for moretrees wood
-moretrees.enable_fences         = stg:get_bool("moretrees.enable_fences", true)
-
 --enable plantlike drawtype for leaves
 moretrees.plantlike_leaves		= stg:get_bool("moretrees.plantlike_leaves", false)
 

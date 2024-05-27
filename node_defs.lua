@@ -327,70 +327,68 @@ for i in ipairs(moretrees.treelist) do
 			},
 		})
 
-		if moretrees.enable_stairs then
-			if minetest.get_modpath("moreblocks") then
+		if minetest.get_modpath("moreblocks") then
 
-	--			stairsplus:register_all(modname, subname, recipeitem, {fields})
+--			stairsplus:register_all(modname, subname, recipeitem, {fields})
 
-				stairsplus:register_all(
-					"moretrees",
-					treename.."_trunk",
-					"moretrees:"..treename.."_trunk",
-					{
-						groups = { snappy=1, choppy=2, oddly_breakable_by_hand=1, flammable=2, not_in_creative_inventory=1 },
-						tiles =	{
-							"moretrees_"..treename.."_trunk_top.png",
-							"moretrees_"..treename.."_trunk_top.png",
-							"moretrees_"..treename.."_trunk.png"
-						},
-						description = moretrees.treedesc[treename].trunk,
-						drop = treename.."_trunk",
-					}
-				)
-
-				if moretrees.enable_planks then
-					stairsplus:register_all(
-						"moretrees",
-						treename.."_planks",
-						"moretrees:"..treename.."_planks",
-						{
-							groups = { snappy=1, choppy=2, oddly_breakable_by_hand=2, flammable=3, not_in_creative_inventory=1 },
-							tiles = { "moretrees_"..treename.."_wood.png" },
-							description = moretrees.treedesc[treename].planks,
-							drop = treename.."_planks",
-						}
-					)
-				end
-			elseif minetest.get_modpath("stairs") then
-				stairs.register_stair_and_slab(
-					"moretrees_"..treename.."_trunk",
-					"moretrees:"..treename.."_trunk",
-					{ snappy=1, choppy=2, oddly_breakable_by_hand=1, flammable=2 },
-					{	"moretrees_"..treename.."_trunk_top.png",
+			stairsplus:register_all(
+				"moretrees",
+				treename.."_trunk",
+				"moretrees:"..treename.."_trunk",
+				{
+					groups = { snappy=1, choppy=2, oddly_breakable_by_hand=1, flammable=2, not_in_creative_inventory=1 },
+					tiles =	{
+						"moretrees_"..treename.."_trunk_top.png",
 						"moretrees_"..treename.."_trunk_top.png",
 						"moretrees_"..treename.."_trunk.png"
 					},
-					moretrees.treedesc[treename].trunk_stair,
-					moretrees.treedesc[treename].trunk_slab,
+					description = moretrees.treedesc[treename].trunk,
+					drop = treename.."_trunk",
+				}
+			)
+
+			if moretrees.enable_planks then
+				stairsplus:register_all(
+					"moretrees",
+					treename.."_planks",
+					"moretrees:"..treename.."_planks",
+					{
+						groups = { snappy=1, choppy=2, oddly_breakable_by_hand=2, flammable=3, not_in_creative_inventory=1 },
+						tiles = { "moretrees_"..treename.."_wood.png" },
+						description = moretrees.treedesc[treename].planks,
+						drop = treename.."_planks",
+					}
+				)
+			end
+		elseif minetest.get_modpath("stairs") then
+			stairs.register_stair_and_slab(
+				"moretrees_"..treename.."_trunk",
+				"moretrees:"..treename.."_trunk",
+				{ snappy=1, choppy=2, oddly_breakable_by_hand=1, flammable=2 },
+				{	"moretrees_"..treename.."_trunk_top.png",
+					"moretrees_"..treename.."_trunk_top.png",
+					"moretrees_"..treename.."_trunk.png"
+				},
+				moretrees.treedesc[treename].trunk_stair,
+				moretrees.treedesc[treename].trunk_slab,
+				xcompat.sounds.node_sound_wood_defaults()
+			)
+
+			if moretrees.enable_planks then
+				stairs.register_stair_and_slab(
+					"moretrees_"..treename.."_planks",
+					"moretrees:"..treename.."_planks",
+					{ snappy=1, choppy=2, oddly_breakable_by_hand=2, flammable=3 },
+					{ "moretrees_"..treename.."_wood.png" },
+					moretrees.treedesc[treename].planks_stair,
+					moretrees.treedesc[treename].planks_slab,
 					xcompat.sounds.node_sound_wood_defaults()
 				)
-
-				if moretrees.enable_planks then
-					stairs.register_stair_and_slab(
-						"moretrees_"..treename.."_planks",
-						"moretrees:"..treename.."_planks",
-						{ snappy=1, choppy=2, oddly_breakable_by_hand=2, flammable=3 },
-						{ "moretrees_"..treename.."_wood.png" },
-						moretrees.treedesc[treename].planks_stair,
-						moretrees.treedesc[treename].planks_slab,
-						xcompat.sounds.node_sound_wood_defaults()
-					)
-				end
-
 			end
+
 		end
 
-		if minetest.get_modpath("default") and moretrees.enable_fences and moretrees.enable_planks then
+		if minetest.get_modpath("default") and moretrees.enable_planks then
 			local planks_name = "moretrees:" .. treename .. "_planks"
 			local planks_tile = "moretrees_" .. treename .. "_wood.png"
 			default.register_fence("moretrees:" .. treename .. "_fence", {
