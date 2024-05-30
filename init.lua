@@ -163,7 +163,9 @@ minetest.register_decoration(translate_biome_defs(moretrees.rubber_tree_biome, "
 minetest.register_decoration(translate_biome_defs(moretrees.willow_biome, "willow"))
 minetest.register_decoration(translate_biome_defs(moretrees.birch_biome, "birch"))
 minetest.register_decoration(translate_biome_defs(moretrees.spruce_biome, "spruce"))
-minetest.register_decoration(translate_biome_defs(moretrees.jungletree_biome, "jungletree"))
+if minetest.get_modpath("default") then
+	minetest.register_decoration(translate_biome_defs(moretrees.jungletree_biome, "jungletree"))
+end
 minetest.register_decoration(translate_biome_defs(moretrees.fir_biome, "fir", 1))
 if minetest.get_modpath("snow") then
 	minetest.register_decoration(translate_biome_defs(moretrees.fir_biome_snow, "fir", 2))
