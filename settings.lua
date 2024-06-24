@@ -50,4 +50,8 @@ moretrees.grow_legacy_saplings	= stg:get_bool("moretrees.grow_legacy_saplings", 
 moretrees.decay_leaves_as_items = stg:get_bool("moretrees.decay_leaves_as_items", false)
 
 -- this is an internal setting for games that only have one type of planks
-moretrees.enable_planks = xcompat.gameid ~= "voxelgarden"
+if type(minetest.get_game_info) == "function" then
+    moretrees.enable_planks = minetest.get_game_info().id~="voxelgarden"
+else
+    moretrees.enable_planks = true
+end
