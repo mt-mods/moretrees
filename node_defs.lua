@@ -445,7 +445,7 @@ for i in ipairs(moretrees.treelist) do
 			groups = regular_groups,
 			sounds = xcompat.sounds.node_sound_default(),
 			on_place = function(itemstack, placer, pointed_thing)
-				itemstack = default.sapling_on_place(itemstack, placer, pointed_thing,
+				itemstack = xcompat.sapling_on_place(itemstack, placer, pointed_thing,
 					"moretrees:" ..treename.. "_sapling",
 					-- minp, maxp to be checked, relative to sapling pos
 					-- minp_relative.y = 1 because sapling pos has been checked
@@ -505,7 +505,7 @@ for i in ipairs(moretrees.treelist) do
 		sounds = xcompat.sounds.node_sound_default(),
 		drop = "moretrees:"..treename.."_sapling",
 		on_place = function(itemstack, placer, pointed_thing)
-			itemstack = default.sapling_on_place(itemstack, placer, pointed_thing,
+			itemstack = xcompat.sapling_on_place(itemstack, placer, pointed_thing,
 				"moretrees:" ..treename.. "_sapling_ongen",
 				-- minp, maxp to be checked, relative to sapling pos
 				-- minp_relative.y = 1 because sapling pos has been checked
