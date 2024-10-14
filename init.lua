@@ -135,14 +135,14 @@ function translate_biome_defs(def, treename, index)
 	local deco_def = {
 		name = treename .. "_" .. index,
 		deco_type = "simple",
-		place_on = def.place_on or def.surface,
+		place_on = def.place_on,
 		sidelen = 16,
 		fill_ratio = def.fill_ratio or 0.001,
 		--biomes eventually?
 		y_min = def.min_elevation,
 		y_max = def.max_elevation,
-		spawn_by = def.near_nodes,
-		num_spawn_by = def.near_nodes_count,
+		spawn_by = def.spawn_by,
+		num_spawn_by = def.num_spawn_by,
 		decoration = "moretrees:"..treename.."_sapling_ongen"
 	}
 
