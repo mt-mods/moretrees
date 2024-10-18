@@ -261,7 +261,6 @@ moretrees.jungletree_model={
 	trunk_type=nil,
 	thin_branches=true,
 	fruit_chance=15,
-	fruit="vines:vine"
 }
 
 moretrees.fir_model={
@@ -269,7 +268,7 @@ moretrees.fir_model={
 	rules_a=nil,
 	rules_b=nil,
 	trunk="moretrees:fir_trunk",
-	leaves=nil,
+	leaves="moretrees:fir_leaves",
 	angle=45,
 	iterations=7,
 	random_level=5,
