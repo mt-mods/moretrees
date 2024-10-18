@@ -261,7 +261,6 @@ moretrees.jungletree_model={
 	trunk_type=nil,
 	thin_branches=true,
 	fruit_chance=15,
-	fruit="vines:vine"
 }
 
 moretrees.fir_model={
