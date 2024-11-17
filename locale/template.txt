@@ -208,3 +208,12 @@ Willow Tree Trunk=
 Willow Tree Trunk Slab=
 Willow Tree Trunk Stair=
 Yellow=
+
+# init.lua
+Sapling=
+Tree=
+Wooden Planks=
+Leaves=
+Wooden Fence=
+Wooden Fence Rail=
+Wooden Fence Gate=
