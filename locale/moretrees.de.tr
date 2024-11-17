@@ -209,3 +209,12 @@ Willow Tree Trunk=Weidenstamm
 Willow Tree Trunk Slab=Weidenstammplatte
 Willow Tree Trunk Stair=Weidenstammstufe
 Yellow=gelb
+
+# init.lua
+Sapling=Setzling
+Tree=Baum
+Wooden Planks=Holzbretter
+Leaves=Blätter
+Wooden Fence=Holzzaun
+Wooden Fence Rail=Holzschiene
+Wooden Fence Gate=Holztor

@@ -209,3 +209,12 @@ Willow Tree Trunk=Tronc d'arbre de saule
 Willow Tree Trunk Slab=Dalle en tronc de saule
 Willow Tree Trunk Stair=Escalier en tronc de saule
 Yellow=jaune
+
+# init.lua
+Sapling=Jeune Arbre
+Tree=Arbre
+Wooden Planks=Planches
+Leaves=Feuilles
+Wooden Fence=Barrière en bois
+Wooden Fence Rail=Rail de clôture en bois
+Wooden Fence Gate=Porte de clôture en bois
