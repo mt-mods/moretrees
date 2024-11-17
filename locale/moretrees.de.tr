@@ -211,10 +211,10 @@ Willow Tree Trunk Stair=Weidenstammstufe
 Yellow=gelb
 
 # init.lua
-Sapling=
-Tree=
-Wooden Planks=
-Leaves=
-Wooden Fence=
-Wooden Fence Rail=
-Wooden Fence Gate=
+Sapling=Setzling
+Tree=Baum
+Wooden Planks=Holzbretter
+Leaves=Blätter
+Wooden Fence=Holzzaun
+Wooden Fence Rail=Holzschiene
+Wooden Fence Gate=Holztor

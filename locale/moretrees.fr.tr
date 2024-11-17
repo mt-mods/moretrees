@@ -211,10 +211,10 @@ Willow Tree Trunk Stair=Escalier en tronc de saule
 Yellow=jaune
 
 # init.lua
-Sapling=
-Tree=
-Wooden Planks=
-Leaves=
-Wooden Fence=
-Wooden Fence Rail=
-Wooden Fence Gate=
+Sapling=Jeune Arbre
+Tree=Arbre
+Wooden Planks=Planches
+Leaves=Feuilles
+Wooden Fence=Barrière en bois
+Wooden Fence Rail=Clôture en bois
+Wooden Fence Gate=Porte de clôture en bois
