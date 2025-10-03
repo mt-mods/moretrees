@@ -161,7 +161,7 @@ moretrees.poplar_small_biome_2 = {
 
 
 moretrees.fir_biome = {
-	place_on = coniferous_and_snow_place_on,
+	place_on = coniferous_place_on,
 	min_elevation = 25,
 	fill_ratio = ratio_normal,
 }
