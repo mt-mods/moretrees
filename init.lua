@@ -136,7 +136,6 @@ function translate_biome_defs(def, treename, index)
 	if not index then index = 1 end
 	local deco_def = {
 		name = treename .. "_" .. index,
-		deco_type = "simple",
 		place_on = def.place_on,
 		sidelen = 16,
 		fill_ratio = def.fill_ratio or 0.001,
@@ -145,8 +144,15 @@ function translate_biome_defs(def, treename, index)
 		y_max = def.max_elevation,
 		spawn_by = def.spawn_by,
 		num_spawn_by = def.num_spawn_by,
-		decoration = "moretrees:"..treename.."_sapling_ongen"
 	}
+
+	if minetest.features.lsystem_decoration_type then
+		deco_def.deco_type = "lsystem"
+		deco_def.treedef = moretrees[treename .. "_model"]
+	else
+		deco_def.deco_type = "simple"
+		deco_def.decoration = "moretrees:"..treename.."_sapling_ongen"
+	end
 
 	deco_ids[#deco_ids+1] = treename .. ("_" .. index or "_1")
 
@@ -178,33 +184,35 @@ minetest.register_decoration(translate_biome_defs(moretrees.poplar_biome_3, "pop
 minetest.register_decoration(translate_biome_defs(moretrees.poplar_small_biome, "poplar_small", 4))
 minetest.register_decoration(translate_biome_defs(moretrees.poplar_small_biome_2, "poplar_small", 5))
 
---[[
-	this is purposefully wrapped in a on mods loaded callback to that it gets the proper ids
-	if other mods clear the registered decorations
-]]
-minetest.register_on_mods_loaded(function()
-	for k, v in pairs(deco_ids) do
-		deco_ids[k] = minetest.get_decoration_id(v)
-	end
-	minetest.set_gen_notify("decoration", deco_ids)
-end)
-
-minetest.register_on_generated(function(minp, maxp, blockseed)
-    local g = minetest.get_mapgen_object("gennotify")
-    local locations = {}
-	for _, id in pairs(deco_ids) do
-		local deco_locations = g["decoration#" .. id] or {}
-		for _, pos in pairs(deco_locations) do
-			locations[#locations+1] = pos
+if not minetest.features.lsystem_decoration_type then
+	--[[
+		this is purposefully wrapped in a on mods loaded callback to that it gets the proper ids
+		if other mods clear the registered decorations
+	]]
+	minetest.register_on_mods_loaded(function()
+		for k, v in pairs(deco_ids) do
+			deco_ids[k] = minetest.get_decoration_id(v)
 		end
-	end
+		minetest.set_gen_notify("decoration", deco_ids)
+	end)
 
-    if #locations == 0 then return end
-    for _, pos in ipairs(locations) do
-        local timer = minetest.get_node_timer({x=pos.x, y=pos.y+1, z=pos.z})
-        timer:start(math.random(2,10))
-    end
-end)
+	minetest.register_on_generated(function(minp, maxp, blockseed)
+		local g = minetest.get_mapgen_object("gennotify")
+		local locations = {}
+		for _, id in pairs(deco_ids) do
+			local deco_locations = g["decoration#" .. id] or {}
+			for _, pos in pairs(deco_locations) do
+				locations[#locations+1] = pos
+			end
+		end
+
+		if #locations == 0 then return end
+		for _, pos in ipairs(locations) do
+			local timer = minetest.get_node_timer({x=pos.x, y=pos.y+1, z=pos.z})
+			timer:start(math.random(2,10))
+		end
+	end)
+end
 
 -- Code to spawn a birch tree
 
