@@ -201,7 +201,7 @@ minetest.register_on_generated(function(minp, maxp, blockseed)
 
     if #locations == 0 then return end
     for _, pos in ipairs(locations) do
-        local timer = minetest.get_node_timer({x=pos.x, y=pos.y+1, z=pos.z})
+        local timer = minetest.get_node_timer(vector.offset(pos, 0,1,0))
         timer:start(math.random(2,10))
     end
 end)
@@ -277,7 +277,7 @@ function moretrees.grow_jungletree(pos)
 
 	minetest.swap_node(pos, {name = "air"})
 	local leaves = minetest.find_nodes_in_area(
-		{x = pos.x-1, y = pos.y, z = pos.z-1}, {x = pos.x+1, y = pos.y+10, z = pos.z+1},
+		vector.offset(pos, -1,0,-1), vector.offset(pos, 1,10,1),
 		xcompat.materials.apple_leaves
 	)
 	for leaf in ipairs(leaves) do
@@ -307,8 +307,8 @@ function moretrees.grow_fir(pos)
 
 	minetest.swap_node(pos, {name = "air"})
 	local leaves = minetest.find_nodes_in_area(
-		{x = pos.x, y = pos.y, z = pos.z},
-		{x = pos.x, y = pos.y+5, z = pos.z},
+		vector.offset(pos, 0,0,0),
+		vector.offset(pos, 0,5,0),
 		xcompat.materials.apple_leaves
 	)
 	for leaf in ipairs(leaves) do
@@ -338,8 +338,8 @@ function moretrees.grow_fir_snow(pos)
 
 	minetest.swap_node(pos, {name = "air"})
 	local leaves = minetest.find_nodes_in_area(
-		{x = pos.x, y = pos.y, z = pos.z},
-		{x = pos.x, y = pos.y+5, z = pos.z},
+		vector.offset(pos, 0,0,0),
+		vector.offset(pos, 0,5,0),
 		xcompat.materials.apple_leaves
 	)
 	for leaf in ipairs(leaves) do
