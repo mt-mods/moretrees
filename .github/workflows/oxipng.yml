@@ -2,7 +2,7 @@ name: Optimize PNGs
 
 on:
   pull_request:
-    branches: [main, master]
+    branches: [main, master, oxipng-test]
     paths:
       - "**.png"
 
