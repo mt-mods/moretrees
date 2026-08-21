@@ -51,94 +51,93 @@ index 8189ffd..afd4644 100644
                 moretrees.jungletree_model.iterations = 2
 ]]
 
-
-minetest.register_chatcommand("make-scene", {
+core.register_chatcommand("make-scene", {
 	func = function()
-		minetest.place_node({x=780, y=30, z=-277}, {name="default:obsidian"})
-		minetest.place_node({x=780, y=30, z=-278}, {name="default:obsidian"})
-		minetest.place_node({x=781, y=30, z=-277}, {name="default:obsidian"})
-		minetest.place_node({x=781, y=30, z=-278}, {name="default:obsidian"})
-		minetest.place_node({x=781, y=30, z=-276}, {name="default:obsidian"})
-		minetest.place_node({x=780, y=30, z=-276}, {name="default:obsidian"})
+		core.place_node({ x = 780, y = 30, z = -277 }, { name = "default:obsidian" })
+		core.place_node({ x = 780, y = 30, z = -278 }, { name = "default:obsidian" })
+		core.place_node({ x = 781, y = 30, z = -277 }, { name = "default:obsidian" })
+		core.place_node({ x = 781, y = 30, z = -278 }, { name = "default:obsidian" })
+		core.place_node({ x = 781, y = 30, z = -276 }, { name = "default:obsidian" })
+		core.place_node({ x = 780, y = 30, z = -276 }, { name = "default:obsidian" })
 
 		for z = -360, -300 do
-			local dy=2
-			for x = 630 + (-z - 360)/3, 660 + (-z - 300)/3 do
+			local dy = 2
+			for x = 630 + (-z - 360) / 3, 660 + (-z - 300) / 3 do
 				for y = 5, 22 do
-					minetest.place_node({x=x, y=y, z=z}, {name="default:desert_stone"})
+					core.place_node({ x = x, y = y, z = z }, { name = "default:desert_stone" })
 				end
 				for y = 23, 25 + dy do
-					minetest.place_node({x=x, y=y, z=z}, {name="default:desert_sand"})
+					core.place_node({ x = x, y = y, z = z }, { name = "default:desert_sand" })
 				end
 				dy = 0
 			end
 		end
 
-		minetest.place_node({x=717, y=2, z=-298}, {name = "moretrees:palm_sapling"})
-		minetest.place_node({x=713, y=2, z=-302}, {name = "moretrees:palm_sapling"})
-		minetest.place_node({x=713, y=2, z=-307}, {name = "moretrees:palm_sapling"})
-		minetest.place_node({x=717, y=2, z=-318}, {name = "moretrees:palm_sapling"})
-		minetest.place_node({x=723, y=2, z=-320}, {name = "moretrees:palm_sapling"})
+		core.place_node({ x = 717, y = 2, z = -298 }, { name = "moretrees:palm_sapling" })
+		core.place_node({ x = 713, y = 2, z = -302 }, { name = "moretrees:palm_sapling" })
+		core.place_node({ x = 713, y = 2, z = -307 }, { name = "moretrees:palm_sapling" })
+		core.place_node({ x = 717, y = 2, z = -318 }, { name = "moretrees:palm_sapling" })
+		core.place_node({ x = 723, y = 2, z = -320 }, { name = "moretrees:palm_sapling" })
 
-		minetest.place_node({x=645, y=26, z=-314}, {name="moretrees:date_palm_sapling"})
-		minetest.place_node({x=653, y=26, z=-322}, {name="moretrees:date_palm_sapling"})
-		minetest.place_node({x=649, y=26, z=-334}, {name="moretrees:date_palm_sapling"})
-		minetest.place_node({x=662, y=26, z=-342}, {name="moretrees:date_palm_sapling"})
+		core.place_node({ x = 645, y = 26, z = -314 }, { name = "moretrees:date_palm_sapling" })
+		core.place_node({ x = 653, y = 26, z = -322 }, { name = "moretrees:date_palm_sapling" })
+		core.place_node({ x = 649, y = 26, z = -334 }, { name = "moretrees:date_palm_sapling" })
+		core.place_node({ x = 662, y = 26, z = -342 }, { name = "moretrees:date_palm_sapling" })
 
-		minetest.place_node({x=672, y=5, z=-305}, {name="moretrees:oak_sapling"})
-		minetest.place_node({x=690, y=6, z=-322}, {name="moretrees:oak_sapling"})
-		minetest.place_node({x=695, y=7, z=-335}, {name="moretrees:oak_sapling"})
-		minetest.place_node({x=699, y=4, z=-301}, {name="moretrees:oak_sapling"})
+		core.place_node({ x = 672, y = 5, z = -305 }, { name = "moretrees:oak_sapling" })
+		core.place_node({ x = 690, y = 6, z = -322 }, { name = "moretrees:oak_sapling" })
+		core.place_node({ x = 695, y = 7, z = -335 }, { name = "moretrees:oak_sapling" })
+		core.place_node({ x = 699, y = 4, z = -301 }, { name = "moretrees:oak_sapling" })
 
-		minetest.place_node({x=751, y=5, z=-254}, {name="moretrees:apple_tree_sapling"})
-		minetest.place_node({x=729, y=3, z=-275}, {name="moretrees:apple_tree_sapling"})
-		minetest.place_node({x=747, y=4, z=-270}, {name="moretrees:apple_tree_sapling"})
+		core.place_node({ x = 751, y = 5, z = -254 }, { name = "moretrees:apple_tree_sapling" })
+		core.place_node({ x = 729, y = 3, z = -275 }, { name = "moretrees:apple_tree_sapling" })
+		core.place_node({ x = 747, y = 4, z = -270 }, { name = "moretrees:apple_tree_sapling" })
 
-		minetest.place_node({x=671, y=5, z=-283}, {name="default:junglesapling"})
-		minetest.place_node({x=680, y=4, z=-287}, {name="default:junglesapling"})
-		minetest.place_node({x=702, y=4, z=-288}, {name="default:junglesapling"})
+		core.place_node({ x = 671, y = 5, z = -283 }, { name = "default:junglesapling" })
+		core.place_node({ x = 680, y = 4, z = -287 }, { name = "default:junglesapling" })
+		core.place_node({ x = 702, y = 4, z = -288 }, { name = "default:junglesapling" })
 
-		minetest.place_node({x=646, y=12, z=-199}, {name="moretrees:spruce_sapling"})
-		minetest.place_node({x=644, y=14, z=-177}, {name="moretrees:spruce_sapling"})
-		minetest.place_node({x=678, y=9, z=-211}, {name="moretrees:spruce_sapling"})
-		minetest.place_node({x=663, y=10, z=-215}, {name="moretrees:spruce_sapling"})
+		core.place_node({ x = 646, y = 12, z = -199 }, { name = "moretrees:spruce_sapling" })
+		core.place_node({ x = 644, y = 14, z = -177 }, { name = "moretrees:spruce_sapling" })
+		core.place_node({ x = 678, y = 9, z = -211 }, { name = "moretrees:spruce_sapling" })
+		core.place_node({ x = 663, y = 10, z = -215 }, { name = "moretrees:spruce_sapling" })
 
-		minetest.place_node({x=637, y=3, z=-263}, {name="moretrees:sequoia_sapling"})
-		minetest.place_node({x=625, y=3, z=-250}, {name="moretrees:sequoia_sapling"})
-		minetest.place_node({x=616, y=3, z=-233}, {name="moretrees:sequoia_sapling"})
-		minetest.place_node({x=635, y=3, z=-276}, {name="moretrees:sequoia_sapling"})
-		minetest.place_node({x=681, y=11, z=-260}, {name="moretrees:sequoia_sapling"})
-		minetest.place_node({x=682, y=10, z=-247}, {name="moretrees:sequoia_sapling"})
+		core.place_node({ x = 637, y = 3, z = -263 }, { name = "moretrees:sequoia_sapling" })
+		core.place_node({ x = 625, y = 3, z = -250 }, { name = "moretrees:sequoia_sapling" })
+		core.place_node({ x = 616, y = 3, z = -233 }, { name = "moretrees:sequoia_sapling" })
+		core.place_node({ x = 635, y = 3, z = -276 }, { name = "moretrees:sequoia_sapling" })
+		core.place_node({ x = 681, y = 11, z = -260 }, { name = "moretrees:sequoia_sapling" })
+		core.place_node({ x = 682, y = 10, z = -247 }, { name = "moretrees:sequoia_sapling" })
 
-		minetest.place_node({x=737, y=7, z=-195}, {name="moretrees:cedar_sapling"})
-		minetest.place_node({x=720, y=8, z=-189}, {name="moretrees:cedar_sapling"})
-		minetest.place_node({x=704, y=7, z=-187}, {name="moretrees:cedar_sapling"})
+		core.place_node({ x = 737, y = 7, z = -195 }, { name = "moretrees:cedar_sapling" })
+		core.place_node({ x = 720, y = 8, z = -189 }, { name = "moretrees:cedar_sapling" })
+		core.place_node({ x = 704, y = 7, z = -187 }, { name = "moretrees:cedar_sapling" })
 
-		minetest.place_node({x=731, y=2, z=-227}, {name="moretrees:poplar_sapling"})
-		minetest.place_node({x=721, y=2, z=-233}, {name="moretrees:poplar_sapling"})
-		minetest.place_node({x=712, y=1, z=-237}, {name="moretrees:poplar_sapling"})
-		minetest.place_node({x=743, y=3, z=-228}, {name="moretrees:poplar_small_sapling"})
-		minetest.place_node({x=750, y=3, z=-230}, {name="moretrees:poplar_small_sapling"})
-		minetest.place_node({x=731, y=5, z=-233}, {name="moretrees:poplar_small_sapling"})
+		core.place_node({ x = 731, y = 2, z = -227 }, { name = "moretrees:poplar_sapling" })
+		core.place_node({ x = 721, y = 2, z = -233 }, { name = "moretrees:poplar_sapling" })
+		core.place_node({ x = 712, y = 1, z = -237 }, { name = "moretrees:poplar_sapling" })
+		core.place_node({ x = 743, y = 3, z = -228 }, { name = "moretrees:poplar_small_sapling" })
+		core.place_node({ x = 750, y = 3, z = -230 }, { name = "moretrees:poplar_small_sapling" })
+		core.place_node({ x = 731, y = 5, z = -233 }, { name = "moretrees:poplar_small_sapling" })
 
-		minetest.place_node({x=702, y=2, z=-274}, {name="moretrees:birch_sapling"})
-		minetest.place_node({x=697, y=2, z=-271}, {name="moretrees:birch_sapling"})
-		minetest.place_node({x=696, y=2, z=-264}, {name="moretrees:birch_sapling"})
-		minetest.place_node({x=710, y=2, z=-265}, {name="moretrees:birch_sapling"})
+		core.place_node({ x = 702, y = 2, z = -274 }, { name = "moretrees:birch_sapling" })
+		core.place_node({ x = 697, y = 2, z = -271 }, { name = "moretrees:birch_sapling" })
+		core.place_node({ x = 696, y = 2, z = -264 }, { name = "moretrees:birch_sapling" })
+		core.place_node({ x = 710, y = 2, z = -265 }, { name = "moretrees:birch_sapling" })
 
-		minetest.place_node({x=707, y=8, z=-247}, {name="moretrees:fir_sapling"})
-		minetest.place_node({x=699, y=10, z=-254}, {name="moretrees:fir_sapling"})
-		minetest.place_node({x=729, y=5, z=-261}, {name="moretrees:fir_sapling"})
-		minetest.place_node({x=732, y=5, z=-252}, {name="moretrees:fir_sapling"})
-		minetest.place_node({x=741, y=4, z=-262}, {name="moretrees:fir_sapling"})
+		core.place_node({ x = 707, y = 8, z = -247 }, { name = "moretrees:fir_sapling" })
+		core.place_node({ x = 699, y = 10, z = -254 }, { name = "moretrees:fir_sapling" })
+		core.place_node({ x = 729, y = 5, z = -261 }, { name = "moretrees:fir_sapling" })
+		core.place_node({ x = 732, y = 5, z = -252 }, { name = "moretrees:fir_sapling" })
+		core.place_node({ x = 741, y = 4, z = -262 }, { name = "moretrees:fir_sapling" })
 
-		minetest.place_node({x=751, y=2, z=-286}, {name="moretrees:willow_sapling"})
+		core.place_node({ x = 751, y = 2, z = -286 }, { name = "moretrees:willow_sapling" })
 
-		minetest.place_node({x=760, y=5, z=-223}, {name="moretrees:rubber_tree_sapling"})
-		minetest.place_node({x=762, y=5, z=-230}, {name="moretrees:rubber_tree_sapling"})
-		minetest.place_node({x=766, y=5, z=-243}, {name="moretrees:rubber_tree_sapling"})
-		minetest.place_node({x=764, y=6, z=-252}, {name="moretrees:rubber_tree_sapling"})
-	end
+		core.place_node({ x = 760, y = 5, z = -223 }, { name = "moretrees:rubber_tree_sapling" })
+		core.place_node({ x = 762, y = 5, z = -230 }, { name = "moretrees:rubber_tree_sapling" })
+		core.place_node({ x = 766, y = 5, z = -243 }, { name = "moretrees:rubber_tree_sapling" })
+		core.place_node({ x = 764, y = 6, z = -252 }, { name = "moretrees:rubber_tree_sapling" })
+	end,
 })
 
 --[[
@@ -146,12 +145,12 @@ The following is a search/replace command suitable for vi (/vim) or sed, to conv
 messages to equivalent lua commands:
 
 s/.*\(\(moretrees\|default\)[^ ]*\) at
-	(\([-0-9]\+\),\([-0-9]\+\),\([-0-9]\+\)).*/\t\tminetest.place_node({x=\3, y=\4, z=\5}, {name="\1"})/
+	(\([-0-9]\+\),\([-0-9]\+\),\([-0-9]\+\)).*/\t\tcore.place_node({x=\3, y=\4, z=\5}, {name="\1"})/
 
 E.g. a minetest log line of the following kind:
 		2016-07-03 11:30:50: ACTION[Server]: singleplayer places node moretrees:rubber_tree_sapling at  (760,5,-223)
 Becomes:
-		minetest.place_node({x=760, y=5, z=-223}, {name="moretrees:rubber_tree_sapling"})
+		core.place_node({x=760, y=5, z=-223}, {name="moretrees:rubber_tree_sapling"})
 (Except that the example log line above has an extra space added, so it won't be converted)
 
 vi/vim users: Add the minetest log lines to this file, then enter the following command, with
@@ -166,4 +165,3 @@ single-quotes.
 Windows users: You're probably out of luck. And the effort of doing such a thing is probably
 larger anyway than the effort of copying an existing line and typing things manually.
 ]]
-

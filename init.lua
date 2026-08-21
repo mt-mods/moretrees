@@ -15,76 +15,76 @@
 
 moretrees = {}
 
-local S = minetest.get_translator("moretrees")
+local S = core.get_translator("moretrees")
 
-if minetest.get_modpath("default") then
-	minetest.override_item("default:sapling", {
-		description = S("Sapling")
+if core.get_modpath("default") then
+	core.override_item("default:sapling", {
+		description = S("Sapling"),
 	})
 
-	minetest.override_item("default:tree", {
-		description = S("Tree")
+	core.override_item("default:tree", {
+		description = S("Tree"),
 	})
 
-	minetest.override_item("default:wood", {
-		description = S("Wooden Planks")
+	core.override_item("default:wood", {
+		description = S("Wooden Planks"),
 	})
 
-	minetest.override_item("default:leaves", {
-		description = S("Leaves")
+	core.override_item("default:leaves", {
+		description = S("Leaves"),
 	})
 
-	minetest.override_item("default:fence_wood", {
-		description = S("Wooden Fence")
+	core.override_item("default:fence_wood", {
+		description = S("Wooden Fence"),
 	})
 
-	minetest.override_item("default:fence_rail_wood", {
-		description = S("Wooden Fence Rail")
-	})
-end
-
-if minetest.get_modpath("doors") then
-	minetest.override_item("doors:gate_wood_closed", {
-		description = S("Wooden Fence Gate")
-	})
-
-	minetest.override_item("doors:gate_wood_open", {
-		description = S("Wooden Fence Gate")
+	core.override_item("default:fence_rail_wood", {
+		description = S("Wooden Fence Rail"),
 	})
 end
 
+if core.get_modpath("doors") then
+	core.override_item("doors:gate_wood_closed", {
+		description = S("Wooden Fence Gate"),
+	})
+
+	core.override_item("doors:gate_wood_open", {
+		description = S("Wooden Fence Gate"),
+	})
+end
 
 -- Read the default config file (and if necessary, copy it to the world folder).
 
-local worldpath=minetest.get_worldpath()
-local modpath=minetest.get_modpath("moretrees")
+local worldpath = core.get_worldpath()
+local modpath = core.get_modpath("moretrees")
 
-dofile(modpath.."/settings.lua")
+dofile(modpath .. "/settings.lua")
 
-if io.open(worldpath.."/moretrees_settings.txt","r") then
+if io.open(worldpath .. "/moretrees_settings.txt", "r") then
 	io.close()
-	dofile(worldpath.."/moretrees_settings.txt")
+	dofile(worldpath .. "/moretrees_settings.txt")
 end
 
 -- Validate that if ethereal exists, that it's version is greater than 20220424.
 -- Lower versions of ethereal clear registered biomes and decorations during
 -- initialization which results in lost content from this mod (and others)
 -- depending on where they are in the mod load order.
-minetest.register_on_mods_loaded(function()
-	if minetest.global_exists("ethereal") then
+core.register_on_mods_loaded(function()
+	if core.global_exists("ethereal") then
 		local ethereal_ver = tonumber(ethereal.version)
-		if (ethereal_ver and ethereal_ver < 20220424) then
-			error("[moretrees] The version of ethereal detected can result " ..
-				  "in parts of this mod and others disappearing due to mod " ..
-				  "load order. Please update ethereal.");
+		if ethereal_ver and ethereal_ver < 20220424 then
+			error(
+				"[moretrees] The version of ethereal detected can result "
+					.. "in parts of this mod and others disappearing due to mod "
+					.. "load order. Please update ethereal."
+			)
 		end
 	end
 end)
 
 -- infinite stacks checking
 
-if minetest.get_modpath("unified_inventory") or not
-		minetest.settings:get_bool("creative_mode") then
+if core.get_modpath("unified_inventory") or not core.settings:get_bool("creative_mode") then
 	moretrees.expect_infinite_stacks = false
 else
 	moretrees.expect_infinite_stacks = true
@@ -104,13 +104,13 @@ moretrees.cutting_tools = {
 	"titanium:axe",
 }
 
-dofile(modpath.."/tree_models.lua")
-dofile(modpath.."/node_defs.lua")
-dofile(modpath.."/date_palm.lua")
-dofile(modpath.."/cocos_palm.lua")
-dofile(modpath.."/biome_defs.lua")
-dofile(modpath.."/saplings.lua")
-dofile(modpath.."/crafts.lua")
+dofile(modpath .. "/tree_models.lua")
+dofile(modpath .. "/node_defs.lua")
+dofile(modpath .. "/date_palm.lua")
+dofile(modpath .. "/cocos_palm.lua")
+dofile(modpath .. "/biome_defs.lua")
+dofile(modpath .. "/saplings.lua")
+dofile(modpath .. "/crafts.lua")
 
 -- tree spawning setup
 moretrees.spawn_beech_object = moretrees.beech_model
@@ -133,7 +133,9 @@ moretrees.spawn_poplar_small_object = moretrees.poplar_small_model
 local deco_ids = {}
 
 function translate_biome_defs(def, treename, index)
-	if not index then index = 1 end
+	if not index then
+		index = 1
+	end
 	local deco_def = {
 		name = treename .. "_" .. index,
 		deco_type = "simple",
@@ -145,86 +147,88 @@ function translate_biome_defs(def, treename, index)
 		y_max = def.max_elevation,
 		spawn_by = def.spawn_by,
 		num_spawn_by = def.num_spawn_by,
-		decoration = "moretrees:"..treename.."_sapling_ongen"
+		decoration = "moretrees:" .. treename .. "_sapling_ongen",
 	}
 
-	deco_ids[#deco_ids+1] = treename .. ("_" .. index or "_1")
+	deco_ids[#deco_ids + 1] = treename .. ("_" .. index or "_1")
 
 	return deco_def
 end
 
-minetest.register_decoration(translate_biome_defs(moretrees.beech_biome, "beech"))
-minetest.register_decoration(translate_biome_defs(moretrees.apple_tree_biome, "apple_tree"))
-minetest.register_decoration(translate_biome_defs(moretrees.oak_biome, "oak"))
-minetest.register_decoration(translate_biome_defs(moretrees.sequoia_biome, "sequoia"))
-minetest.register_decoration(translate_biome_defs(moretrees.palm_biome, "palm"))
-minetest.register_decoration(translate_biome_defs(moretrees.date_palm_biome, "date_palm", 1))
-minetest.register_decoration(translate_biome_defs(moretrees.date_palm_biome_2, "date_palm", 2))
-minetest.register_decoration(translate_biome_defs(moretrees.cedar_biome, "cedar"))
-minetest.register_decoration(translate_biome_defs(moretrees.rubber_tree_biome, "rubber_tree"))
-minetest.register_decoration(translate_biome_defs(moretrees.willow_biome, "willow"))
-minetest.register_decoration(translate_biome_defs(moretrees.birch_biome, "birch"))
-minetest.register_decoration(translate_biome_defs(moretrees.spruce_biome, "spruce"))
-if minetest.get_modpath("default") then
-	minetest.register_decoration(translate_biome_defs(moretrees.jungletree_biome, "jungletree"))
+core.register_decoration(translate_biome_defs(moretrees.beech_biome, "beech"))
+core.register_decoration(translate_biome_defs(moretrees.apple_tree_biome, "apple_tree"))
+core.register_decoration(translate_biome_defs(moretrees.oak_biome, "oak"))
+core.register_decoration(translate_biome_defs(moretrees.sequoia_biome, "sequoia"))
+core.register_decoration(translate_biome_defs(moretrees.palm_biome, "palm"))
+core.register_decoration(translate_biome_defs(moretrees.date_palm_biome, "date_palm", 1))
+core.register_decoration(translate_biome_defs(moretrees.date_palm_biome_2, "date_palm", 2))
+core.register_decoration(translate_biome_defs(moretrees.cedar_biome, "cedar"))
+core.register_decoration(translate_biome_defs(moretrees.rubber_tree_biome, "rubber_tree"))
+core.register_decoration(translate_biome_defs(moretrees.willow_biome, "willow"))
+core.register_decoration(translate_biome_defs(moretrees.birch_biome, "birch"))
+core.register_decoration(translate_biome_defs(moretrees.spruce_biome, "spruce"))
+if core.get_modpath("default") then
+	core.register_decoration(translate_biome_defs(moretrees.jungletree_biome, "jungletree"))
 end
-minetest.register_decoration(translate_biome_defs(moretrees.fir_biome, "fir", 1))
-if minetest.get_modpath("snow") then
-	minetest.register_decoration(translate_biome_defs(moretrees.fir_biome_snow, "fir", 2))
+core.register_decoration(translate_biome_defs(moretrees.fir_biome, "fir", 1))
+if core.get_modpath("snow") then
+	core.register_decoration(translate_biome_defs(moretrees.fir_biome_snow, "fir", 2))
 end
-minetest.register_decoration(translate_biome_defs(moretrees.poplar_biome, "poplar", 1))
-minetest.register_decoration(translate_biome_defs(moretrees.poplar_biome_2, "poplar", 2))
-minetest.register_decoration(translate_biome_defs(moretrees.poplar_biome_3, "poplar", 3))
-minetest.register_decoration(translate_biome_defs(moretrees.poplar_small_biome, "poplar_small", 4))
-minetest.register_decoration(translate_biome_defs(moretrees.poplar_small_biome_2, "poplar_small", 5))
+core.register_decoration(translate_biome_defs(moretrees.poplar_biome, "poplar", 1))
+core.register_decoration(translate_biome_defs(moretrees.poplar_biome_2, "poplar", 2))
+core.register_decoration(translate_biome_defs(moretrees.poplar_biome_3, "poplar", 3))
+core.register_decoration(translate_biome_defs(moretrees.poplar_small_biome, "poplar_small", 4))
+core.register_decoration(translate_biome_defs(moretrees.poplar_small_biome_2, "poplar_small", 5))
 
 --[[
 	this is purposefully wrapped in a on mods loaded callback to that it gets the proper ids
 	if other mods clear the registered decorations
 ]]
-minetest.register_on_mods_loaded(function()
+core.register_on_mods_loaded(function()
 	for k, v in pairs(deco_ids) do
-		deco_ids[k] = minetest.get_decoration_id(v)
+		deco_ids[k] = core.get_decoration_id(v)
 	end
-	minetest.set_gen_notify("decoration", deco_ids)
+	core.set_gen_notify("decoration", deco_ids)
 end)
 
-minetest.register_on_generated(function(minp, maxp, blockseed)
-    local g = minetest.get_mapgen_object("gennotify")
-    local locations = {}
+core.register_on_generated(function(minp, maxp, blockseed)
+	local g = core.get_mapgen_object("gennotify")
+	local locations = {}
 	for _, id in pairs(deco_ids) do
 		local deco_locations = g["decoration#" .. id] or {}
 		for _, pos in pairs(deco_locations) do
-			locations[#locations+1] = pos
+			locations[#locations + 1] = pos
 		end
 	end
 
-    if #locations == 0 then return end
-    for _, pos in ipairs(locations) do
-        local timer = minetest.get_node_timer(vector.offset(pos, 0,1,0))
-        timer:start(math.random(2,10))
-    end
+	if #locations == 0 then
+		return
+	end
+	for _, pos in ipairs(locations) do
+		local timer = core.get_node_timer(vector.offset(pos, 0, 1, 0))
+		timer:start(math.random(2, 10))
+	end
 end)
 
 -- Code to spawn a birch tree
 
 function moretrees.grow_birch(pos)
-	minetest.swap_node(pos, {name = "air"})
-	if math.random(1,2) == 1 then
-		minetest.spawn_tree(pos, moretrees.birch_model1)
+	core.swap_node(pos, { name = "air" })
+	if math.random(1, 2) == 1 then
+		core.spawn_tree(pos, moretrees.birch_model1)
 	else
-		minetest.spawn_tree(pos, moretrees.birch_model2)
+		core.spawn_tree(pos, moretrees.birch_model2)
 	end
 end
 
 -- Code to spawn a spruce tree
 
 function moretrees.grow_spruce(pos)
-	minetest.swap_node(pos, {name = "air"})
-	if math.random(1,2) == 1 then
-		minetest.spawn_tree(pos, moretrees.spruce_model1)
+	core.swap_node(pos, { name = "air" })
+	if math.random(1, 2) == 1 then
+		core.spawn_tree(pos, moretrees.spruce_model1)
 	else
-		minetest.spawn_tree(pos, moretrees.spruce_model2)
+		core.spawn_tree(pos, moretrees.spruce_model2)
 	end
 end
 
@@ -236,7 +240,8 @@ moretrees.jt_rules_b1 = "[-Ff&f][+Ff&f]B"
 
 moretrees.jt_axiom2 = "FFFFFA"
 -- luacheck: no max line length
-moretrees.jt_rules_a2 = "FFFFF[&&-FFFBF[&&&FFff]^^^FFf][&&+FFFBFF[&&&FFff]^^^FFf][&&---FFFBFF[&&&FFff]^^^FFf][&&+++FFFBFF[&&&FFff]^^^FFf]FF/A"
+moretrees.jt_rules_a2 =
+	"FFFFF[&&-FFFBF[&&&FFff]^^^FFf][&&+FFFBFF[&&&FFff]^^^FFf][&&---FFFBFF[&&&FFff]^^^FFf][&&+++FFFBFF[&&&FFff]^^^FFf]FF/A"
 moretrees.jt_rules_b2 = "[-FFf&ff][+FFf&ff]B"
 
 moretrees.ct_rules_a1 = "FF[FF][&&-FBF][&&+FBF][&&---FBF][&&+++FBF]F/A"
@@ -275,24 +280,25 @@ function moretrees.grow_jungletree(pos)
 		moretrees.jungletree_model.rules_b = moretrees.jt_rules_b2
 	end
 
-	minetest.swap_node(pos, {name = "air"})
-	local leaves = minetest.find_nodes_in_area(
-		vector.offset(pos, -1,0,-1), vector.offset(pos, 1,10,1),
+	core.swap_node(pos, { name = "air" })
+	local leaves = core.find_nodes_in_area(
+		vector.offset(pos, -1, 0, -1),
+		vector.offset(pos, 1, 10, 1),
 		xcompat.materials.apple_leaves
 	)
 	for leaf in ipairs(leaves) do
-			minetest.swap_node(leaves[leaf], {name = "air"})
+		core.swap_node(leaves[leaf], { name = "air" })
 	end
-	minetest.spawn_tree(pos, moretrees.jungletree_model)
+	core.spawn_tree(pos, moretrees.jungletree_model)
 end
 
 -- code to spawn fir trees
 
 function moretrees.grow_fir(pos)
 	if math.random(2) == 1 then
-		moretrees.fir_model.leaves="moretrees:fir_leaves"
+		moretrees.fir_model.leaves = "moretrees:fir_leaves"
 	else
-		moretrees.fir_model.leaves="moretrees:fir_leaves_bright"
+		moretrees.fir_model.leaves = "moretrees:fir_leaves_bright"
 	end
 	if math.random(2) == 1 then
 		moretrees.fir_model.rules_a = moretrees.ct_rules_a1
@@ -305,25 +311,25 @@ function moretrees.grow_fir(pos)
 	moretrees.fir_model.iterations = 7
 	moretrees.fir_model.random_level = 5
 
-	minetest.swap_node(pos, {name = "air"})
-	local leaves = minetest.find_nodes_in_area(
-		vector.offset(pos, 0,0,0),
-		vector.offset(pos, 0,5,0),
+	core.swap_node(pos, { name = "air" })
+	local leaves = core.find_nodes_in_area(
+		vector.offset(pos, 0, 0, 0),
+		vector.offset(pos, 0, 5, 0),
 		xcompat.materials.apple_leaves
 	)
 	for leaf in ipairs(leaves) do
-		minetest.swap_node(leaves[leaf], {name = "air"})
+		core.swap_node(leaves[leaf], { name = "air" })
 	end
-	minetest.spawn_tree(pos,moretrees.fir_model)
+	core.spawn_tree(pos, moretrees.fir_model)
 end
 
 -- same thing, but a smaller version that grows only in snow biomes
 
 function moretrees.grow_fir_snow(pos)
 	if math.random(2) == 1 then
-		moretrees.fir_model.leaves="moretrees:fir_leaves"
+		moretrees.fir_model.leaves = "moretrees:fir_leaves"
 	else
-		moretrees.fir_model.leaves="moretrees:fir_leaves_bright"
+		moretrees.fir_model.leaves = "moretrees:fir_leaves_bright"
 	end
 	if math.random(2) == 1 then
 		moretrees.fir_model.rules_a = moretrees.ct_rules_a1
@@ -336,29 +342,32 @@ function moretrees.grow_fir_snow(pos)
 	moretrees.fir_model.iterations = 2
 	moretrees.fir_model.random_level = 2
 
-	minetest.swap_node(pos, {name = "air"})
-	local leaves = minetest.find_nodes_in_area(
-		vector.offset(pos, 0,0,0),
-		vector.offset(pos, 0,5,0),
+	core.swap_node(pos, { name = "air" })
+	local leaves = core.find_nodes_in_area(
+		vector.offset(pos, 0, 0, 0),
+		vector.offset(pos, 0, 5, 0),
 		xcompat.materials.apple_leaves
 	)
 	for leaf in ipairs(leaves) do
-			minetest.swap_node(leaves[leaf], {name = "air"})
+		core.swap_node(leaves[leaf], { name = "air" })
 	end
-	minetest.spawn_tree(pos,moretrees.fir_model)
+	core.spawn_tree(pos, moretrees.fir_model)
 end
 
 if moretrees.grow_legacy_saplings then
-	minetest.register_lbm({
+	core.register_lbm({
 		name = "moretrees:grow_ongen_saplings",
 		label = "Grow legacy ongen saplings",
-		nodenames = {"group:moretrees_ongen"},
+		nodenames = { "group:moretrees_ongen" },
 		run_at_every_load = true,
 		action = function(pos)
-			minetest.log("info", "[moretrees] Starting growth timer for legacy ongen sapling at "..minetest.pos_to_string(pos, 0))
-			minetest.get_node_timer(pos):start(math.random(2, 10))
-		end
+			core.log(
+				"info",
+				"[moretrees] Starting growth timer for legacy ongen sapling at " .. core.pos_to_string(pos, 0)
+			)
+			core.get_node_timer(pos):start(math.random(2, 10))
+		end,
 	})
 end
 
-minetest.log("info", "[moretrees] Loading done")
+core.log("info", "[moretrees] Loading done")
