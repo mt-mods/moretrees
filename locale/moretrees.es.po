@@ -1,0 +1,828 @@
+# Spanish translations for moretrees package.
+# Translation by Carlos Barraza, improvements by David Leal
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: moretrees\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-21 09:46-0500\n"
+"PO-Revision-Date: 2026-08-21 09:50-0500\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: Spanish\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+#: cocos_palm.lua:155
+msgid "Coconut Flower"
+msgstr "Flor de Coco"
+
+#: cocos_palm.lua:157
+msgid "Coconut"
+msgstr "Coco"
+
+#: crafts.lua:40
+msgid "Coconut Milk"
+msgstr "Leche de Coco"
+
+#: crafts.lua:48
+msgid "Raw Coconut"
+msgstr "Coco Crudo"
+
+#: crafts.lua:54
+msgid "Date"
+msgstr "Datilera"
+
+#: crafts.lua:60
+msgid "Date & nut snack"
+msgstr "Datilera y Nueces"
+
+#: crafts.lua:66
+msgid "Date-nut cake batter"
+msgstr "Pasta de torta de Datilera"
+
+#: crafts.lua:71
+msgid "Date-nut cake"
+msgstr "Pastel de Datilera"
+
+#: crafts.lua:77
+msgid "Date-nut energy bar"
+msgstr "Barra energetica de Datilera"
+
+#: crafts.lua:83
+msgid "Acorn Muffin batter"
+msgstr " Masa de Mollete de Bellota"
+
+#: crafts.lua:88
+msgid "Acorn Muffin"
+msgstr "Mollete de Bellota"
+
+#: crafts.lua:94
+msgid "Roasted Spruce Cone Nuts"
+msgstr "Cono de Picea Tostado"
+
+#: crafts.lua:100
+msgid "Roasted Cedar Cone Nuts"
+msgstr "Coco de Álamo Tostado"
+
+#: crafts.lua:106
+msgid "Roasted Fir Cone Nuts"
+msgstr "Cono de Abeto Tostado"
+
+#: date_palm.lua:711
+msgid "Date Flowers"
+msgstr "Flores de Datilera"
+
+#: date_palm.lua:713
+msgid "Date Stem"
+msgstr "Tallo de Datilera"
+
+#: date_palm.lua:715
+msgid "Dates"
+msgstr "Datilera"
+
+#: init.lua:22
+msgid "Sapling"
+msgstr "Retoño"
+
+#: init.lua:26
+msgid "Tree"
+msgstr "Árbol"
+
+#: init.lua:30
+msgid "Wooden Planks"
+msgstr "Tablones"
+
+#: init.lua:34
+msgid "Leaves"
+msgstr "Hojas"
+
+#: init.lua:38
+msgid "Wooden Fence"
+msgstr "Valla"
+
+#: init.lua:42
+msgid "Wooden Fence Rail"
+msgstr "Riel de Valla"
+
+#: init.lua:48 init.lua:52
+msgid "Wooden Fence Gate"
+msgstr "Puerta de Valla"
+
+#: node_defs.lua:9
+msgid "Beech Tree"
+msgstr "Haya"
+
+#: node_defs.lua:10
+msgid "Apple Tree"
+msgstr "Árbol de manzana"
+
+#: node_defs.lua:11
+msgid "Oak Tree"
+msgstr "Árbol de Roble"
+
+#: node_defs.lua:11
+msgid "Acorn"
+msgstr "Bellota"
+
+#: node_defs.lua:12
+msgid "Giant Sequoia"
+msgstr "Secuoya Gigante"
+
+#: node_defs.lua:13
+msgid "Birch Tree"
+msgstr "Abedul"
+
+#: node_defs.lua:14
+msgid "Palm Tree"
+msgstr "Palmera"
+
+#: node_defs.lua:15
+msgid "Date Palm Tree"
+msgstr "Palmera Datilera"
+
+#: node_defs.lua:16
+msgid "Spruce Tree"
+msgstr "Árbol de Abeto"
+
+#: node_defs.lua:16
+msgid "Spruce Cone"
+msgstr "Coco de Picea"
+
+#: node_defs.lua:17
+msgid "Cedar Tree"
+msgstr "Árbol de Cedro"
+
+#: node_defs.lua:17
+msgid "Cedar Cone"
+msgstr "Coco de Álamo"
+
+#: node_defs.lua:18 node_defs.lua:19
+msgid "Poplar Tree"
+msgstr "Árbol de Alamo"
+
+#: node_defs.lua:20
+msgid "Willow Tree"
+msgstr "Árbol de Sauce"
+
+#: node_defs.lua:21
+msgid "Rubber Tree"
+msgstr "Árbol del Caucho"
+
+#: node_defs.lua:22
+msgid "Douglas Fir"
+msgstr "Árbol de Abeto de Douglas"
+
+#: node_defs.lua:22
+msgid "Fir Cone"
+msgstr "Coco de Abeto"
+
+#: node_defs.lua:23
+msgid "Jungle Tree"
+msgstr "Árbol de la Selva"
+
+#: node_defs.lua:28
+msgid "Beech Tree Trunk"
+msgstr "Tronco de Árbol de Haya"
+
+#: node_defs.lua:29
+msgid "Beech Tree Planks"
+msgstr "Madera de Arbol de Haya"
+
+#: node_defs.lua:30
+msgid "Beech Tree Sapling"
+msgstr "Retoño de Árbol de Haya"
+
+#: node_defs.lua:31
+msgid "Beech Tree Leaves"
+msgstr "Hojas de Arbol de Haya"
+
+#: node_defs.lua:32
+msgid "Beech Tree Trunk Stair"
+msgstr "Escalera de Tronco de Haya"
+
+#: node_defs.lua:33
+msgid "Beech Tree Trunk Slab"
+msgstr "Losa de Tronco de Haya"
+
+#: node_defs.lua:34
+msgid "Beech Tree Planks Stair"
+msgstr "Escalera de Tablones de Haya"
+
+#: node_defs.lua:35
+msgid "Beech Tree Planks Slab"
+msgstr "Losa de Tablones de Haya"
+
+#: node_defs.lua:36
+msgid "Beech Tree Fence"
+msgstr "Valla de Haya"
+
+#: node_defs.lua:37
+msgid "Beech Tree Fence Rail"
+msgstr "Riel de Valla de Haya"
+
+#: node_defs.lua:38
+msgid "Beech Tree Fence Gate"
+msgstr "Puerta de Valla de Haya"
+
+#: node_defs.lua:41
+msgid "Apple Tree Trunk"
+msgstr "Tronco de Árbol de Manzana"
+
+#: node_defs.lua:42
+msgid "Apple Tree Planks"
+msgstr "Madera de Árbol de Manzana"
+
+#: node_defs.lua:43
+msgid "Apple Tree Sapling"
+msgstr "Retoño de Árbol de Manzana"
+
+#: node_defs.lua:44
+msgid "Apple Tree Leaves"
+msgstr "Hojas de Árbol de Manzana"
+
+#: node_defs.lua:45
+msgid "Apple Tree Trunk Stair"
+msgstr "Escalera de Tronco de Manzano"
+
+#: node_defs.lua:46
+msgid "Apple Tree Trunk Slab"
+msgstr "Losa de Tronco de Manzano"
+
+#: node_defs.lua:47
+msgid "Apple Tree Planks Stair"
+msgstr "Escalera de Tablones de Manzano"
+
+#: node_defs.lua:48
+msgid "Apple Tree Planks Slab"
+msgstr "Losa de Tablones de Manzano"
+
+#: node_defs.lua:49
+msgid "Apple Tree Fence"
+msgstr "Valla de manzano"
+
+#: node_defs.lua:50
+msgid "Apple Tree Fence Rail"
+msgstr "Riel de Valla de Manzano"
+
+#: node_defs.lua:51
+msgid "Apple Tree Fence Gate"
+msgstr "Puerta de Valla de Manzano"
+
+#: node_defs.lua:54
+msgid "Oak Tree Trunk"
+msgstr "Tronco de Árbol de Roble"
+
+#: node_defs.lua:55
+msgid "Oak Tree Planks"
+msgstr "Madera de Árbol de Roble"
+
+#: node_defs.lua:56
+msgid "Oak Tree Sapling"
+msgstr "Retoño de Árbol de Roble"
+
+#: node_defs.lua:57
+msgid "Oak Tree Leaves"
+msgstr "Hojas de Árbol de Roble"
+
+#: node_defs.lua:58
+msgid "Oak Tree Trunk Stair"
+msgstr "Escalera de Tronco de Árbol de Roble"
+
+#: node_defs.lua:59
+msgid "Oak Tree Trunk Slab"
+msgstr "Losa de Tronco de Árbol de Roble"
+
+#: node_defs.lua:60
+msgid "Oak Tree Planks Stair"
+msgstr "Escalera de Tablones de Árbol de Roble"
+
+#: node_defs.lua:61
+msgid "Oak Tree Planks Slab"
+msgstr "Losa de Tablones de Árbol de Roble"
+
+#: node_defs.lua:62
+msgid "Oak Tree Fence"
+msgstr "Valla de Árbol de Roble"
+
+#: node_defs.lua:63
+msgid "Oak Tree Fence Rail"
+msgstr "Riel de Valla de Árbol de Roble"
+
+#: node_defs.lua:64
+msgid "Oak Tree Fence Gate"
+msgstr "Puerta de Valla de Árbol de Roble"
+
+#: node_defs.lua:67
+msgid "Giant Sequoia Trunk"
+msgstr "Tronco de Secuoya Gigante"
+
+#: node_defs.lua:68
+msgid "Giant Sequoia Planks"
+msgstr "Madera de Secuoya Gigante"
+
+#: node_defs.lua:69
+msgid "Giant Sequoia Sapling"
+msgstr "Retoño de Árbol de Secuoya Gigante"
+
+#: node_defs.lua:70
+msgid "Giant Sequoia Leaves"
+msgstr "Hojas de Secuoya Gigante"
+
+#: node_defs.lua:71
+msgid "Giant Sequoia Trunk Stair"
+msgstr "Escalera de Tronco de Secuoya Gigante"
+
+#: node_defs.lua:72
+msgid "Giant Sequoia Trunk Slab"
+msgstr "Losa de Tronco de Secuoya Gigante"
+
+#: node_defs.lua:73
+msgid "Giant Sequoia Planks Stair"
+msgstr "Escalera de Tablones de Secuoya Gigante"
+
+#: node_defs.lua:74
+msgid "Giant Sequoia Planks Slab"
+msgstr "Losa de Tablones de Secuoya Gigante"
+
+#: node_defs.lua:75
+msgid "Giant Sequoia Fence"
+msgstr "Valla de Secuoya Gigante"
+
+#: node_defs.lua:76
+msgid "Giant Sequoia Fence Rail"
+msgstr "Riel de Valla de Secuoya Gigante"
+
+#: node_defs.lua:77
+msgid "Giant Sequoia Fence Gate"
+msgstr "Puerta de Valla de Secuoya Gigante"
+
+#: node_defs.lua:80
+msgid "Birch Tree Trunk"
+msgstr "Tronco de Árbol de Abedul"
+
+#: node_defs.lua:81
+msgid "Birch Tree Planks"
+msgstr "Madera de Arbol de Abedul"
+
+#: node_defs.lua:82
+msgid "Birch Tree Sapling"
+msgstr "Retoño de Árbol de Abedul"
+
+#: node_defs.lua:83
+msgid "Birch Tree Leaves"
+msgstr "Hojas de Arbol de Abedul"
+
+#: node_defs.lua:84
+msgid "Birch Tree Trunk Stair"
+msgstr "Escalera de Tronco de Abedul"
+
+#: node_defs.lua:85
+msgid "Birch Tree Trunk Slab"
+msgstr "Losa de Tronco de Abedul"
+
+#: node_defs.lua:86
+msgid "Birch Tree Planks Stair"
+msgstr "Escalera de Tablones de Abedul"
+
+#: node_defs.lua:87
+msgid "Birch Tree Planks Slab"
+msgstr "Losa de Tablones de Abedul"
+
+#: node_defs.lua:88
+msgid "Birch Tree Fence"
+msgstr "Valla de Abedul"
+
+#: node_defs.lua:89
+msgid "Birch Tree Fence Rail"
+msgstr "Riel de Valla de Abedul"
+
+#: node_defs.lua:90
+msgid "Birch Tree Fence Gate"
+msgstr "Puerta de Valla de Abedul"
+
+#: node_defs.lua:93
+msgid "Palm Tree Trunk"
+msgstr "Tronco de Palmera"
+
+#: node_defs.lua:94
+msgid "Palm Tree Planks"
+msgstr "Madera de Palmera"
+
+#: node_defs.lua:95
+msgid "Palm Tree Sapling"
+msgstr "Retoño de Palmera"
+
+#: node_defs.lua:96
+msgid "Palm Tree Leaves"
+msgstr "Hojas de Palmera"
+
+#: node_defs.lua:97
+msgid "Palm Tree Trunk Stair"
+msgstr "Escalera de Troncos de Palmera"
+
+#: node_defs.lua:98
+msgid "Palm Tree Trunk Slab"
+msgstr "Losa de Troncos de Palmera"
+
+#: node_defs.lua:99
+msgid "Palm Tree Planks Stair"
+msgstr "Escalera de Tablones de Palmera"
+
+#: node_defs.lua:100
+msgid "Palm Tree Planks Slab"
+msgstr "Losa de Tablones de Palmera"
+
+#: node_defs.lua:101
+msgid "Palm Tree Fence"
+msgstr "Valla de Palmera"
+
+#: node_defs.lua:102
+msgid "Palm Tree Fence Rail"
+msgstr "Riel de Valla de Palmera"
+
+#: node_defs.lua:103
+msgid "Palm Tree Fence Gate"
+msgstr "Puerta de Valla de Palmera"
+
+#: node_defs.lua:106
+msgid "Date Palm Tree Trunk"
+msgstr "Tronco de Palmera Datilera"
+
+#: node_defs.lua:107
+msgid "Date Palm Tree Planks"
+msgstr "Madera de Palmera Datilera"
+
+#: node_defs.lua:108
+msgid "Date Palm Tree Sapling"
+msgstr "Retoño de Palmera Datilera"
+
+#: node_defs.lua:109
+msgid "Date Palm Tree Leaves"
+msgstr "Hojas de Palmera Datilera"
+
+#: node_defs.lua:110
+msgid "Date Palm Tree Trunk Stair"
+msgstr "Escalera de Tronco de Palmera Datilera"
+
+#: node_defs.lua:111
+msgid "Date Palm Tree Trunk Slab"
+msgstr "Losa de Tronco de Palmera Datilera"
+
+#: node_defs.lua:112
+msgid "Date Palm Tree Planks Stair"
+msgstr "Escalera de Tablones de Palmera Datilera"
+
+#: node_defs.lua:113
+msgid "Date Palm Tree Planks Slab"
+msgstr "Losa de Tablones de Palmera Datilera"
+
+#: node_defs.lua:114
+msgid "Date Palm Tree Fence"
+msgstr "Valla de Palmera Datilera"
+
+#: node_defs.lua:115
+msgid "Date Palm Tree Fence Rail"
+msgstr "Riel de Valla de Palmera Datilera"
+
+#: node_defs.lua:116
+msgid "Date Palm Tree Fence Gate"
+msgstr "Puerta de Valla de Palmera Datilera"
+
+#: node_defs.lua:119
+msgid "Spruce Tree Trunk"
+msgstr "Tronco de Árbol de Abeto"
+
+#: node_defs.lua:120
+msgid "Spruce Tree Planks"
+msgstr "Madera de Árbol de Abeto"
+
+#: node_defs.lua:121
+msgid "Spruce Tree Sapling"
+msgstr "Retoño de Árbol de Abeto"
+
+#: node_defs.lua:122
+msgid "Spruce Tree Leaves"
+msgstr "Hojas de Árbol de Abeto"
+
+#: node_defs.lua:123
+msgid "Spruce Tree Trunk Stair"
+msgstr "Escalera de Tronco de Árbol de Abeto"
+
+#: node_defs.lua:124
+msgid "Spruce Tree Trunk Slab"
+msgstr "Losa de Tronco de Árbol de Abeto"
+
+#: node_defs.lua:125
+msgid "Spruce Tree Planks Stair"
+msgstr "Escalera de Tablones de Árbol de Abeto"
+
+#: node_defs.lua:126
+msgid "Spruce Tree Planks Slab"
+msgstr "Losa de Tablones de Árbol de Abeto"
+
+#: node_defs.lua:127
+msgid "Spruce Tree Fence"
+msgstr "Valla de Árbol de Abeto"
+
+#: node_defs.lua:128
+msgid "Spruce Tree Fence Rail"
+msgstr "Riel de Valla de Árbol de Abeto"
+
+#: node_defs.lua:129
+msgid "Spruce Tree Fence Gate"
+msgstr "Puerta de Valla de Árbol de Abeto"
+
+#: node_defs.lua:132
+msgid "Cedar Tree Trunk"
+msgstr "Tronco de Árbol de Cedro"
+
+#: node_defs.lua:133
+msgid "Cedar Tree Planks"
+msgstr "Madera de Árbol de Cedro"
+
+#: node_defs.lua:134
+msgid "Cedar Tree Sapling"
+msgstr "Retoño de Árbol de Cedro"
+
+#: node_defs.lua:135
+msgid "Cedar Tree Leaves"
+msgstr "Hojas de Árbol de Cedro"
+
+#: node_defs.lua:136
+msgid "Cedar Tree Trunk Stair"
+msgstr "Escalera de Tronco de Árbol de Cedro"
+
+#: node_defs.lua:137
+msgid "Cedar Tree Trunk Slab"
+msgstr "Losa de Tronco de Árbol de Cedro"
+
+#: node_defs.lua:138
+msgid "Cedar Tree Planks Stair"
+msgstr "Escalera de Tablones de Árbol de Cedro"
+
+#: node_defs.lua:139
+msgid "Cedar Tree Planks Slab"
+msgstr "Losa de Tablones de Árbol de Cedro"
+
+#: node_defs.lua:140
+msgid "Cedar Tree Fence"
+msgstr "Valla de Árbol de Cedro"
+
+#: node_defs.lua:141
+msgid "Cedar Tree Fence Rail"
+msgstr "Riel de Valla de Árbol de Cedro"
+
+#: node_defs.lua:142
+msgid "Cedar Tree Fence Gate"
+msgstr "Puerta de Valla de Árbol de Cedro"
+
+#: node_defs.lua:145
+msgid "Poplar Tree Trunk"
+msgstr "Tronco de Árbol de Alamo"
+
+#: node_defs.lua:146
+msgid "Poplar Tree Planks"
+msgstr "Madera de Árbol de Alamo"
+
+#: node_defs.lua:147
+msgid "Poplar Tree Sapling"
+msgstr "Retoño de Árbol de Alamo"
+
+#: node_defs.lua:148
+msgid "Poplar Tree Leaves"
+msgstr "Hojas de Arbol de Alamo"
+
+#: node_defs.lua:149
+msgid "Poplar Tree Trunk Stair"
+msgstr "Escalera de Tronco de Árbol de Alamo"
+
+#: node_defs.lua:150
+msgid "Poplar Tree Trunk Slab"
+msgstr "Losa de Tronco de Árbol de Alamo"
+
+#: node_defs.lua:151
+msgid "Poplar Tree Planks Stair"
+msgstr "Escalera de Tablones de Árbol de Alamo"
+
+#: node_defs.lua:152
+msgid "Poplar Tree Planks Slab"
+msgstr "Losa de Tablones de Árbol de Alamo"
+
+#: node_defs.lua:153
+msgid "Poplar Tree Fence"
+msgstr "Valla de Árbol de Alamo"
+
+#: node_defs.lua:154
+msgid "Poplar Tree Fence Rail"
+msgstr "Riel de Valla de Árbol de Alamo"
+
+#: node_defs.lua:155
+msgid "Poplar Tree Fence Gate"
+msgstr "Puerta de Valla de Árbol de Alamo"
+
+#: node_defs.lua:158
+msgid "Small poplar Tree Sapling"
+msgstr "Pequeño Retoño de Álamo"
+
+#: node_defs.lua:161
+msgid "Willow Tree Trunk"
+msgstr "Tronco de Árbol de Sauce"
+
+#: node_defs.lua:162
+msgid "Willow Tree Planks"
+msgstr "Madera de Árbol de Sauce"
+
+#: node_defs.lua:163
+msgid "Willow Tree Sapling"
+msgstr "Retoño de Árbol de Sauce"
+
+#: node_defs.lua:164
+msgid "Willow Tree Leaves"
+msgstr "Hojas de Árbol de Sauce"
+
+#: node_defs.lua:165
+msgid "Willow Tree Trunk Stair"
+msgstr "Escalera de Tronco de Árbol de Sauce"
+
+#: node_defs.lua:166
+msgid "Willow Tree Trunk Slab"
+msgstr "Losa de Tronco de Árbol de Sauce"
+
+#: node_defs.lua:167
+msgid "Willow Tree Planks Stair"
+msgstr "Escalera de Tablones de Árbol de Sauce"
+
+#: node_defs.lua:168
+msgid "Willow Tree Planks Slab"
+msgstr "Losa de Tablones de Árbol de Sauce"
+
+#: node_defs.lua:169
+msgid "Willow Tree Fence"
+msgstr "Valla de Árbol de Sauce"
+
+#: node_defs.lua:170
+msgid "Willow Tree Fence Rail"
+msgstr "Riel de Valla de Árbol de Sauce"
+
+#: node_defs.lua:171
+msgid "Willow Tree Fence Gate"
+msgstr "Puerta de Valla de Árbol de Sauce"
+
+#: node_defs.lua:174
+msgid "Rubber Tree Trunk"
+msgstr "Tronco de Árbol de Árbol del Caucho"
+
+#: node_defs.lua:175
+msgid "Rubber Tree Planks"
+msgstr "Madera de Árbol de Árbol del Caucho"
+
+#: node_defs.lua:176
+msgid "Rubber Tree Sapling"
+msgstr "Retoño de Árbol de Árbol del Caucho"
+
+#: node_defs.lua:177
+msgid "Rubber Tree Leaves"
+msgstr "Hojas de Árbol de Árbol del Caucho"
+
+#: node_defs.lua:178
+msgid "Rubber Tree Trunk Stair"
+msgstr "Escalera de Tronco de Árbol del Caucho"
+
+#: node_defs.lua:179
+msgid "Rubber Tree Trunk Slab"
+msgstr "Losa de Tronco de Árbol del Caucho"
+
+#: node_defs.lua:180
+msgid "Rubber Tree Planks Stair"
+msgstr "Escalera de Tablones de Árbol del Caucho"
+
+#: node_defs.lua:181
+msgid "Rubber Tree Planks Slab"
+msgstr "Losa de Tablones de Árbol del Caucho"
+
+#: node_defs.lua:182
+msgid "Rubber Tree Fence"
+msgstr "Valla de Árbol del Caucho"
+
+#: node_defs.lua:183
+msgid "Rubber Tree Fence Rail"
+msgstr "Riel de Valla de Árbol del Caucho"
+
+#: node_defs.lua:184
+msgid "Rubber Tree Fence Gate"
+msgstr "Puerta de Valla de Árbol del Caucho"
+
+#: node_defs.lua:187
+msgid "Douglas Fir Trunk"
+msgstr "Tronco de Árbol de Abeto de Douglas"
+
+#: node_defs.lua:188
+msgid "Douglas Fir Planks"
+msgstr "Madera de Árbol de Abeto de Douglas"
+
+#: node_defs.lua:189
+msgid "Douglas Fir Sapling"
+msgstr "Retoño de Árbol de Abeto de Douglas"
+
+#: node_defs.lua:190
+msgid "Douglas Fir Leaves"
+msgstr "Hojas de Árbol de Abeto de Douglas"
+
+#: node_defs.lua:191
+msgid "Douglas Fir Trunk Stair"
+msgstr "Escalera de Tronco de Árbol de Abeto de Douglas"
+
+#: node_defs.lua:192
+msgid "Douglas Fir Trunk Slab"
+msgstr "Losa de Tronco de Árbol de Abeto de Douglas"
+
+#: node_defs.lua:193
+msgid "Douglas Fir Planks Stair"
+msgstr "Escalera de Tablones de Árbol de Abeto de Douglas"
+
+#: node_defs.lua:194
+msgid "Douglas Fir Planks Slab"
+msgstr "Losa de Tablones de Árbol de Abeto de Douglas"
+
+#: node_defs.lua:195
+msgid "Douglas Fir Fence"
+msgstr "Valla de Árbol de Abeto de Douglas"
+
+#: node_defs.lua:196
+msgid "Douglas Fir Fence Rail"
+msgstr "Riel de Valla de Árbol de Abeto de Douglas"
+
+#: node_defs.lua:197
+msgid "Douglas Fir Fence Gate"
+msgstr "Puerta de Valla de Árbol de Abeto de Douglas"
+
+#: node_defs.lua:200
+msgid "Jungle Tree Trunk"
+msgstr "Tronco de Árbol de Árbol de la Selva"
+
+#: node_defs.lua:201
+msgid "Jungle Tree Planks"
+msgstr "Madera de Árbol de la Selva"
+
+#: node_defs.lua:202
+msgid "Jungle Tree Sapling"
+msgstr "Retoño de Árbol de la Selva"
+
+#: node_defs.lua:203
+msgid "Jungle Tree Leaves"
+msgstr "Hojas de Árbol de la Selva"
+
+#: node_defs.lua:204
+msgid "Jungle Tree Trunk Stair"
+msgstr "Escalera de Tronco de Árbol de la Selva"
+
+#: node_defs.lua:205
+msgid "Jungle Tree Trunk Slab"
+msgstr "Losa de Tronco de Árbol de la Selva"
+
+#: node_defs.lua:206
+msgid "Jungle Tree Planks Stair"
+msgstr "Escalera de Tablones de Árbol de la Selva"
+
+#: node_defs.lua:207
+msgid "Jungle Tree Planks Slab"
+msgstr "Losa de Tablones de Árbol de la Selva"
+
+#: node_defs.lua:208
+msgid "Jungle Tree Fence"
+msgstr "Valla de Árbol de la Selva"
+
+#: node_defs.lua:209
+msgid "Jungle Tree Fence Rail"
+msgstr "Riel de Valla de Árbol de la Selva"
+
+#: node_defs.lua:210
+msgid "Jungle Tree Fence Gate"
+msgstr "Puerta de Valla de Árbol de la Selva"
+
+#: node_defs.lua:491
+msgid "@1 (fast growth)"
+msgstr "@1 (crecimiento rápido)"
+
+#: node_defs.lua:610
+msgid "Yellow"
+msgstr "Amarillo"
+
+#: node_defs.lua:610
+msgid "Red"
+msgstr "Rojo"
+
+#: node_defs.lua:623
+msgid "Jungle Tree Leaves (@1)"
+msgstr "Hojas de Árbol de la Selva (@1)"
+
+#: node_defs.lua:670
+msgid "Douglas Fir Leaves (Bright)"
+msgstr "Hojas de Árbol de Abeto de Douglas (Brillante)"
+
+#: node_defs.lua:716
+msgid "Rubber Tree Trunk (Empty)"
+msgstr "Tronco de Árbol del Caucho (Vacío)"
+

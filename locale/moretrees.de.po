@@ -1,0 +1,828 @@
+# German translations for moretrees package.
+# Translation by Xanthin, heavygale and Wuzzy
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: moretrees\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-21 09:46-0500\n"
+"PO-Revision-Date: 2026-08-21 09:50-0500\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: German\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+#: cocos_palm.lua:155
+msgid "Coconut Flower"
+msgstr "Kokosnussblüte"
+
+#: cocos_palm.lua:157
+msgid "Coconut"
+msgstr "Kokosnuss"
+
+#: crafts.lua:40
+msgid "Coconut Milk"
+msgstr "Kokosnussmilch"
+
+#: crafts.lua:48
+msgid "Raw Coconut"
+msgstr "Kokosnussfleisch"
+
+#: crafts.lua:54
+msgid "Date"
+msgstr "Dattel"
+
+#: crafts.lua:60
+msgid "Date & nut snack"
+msgstr "Dattel-und-Nuss-Snack"
+
+#: crafts.lua:66
+msgid "Date-nut cake batter"
+msgstr "Dattel-Nuss-Kuchenteig"
+
+#: crafts.lua:71
+msgid "Date-nut cake"
+msgstr "Dattel-Nuss-Kuchen"
+
+#: crafts.lua:77
+msgid "Date-nut energy bar"
+msgstr "Dattel-Nuss-Energieriegel"
+
+#: crafts.lua:83
+msgid "Acorn Muffin batter"
+msgstr "Eichelmuffinteig"
+
+#: crafts.lua:88
+msgid "Acorn Muffin"
+msgstr "Eichelmuffin"
+
+#: crafts.lua:94
+msgid "Roasted Spruce Cone Nuts"
+msgstr "Geröstete Fichtenzapfenkerne"
+
+#: crafts.lua:100
+msgid "Roasted Cedar Cone Nuts"
+msgstr "Geröstete Zedernzapfenkerne"
+
+#: crafts.lua:106
+msgid "Roasted Fir Cone Nuts"
+msgstr "Geröstete Tannenzapfenkerne"
+
+#: date_palm.lua:711
+msgid "Date Flowers"
+msgstr "Dattelblüten"
+
+#: date_palm.lua:713
+msgid "Date Stem"
+msgstr "Dattelstängel"
+
+#: date_palm.lua:715
+msgid "Dates"
+msgstr "Datteln"
+
+#: init.lua:22
+msgid "Sapling"
+msgstr "Setzling"
+
+#: init.lua:26
+msgid "Tree"
+msgstr "Baum"
+
+#: init.lua:30
+msgid "Wooden Planks"
+msgstr "Holzplanken"
+
+#: init.lua:34
+msgid "Leaves"
+msgstr "Blätter"
+
+#: init.lua:38
+msgid "Wooden Fence"
+msgstr "Holzzaun"
+
+#: init.lua:42
+msgid "Wooden Fence Rail"
+msgstr "Holzzaungeländer"
+
+#: init.lua:48 init.lua:52
+msgid "Wooden Fence Gate"
+msgstr "Holzzauntor"
+
+#: node_defs.lua:9
+msgid "Beech Tree"
+msgstr "Buche"
+
+#: node_defs.lua:10
+msgid "Apple Tree"
+msgstr "Apfelbaum"
+
+#: node_defs.lua:11
+msgid "Oak Tree"
+msgstr "Eiche"
+
+#: node_defs.lua:11
+msgid "Acorn"
+msgstr "Eichel"
+
+#: node_defs.lua:12
+msgid "Giant Sequoia"
+msgstr "Riesenmammutbaum"
+
+#: node_defs.lua:13
+msgid "Birch Tree"
+msgstr "Birke"
+
+#: node_defs.lua:14
+msgid "Palm Tree"
+msgstr "Palme"
+
+#: node_defs.lua:15
+msgid "Date Palm Tree"
+msgstr "Dattelpalme"
+
+#: node_defs.lua:16
+msgid "Spruce Tree"
+msgstr "Fichte"
+
+#: node_defs.lua:16
+msgid "Spruce Cone"
+msgstr "Fichtenzapfen"
+
+#: node_defs.lua:17
+msgid "Cedar Tree"
+msgstr "Zeder"
+
+#: node_defs.lua:17
+msgid "Cedar Cone"
+msgstr "Zedernzapfen"
+
+#: node_defs.lua:18 node_defs.lua:19
+msgid "Poplar Tree"
+msgstr "Pappel"
+
+#: node_defs.lua:20
+msgid "Willow Tree"
+msgstr "Weide"
+
+#: node_defs.lua:21
+msgid "Rubber Tree"
+msgstr "Gummibaum"
+
+#: node_defs.lua:22
+msgid "Douglas Fir"
+msgstr "Douglasie"
+
+#: node_defs.lua:22
+msgid "Fir Cone"
+msgstr "Tannenzapfen"
+
+#: node_defs.lua:23
+msgid "Jungle Tree"
+msgstr "Dschungelbaum"
+
+#: node_defs.lua:28
+msgid "Beech Tree Trunk"
+msgstr "Buchenstamm"
+
+#: node_defs.lua:29
+msgid "Beech Tree Planks"
+msgstr "Buchenholzplanken"
+
+#: node_defs.lua:30
+msgid "Beech Tree Sapling"
+msgstr "Buchensetzling"
+
+#: node_defs.lua:31
+msgid "Beech Tree Leaves"
+msgstr "Buchenblätter"
+
+#: node_defs.lua:32
+msgid "Beech Tree Trunk Stair"
+msgstr "Buchenstammtreppe"
+
+#: node_defs.lua:33
+msgid "Beech Tree Trunk Slab"
+msgstr "Buchenstammplatte"
+
+#: node_defs.lua:34
+msgid "Beech Tree Planks Stair"
+msgstr "Buchenholztreppe"
+
+#: node_defs.lua:35
+msgid "Beech Tree Planks Slab"
+msgstr "Buchenholzplatte"
+
+#: node_defs.lua:36
+msgid "Beech Tree Fence"
+msgstr "Buchenholzzaun"
+
+#: node_defs.lua:37
+msgid "Beech Tree Fence Rail"
+msgstr "Buchenholzzaungeländer"
+
+#: node_defs.lua:38
+msgid "Beech Tree Fence Gate"
+msgstr "Buchenholzzaunzor"
+
+#: node_defs.lua:41
+msgid "Apple Tree Trunk"
+msgstr "Apfelbaumstamm"
+
+#: node_defs.lua:42
+msgid "Apple Tree Planks"
+msgstr "Apfelbaumplanken"
+
+#: node_defs.lua:43
+msgid "Apple Tree Sapling"
+msgstr "Apfelbaumsetzling"
+
+#: node_defs.lua:44
+msgid "Apple Tree Leaves"
+msgstr "Apfelbaumblätter"
+
+#: node_defs.lua:45
+msgid "Apple Tree Trunk Stair"
+msgstr "Apfelbaumstammtreppe"
+
+#: node_defs.lua:46
+msgid "Apple Tree Trunk Slab"
+msgstr "Apfelbaumstammplatte"
+
+#: node_defs.lua:47
+msgid "Apple Tree Planks Stair"
+msgstr "Apfelbaumplankentreppe"
+
+#: node_defs.lua:48
+msgid "Apple Tree Planks Slab"
+msgstr "Apfelbaumplankenplatte"
+
+#: node_defs.lua:49
+msgid "Apple Tree Fence"
+msgstr "Apfelbaumzaun"
+
+#: node_defs.lua:50
+msgid "Apple Tree Fence Rail"
+msgstr "Apfelbaumzaungeländer"
+
+#: node_defs.lua:51
+msgid "Apple Tree Fence Gate"
+msgstr "Apfelbaumzauntor"
+
+#: node_defs.lua:54
+msgid "Oak Tree Trunk"
+msgstr "Eichenstamm"
+
+#: node_defs.lua:55
+msgid "Oak Tree Planks"
+msgstr "Eichenplanken"
+
+#: node_defs.lua:56
+msgid "Oak Tree Sapling"
+msgstr "Eichensetzling"
+
+#: node_defs.lua:57
+msgid "Oak Tree Leaves"
+msgstr "Eichenblätter"
+
+#: node_defs.lua:58
+msgid "Oak Tree Trunk Stair"
+msgstr "Eichenstammtreppe"
+
+#: node_defs.lua:59
+msgid "Oak Tree Trunk Slab"
+msgstr "Eichenstammplatte"
+
+#: node_defs.lua:60
+msgid "Oak Tree Planks Stair"
+msgstr "Eichenholztreppe"
+
+#: node_defs.lua:61
+msgid "Oak Tree Planks Slab"
+msgstr "Eichenholzplatte"
+
+#: node_defs.lua:62
+msgid "Oak Tree Fence"
+msgstr "Eichenholzzaun"
+
+#: node_defs.lua:63
+msgid "Oak Tree Fence Rail"
+msgstr "Eichenholzzaungeländer"
+
+#: node_defs.lua:64
+msgid "Oak Tree Fence Gate"
+msgstr "Eichenholzzauntor"
+
+#: node_defs.lua:67
+msgid "Giant Sequoia Trunk"
+msgstr "Riesenmammutbaumstamm"
+
+#: node_defs.lua:68
+msgid "Giant Sequoia Planks"
+msgstr "Riesenmammutbaumplanken"
+
+#: node_defs.lua:69
+msgid "Giant Sequoia Sapling"
+msgstr "Riesenmammutbaumsetzling"
+
+#: node_defs.lua:70
+msgid "Giant Sequoia Leaves"
+msgstr "Riesenmammutbaumblätter"
+
+#: node_defs.lua:71
+msgid "Giant Sequoia Trunk Stair"
+msgstr "Riesenmammutbaumstammtreppe"
+
+#: node_defs.lua:72
+msgid "Giant Sequoia Trunk Slab"
+msgstr "Riesenmammutbaumstammplatte"
+
+#: node_defs.lua:73
+msgid "Giant Sequoia Planks Stair"
+msgstr "Riesenmammutbaumtreppe"
+
+#: node_defs.lua:74
+msgid "Giant Sequoia Planks Slab"
+msgstr "Riesenmammutbaumplatte"
+
+#: node_defs.lua:75
+msgid "Giant Sequoia Fence"
+msgstr "Riesenmammutbaumzaun"
+
+#: node_defs.lua:76
+msgid "Giant Sequoia Fence Rail"
+msgstr "Riesenmammutbaumzaungeländer"
+
+#: node_defs.lua:77
+msgid "Giant Sequoia Fence Gate"
+msgstr "Riesenmammutbaumzauntor"
+
+#: node_defs.lua:80
+msgid "Birch Tree Trunk"
+msgstr "Birkenstamm"
+
+#: node_defs.lua:81
+msgid "Birch Tree Planks"
+msgstr "Birkenplanken"
+
+#: node_defs.lua:82
+msgid "Birch Tree Sapling"
+msgstr "Birkensetzling"
+
+#: node_defs.lua:83
+msgid "Birch Tree Leaves"
+msgstr "Birkenblätter"
+
+#: node_defs.lua:84
+msgid "Birch Tree Trunk Stair"
+msgstr "Birkenstammtreppe"
+
+#: node_defs.lua:85
+msgid "Birch Tree Trunk Slab"
+msgstr "Birkenstammplatte"
+
+#: node_defs.lua:86
+msgid "Birch Tree Planks Stair"
+msgstr "Birkeholztreppe"
+
+#: node_defs.lua:87
+msgid "Birch Tree Planks Slab"
+msgstr "Birkenholzplatte"
+
+#: node_defs.lua:88
+msgid "Birch Tree Fence"
+msgstr "Birkenholzzaun"
+
+#: node_defs.lua:89
+msgid "Birch Tree Fence Rail"
+msgstr "Birkenholzzaungeländer"
+
+#: node_defs.lua:90
+msgid "Birch Tree Fence Gate"
+msgstr "Birkenholzzauntor"
+
+#: node_defs.lua:93
+msgid "Palm Tree Trunk"
+msgstr "Palmenstamm"
+
+#: node_defs.lua:94
+msgid "Palm Tree Planks"
+msgstr "Palmenplanken"
+
+#: node_defs.lua:95
+msgid "Palm Tree Sapling"
+msgstr "Palmensetzling"
+
+#: node_defs.lua:96
+msgid "Palm Tree Leaves"
+msgstr "Palmblätter"
+
+#: node_defs.lua:97
+msgid "Palm Tree Trunk Stair"
+msgstr "Palmenstammtreppe"
+
+#: node_defs.lua:98
+msgid "Palm Tree Trunk Slab"
+msgstr "Palmenstammplatte"
+
+#: node_defs.lua:99
+msgid "Palm Tree Planks Stair"
+msgstr "Palmholztreppe"
+
+#: node_defs.lua:100
+msgid "Palm Tree Planks Slab"
+msgstr "Palmholzplatte"
+
+#: node_defs.lua:101
+msgid "Palm Tree Fence"
+msgstr "Palmholzzaun"
+
+#: node_defs.lua:102
+msgid "Palm Tree Fence Rail"
+msgstr "Palmholzzaungeländer"
+
+#: node_defs.lua:103
+msgid "Palm Tree Fence Gate"
+msgstr "Palmholzzauntor"
+
+#: node_defs.lua:106
+msgid "Date Palm Tree Trunk"
+msgstr "Dattelpalmenstamm"
+
+#: node_defs.lua:107
+msgid "Date Palm Tree Planks"
+msgstr "Dattelpalmenplanken"
+
+#: node_defs.lua:108
+msgid "Date Palm Tree Sapling"
+msgstr "Dattelpalmensetzling"
+
+#: node_defs.lua:109
+msgid "Date Palm Tree Leaves"
+msgstr "Dattelpalmblätter"
+
+#: node_defs.lua:110
+msgid "Date Palm Tree Trunk Stair"
+msgstr "Dattelpalmenstammtreppe"
+
+#: node_defs.lua:111
+msgid "Date Palm Tree Trunk Slab"
+msgstr "Dattelpalmenstammplatte"
+
+#: node_defs.lua:112
+msgid "Date Palm Tree Planks Stair"
+msgstr "Dattelpalmentreppe"
+
+#: node_defs.lua:113
+msgid "Date Palm Tree Planks Slab"
+msgstr "Dattelpalmenplatte"
+
+#: node_defs.lua:114
+msgid "Date Palm Tree Fence"
+msgstr "Dattelpalmenzaun"
+
+#: node_defs.lua:115
+msgid "Date Palm Tree Fence Rail"
+msgstr "Dattelpalmenzaungeländer"
+
+#: node_defs.lua:116
+msgid "Date Palm Tree Fence Gate"
+msgstr "Dattelpalmenzauntor"
+
+#: node_defs.lua:119
+msgid "Spruce Tree Trunk"
+msgstr "Fichtenstamm"
+
+#: node_defs.lua:120
+msgid "Spruce Tree Planks"
+msgstr "Fichtenplanken"
+
+#: node_defs.lua:121
+msgid "Spruce Tree Sapling"
+msgstr "Fichtensetzling"
+
+#: node_defs.lua:122
+msgid "Spruce Tree Leaves"
+msgstr "Fichtennadeln"
+
+#: node_defs.lua:123
+msgid "Spruce Tree Trunk Stair"
+msgstr "Fichtenstammtreppe"
+
+#: node_defs.lua:124
+msgid "Spruce Tree Trunk Slab"
+msgstr "Fichtenstammplatte"
+
+#: node_defs.lua:125
+msgid "Spruce Tree Planks Stair"
+msgstr "Fichtenholztreppe"
+
+#: node_defs.lua:126
+msgid "Spruce Tree Planks Slab"
+msgstr "Fichtenholzplatte"
+
+#: node_defs.lua:127
+msgid "Spruce Tree Fence"
+msgstr "Fichtenholzzaun"
+
+#: node_defs.lua:128
+msgid "Spruce Tree Fence Rail"
+msgstr "Fichtenholzzaungeländer"
+
+#: node_defs.lua:129
+msgid "Spruce Tree Fence Gate"
+msgstr "Fichtenholzzaun"
+
+#: node_defs.lua:132
+msgid "Cedar Tree Trunk"
+msgstr "Zederstamm"
+
+#: node_defs.lua:133
+msgid "Cedar Tree Planks"
+msgstr "Zedernholzplanken"
+
+#: node_defs.lua:134
+msgid "Cedar Tree Sapling"
+msgstr "Zedersetzling"
+
+#: node_defs.lua:135
+msgid "Cedar Tree Leaves"
+msgstr "Zederblätter"
+
+#: node_defs.lua:136
+msgid "Cedar Tree Trunk Stair"
+msgstr "Zederstammtreppe"
+
+#: node_defs.lua:137
+msgid "Cedar Tree Trunk Slab"
+msgstr "Zederstammplatte"
+
+#: node_defs.lua:138
+msgid "Cedar Tree Planks Stair"
+msgstr "Zedernholztreppe"
+
+#: node_defs.lua:139
+msgid "Cedar Tree Planks Slab"
+msgstr "Zedernholzplatte"
+
+#: node_defs.lua:140
+msgid "Cedar Tree Fence"
+msgstr "Zedernholzzaun"
+
+#: node_defs.lua:141
+msgid "Cedar Tree Fence Rail"
+msgstr "Zedernholzzaungeländer"
+
+#: node_defs.lua:142
+msgid "Cedar Tree Fence Gate"
+msgstr "Zedernholzzauntor"
+
+#: node_defs.lua:145
+msgid "Poplar Tree Trunk"
+msgstr "Pappelstamm"
+
+#: node_defs.lua:146
+msgid "Poplar Tree Planks"
+msgstr "Pappelholzplanken"
+
+#: node_defs.lua:147
+msgid "Poplar Tree Sapling"
+msgstr "Pappelsetzling"
+
+#: node_defs.lua:148
+msgid "Poplar Tree Leaves"
+msgstr "Pappelblätter"
+
+#: node_defs.lua:149
+msgid "Poplar Tree Trunk Stair"
+msgstr "Pappelstammtreppe"
+
+#: node_defs.lua:150
+msgid "Poplar Tree Trunk Slab"
+msgstr "Pappelstammplatte"
+
+#: node_defs.lua:151
+msgid "Poplar Tree Planks Stair"
+msgstr "Pappelholztreppe"
+
+#: node_defs.lua:152
+msgid "Poplar Tree Planks Slab"
+msgstr "Pappelholzsplatte"
+
+#: node_defs.lua:153
+msgid "Poplar Tree Fence"
+msgstr "Pappelholzzaun"
+
+#: node_defs.lua:154
+msgid "Poplar Tree Fence Rail"
+msgstr "Pappelholzzaungeländer"
+
+#: node_defs.lua:155
+msgid "Poplar Tree Fence Gate"
+msgstr "Pappelholzzauntor"
+
+#: node_defs.lua:158
+msgid "Small poplar Tree Sapling"
+msgstr "Kleiner Pappelsetzling"
+
+#: node_defs.lua:161
+msgid "Willow Tree Trunk"
+msgstr "Weidenstamm"
+
+#: node_defs.lua:162
+msgid "Willow Tree Planks"
+msgstr "Weidenplanken"
+
+#: node_defs.lua:163
+msgid "Willow Tree Sapling"
+msgstr "Weidensetzling"
+
+#: node_defs.lua:164
+msgid "Willow Tree Leaves"
+msgstr "Weidenblätter"
+
+#: node_defs.lua:165
+msgid "Willow Tree Trunk Stair"
+msgstr "Weidenstammtreppe"
+
+#: node_defs.lua:166
+msgid "Willow Tree Trunk Slab"
+msgstr "Weidenstammplatte"
+
+#: node_defs.lua:167
+msgid "Willow Tree Planks Stair"
+msgstr "Weidenholztreppe"
+
+#: node_defs.lua:168
+msgid "Willow Tree Planks Slab"
+msgstr "Weidenholzplatte"
+
+#: node_defs.lua:169
+msgid "Willow Tree Fence"
+msgstr "Weidenholzzaun"
+
+#: node_defs.lua:170
+msgid "Willow Tree Fence Rail"
+msgstr "Weidenholzzaungeländer"
+
+#: node_defs.lua:171
+msgid "Willow Tree Fence Gate"
+msgstr "Weidenholzzauntor"
+
+#: node_defs.lua:174
+msgid "Rubber Tree Trunk"
+msgstr "Gummibaumstamm"
+
+#: node_defs.lua:175
+msgid "Rubber Tree Planks"
+msgstr "Gummibaumplanken"
+
+#: node_defs.lua:176
+msgid "Rubber Tree Sapling"
+msgstr "Gummibaumsetzling"
+
+#: node_defs.lua:177
+msgid "Rubber Tree Leaves"
+msgstr "Gummibaumblätter"
+
+#: node_defs.lua:178
+msgid "Rubber Tree Trunk Stair"
+msgstr "Gummibaumstammtreppe"
+
+#: node_defs.lua:179
+msgid "Rubber Tree Trunk Slab"
+msgstr "Gummibaumstammplatte"
+
+#: node_defs.lua:180
+msgid "Rubber Tree Planks Stair"
+msgstr "Gummibaumtreppe"
+
+#: node_defs.lua:181
+msgid "Rubber Tree Planks Slab"
+msgstr "Gummibaumplatte"
+
+#: node_defs.lua:182
+msgid "Rubber Tree Fence"
+msgstr "Gummibaumzaun"
+
+#: node_defs.lua:183
+msgid "Rubber Tree Fence Rail"
+msgstr "Gummibaumzaungeländer"
+
+#: node_defs.lua:184
+msgid "Rubber Tree Fence Gate"
+msgstr "Gummibaumzauntor"
+
+#: node_defs.lua:187
+msgid "Douglas Fir Trunk"
+msgstr "Douglasienstamm"
+
+#: node_defs.lua:188
+msgid "Douglas Fir Planks"
+msgstr "Douglasienplanken"
+
+#: node_defs.lua:189
+msgid "Douglas Fir Sapling"
+msgstr "Douglasiensetzling"
+
+#: node_defs.lua:190
+msgid "Douglas Fir Leaves"
+msgstr "Douglasiennadeln"
+
+#: node_defs.lua:191
+msgid "Douglas Fir Trunk Stair"
+msgstr "Douglasienstammtreppe"
+
+#: node_defs.lua:192
+msgid "Douglas Fir Trunk Slab"
+msgstr "Douglasienstammplatte"
+
+#: node_defs.lua:193
+msgid "Douglas Fir Planks Stair"
+msgstr "Douglasientreppe"
+
+#: node_defs.lua:194
+msgid "Douglas Fir Planks Slab"
+msgstr "Douglasienplatte"
+
+#: node_defs.lua:195
+msgid "Douglas Fir Fence"
+msgstr "Douglasienzaun"
+
+#: node_defs.lua:196
+msgid "Douglas Fir Fence Rail"
+msgstr "Douglasienzaungeländer"
+
+#: node_defs.lua:197
+msgid "Douglas Fir Fence Gate"
+msgstr "Douglasienzauntor"
+
+#: node_defs.lua:200
+msgid "Jungle Tree Trunk"
+msgstr "Dschungelbaumstamm"
+
+#: node_defs.lua:201
+msgid "Jungle Tree Planks"
+msgstr "Dschungelholzplanken"
+
+#: node_defs.lua:202
+msgid "Jungle Tree Sapling"
+msgstr "Dschungelbaumsetzling"
+
+#: node_defs.lua:203
+msgid "Jungle Tree Leaves"
+msgstr "Dschungelbaumblätter"
+
+#: node_defs.lua:204
+msgid "Jungle Tree Trunk Stair"
+msgstr "Dschungelbaumstammtreppe"
+
+#: node_defs.lua:205
+msgid "Jungle Tree Trunk Slab"
+msgstr "Dschungelbaumstammplatte"
+
+#: node_defs.lua:206
+msgid "Jungle Tree Planks Stair"
+msgstr "Dschungelholztreppe"
+
+#: node_defs.lua:207
+msgid "Jungle Tree Planks Slab"
+msgstr "Dschungelholzplatte"
+
+#: node_defs.lua:208
+msgid "Jungle Tree Fence"
+msgstr "Dschungelbaumzaun"
+
+#: node_defs.lua:209
+msgid "Jungle Tree Fence Rail"
+msgstr "Dschungelbaumzaungeländer"
+
+#: node_defs.lua:210
+msgid "Jungle Tree Fence Gate"
+msgstr "Dschungelbaumzauntor"
+
+#: node_defs.lua:491
+msgid "@1 (fast growth)"
+msgstr "@1 (schnelles Wachstum)"
+
+#: node_defs.lua:610
+msgid "Yellow"
+msgstr "gelb"
+
+#: node_defs.lua:610
+msgid "Red"
+msgstr "rot"
+
+#: node_defs.lua:623
+msgid "Jungle Tree Leaves (@1)"
+msgstr "Dschungelbaumblätter (@1)"
+
+#: node_defs.lua:670
+msgid "Douglas Fir Leaves (Bright)"
+msgstr "Douglasiennadeln (hell)"
+
+#: node_defs.lua:716
+msgid "Rubber Tree Trunk (Empty)"
+msgstr "Gummibaumstamm (leer)"
+
