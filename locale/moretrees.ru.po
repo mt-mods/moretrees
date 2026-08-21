@@ -1,0 +1,827 @@
+# Russian translations for moretrees package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: moretrees\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-21 09:46-0500\n"
+"PO-Revision-Date: 2026-08-21 09:50-0500\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: Russian\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+#: cocos_palm.lua:155
+msgid "Coconut Flower"
+msgstr "Цветок кокоса"
+
+#: cocos_palm.lua:157
+msgid "Coconut"
+msgstr "Кокос"
+
+#: crafts.lua:40
+msgid "Coconut Milk"
+msgstr "Кокосовое молоко"
+
+#: crafts.lua:48
+msgid "Raw Coconut"
+msgstr "Сырой кокос"
+
+#: crafts.lua:54
+msgid "Date"
+msgstr "Финик"
+
+#: crafts.lua:60
+msgid "Date & nut snack"
+msgstr "Закуска из фиников и орехов"
+
+#: crafts.lua:66
+msgid "Date-nut cake batter"
+msgstr "Тесто для финиково-орехового пирога"
+
+#: crafts.lua:71
+msgid "Date-nut cake"
+msgstr "Финиково-ореховый пирог"
+
+#: crafts.lua:77
+msgid "Date-nut energy bar"
+msgstr "Финиково-ореховый батончик"
+
+#: crafts.lua:83
+msgid "Acorn Muffin batter"
+msgstr "Тесто для маффина с желудями"
+
+#: crafts.lua:88
+msgid "Acorn Muffin"
+msgstr "Маффин с желудями"
+
+#: crafts.lua:94
+msgid "Roasted Spruce Cone Nuts"
+msgstr "Жареные еловые орешки"
+
+#: crafts.lua:100
+msgid "Roasted Cedar Cone Nuts"
+msgstr "Жареные кедровые орешки"
+
+#: crafts.lua:106
+msgid "Roasted Fir Cone Nuts"
+msgstr "Жареные орешки пихты"
+
+#: date_palm.lua:711
+msgid "Date Flowers"
+msgstr "Цветки фиников"
+
+#: date_palm.lua:713
+msgid "Date Stem"
+msgstr "Стебель финика"
+
+#: date_palm.lua:715
+msgid "Dates"
+msgstr "Финики"
+
+#: init.lua:22
+msgid "Sapling"
+msgstr "Саженец"
+
+#: init.lua:26
+msgid "Tree"
+msgstr "Дерево"
+
+#: init.lua:30
+msgid "Wooden Planks"
+msgstr "Деревянные доски"
+
+#: init.lua:34
+msgid "Leaves"
+msgstr "Листья"
+
+#: init.lua:38
+msgid "Wooden Fence"
+msgstr "Деревянный забор"
+
+#: init.lua:42
+msgid "Wooden Fence Rail"
+msgstr "Деревянные перила"
+
+#: init.lua:48 init.lua:52
+msgid "Wooden Fence Gate"
+msgstr "Деревянные ворота"
+
+#: node_defs.lua:9
+msgid "Beech Tree"
+msgstr "Бук"
+
+#: node_defs.lua:10
+msgid "Apple Tree"
+msgstr "Яблоня"
+
+#: node_defs.lua:11
+msgid "Oak Tree"
+msgstr "Дуб"
+
+#: node_defs.lua:11
+msgid "Acorn"
+msgstr "Желудь"
+
+#: node_defs.lua:12
+msgid "Giant Sequoia"
+msgstr "Гигантская секвойя"
+
+#: node_defs.lua:13
+msgid "Birch Tree"
+msgstr "Береза"
+
+#: node_defs.lua:14
+msgid "Palm Tree"
+msgstr "Пальма"
+
+#: node_defs.lua:15
+msgid "Date Palm Tree"
+msgstr "Финиковая пальма"
+
+#: node_defs.lua:16
+msgid "Spruce Tree"
+msgstr "Ель"
+
+#: node_defs.lua:16
+msgid "Spruce Cone"
+msgstr "Еловая шишка"
+
+#: node_defs.lua:17
+msgid "Cedar Tree"
+msgstr "Кедр"
+
+#: node_defs.lua:17
+msgid "Cedar Cone"
+msgstr "Кедровая шишка"
+
+#: node_defs.lua:18 node_defs.lua:19
+msgid "Poplar Tree"
+msgstr "Тополь"
+
+#: node_defs.lua:20
+msgid "Willow Tree"
+msgstr "Ива"
+
+#: node_defs.lua:21
+msgid "Rubber Tree"
+msgstr "Каучуковое дерево"
+
+#: node_defs.lua:22
+msgid "Douglas Fir"
+msgstr "Дугласова пихта"
+
+#: node_defs.lua:22
+msgid "Fir Cone"
+msgstr "Пихтовая шишка"
+
+#: node_defs.lua:23
+msgid "Jungle Tree"
+msgstr "Тропическое дерево"
+
+#: node_defs.lua:28
+msgid "Beech Tree Trunk"
+msgstr "Ствол бука"
+
+#: node_defs.lua:29
+msgid "Beech Tree Planks"
+msgstr "Доски из бука"
+
+#: node_defs.lua:30
+msgid "Beech Tree Sapling"
+msgstr "Саженец бука"
+
+#: node_defs.lua:31
+msgid "Beech Tree Leaves"
+msgstr "Листья бука"
+
+#: node_defs.lua:32
+msgid "Beech Tree Trunk Stair"
+msgstr "Ствол бука (ступени)"
+
+#: node_defs.lua:33
+msgid "Beech Tree Trunk Slab"
+msgstr "Ствол бука (плита)"
+
+#: node_defs.lua:34
+msgid "Beech Tree Planks Stair"
+msgstr "Доски из бука (ступени)"
+
+#: node_defs.lua:35
+msgid "Beech Tree Planks Slab"
+msgstr "Доски из бука (плита)"
+
+#: node_defs.lua:36
+msgid "Beech Tree Fence"
+msgstr "Забор из бука"
+
+#: node_defs.lua:37
+msgid "Beech Tree Fence Rail"
+msgstr "Перила из бука"
+
+#: node_defs.lua:38
+msgid "Beech Tree Fence Gate"
+msgstr "Ворота из бука"
+
+#: node_defs.lua:41
+msgid "Apple Tree Trunk"
+msgstr "Ствол яблони"
+
+#: node_defs.lua:42
+msgid "Apple Tree Planks"
+msgstr "Яблоневые доски"
+
+#: node_defs.lua:43
+msgid "Apple Tree Sapling"
+msgstr "Саженец яблони"
+
+#: node_defs.lua:44
+msgid "Apple Tree Leaves"
+msgstr "Листья яблони"
+
+#: node_defs.lua:45
+msgid "Apple Tree Trunk Stair"
+msgstr "Ствол яблони (ступени)"
+
+#: node_defs.lua:46
+msgid "Apple Tree Trunk Slab"
+msgstr "Ствол яблони (плита)"
+
+#: node_defs.lua:47
+msgid "Apple Tree Planks Stair"
+msgstr "Яблоневые доски (ступени)"
+
+#: node_defs.lua:48
+msgid "Apple Tree Planks Slab"
+msgstr "Яблоневые доски (плита)"
+
+#: node_defs.lua:49
+msgid "Apple Tree Fence"
+msgstr "Яблоневый забор"
+
+#: node_defs.lua:50
+msgid "Apple Tree Fence Rail"
+msgstr "Яблоневые перила"
+
+#: node_defs.lua:51
+msgid "Apple Tree Fence Gate"
+msgstr "Яблоневые ворота"
+
+#: node_defs.lua:54
+msgid "Oak Tree Trunk"
+msgstr "Ствол дуба"
+
+#: node_defs.lua:55
+msgid "Oak Tree Planks"
+msgstr "Дубовые доски"
+
+#: node_defs.lua:56
+msgid "Oak Tree Sapling"
+msgstr "Саженец дуба"
+
+#: node_defs.lua:57
+msgid "Oak Tree Leaves"
+msgstr "Листья дуба"
+
+#: node_defs.lua:58
+msgid "Oak Tree Trunk Stair"
+msgstr "Ствол дуба (ступени)"
+
+#: node_defs.lua:59
+msgid "Oak Tree Trunk Slab"
+msgstr "Ствол дуба (плита)"
+
+#: node_defs.lua:60
+msgid "Oak Tree Planks Stair"
+msgstr "Дубовые доски (ступени)"
+
+#: node_defs.lua:61
+msgid "Oak Tree Planks Slab"
+msgstr "Дубовые доски (плита)"
+
+#: node_defs.lua:62
+msgid "Oak Tree Fence"
+msgstr "Дубовый забор"
+
+#: node_defs.lua:63
+msgid "Oak Tree Fence Rail"
+msgstr "Дубовые перила"
+
+#: node_defs.lua:64
+msgid "Oak Tree Fence Gate"
+msgstr "Дубовые ворота"
+
+#: node_defs.lua:67
+msgid "Giant Sequoia Trunk"
+msgstr "Ствол гигантской секвойи"
+
+#: node_defs.lua:68
+msgid "Giant Sequoia Planks"
+msgstr "Доски из гигантской секвойи"
+
+#: node_defs.lua:69
+msgid "Giant Sequoia Sapling"
+msgstr "Саженец гигантской секвойи"
+
+#: node_defs.lua:70
+msgid "Giant Sequoia Leaves"
+msgstr "Хвоя гигантской секвойи"
+
+#: node_defs.lua:71
+msgid "Giant Sequoia Trunk Stair"
+msgstr "Ствол гигантской секвойи (ступени)"
+
+#: node_defs.lua:72
+msgid "Giant Sequoia Trunk Slab"
+msgstr "Ствол гигантской секвойи (плита)"
+
+#: node_defs.lua:73
+msgid "Giant Sequoia Planks Stair"
+msgstr "Доски из гигантской секвойи (ступени)"
+
+#: node_defs.lua:74
+msgid "Giant Sequoia Planks Slab"
+msgstr "Доски из гигантской секвойи (плита)"
+
+#: node_defs.lua:75
+msgid "Giant Sequoia Fence"
+msgstr "Забор из гигантской секвойи"
+
+#: node_defs.lua:76
+msgid "Giant Sequoia Fence Rail"
+msgstr "Перила из гигантской секвойи"
+
+#: node_defs.lua:77
+msgid "Giant Sequoia Fence Gate"
+msgstr "Ворота из гигантской секвойи"
+
+#: node_defs.lua:80
+msgid "Birch Tree Trunk"
+msgstr "Ствол березы"
+
+#: node_defs.lua:81
+msgid "Birch Tree Planks"
+msgstr "Березовые доски"
+
+#: node_defs.lua:82
+msgid "Birch Tree Sapling"
+msgstr "Саженец березы"
+
+#: node_defs.lua:83
+msgid "Birch Tree Leaves"
+msgstr "Березовые листья"
+
+#: node_defs.lua:84
+msgid "Birch Tree Trunk Stair"
+msgstr "Ствол березы (ступени)"
+
+#: node_defs.lua:85
+msgid "Birch Tree Trunk Slab"
+msgstr "Ствол березы (плита)"
+
+#: node_defs.lua:86
+msgid "Birch Tree Planks Stair"
+msgstr "Березовые доски (ступени)"
+
+#: node_defs.lua:87
+msgid "Birch Tree Planks Slab"
+msgstr "Березовые доски (плита)"
+
+#: node_defs.lua:88
+msgid "Birch Tree Fence"
+msgstr "Березовый забор"
+
+#: node_defs.lua:89
+msgid "Birch Tree Fence Rail"
+msgstr "Березовые перила"
+
+#: node_defs.lua:90
+msgid "Birch Tree Fence Gate"
+msgstr "Березовые ворота"
+
+#: node_defs.lua:93
+msgid "Palm Tree Trunk"
+msgstr "Ствол пальмы"
+
+#: node_defs.lua:94
+msgid "Palm Tree Planks"
+msgstr "Пальмовые доски"
+
+#: node_defs.lua:95
+msgid "Palm Tree Sapling"
+msgstr "Саженец пальмы"
+
+#: node_defs.lua:96
+msgid "Palm Tree Leaves"
+msgstr "Листья пальмы"
+
+#: node_defs.lua:97
+msgid "Palm Tree Trunk Stair"
+msgstr "Ствол пальмы (ступени)"
+
+#: node_defs.lua:98
+msgid "Palm Tree Trunk Slab"
+msgstr "Ствол пальмы (плита)"
+
+#: node_defs.lua:99
+msgid "Palm Tree Planks Stair"
+msgstr "Пальмовые доски (ступени)"
+
+#: node_defs.lua:100
+msgid "Palm Tree Planks Slab"
+msgstr "Пальмовые доски (плита)"
+
+#: node_defs.lua:101
+msgid "Palm Tree Fence"
+msgstr "Пальмовый забор"
+
+#: node_defs.lua:102
+msgid "Palm Tree Fence Rail"
+msgstr "Пальмовые перила"
+
+#: node_defs.lua:103
+msgid "Palm Tree Fence Gate"
+msgstr "Пальмовые ворота"
+
+#: node_defs.lua:106
+msgid "Date Palm Tree Trunk"
+msgstr "Ствол финиковой пальмы"
+
+#: node_defs.lua:107
+msgid "Date Palm Tree Planks"
+msgstr "Доски из финиковой пальмы"
+
+#: node_defs.lua:108
+msgid "Date Palm Tree Sapling"
+msgstr "Саженец финиковой пальмы"
+
+#: node_defs.lua:109
+msgid "Date Palm Tree Leaves"
+msgstr "Листья финиковой пальмы"
+
+#: node_defs.lua:110
+msgid "Date Palm Tree Trunk Stair"
+msgstr "Ствол финиковой пальмы (ступени)"
+
+#: node_defs.lua:111
+msgid "Date Palm Tree Trunk Slab"
+msgstr "Ствол финиковой пальмы (плита)"
+
+#: node_defs.lua:112
+msgid "Date Palm Tree Planks Stair"
+msgstr "Доски из финиковой пальмы (ступени)"
+
+#: node_defs.lua:113
+msgid "Date Palm Tree Planks Slab"
+msgstr "Доски из финиковой пальмы (плита)"
+
+#: node_defs.lua:114
+msgid "Date Palm Tree Fence"
+msgstr "Забор из финиковой пальмы"
+
+#: node_defs.lua:115
+msgid "Date Palm Tree Fence Rail"
+msgstr "Перила из финиковой пальмы"
+
+#: node_defs.lua:116
+msgid "Date Palm Tree Fence Gate"
+msgstr "Ворота из финиковой пальмы"
+
+#: node_defs.lua:119
+msgid "Spruce Tree Trunk"
+msgstr "Ствол ели"
+
+#: node_defs.lua:120
+msgid "Spruce Tree Planks"
+msgstr "Еловые доски"
+
+#: node_defs.lua:121
+msgid "Spruce Tree Sapling"
+msgstr "Саженец ели"
+
+#: node_defs.lua:122
+msgid "Spruce Tree Leaves"
+msgstr "Еловая хвоя"
+
+#: node_defs.lua:123
+msgid "Spruce Tree Trunk Stair"
+msgstr "Ствол ели (ступени)"
+
+#: node_defs.lua:124
+msgid "Spruce Tree Trunk Slab"
+msgstr "Ствол ели (плита)"
+
+#: node_defs.lua:125
+msgid "Spruce Tree Planks Stair"
+msgstr "Еловые доски (ступени)"
+
+#: node_defs.lua:126
+msgid "Spruce Tree Planks Slab"
+msgstr "Еловые доски (плита)"
+
+#: node_defs.lua:127
+msgid "Spruce Tree Fence"
+msgstr "Еловый забор"
+
+#: node_defs.lua:128
+msgid "Spruce Tree Fence Rail"
+msgstr "Еловые перила"
+
+#: node_defs.lua:129
+msgid "Spruce Tree Fence Gate"
+msgstr "Еловые ворота"
+
+#: node_defs.lua:132
+msgid "Cedar Tree Trunk"
+msgstr "Ствол кедра"
+
+#: node_defs.lua:133
+msgid "Cedar Tree Planks"
+msgstr "Доски из кедра"
+
+#: node_defs.lua:134
+msgid "Cedar Tree Sapling"
+msgstr "Саженец кедра"
+
+#: node_defs.lua:135
+msgid "Cedar Tree Leaves"
+msgstr "Кедровая хвоя"
+
+#: node_defs.lua:136
+msgid "Cedar Tree Trunk Stair"
+msgstr "Ствол кедра (ступени)"
+
+#: node_defs.lua:137
+msgid "Cedar Tree Trunk Slab"
+msgstr "Ствол кедра (плита)"
+
+#: node_defs.lua:138
+msgid "Cedar Tree Planks Stair"
+msgstr "Доски из кедра (ступени)"
+
+#: node_defs.lua:139
+msgid "Cedar Tree Planks Slab"
+msgstr "Доски из кедра (плита)"
+
+#: node_defs.lua:140
+msgid "Cedar Tree Fence"
+msgstr "Забор из кедра"
+
+#: node_defs.lua:141
+msgid "Cedar Tree Fence Rail"
+msgstr "Перила из кедра"
+
+#: node_defs.lua:142
+msgid "Cedar Tree Fence Gate"
+msgstr "Ворота из кедра"
+
+#: node_defs.lua:145
+msgid "Poplar Tree Trunk"
+msgstr "Ствол тополя"
+
+#: node_defs.lua:146
+msgid "Poplar Tree Planks"
+msgstr "Доски из тополя"
+
+#: node_defs.lua:147
+msgid "Poplar Tree Sapling"
+msgstr "Саженец тополя"
+
+#: node_defs.lua:148
+msgid "Poplar Tree Leaves"
+msgstr "Листья тополя"
+
+#: node_defs.lua:149
+msgid "Poplar Tree Trunk Stair"
+msgstr "Ствол тополя (ступени)"
+
+#: node_defs.lua:150
+msgid "Poplar Tree Trunk Slab"
+msgstr "Ствол тополя (плита)"
+
+#: node_defs.lua:151
+msgid "Poplar Tree Planks Stair"
+msgstr "Доски из тополя (ступени)"
+
+#: node_defs.lua:152
+msgid "Poplar Tree Planks Slab"
+msgstr "Доски из тополя (плита)"
+
+#: node_defs.lua:153
+msgid "Poplar Tree Fence"
+msgstr "Забор из тополя"
+
+#: node_defs.lua:154
+msgid "Poplar Tree Fence Rail"
+msgstr "Перила из тополя"
+
+#: node_defs.lua:155
+msgid "Poplar Tree Fence Gate"
+msgstr "Ворота из тополя"
+
+#: node_defs.lua:158
+msgid "Small poplar Tree Sapling"
+msgstr "Малы саженец тополя"
+
+#: node_defs.lua:161
+msgid "Willow Tree Trunk"
+msgstr "Ствол ивы"
+
+#: node_defs.lua:162
+msgid "Willow Tree Planks"
+msgstr "Ивовые доски"
+
+#: node_defs.lua:163
+msgid "Willow Tree Sapling"
+msgstr "Саженец ивы"
+
+#: node_defs.lua:164
+msgid "Willow Tree Leaves"
+msgstr "Листья ивы"
+
+#: node_defs.lua:165
+msgid "Willow Tree Trunk Stair"
+msgstr "Ствол ивы (ступени)"
+
+#: node_defs.lua:166
+msgid "Willow Tree Trunk Slab"
+msgstr "Ствол ивы (плита)"
+
+#: node_defs.lua:167
+msgid "Willow Tree Planks Stair"
+msgstr "Ивовые доски (ступени)"
+
+#: node_defs.lua:168
+msgid "Willow Tree Planks Slab"
+msgstr "Ивовые доски (плита)"
+
+#: node_defs.lua:169
+msgid "Willow Tree Fence"
+msgstr "Ивовый забор"
+
+#: node_defs.lua:170
+msgid "Willow Tree Fence Rail"
+msgstr "Ивовые перила"
+
+#: node_defs.lua:171
+msgid "Willow Tree Fence Gate"
+msgstr "Ивовые ворота"
+
+#: node_defs.lua:174
+msgid "Rubber Tree Trunk"
+msgstr "Ствол каучукового дерева"
+
+#: node_defs.lua:175
+msgid "Rubber Tree Planks"
+msgstr "Доски из каучукового дерева"
+
+#: node_defs.lua:176
+msgid "Rubber Tree Sapling"
+msgstr "Саженец каучукового дерева"
+
+#: node_defs.lua:177
+msgid "Rubber Tree Leaves"
+msgstr "Листья каучукового дерева"
+
+#: node_defs.lua:178
+msgid "Rubber Tree Trunk Stair"
+msgstr "Ствол каучукового дерева (ступени)"
+
+#: node_defs.lua:179
+msgid "Rubber Tree Trunk Slab"
+msgstr "Ствол каучукового дерева (плита)"
+
+#: node_defs.lua:180
+msgid "Rubber Tree Planks Stair"
+msgstr "Доски из каучукового дерева (ступени)"
+
+#: node_defs.lua:181
+msgid "Rubber Tree Planks Slab"
+msgstr "Доски из каучукового дерева (плита)"
+
+#: node_defs.lua:182
+msgid "Rubber Tree Fence"
+msgstr "Забор из каучукового дерева"
+
+#: node_defs.lua:183
+msgid "Rubber Tree Fence Rail"
+msgstr "Перила из каучукового дерева"
+
+#: node_defs.lua:184
+msgid "Rubber Tree Fence Gate"
+msgstr "Ворота из каучукового дерева"
+
+#: node_defs.lua:187
+msgid "Douglas Fir Trunk"
+msgstr "Ствол дугласовой пихты"
+
+#: node_defs.lua:188
+msgid "Douglas Fir Planks"
+msgstr "Доски из дугласовой пихты"
+
+#: node_defs.lua:189
+msgid "Douglas Fir Sapling"
+msgstr "Саженец дугласовой пихты"
+
+#: node_defs.lua:190
+msgid "Douglas Fir Leaves"
+msgstr "Хвоя дугласовой пихты"
+
+#: node_defs.lua:191
+msgid "Douglas Fir Trunk Stair"
+msgstr "Ствол дугласовой пихты (ступени)"
+
+#: node_defs.lua:192
+msgid "Douglas Fir Trunk Slab"
+msgstr "Ствол дугласовой пихты (плита)"
+
+#: node_defs.lua:193
+msgid "Douglas Fir Planks Stair"
+msgstr "Доски из дугласовой пихты (ступени)"
+
+#: node_defs.lua:194
+msgid "Douglas Fir Planks Slab"
+msgstr "Доски из дугласовой пихты (плита)"
+
+#: node_defs.lua:195
+msgid "Douglas Fir Fence"
+msgstr "Забор из дугласовой пихты"
+
+#: node_defs.lua:196
+msgid "Douglas Fir Fence Rail"
+msgstr "Перила из дугласовой пихты"
+
+#: node_defs.lua:197
+msgid "Douglas Fir Fence Gate"
+msgstr "Ворота из дугласовой пихты"
+
+#: node_defs.lua:200
+msgid "Jungle Tree Trunk"
+msgstr "Ствол тропического дерева"
+
+#: node_defs.lua:201
+msgid "Jungle Tree Planks"
+msgstr "Доски из тропического дерева"
+
+#: node_defs.lua:202
+msgid "Jungle Tree Sapling"
+msgstr "Саженец тропического дерева"
+
+#: node_defs.lua:203
+msgid "Jungle Tree Leaves"
+msgstr "Листья тропического дерева"
+
+#: node_defs.lua:204
+msgid "Jungle Tree Trunk Stair"
+msgstr "Ствол тропического дерева (ступени)"
+
+#: node_defs.lua:205
+msgid "Jungle Tree Trunk Slab"
+msgstr "Ствол тропического дерева (плита)"
+
+#: node_defs.lua:206
+msgid "Jungle Tree Planks Stair"
+msgstr "Доски из тропического дерева (ступени)"
+
+#: node_defs.lua:207
+msgid "Jungle Tree Planks Slab"
+msgstr "Доски из тропического дерева (плита)"
+
+#: node_defs.lua:208
+msgid "Jungle Tree Fence"
+msgstr "Забор из тропического дерева"
+
+#: node_defs.lua:209
+msgid "Jungle Tree Fence Rail"
+msgstr "Перила из тропического дерева"
+
+#: node_defs.lua:210
+msgid "Jungle Tree Fence Gate"
+msgstr "Ворота из тропического дерева"
+
+#: node_defs.lua:491
+msgid "@1 (fast growth)"
+msgstr "@1 (бестрый рост)"
+
+#: node_defs.lua:610
+msgid "Yellow"
+msgstr "желтые"
+
+#: node_defs.lua:610
+msgid "Red"
+msgstr "красные"
+
+#: node_defs.lua:623
+msgid "Jungle Tree Leaves (@1)"
+msgstr "Листья тропического дерева (@1)"
+
+#: node_defs.lua:670
+msgid "Douglas Fir Leaves (Bright)"
+msgstr "Листья дугласовой пихты (яркие)"
+
+#: node_defs.lua:716
+msgid "Rubber Tree Trunk (Empty)"
+msgstr "Ствол каучукового дерева (пусто)"
+

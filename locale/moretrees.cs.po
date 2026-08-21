@@ -1,0 +1,827 @@
+# Czech translations for moretrees package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: moretrees\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-21 09:46-0500\n"
+"PO-Revision-Date: 2026-08-21 09:50-0500\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: Czech\n"
+"Language: cs\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+#: cocos_palm.lua:155
+msgid "Coconut Flower"
+msgstr "Kokosový květ"
+
+#: cocos_palm.lua:157
+msgid "Coconut"
+msgstr "Kokos"
+
+#: crafts.lua:40
+msgid "Coconut Milk"
+msgstr "Kokosové mléko"
+
+#: crafts.lua:48
+msgid "Raw Coconut"
+msgstr "Čerstvý kokos"
+
+#: crafts.lua:54
+msgid "Date"
+msgstr "Datle"
+
+#: crafts.lua:60
+msgid "Date & nut snack"
+msgstr "Tyčinka z datlí a ořechů"
+
+#: crafts.lua:66
+msgid "Date-nut cake batter"
+msgstr "Těsto na datlo-ořechový dort"
+
+#: crafts.lua:71
+msgid "Date-nut cake"
+msgstr "Datlo-ořechový dort"
+
+#: crafts.lua:77
+msgid "Date-nut energy bar"
+msgstr "Datlo-ořechová energetická tyčinka"
+
+#: crafts.lua:83
+msgid "Acorn Muffin batter"
+msgstr "Těsto na žaludový muffin"
+
+#: crafts.lua:88
+msgid "Acorn Muffin"
+msgstr "Žaludový muffin"
+
+#: crafts.lua:94
+msgid "Roasted Spruce Cone Nuts"
+msgstr "Šiška "
+
+#: crafts.lua:100
+msgid "Roasted Cedar Cone Nuts"
+msgstr "Šiška "
+
+#: crafts.lua:106
+msgid "Roasted Fir Cone Nuts"
+msgstr "Šiška "
+
+#: date_palm.lua:711
+msgid "Date Flowers"
+msgstr "Datlový květ"
+
+#: date_palm.lua:713
+msgid "Date Stem"
+msgstr "Stopka datle"
+
+#: date_palm.lua:715
+msgid "Dates"
+msgstr "Datle"
+
+#: init.lua:22
+msgid "Sapling"
+msgstr "Sazenice"
+
+#: init.lua:26
+msgid "Tree"
+msgstr "Strom"
+
+#: init.lua:30
+msgid "Wooden Planks"
+msgstr "Dřevěná prkna"
+
+#: init.lua:34
+msgid "Leaves"
+msgstr "Listí"
+
+#: init.lua:38
+msgid "Wooden Fence"
+msgstr "Dřevěný plot"
+
+#: init.lua:42
+msgid "Wooden Fence Rail"
+msgstr "Madlo dřevěného plotu"
+
+#: init.lua:48 init.lua:52
+msgid "Wooden Fence Gate"
+msgstr "Brána dřevěného plotu"
+
+#: node_defs.lua:9
+msgid "Beech Tree"
+msgstr "Buk"
+
+#: node_defs.lua:10
+msgid "Apple Tree"
+msgstr "Jabloň"
+
+#: node_defs.lua:11
+msgid "Oak Tree"
+msgstr "Dub"
+
+#: node_defs.lua:11
+msgid "Acorn"
+msgstr "Žalud"
+
+#: node_defs.lua:12
+msgid "Giant Sequoia"
+msgstr "Sekvoje"
+
+#: node_defs.lua:13
+msgid "Birch Tree"
+msgstr "Bříza"
+
+#: node_defs.lua:14
+msgid "Palm Tree"
+msgstr "Palma"
+
+#: node_defs.lua:15
+msgid "Date Palm Tree"
+msgstr "Datlovník"
+
+#: node_defs.lua:16
+msgid "Spruce Tree"
+msgstr "Smrk"
+
+#: node_defs.lua:16
+msgid "Spruce Cone"
+msgstr "Šiška smrku"
+
+#: node_defs.lua:17
+msgid "Cedar Tree"
+msgstr "Cedr"
+
+#: node_defs.lua:17
+msgid "Cedar Cone"
+msgstr "Šiška cedru"
+
+#: node_defs.lua:18 node_defs.lua:19
+msgid "Poplar Tree"
+msgstr "Topol"
+
+#: node_defs.lua:20
+msgid "Willow Tree"
+msgstr "Vrba"
+
+#: node_defs.lua:21
+msgid "Rubber Tree"
+msgstr "Kaučukovník"
+
+#: node_defs.lua:22
+msgid "Douglas Fir"
+msgstr "Douglaska"
+
+#: node_defs.lua:22
+msgid "Fir Cone"
+msgstr "Šiška jedle"
+
+#: node_defs.lua:23
+msgid "Jungle Tree"
+msgstr "Strom z džungle"
+
+#: node_defs.lua:28
+msgid "Beech Tree Trunk"
+msgstr "Kmen buku"
+
+#: node_defs.lua:29
+msgid "Beech Tree Planks"
+msgstr "Buková prkna"
+
+#: node_defs.lua:30
+msgid "Beech Tree Sapling"
+msgstr "Sazenice buku"
+
+#: node_defs.lua:31
+msgid "Beech Tree Leaves"
+msgstr "Listí buku"
+
+#: node_defs.lua:32
+msgid "Beech Tree Trunk Stair"
+msgstr "Schody z kmene buku"
+
+#: node_defs.lua:33
+msgid "Beech Tree Trunk Slab"
+msgstr "Půlblok z kmene buku"
+
+#: node_defs.lua:34
+msgid "Beech Tree Planks Stair"
+msgstr "Schody z bukových prken"
+
+#: node_defs.lua:35
+msgid "Beech Tree Planks Slab"
+msgstr "Půlblok z bukových prken"
+
+#: node_defs.lua:36
+msgid "Beech Tree Fence"
+msgstr "Plot z bukového dřeva"
+
+#: node_defs.lua:37
+msgid "Beech Tree Fence Rail"
+msgstr "Madlo plotu z bukového dřeva"
+
+#: node_defs.lua:38
+msgid "Beech Tree Fence Gate"
+msgstr "Brána plotu z bukového dřeva"
+
+#: node_defs.lua:41
+msgid "Apple Tree Trunk"
+msgstr "Kmen jabloně"
+
+#: node_defs.lua:42
+msgid "Apple Tree Planks"
+msgstr "Jabloňová prkna"
+
+#: node_defs.lua:43
+msgid "Apple Tree Sapling"
+msgstr "Sazenice jabloně"
+
+#: node_defs.lua:44
+msgid "Apple Tree Leaves"
+msgstr "Listí jabloně"
+
+#: node_defs.lua:45
+msgid "Apple Tree Trunk Stair"
+msgstr "Schody z kmene jabloně"
+
+#: node_defs.lua:46
+msgid "Apple Tree Trunk Slab"
+msgstr "Půlblok z kmene jabloně"
+
+#: node_defs.lua:47
+msgid "Apple Tree Planks Stair"
+msgstr "Schody z jabloňových prken"
+
+#: node_defs.lua:48
+msgid "Apple Tree Planks Slab"
+msgstr "Půlblok z jabloňových prken"
+
+#: node_defs.lua:49
+msgid "Apple Tree Fence"
+msgstr "Plot z dřeva jabloně"
+
+#: node_defs.lua:50
+msgid "Apple Tree Fence Rail"
+msgstr "Madlo plotu z dřeva jabloně"
+
+#: node_defs.lua:51
+msgid "Apple Tree Fence Gate"
+msgstr "Brána plotu z dřeva jabloně"
+
+#: node_defs.lua:54
+msgid "Oak Tree Trunk"
+msgstr "Kmen dubu"
+
+#: node_defs.lua:55
+msgid "Oak Tree Planks"
+msgstr "Dubová prkna"
+
+#: node_defs.lua:56
+msgid "Oak Tree Sapling"
+msgstr "Sazenice dubu"
+
+#: node_defs.lua:57
+msgid "Oak Tree Leaves"
+msgstr "Dubové listí"
+
+#: node_defs.lua:58
+msgid "Oak Tree Trunk Stair"
+msgstr "Schody z kmene dubu"
+
+#: node_defs.lua:59
+msgid "Oak Tree Trunk Slab"
+msgstr "Půlblok z kmene dubu"
+
+#: node_defs.lua:60
+msgid "Oak Tree Planks Stair"
+msgstr "Schody z dubových prken"
+
+#: node_defs.lua:61
+msgid "Oak Tree Planks Slab"
+msgstr "Půlblok z dubových prken"
+
+#: node_defs.lua:62
+msgid "Oak Tree Fence"
+msgstr "Dubový plot"
+
+#: node_defs.lua:63
+msgid "Oak Tree Fence Rail"
+msgstr "Madlo dubového plotu"
+
+#: node_defs.lua:64
+msgid "Oak Tree Fence Gate"
+msgstr "Brána dubového plotu "
+
+#: node_defs.lua:67
+msgid "Giant Sequoia Trunk"
+msgstr "Kmen sekvoje"
+
+#: node_defs.lua:68
+msgid "Giant Sequoia Planks"
+msgstr "Sekvojová prkna"
+
+#: node_defs.lua:69
+msgid "Giant Sequoia Sapling"
+msgstr "Sazenice sekvoje"
+
+#: node_defs.lua:70
+msgid "Giant Sequoia Leaves"
+msgstr "Jehličí sekvoje"
+
+#: node_defs.lua:71
+msgid "Giant Sequoia Trunk Stair"
+msgstr "Schody z kmene sekvoje"
+
+#: node_defs.lua:72
+msgid "Giant Sequoia Trunk Slab"
+msgstr "Půlblok z kmene sekvoje"
+
+#: node_defs.lua:73
+msgid "Giant Sequoia Planks Stair"
+msgstr "Schody ze sekvojových prken"
+
+#: node_defs.lua:74
+msgid "Giant Sequoia Planks Slab"
+msgstr "Půlblok ze sekvojových prken "
+
+#: node_defs.lua:75
+msgid "Giant Sequoia Fence"
+msgstr "Sekvojový plot"
+
+#: node_defs.lua:76
+msgid "Giant Sequoia Fence Rail"
+msgstr "Madlo sekvojového plotu"
+
+#: node_defs.lua:77
+msgid "Giant Sequoia Fence Gate"
+msgstr "Brána sekvojového plotu"
+
+#: node_defs.lua:80
+msgid "Birch Tree Trunk"
+msgstr "Kmen břízy"
+
+#: node_defs.lua:81
+msgid "Birch Tree Planks"
+msgstr "Březová prkna"
+
+#: node_defs.lua:82
+msgid "Birch Tree Sapling"
+msgstr "Sazenice břízy"
+
+#: node_defs.lua:83
+msgid "Birch Tree Leaves"
+msgstr "Březové listí "
+
+#: node_defs.lua:84
+msgid "Birch Tree Trunk Stair"
+msgstr "Schody z kmene břízy"
+
+#: node_defs.lua:85
+msgid "Birch Tree Trunk Slab"
+msgstr "Půlblok z kmene břízy"
+
+#: node_defs.lua:86
+msgid "Birch Tree Planks Stair"
+msgstr "Schody z březových prken"
+
+#: node_defs.lua:87
+msgid "Birch Tree Planks Slab"
+msgstr "Půlblok z březových prken"
+
+#: node_defs.lua:88
+msgid "Birch Tree Fence"
+msgstr "Plot z březového dřeva"
+
+#: node_defs.lua:89
+msgid "Birch Tree Fence Rail"
+msgstr "Madlo plotu z březového dřeva"
+
+#: node_defs.lua:90
+msgid "Birch Tree Fence Gate"
+msgstr "Brána plotu z březového dřeva"
+
+#: node_defs.lua:93
+msgid "Palm Tree Trunk"
+msgstr "Kmen palmy"
+
+#: node_defs.lua:94
+msgid "Palm Tree Planks"
+msgstr "Palmová prkna"
+
+#: node_defs.lua:95
+msgid "Palm Tree Sapling"
+msgstr "Sazenice palmy"
+
+#: node_defs.lua:96
+msgid "Palm Tree Leaves"
+msgstr "Listí palmy"
+
+#: node_defs.lua:97
+msgid "Palm Tree Trunk Stair"
+msgstr "Schody z kmene palmy"
+
+#: node_defs.lua:98
+msgid "Palm Tree Trunk Slab"
+msgstr "Půlblok z kmene palmy"
+
+#: node_defs.lua:99
+msgid "Palm Tree Planks Stair"
+msgstr "Schody z palmových prken"
+
+#: node_defs.lua:100
+msgid "Palm Tree Planks Slab"
+msgstr "Půlblok z palmových prken"
+
+#: node_defs.lua:101
+msgid "Palm Tree Fence"
+msgstr "Plot z palmy"
+
+#: node_defs.lua:102
+msgid "Palm Tree Fence Rail"
+msgstr "Madlo plotu z palmového dřeva"
+
+#: node_defs.lua:103
+msgid "Palm Tree Fence Gate"
+msgstr "Brána plotu z palmového dřeva"
+
+#: node_defs.lua:106
+msgid "Date Palm Tree Trunk"
+msgstr "Kmen datlovníku"
+
+#: node_defs.lua:107
+msgid "Date Palm Tree Planks"
+msgstr "Prkna z dřeva datlovníku"
+
+#: node_defs.lua:108
+msgid "Date Palm Tree Sapling"
+msgstr "Sazenice datlovníku"
+
+#: node_defs.lua:109
+msgid "Date Palm Tree Leaves"
+msgstr "Listí datlovníku"
+
+#: node_defs.lua:110
+msgid "Date Palm Tree Trunk Stair"
+msgstr "Schody z kmene datlovníku"
+
+#: node_defs.lua:111
+msgid "Date Palm Tree Trunk Slab"
+msgstr "Půlblok z kmene datlovníku "
+
+#: node_defs.lua:112
+msgid "Date Palm Tree Planks Stair"
+msgstr "Schody z prken z dřeva datlovníku"
+
+#: node_defs.lua:113
+msgid "Date Palm Tree Planks Slab"
+msgstr "Půlblok z prken z dřeva datlovníku"
+
+#: node_defs.lua:114
+msgid "Date Palm Tree Fence"
+msgstr "Plot z dřeva datlovníku"
+
+#: node_defs.lua:115
+msgid "Date Palm Tree Fence Rail"
+msgstr "Madlo plotu z dřeva datlovníku"
+
+#: node_defs.lua:116
+msgid "Date Palm Tree Fence Gate"
+msgstr "Brána plotu z dřeva datlovníku"
+
+#: node_defs.lua:119
+msgid "Spruce Tree Trunk"
+msgstr "Kmen smrku"
+
+#: node_defs.lua:120
+msgid "Spruce Tree Planks"
+msgstr "Smrková prkna"
+
+#: node_defs.lua:121
+msgid "Spruce Tree Sapling"
+msgstr "Sazenice smrku"
+
+#: node_defs.lua:122
+msgid "Spruce Tree Leaves"
+msgstr "Smrkové jehličí"
+
+#: node_defs.lua:123
+msgid "Spruce Tree Trunk Stair"
+msgstr "Schody z kmene smrku"
+
+#: node_defs.lua:124
+msgid "Spruce Tree Trunk Slab"
+msgstr "Půlblok z kmene smrku"
+
+#: node_defs.lua:125
+msgid "Spruce Tree Planks Stair"
+msgstr "Schody ze smrkových prken"
+
+#: node_defs.lua:126
+msgid "Spruce Tree Planks Slab"
+msgstr "Půlblok ze smrkových prken"
+
+#: node_defs.lua:127
+msgid "Spruce Tree Fence"
+msgstr "Smrkový plot"
+
+#: node_defs.lua:128
+msgid "Spruce Tree Fence Rail"
+msgstr "Madlo smrkového plotu"
+
+#: node_defs.lua:129
+msgid "Spruce Tree Fence Gate"
+msgstr "Brána smrkového plotu"
+
+#: node_defs.lua:132
+msgid "Cedar Tree Trunk"
+msgstr "Kmen cedru"
+
+#: node_defs.lua:133
+msgid "Cedar Tree Planks"
+msgstr "Prkna z cedrového dřeva"
+
+#: node_defs.lua:134
+msgid "Cedar Tree Sapling"
+msgstr "Sazenice cedru"
+
+#: node_defs.lua:135
+msgid "Cedar Tree Leaves"
+msgstr "Jehličí cedru"
+
+#: node_defs.lua:136
+msgid "Cedar Tree Trunk Stair"
+msgstr "Schody z kmene cedru"
+
+#: node_defs.lua:137
+msgid "Cedar Tree Trunk Slab"
+msgstr "Půlblok z kmene cedru"
+
+#: node_defs.lua:138
+msgid "Cedar Tree Planks Stair"
+msgstr "Schody z prken z cedrového dřeva"
+
+#: node_defs.lua:139
+msgid "Cedar Tree Planks Slab"
+msgstr "Půlblok z prken z cedrového dřeva"
+
+#: node_defs.lua:140
+msgid "Cedar Tree Fence"
+msgstr "Plot z cedrového dřeva"
+
+#: node_defs.lua:141
+msgid "Cedar Tree Fence Rail"
+msgstr "Madlo plotu z cedrového dřeva"
+
+#: node_defs.lua:142
+msgid "Cedar Tree Fence Gate"
+msgstr "Brána plotu z cedrového dřeva"
+
+#: node_defs.lua:145
+msgid "Poplar Tree Trunk"
+msgstr "Kmen topolu"
+
+#: node_defs.lua:146
+msgid "Poplar Tree Planks"
+msgstr "Topolová prkna"
+
+#: node_defs.lua:147
+msgid "Poplar Tree Sapling"
+msgstr "Sazenice topolu"
+
+#: node_defs.lua:148
+msgid "Poplar Tree Leaves"
+msgstr "Topolové listí"
+
+#: node_defs.lua:149
+msgid "Poplar Tree Trunk Stair"
+msgstr "Schody z kmene topolu"
+
+#: node_defs.lua:150
+msgid "Poplar Tree Trunk Slab"
+msgstr "Půlblok z kmene topolu"
+
+#: node_defs.lua:151
+msgid "Poplar Tree Planks Stair"
+msgstr "Schody z topolových prken"
+
+#: node_defs.lua:152
+msgid "Poplar Tree Planks Slab"
+msgstr "Půlblok z topolových prken"
+
+#: node_defs.lua:153
+msgid "Poplar Tree Fence"
+msgstr "Plot z topolového dřeva"
+
+#: node_defs.lua:154
+msgid "Poplar Tree Fence Rail"
+msgstr "Madlo plotu z topolového dřeva"
+
+#: node_defs.lua:155
+msgid "Poplar Tree Fence Gate"
+msgstr "Brána plotu z topolového dřeva"
+
+#: node_defs.lua:158
+msgid "Small poplar Tree Sapling"
+msgstr "Sazenice kaučukovníku"
+
+#: node_defs.lua:161
+msgid "Willow Tree Trunk"
+msgstr "Kmen vrby"
+
+#: node_defs.lua:162
+msgid "Willow Tree Planks"
+msgstr "Prkna z vrby"
+
+#: node_defs.lua:163
+msgid "Willow Tree Sapling"
+msgstr "Sazenice vrby"
+
+#: node_defs.lua:164
+msgid "Willow Tree Leaves"
+msgstr "Listí vrby"
+
+#: node_defs.lua:165
+msgid "Willow Tree Trunk Stair"
+msgstr "Schody z kmene vrby"
+
+#: node_defs.lua:166
+msgid "Willow Tree Trunk Slab"
+msgstr "Půlblok z kmene vrby"
+
+#: node_defs.lua:167
+msgid "Willow Tree Planks Stair"
+msgstr "Schody z prken z vrby"
+
+#: node_defs.lua:168
+msgid "Willow Tree Planks Slab"
+msgstr "Půlblok z prken z vrby"
+
+#: node_defs.lua:169
+msgid "Willow Tree Fence"
+msgstr "Plot z dřeva vrby"
+
+#: node_defs.lua:170
+msgid "Willow Tree Fence Rail"
+msgstr "Madlo plotu z dřeva vrby"
+
+#: node_defs.lua:171
+msgid "Willow Tree Fence Gate"
+msgstr "Brána plotu z dřeva vrby"
+
+#: node_defs.lua:174
+msgid "Rubber Tree Trunk"
+msgstr "Kmen kaučukovníku"
+
+#: node_defs.lua:175
+msgid "Rubber Tree Planks"
+msgstr "Prkna z kaučukovníku"
+
+#: node_defs.lua:176
+msgid "Rubber Tree Sapling"
+msgstr "Sazenice kaučukovníku"
+
+#: node_defs.lua:177
+msgid "Rubber Tree Leaves"
+msgstr "Listí kaučukovníku"
+
+#: node_defs.lua:178
+msgid "Rubber Tree Trunk Stair"
+msgstr "Schody z kmene kaučukovníku"
+
+#: node_defs.lua:179
+msgid "Rubber Tree Trunk Slab"
+msgstr "Půlblok z kmene kaučukovníku"
+
+#: node_defs.lua:180
+msgid "Rubber Tree Planks Stair"
+msgstr "Schody z prken z kaučukovníku"
+
+#: node_defs.lua:181
+msgid "Rubber Tree Planks Slab"
+msgstr "Půlblok z prken z kaučukovníku"
+
+#: node_defs.lua:182
+msgid "Rubber Tree Fence"
+msgstr "Plot z kaučukovníku"
+
+#: node_defs.lua:183
+msgid "Rubber Tree Fence Rail"
+msgstr "Madlo plotu z kaučukovníku"
+
+#: node_defs.lua:184
+msgid "Rubber Tree Fence Gate"
+msgstr "Brána plotu z kaučukovníku"
+
+#: node_defs.lua:187
+msgid "Douglas Fir Trunk"
+msgstr "Kmen douglasky"
+
+#: node_defs.lua:188
+msgid "Douglas Fir Planks"
+msgstr "Prkna z dřeva douglasky"
+
+#: node_defs.lua:189
+msgid "Douglas Fir Sapling"
+msgstr "Sazenice douglasky"
+
+#: node_defs.lua:190
+msgid "Douglas Fir Leaves"
+msgstr "Jehličí douglasky"
+
+#: node_defs.lua:191
+msgid "Douglas Fir Trunk Stair"
+msgstr "Schody z kmene douglasky"
+
+#: node_defs.lua:192
+msgid "Douglas Fir Trunk Slab"
+msgstr "Půlblok z kmene douglasky"
+
+#: node_defs.lua:193
+msgid "Douglas Fir Planks Stair"
+msgstr "Schody z prken z dřeva douglasky"
+
+#: node_defs.lua:194
+msgid "Douglas Fir Planks Slab"
+msgstr "Půlblok z prken z dřeva douglasky"
+
+#: node_defs.lua:195
+msgid "Douglas Fir Fence"
+msgstr "Plot z dřeva douglasky"
+
+#: node_defs.lua:196
+msgid "Douglas Fir Fence Rail"
+msgstr "Madlo plotu z dřeva douglasky"
+
+#: node_defs.lua:197
+msgid "Douglas Fir Fence Gate"
+msgstr "Brána plotu z dřeva douglasky"
+
+#: node_defs.lua:200
+msgid "Jungle Tree Trunk"
+msgstr "Kmen stromu z džungle"
+
+#: node_defs.lua:201
+msgid "Jungle Tree Planks"
+msgstr "Prkna z dřeva ze stromu z džungle"
+
+#: node_defs.lua:202
+msgid "Jungle Tree Sapling"
+msgstr "Sazenice stromu z džungle"
+
+#: node_defs.lua:203
+msgid "Jungle Tree Leaves"
+msgstr "Listí stromu z džungle"
+
+#: node_defs.lua:204
+msgid "Jungle Tree Trunk Stair"
+msgstr "Schody z kmene stromu z džungle"
+
+#: node_defs.lua:205
+msgid "Jungle Tree Trunk Slab"
+msgstr "Půlblok z kmene stromu z džungle"
+
+#: node_defs.lua:206
+msgid "Jungle Tree Planks Stair"
+msgstr "Schody z prken z dřeva ze stromu z džungle"
+
+#: node_defs.lua:207
+msgid "Jungle Tree Planks Slab"
+msgstr "Půlblok z prken z dřeva ze stromu z džungle"
+
+#: node_defs.lua:208
+msgid "Jungle Tree Fence"
+msgstr "Plot ze stromu z džungle"
+
+#: node_defs.lua:209
+msgid "Jungle Tree Fence Rail"
+msgstr "Madlo plotu z dřeva stromu z džungle"
+
+#: node_defs.lua:210
+msgid "Jungle Tree Fence Gate"
+msgstr "Brána plotu z dřeva stromu z džungle"
+
+#: node_defs.lua:491
+msgid "@1 (fast growth)"
+msgstr "@1 (rychlý růst)"
+
+#: node_defs.lua:610
+msgid "Yellow"
+msgstr "Žlutá"
+
+#: node_defs.lua:610
+msgid "Red"
+msgstr "červená"
+
+#: node_defs.lua:623
+msgid "Jungle Tree Leaves (@1)"
+msgstr "Listí (@1)"
+
+#: node_defs.lua:670
+msgid "Douglas Fir Leaves (Bright)"
+msgstr "Listí douglasky (světlé)"
+
+#: node_defs.lua:716
+msgid "Rubber Tree Trunk (Empty)"
+msgstr "Kmen kaučukovníku (prázdný)"
+

@@ -1,0 +1,828 @@
+# French translations for moretrees package.
+# Translation by Yoan31 and Louis Royer
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: moretrees\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-21 09:46-0500\n"
+"PO-Revision-Date: 2026-08-21 09:50-0500\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: French\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+#: cocos_palm.lua:155
+msgid "Coconut Flower"
+msgstr "Fleur de coco"
+
+#: cocos_palm.lua:157
+msgid "Coconut"
+msgstr "Noix de coco"
+
+#: crafts.lua:40
+msgid "Coconut Milk"
+msgstr "Lait de coco"
+
+#: crafts.lua:48
+msgid "Raw Coconut"
+msgstr "Noix de coco crue"
+
+#: crafts.lua:54
+msgid "Date"
+msgstr "Datte"
+
+#: crafts.lua:60
+msgid "Date & nut snack"
+msgstr "Collation aux dattes et aux noix"
+
+#: crafts.lua:66
+msgid "Date-nut cake batter"
+msgstr "Pâte à gâteau datte-noix"
+
+#: crafts.lua:71
+msgid "Date-nut cake"
+msgstr "Gâteau datte-noix"
+
+#: crafts.lua:77
+msgid "Date-nut energy bar"
+msgstr "Barre énergétique datte-noix"
+
+#: crafts.lua:83
+msgid "Acorn Muffin batter"
+msgstr "Pate à muffins au Gland"
+
+#: crafts.lua:88
+msgid "Acorn Muffin"
+msgstr "Muffins au gland"
+
+#: crafts.lua:94
+msgid "Roasted Spruce Cone Nuts"
+msgstr "Noix de cône de sapin roties"
+
+#: crafts.lua:100
+msgid "Roasted Cedar Cone Nuts"
+msgstr "Noix de pomme de pin roties"
+
+#: crafts.lua:106
+msgid "Roasted Fir Cone Nuts"
+msgstr "Noix de cône de sapin roties"
+
+#: date_palm.lua:711
+msgid "Date Flowers"
+msgstr "Fleurs de datte"
+
+#: date_palm.lua:713
+msgid "Date Stem"
+msgstr "Tige de datte"
+
+#: date_palm.lua:715
+msgid "Dates"
+msgstr "Dattes"
+
+#: init.lua:22
+msgid "Sapling"
+msgstr "Jeune Arbre"
+
+#: init.lua:26
+msgid "Tree"
+msgstr "Arbre"
+
+#: init.lua:30
+msgid "Wooden Planks"
+msgstr "Planches"
+
+#: init.lua:34
+msgid "Leaves"
+msgstr "Feuilles"
+
+#: init.lua:38
+msgid "Wooden Fence"
+msgstr "Barrière en bois"
+
+#: init.lua:42
+msgid "Wooden Fence Rail"
+msgstr "Rail de clôture en bois"
+
+#: init.lua:48 init.lua:52
+msgid "Wooden Fence Gate"
+msgstr "Porte de clôture en bois"
+
+#: node_defs.lua:9
+msgid "Beech Tree"
+msgstr "Hêtre"
+
+#: node_defs.lua:10
+msgid "Apple Tree"
+msgstr "Pommier"
+
+#: node_defs.lua:11
+msgid "Oak Tree"
+msgstr "Chêne"
+
+#: node_defs.lua:11
+msgid "Acorn"
+msgstr "Gland"
+
+#: node_defs.lua:12
+msgid "Giant Sequoia"
+msgstr "Séquoia géant"
+
+#: node_defs.lua:13
+msgid "Birch Tree"
+msgstr "Bouleau"
+
+#: node_defs.lua:14
+msgid "Palm Tree"
+msgstr "Palmier"
+
+#: node_defs.lua:15
+msgid "Date Palm Tree"
+msgstr "Dattier"
+
+#: node_defs.lua:16
+msgid "Spruce Tree"
+msgstr "Épicéa"
+
+#: node_defs.lua:16
+msgid "Spruce Cone"
+msgstr "Cône de sapin"
+
+#: node_defs.lua:17
+msgid "Cedar Tree"
+msgstr "Pin"
+
+#: node_defs.lua:17
+msgid "Cedar Cone"
+msgstr "Pomme de pin"
+
+#: node_defs.lua:18 node_defs.lua:19
+msgid "Poplar Tree"
+msgstr "Peuplier"
+
+#: node_defs.lua:20
+msgid "Willow Tree"
+msgstr "Saule"
+
+#: node_defs.lua:21
+msgid "Rubber Tree"
+msgstr "Arbre à caoutchouc"
+
+#: node_defs.lua:22
+msgid "Douglas Fir"
+msgstr "Sapin de Douglas"
+
+#: node_defs.lua:22
+msgid "Fir Cone"
+msgstr "Pomme de sapin"
+
+#: node_defs.lua:23
+msgid "Jungle Tree"
+msgstr "Arbre de la jungle"
+
+#: node_defs.lua:28
+msgid "Beech Tree Trunk"
+msgstr "Tronc d'arbre de hêtre"
+
+#: node_defs.lua:29
+msgid "Beech Tree Planks"
+msgstr "Planches de hêtre"
+
+#: node_defs.lua:30
+msgid "Beech Tree Sapling"
+msgstr "Pousse d'arbre de hêtre"
+
+#: node_defs.lua:31
+msgid "Beech Tree Leaves"
+msgstr "Feuilles de hêtre"
+
+#: node_defs.lua:32
+msgid "Beech Tree Trunk Stair"
+msgstr "Escalier en tronc de hêtre"
+
+#: node_defs.lua:33
+msgid "Beech Tree Trunk Slab"
+msgstr "Dalle en tronc de hêtre"
+
+#: node_defs.lua:34
+msgid "Beech Tree Planks Stair"
+msgstr "Escalier en bois de hêtre"
+
+#: node_defs.lua:35
+msgid "Beech Tree Planks Slab"
+msgstr "Dalle en bois de hêtre"
+
+#: node_defs.lua:36
+msgid "Beech Tree Fence"
+msgstr "Barrière en bois de hêtre"
+
+#: node_defs.lua:37
+msgid "Beech Tree Fence Rail"
+msgstr "Clôture en bois de hêtre"
+
+#: node_defs.lua:38
+msgid "Beech Tree Fence Gate"
+msgstr "Porte de clôture en bois de hêtre"
+
+#: node_defs.lua:41
+msgid "Apple Tree Trunk"
+msgstr "Tronc d'arbre de pommier"
+
+#: node_defs.lua:42
+msgid "Apple Tree Planks"
+msgstr "Planches de pommier"
+
+#: node_defs.lua:43
+msgid "Apple Tree Sapling"
+msgstr "Pousse d'arbre de pommier"
+
+#: node_defs.lua:44
+msgid "Apple Tree Leaves"
+msgstr "Feuilles de pommier"
+
+#: node_defs.lua:45
+msgid "Apple Tree Trunk Stair"
+msgstr "Escalier en tronc de pommier"
+
+#: node_defs.lua:46
+msgid "Apple Tree Trunk Slab"
+msgstr "Dalle en tronc de pommier"
+
+#: node_defs.lua:47
+msgid "Apple Tree Planks Stair"
+msgstr "Escaliers en bois de pommier"
+
+#: node_defs.lua:48
+msgid "Apple Tree Planks Slab"
+msgstr "Dalle en bois de pommier"
+
+#: node_defs.lua:49
+msgid "Apple Tree Fence"
+msgstr "Barrière en bois de pommier"
+
+#: node_defs.lua:50
+msgid "Apple Tree Fence Rail"
+msgstr "Clôture en bois de pommier"
+
+#: node_defs.lua:51
+msgid "Apple Tree Fence Gate"
+msgstr "Porte de clôture en bois de pommier"
+
+#: node_defs.lua:54
+msgid "Oak Tree Trunk"
+msgstr "Tronc d'arbre de chêne"
+
+#: node_defs.lua:55
+msgid "Oak Tree Planks"
+msgstr "Planches de chêne"
+
+#: node_defs.lua:56
+msgid "Oak Tree Sapling"
+msgstr "Pousse d'arbre de chêne"
+
+#: node_defs.lua:57
+msgid "Oak Tree Leaves"
+msgstr "Feuilles de chêne"
+
+#: node_defs.lua:58
+msgid "Oak Tree Trunk Stair"
+msgstr "Escalier en tronc de chêne"
+
+#: node_defs.lua:59
+msgid "Oak Tree Trunk Slab"
+msgstr "Dalle en tronc de chêne"
+
+#: node_defs.lua:60
+msgid "Oak Tree Planks Stair"
+msgstr "Escalier en bois de chêne"
+
+#: node_defs.lua:61
+msgid "Oak Tree Planks Slab"
+msgstr "Dalle en bois de chêne"
+
+#: node_defs.lua:62
+msgid "Oak Tree Fence"
+msgstr "Barrière en bois de chêne"
+
+#: node_defs.lua:63
+msgid "Oak Tree Fence Rail"
+msgstr "Clôture en bois de chêne"
+
+#: node_defs.lua:64
+msgid "Oak Tree Fence Gate"
+msgstr "Porte de clôture en bois de chêne"
+
+#: node_defs.lua:67
+msgid "Giant Sequoia Trunk"
+msgstr "Tronc de séquoia géant"
+
+#: node_defs.lua:68
+msgid "Giant Sequoia Planks"
+msgstr "Planches de séquoia géant"
+
+#: node_defs.lua:69
+msgid "Giant Sequoia Sapling"
+msgstr "Pousse de séquoia géant"
+
+#: node_defs.lua:70
+msgid "Giant Sequoia Leaves"
+msgstr "Feuilles de séquoia géant"
+
+#: node_defs.lua:71
+msgid "Giant Sequoia Trunk Stair"
+msgstr "Escalier en tronc de séquoia géant"
+
+#: node_defs.lua:72
+msgid "Giant Sequoia Trunk Slab"
+msgstr "Dalle en tronc de séquoia géant"
+
+#: node_defs.lua:73
+msgid "Giant Sequoia Planks Stair"
+msgstr "Escalier en bois de séquoia géant"
+
+#: node_defs.lua:74
+msgid "Giant Sequoia Planks Slab"
+msgstr "Dalle en bois de séquoia géant"
+
+#: node_defs.lua:75
+msgid "Giant Sequoia Fence"
+msgstr "Barrière en bois de séquoia géant"
+
+#: node_defs.lua:76
+msgid "Giant Sequoia Fence Rail"
+msgstr "Clôture en bois de séquoia géant"
+
+#: node_defs.lua:77
+msgid "Giant Sequoia Fence Gate"
+msgstr "Porte de clôture en bois de séquoia géant"
+
+#: node_defs.lua:80
+msgid "Birch Tree Trunk"
+msgstr "Tronc d'arbre de bouleau"
+
+#: node_defs.lua:81
+msgid "Birch Tree Planks"
+msgstr "Planches d'arbre de bouleau"
+
+#: node_defs.lua:82
+msgid "Birch Tree Sapling"
+msgstr "Pousse d'arbre de bouleau"
+
+#: node_defs.lua:83
+msgid "Birch Tree Leaves"
+msgstr "Feuilles de bouleau"
+
+#: node_defs.lua:84
+msgid "Birch Tree Trunk Stair"
+msgstr "Escalier en tronc de bouleau"
+
+#: node_defs.lua:85
+msgid "Birch Tree Trunk Slab"
+msgstr "Dalle en tronc de bouleau"
+
+#: node_defs.lua:86
+msgid "Birch Tree Planks Stair"
+msgstr "Escalier en bois de bouleau"
+
+#: node_defs.lua:87
+msgid "Birch Tree Planks Slab"
+msgstr "Dalle en bois de bouleau"
+
+#: node_defs.lua:88
+msgid "Birch Tree Fence"
+msgstr "Barrière en bois de bouleau"
+
+#: node_defs.lua:89
+msgid "Birch Tree Fence Rail"
+msgstr "Clôture en bois de bouleau"
+
+#: node_defs.lua:90
+msgid "Birch Tree Fence Gate"
+msgstr "Porte de clôture en bois de bouleau"
+
+#: node_defs.lua:93
+msgid "Palm Tree Trunk"
+msgstr "Tronc d'arbre de palmier"
+
+#: node_defs.lua:94
+msgid "Palm Tree Planks"
+msgstr "Planches de palmier"
+
+#: node_defs.lua:95
+msgid "Palm Tree Sapling"
+msgstr "Pousse d'arbre de palmier"
+
+#: node_defs.lua:96
+msgid "Palm Tree Leaves"
+msgstr "Feuilles de palmier"
+
+#: node_defs.lua:97
+msgid "Palm Tree Trunk Stair"
+msgstr "Escalier en tronc de palmier"
+
+#: node_defs.lua:98
+msgid "Palm Tree Trunk Slab"
+msgstr "Dalle en tronc de palmier"
+
+#: node_defs.lua:99
+msgid "Palm Tree Planks Stair"
+msgstr "Escalier en bois de palmier"
+
+#: node_defs.lua:100
+msgid "Palm Tree Planks Slab"
+msgstr "Dalle en bois de palmier"
+
+#: node_defs.lua:101
+msgid "Palm Tree Fence"
+msgstr "Barrière en bois de palmier"
+
+#: node_defs.lua:102
+msgid "Palm Tree Fence Rail"
+msgstr "Clôture en bois de palmier"
+
+#: node_defs.lua:103
+msgid "Palm Tree Fence Gate"
+msgstr "Porte de clôture en bois de palmier"
+
+#: node_defs.lua:106
+msgid "Date Palm Tree Trunk"
+msgstr "Tronc de dattier"
+
+#: node_defs.lua:107
+msgid "Date Palm Tree Planks"
+msgstr "Planches de dattier"
+
+#: node_defs.lua:108
+msgid "Date Palm Tree Sapling"
+msgstr "Pousse de dattier"
+
+#: node_defs.lua:109
+msgid "Date Palm Tree Leaves"
+msgstr "Feuille de dattier"
+
+#: node_defs.lua:110
+msgid "Date Palm Tree Trunk Stair"
+msgstr "Escalier en tronc de dattier"
+
+#: node_defs.lua:111
+msgid "Date Palm Tree Trunk Slab"
+msgstr "Dalle en tronc de dattier"
+
+#: node_defs.lua:112
+msgid "Date Palm Tree Planks Stair"
+msgstr "Escalier en bois de dattier"
+
+#: node_defs.lua:113
+msgid "Date Palm Tree Planks Slab"
+msgstr "Dalle en bois de dattier"
+
+#: node_defs.lua:114
+msgid "Date Palm Tree Fence"
+msgstr "Barrière en bois de dattier"
+
+#: node_defs.lua:115
+msgid "Date Palm Tree Fence Rail"
+msgstr "Clôture en bois de dattier"
+
+#: node_defs.lua:116
+msgid "Date Palm Tree Fence Gate"
+msgstr "Porte de clôture en bois de dattier"
+
+#: node_defs.lua:119
+msgid "Spruce Tree Trunk"
+msgstr "Tronc d'arbre d'épicéa"
+
+#: node_defs.lua:120
+msgid "Spruce Tree Planks"
+msgstr "Planches d'arbre d'épicéa"
+
+#: node_defs.lua:121
+msgid "Spruce Tree Sapling"
+msgstr "Pousse d'arbre d'épicéa"
+
+#: node_defs.lua:122
+msgid "Spruce Tree Leaves"
+msgstr "Feuilles d'épicéa"
+
+#: node_defs.lua:123
+msgid "Spruce Tree Trunk Stair"
+msgstr "Escalier en tronc d'épicéa"
+
+#: node_defs.lua:124
+msgid "Spruce Tree Trunk Slab"
+msgstr "Dalle en tronc d'épicéa"
+
+#: node_defs.lua:125
+msgid "Spruce Tree Planks Stair"
+msgstr "Escalier en bois d'épicéa"
+
+#: node_defs.lua:126
+msgid "Spruce Tree Planks Slab"
+msgstr "Dalle en bois d'épicéa"
+
+#: node_defs.lua:127
+msgid "Spruce Tree Fence"
+msgstr "Barrière en bois d'épicéa"
+
+#: node_defs.lua:128
+msgid "Spruce Tree Fence Rail"
+msgstr "Clôture en bois d'épicéa"
+
+#: node_defs.lua:129
+msgid "Spruce Tree Fence Gate"
+msgstr "Porte de clôture en bois d'épicéa"
+
+#: node_defs.lua:132
+msgid "Cedar Tree Trunk"
+msgstr "Tronc d'arbre de pin"
+
+#: node_defs.lua:133
+msgid "Cedar Tree Planks"
+msgstr "Planches d'arbre de pin"
+
+#: node_defs.lua:134
+msgid "Cedar Tree Sapling"
+msgstr "Pousse d'arbre de pin"
+
+#: node_defs.lua:135
+msgid "Cedar Tree Leaves"
+msgstr "Feuilles de pin"
+
+#: node_defs.lua:136
+msgid "Cedar Tree Trunk Stair"
+msgstr "Escalier en tronc de pin"
+
+#: node_defs.lua:137
+msgid "Cedar Tree Trunk Slab"
+msgstr "Dalle en tronc de pin"
+
+#: node_defs.lua:138
+msgid "Cedar Tree Planks Stair"
+msgstr "Escalier en bois de pin"
+
+#: node_defs.lua:139
+msgid "Cedar Tree Planks Slab"
+msgstr "Dalle en bois de pin"
+
+#: node_defs.lua:140
+msgid "Cedar Tree Fence"
+msgstr "Barrière en bois de pin"
+
+#: node_defs.lua:141
+msgid "Cedar Tree Fence Rail"
+msgstr "Clôture en bois de pin"
+
+#: node_defs.lua:142
+msgid "Cedar Tree Fence Gate"
+msgstr "Porte de clôture en bois de pin"
+
+#: node_defs.lua:145
+msgid "Poplar Tree Trunk"
+msgstr "Tronc de peuplier"
+
+#: node_defs.lua:146
+msgid "Poplar Tree Planks"
+msgstr "Plances de peuplier"
+
+#: node_defs.lua:147
+msgid "Poplar Tree Sapling"
+msgstr "Pousse de peuplier"
+
+#: node_defs.lua:148
+msgid "Poplar Tree Leaves"
+msgstr "Feuilles de peuplier"
+
+#: node_defs.lua:149
+msgid "Poplar Tree Trunk Stair"
+msgstr "Escalier en tronc de peuplier"
+
+#: node_defs.lua:150
+msgid "Poplar Tree Trunk Slab"
+msgstr "Dalle en tronc de peuplier"
+
+#: node_defs.lua:151
+msgid "Poplar Tree Planks Stair"
+msgstr "Escalier en bois de peuplier"
+
+#: node_defs.lua:152
+msgid "Poplar Tree Planks Slab"
+msgstr "Dalle en bois de peuplier"
+
+#: node_defs.lua:153
+msgid "Poplar Tree Fence"
+msgstr "Barrière en bois de peuplier"
+
+#: node_defs.lua:154
+msgid "Poplar Tree Fence Rail"
+msgstr "Clôture en bois de peuplier"
+
+#: node_defs.lua:155
+msgid "Poplar Tree Fence Gate"
+msgstr "Porte de clôture en bois de peuplier"
+
+#: node_defs.lua:158
+msgid "Small poplar Tree Sapling"
+msgstr "Pousse de petit peuplier"
+
+#: node_defs.lua:161
+msgid "Willow Tree Trunk"
+msgstr "Tronc d'arbre de saule"
+
+#: node_defs.lua:162
+msgid "Willow Tree Planks"
+msgstr "Planches de saule"
+
+#: node_defs.lua:163
+msgid "Willow Tree Sapling"
+msgstr "Pousse de saule"
+
+#: node_defs.lua:164
+msgid "Willow Tree Leaves"
+msgstr "Feuilles de saule"
+
+#: node_defs.lua:165
+msgid "Willow Tree Trunk Stair"
+msgstr "Escalier en tronc de saule"
+
+#: node_defs.lua:166
+msgid "Willow Tree Trunk Slab"
+msgstr "Dalle en tronc de saule"
+
+#: node_defs.lua:167
+msgid "Willow Tree Planks Stair"
+msgstr "Escalier en bois de saule"
+
+#: node_defs.lua:168
+msgid "Willow Tree Planks Slab"
+msgstr "Dalle en bois de saule"
+
+#: node_defs.lua:169
+msgid "Willow Tree Fence"
+msgstr "Barrière en bois de saule"
+
+#: node_defs.lua:170
+msgid "Willow Tree Fence Rail"
+msgstr "Clôture en bois de saule"
+
+#: node_defs.lua:171
+msgid "Willow Tree Fence Gate"
+msgstr "Porte de clôture en bois de saule"
+
+#: node_defs.lua:174
+msgid "Rubber Tree Trunk"
+msgstr "Tronc d'arbre a caoutchouc"
+
+#: node_defs.lua:175
+msgid "Rubber Tree Planks"
+msgstr "Planches d'arbre à caoutchouc"
+
+#: node_defs.lua:176
+msgid "Rubber Tree Sapling"
+msgstr "Pousse d'arbre à caoutchouc"
+
+#: node_defs.lua:177
+msgid "Rubber Tree Leaves"
+msgstr "Feuilles d'arbre à caoutchouc"
+
+#: node_defs.lua:178
+msgid "Rubber Tree Trunk Stair"
+msgstr "Escalier en tronc d'arbre à caoutchouc"
+
+#: node_defs.lua:179
+msgid "Rubber Tree Trunk Slab"
+msgstr "Dalle en tronc d'arbre à caoutchouc"
+
+#: node_defs.lua:180
+msgid "Rubber Tree Planks Stair"
+msgstr "Escalier en bois d'arbre à caoutchouc"
+
+#: node_defs.lua:181
+msgid "Rubber Tree Planks Slab"
+msgstr "Dalle en bois d'arbre à caoutchouc"
+
+#: node_defs.lua:182
+msgid "Rubber Tree Fence"
+msgstr "Barrière en bois d'arbre à caoutchouc"
+
+#: node_defs.lua:183
+msgid "Rubber Tree Fence Rail"
+msgstr "Clôture en bois d'arbre à caoutchouc"
+
+#: node_defs.lua:184
+msgid "Rubber Tree Fence Gate"
+msgstr "Porte de clôture en bois d'arbre à caoutchouc"
+
+#: node_defs.lua:187
+msgid "Douglas Fir Trunk"
+msgstr "Tronc de sapin de Douglas"
+
+#: node_defs.lua:188
+msgid "Douglas Fir Planks"
+msgstr "Planches de sapin de Douglas"
+
+#: node_defs.lua:189
+msgid "Douglas Fir Sapling"
+msgstr "Pousse de sapin de Douglas"
+
+#: node_defs.lua:190
+msgid "Douglas Fir Leaves"
+msgstr "Feuilles de sapin de Douglas"
+
+#: node_defs.lua:191
+msgid "Douglas Fir Trunk Stair"
+msgstr "Escalier en tronc de sapin de Douglas"
+
+#: node_defs.lua:192
+msgid "Douglas Fir Trunk Slab"
+msgstr "Dalle en tronc de sapin de Douglas"
+
+#: node_defs.lua:193
+msgid "Douglas Fir Planks Stair"
+msgstr "Escalier en bois de sapin de Douglas"
+
+#: node_defs.lua:194
+msgid "Douglas Fir Planks Slab"
+msgstr "Dalle en bois de sapin de Douglas"
+
+#: node_defs.lua:195
+msgid "Douglas Fir Fence"
+msgstr "Barrière en bois de sapin de Douglas"
+
+#: node_defs.lua:196
+msgid "Douglas Fir Fence Rail"
+msgstr "Clôture en bois de sapin de Douglas"
+
+#: node_defs.lua:197
+msgid "Douglas Fir Fence Gate"
+msgstr "Porte de clôture en bois de sapin de Douglas"
+
+#: node_defs.lua:200
+msgid "Jungle Tree Trunk"
+msgstr "Tronc d'arbre de la jungle"
+
+#: node_defs.lua:201
+msgid "Jungle Tree Planks"
+msgstr "Planches d'arbre de la jungle"
+
+#: node_defs.lua:202
+msgid "Jungle Tree Sapling"
+msgstr "Pousse d'arbre de la jungle"
+
+#: node_defs.lua:203
+msgid "Jungle Tree Leaves"
+msgstr "Feuilles d'arbre de la jungle"
+
+#: node_defs.lua:204
+msgid "Jungle Tree Trunk Stair"
+msgstr "Escalier en tronc d'arbre de la jungle"
+
+#: node_defs.lua:205
+msgid "Jungle Tree Trunk Slab"
+msgstr "Dalle en tronc d'arbre de la jungle"
+
+#: node_defs.lua:206
+msgid "Jungle Tree Planks Stair"
+msgstr "Escalier en bois d'arbre de la jungle"
+
+#: node_defs.lua:207
+msgid "Jungle Tree Planks Slab"
+msgstr "Dalle en bois d'arbre de la jungle"
+
+#: node_defs.lua:208
+msgid "Jungle Tree Fence"
+msgstr "Barrière en bois d'arbre de la jungle"
+
+#: node_defs.lua:209
+msgid "Jungle Tree Fence Rail"
+msgstr "Clôture en bois d'arbre de la jungle"
+
+#: node_defs.lua:210
+msgid "Jungle Tree Fence Gate"
+msgstr "Porte de clôture en bois d'arbre de la jungle"
+
+#: node_defs.lua:491
+msgid "@1 (fast growth)"
+msgstr "@1 (croissance rapide)"
+
+#: node_defs.lua:610
+msgid "Yellow"
+msgstr "jaune"
+
+#: node_defs.lua:610
+msgid "Red"
+msgstr "rouge"
+
+#: node_defs.lua:623
+msgid "Jungle Tree Leaves (@1)"
+msgstr "Feuilles d'arbre de la jungle (@1)"
+
+#: node_defs.lua:670
+msgid "Douglas Fir Leaves (Bright)"
+msgstr "Feuille de sapin de Douglas (brillant)"
+
+#: node_defs.lua:716
+msgid "Rubber Tree Trunk (Empty)"
+msgstr "Tronc d'arbre à caoutchouc (vide)"
+
