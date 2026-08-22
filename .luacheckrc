@@ -5,24 +5,20 @@ exclude_files = {".luacheckrc"}
 
 
 globals = {
-	"minetest",
-	"vector",
-	"VoxelManip",
-	"VoxelArea",
-	"PseudoRandom",
-	"ItemStack",
-	"default",
-	"dump",
-	"moretrees",
-	"ethereal",
+	"moretrees"
 }
 
 read_globals = {
+	-- Luanti
+	"minetest", "core",
+	"vector", "VoxelManip",
+	"VoxelArea", "PseudoRandom",
+	"ItemStack", "dump",
 	string = {fields = {"split"}},
-    table = {fields = {"copy", "getn"}},
+  table = {fields = {"copy", "getn"}},
 
-	"stairsplus",
-	"stairs",
-	"doors",
-	"xcompat",
+	-- Dependencies
+	"default", "ethereal",
+	"stairsplus", "stairs",
+	"doors", "xcompat",
 }

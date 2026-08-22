@@ -11,7 +11,7 @@
 
 -- © 2016, Rogier <rogier777@gmail.com>
 
-local S = minetest.get_translator("moretrees")
+local S = core.get_translator("moretrees")
 
 -- Some constants
 
@@ -27,55 +27,55 @@ if moretrees.dates_regrow_unpollinated_percent <= 0 then
 elseif moretrees.dates_regrow_unpollinated_percent >= 100 then
 	dates_regrow_prob = 1
 else
-	dates_regrow_prob = 1 - math.pow(moretrees.dates_regrow_unpollinated_percent/100, 1/flowers_wither_ichance)
+	dates_regrow_prob = 1 - math.pow(moretrees.dates_regrow_unpollinated_percent / 100, 1 / flowers_wither_ichance)
 end
 
 -- Make the date palm fruit trunk a real trunk (it is generated as a fruit)
-local trunk = minetest.registered_nodes["moretrees:date_palm_trunk"]
+local trunk = core.registered_nodes["moretrees:date_palm_trunk"]
 local ftrunk = {}
 local fftrunk = {}
 local mftrunk = {}
-for k,v in pairs(trunk) do
+for k, v in pairs(trunk) do
 	ftrunk[k] = v
 end
 ftrunk.tiles = {}
-for k,v in pairs(trunk.tiles) do
+for k, v in pairs(trunk.tiles) do
 	ftrunk.tiles[k] = v
 end
 ftrunk.drop = "moretrees:date_palm_trunk"
 ftrunk.after_destruct = function(pos, oldnode)
-	local dates = minetest.find_nodes_in_area(
-		{x=pos.x-2, y=pos.y, z=pos.z-2},
-		{x=pos.x+2, y=pos.y, z=pos.z+2},
-		{"group:moretrees_dates"}
+	local dates = core.find_nodes_in_area(
+		{ x = pos.x - 2, y = pos.y, z = pos.z - 2 },
+		{ x = pos.x + 2, y = pos.y, z = pos.z + 2 },
+		{ "group:moretrees_dates" }
 	)
-	for _,datespos in pairs(dates) do
-		-- minetest.dig_node(datespos) does not cause nearby dates to be dropped :-( ...
-		local items = minetest.get_node_drops(minetest.get_node(datespos).name)
-		minetest.swap_node(datespos, {name = "air"})
+	for _, datespos in pairs(dates) do
+		-- core.dig_node(datespos) does not cause nearby dates to be dropped :-( ...
+		local items = core.get_node_drops(core.get_node(datespos).name)
+		core.swap_node(datespos, { name = "air" })
 		for _, itemname in pairs(items) do
-			minetest.add_item(datespos, itemname)
+			core.add_item(datespos, itemname)
 		end
 	end
 end
-for k,v in pairs(ftrunk) do
+for k, v in pairs(ftrunk) do
 	mftrunk[k] = v
 	fftrunk[k] = v
 end
 fftrunk.tiles = {}
 mftrunk.tiles = {}
-for k,v in pairs(trunk.tiles) do
+for k, v in pairs(trunk.tiles) do
 	fftrunk.tiles[k] = v
 	mftrunk.tiles[k] = v
 end
 -- Make the different types of trunk distinguishable (but not too easily)
 ftrunk.tiles[1] = "moretrees_date_palm_trunk_top.png^[transformR180"
-ftrunk.description = ftrunk.description.." (gen)"
+ftrunk.description = ftrunk.description .. " (gen)"
 fftrunk.tiles[1] = "moretrees_date_palm_trunk_top.png^[transformR90"
 mftrunk.tiles[1] = "moretrees_date_palm_trunk_top.png^[transformR-90"
-minetest.register_node("moretrees:date_palm_fruit_trunk", ftrunk)
-minetest.register_node("moretrees:date_palm_ffruit_trunk", fftrunk)
-minetest.register_node("moretrees:date_palm_mfruit_trunk", mftrunk)
+core.register_node("moretrees:date_palm_fruit_trunk", ftrunk)
+core.register_node("moretrees:date_palm_ffruit_trunk", fftrunk)
+core.register_node("moretrees:date_palm_mfruit_trunk", mftrunk)
 
 -- ABM to grow new date blossoms
 local date_regrow_abm_spec = {
@@ -83,38 +83,39 @@ local date_regrow_abm_spec = {
 	interval = moretrees.dates_flower_interval,
 	chance = moretrees.dates_flower_chance,
 	action = function(pos, node, active_object_count, active_object_count_wider)
-		local dates = minetest.find_nodes_in_area(
-			{x=pos.x-2, y=pos.y, z=pos.z-2}, {x=pos.x+2, y=pos.y, z=pos.z+2},
+		local dates = core.find_nodes_in_area(
+			{ x = pos.x - 2, y = pos.y, z = pos.z - 2 },
+			{ x = pos.x + 2, y = pos.y, z = pos.z + 2 },
 			"group:moretrees_dates"
 		)
 
 		-- New blossom interval increases exponentially with number of dates already hanging
 		-- In addition: if more dates are hanging, the chance of picking an empty spot decreases as well...
-		if math.random(2^#dates) <= 2 then
+		if math.random(2 ^ #dates) <= 2 then
 			-- Grow in area of 5x5 round trunk; higher probability in 3x3 area close to trunk
-			local dx=math.floor((math.random(50)-18)/16)
-			local dz=math.floor((math.random(50)-18)/16)
-			local datepos = {x=pos.x+dx, y=pos.y, z=pos.z+dz}
-			local datenode = minetest.get_node(datepos)
+			local dx = math.floor((math.random(50) - 18) / 16)
+			local dz = math.floor((math.random(50) - 18) / 16)
+			local datepos = { x = pos.x + dx, y = pos.y, z = pos.z + dz }
+			local datenode = core.get_node(datepos)
 			if datenode.name == "air" then
 				if node.name == "moretrees:date_palm_ffruit_trunk" then
-					minetest.swap_node(datepos, {name="moretrees:dates_f0"})
+					core.swap_node(datepos, { name = "moretrees:dates_f0" })
 				else
-					minetest.swap_node(datepos, {name="moretrees:dates_m0"})
+					core.swap_node(datepos, { name = "moretrees:dates_m0" })
 				end
 			end
 		end
-	end
+	end,
 }
 if moretrees.dates_regrow_pollinated or moretrees.dates_regrow_unpollinated_percent > 0 then
-	minetest.register_abm(date_regrow_abm_spec)
+	core.register_abm(date_regrow_abm_spec)
 end
 
 -- Choose male or female palm, and spawn initial dates
 -- (Instead of dates, a dates fruit trunk is generated with the tree. This
 --  ABM converts the trunk to a female or male fruit trunk, and spawns some
 --  hanging dates)
-minetest.register_abm({
+core.register_abm({
 	nodenames = { "moretrees:date_palm_fruit_trunk" },
 	interval = 1,
 	chance = 1,
@@ -122,36 +123,36 @@ minetest.register_abm({
 		local type
 		if math.random(100) <= moretrees.dates_female_percent then
 			type = "f"
-			minetest.swap_node(pos, {name="moretrees:date_palm_ffruit_trunk"})
+			core.swap_node(pos, { name = "moretrees:date_palm_ffruit_trunk" })
 		else
 			type = "m"
-			minetest.swap_node(pos, {name="moretrees:date_palm_mfruit_trunk"})
+			core.swap_node(pos, { name = "moretrees:date_palm_mfruit_trunk" })
 		end
-		local dates1 = minetest.find_nodes_in_area(
-			{x=pos.x-1, y=pos.y, z=pos.z-1},
-			{x=pos.x+1, y=pos.y, z=pos.z+1},
+		local dates1 = core.find_nodes_in_area(
+			{ x = pos.x - 1, y = pos.y, z = pos.z - 1 },
+			{ x = pos.x + 1, y = pos.y, z = pos.z + 1 },
 			"air"
 		)
-		for _,genpos in pairs(dates1) do
+		for _, genpos in pairs(dates1) do
 			if math.random(100) <= 20 then
 				if type == "m" then
-					minetest.swap_node(genpos, {name = "moretrees:dates_n"})
+					core.swap_node(genpos, { name = "moretrees:dates_n" })
 				else
-					minetest.swap_node(genpos, {name = "moretrees:dates_f4"})
+					core.swap_node(genpos, { name = "moretrees:dates_f4" })
 				end
 			end
 		end
-		local dates2 = minetest.find_nodes_in_area(
-			{x=pos.x-2, y=pos.y, z=pos.z-2},
-			{x=pos.x+2, y=pos.y, z=pos.z+2},
+		local dates2 = core.find_nodes_in_area(
+			{ x = pos.x - 2, y = pos.y, z = pos.z - 2 },
+			{ x = pos.x + 2, y = pos.y, z = pos.z + 2 },
 			"air"
 		)
-		for _,genpos in pairs(dates2) do
+		for _, genpos in pairs(dates2) do
 			if math.random(100) <= 5 then
 				if type == "m" then
-					minetest.swap_node(genpos, {name = "moretrees:dates_n"})
+					core.swap_node(genpos, { name = "moretrees:dates_n" })
 				else
-					minetest.swap_node(genpos, {name = "moretrees:dates_f4"})
+					core.swap_node(genpos, { name = "moretrees:dates_f4" })
 				end
 			end
 		end
@@ -191,17 +192,17 @@ minetest.register_abm({
 --   for newly-grown male palms.
 
 -- Search statistics - used to limit the search load.
-local sect_search_stats = {}		-- Search statistics - server-wide
+local sect_search_stats = {} -- Search statistics - server-wide
 local function reset_sect_search_stats()
-	sect_search_stats.count = 0		-- # of searches
-	sect_search_stats.skip = 0		-- # of times skipped
-	sect_search_stats.sum = 0		-- total time spent
-	sect_search_stats.min = 999999999	-- min time spent
-	sect_search_stats.max = 0		-- max time spent
+	sect_search_stats.count = 0 -- # of searches
+	sect_search_stats.skip = 0 -- # of times skipped
+	sect_search_stats.sum = 0 -- total time spent
+	sect_search_stats.min = 999999999 -- min time spent
+	sect_search_stats.max = 0 -- max time spent
 end
 reset_sect_search_stats()
-sect_search_stats.last_us = 0			-- last time a search was done (microseconds, max: 2^32)
-sect_search_stats.last_s = 0			-- last time a search was done (system time in seconds)
+sect_search_stats.last_us = 0 -- last time a search was done (microseconds, max: 2^32)
+sect_search_stats.last_s = 0 -- last time a search was done (system time in seconds)
 
 -- Find male trunks in one section (=1/9 th) of the searchable area.
 -- sect is -4 to 4, where 0 is the center section
@@ -209,7 +210,7 @@ local function find_fruit_trunks_near(ftpos, sect)
 	local r = moretrees.dates_pollination_distance + 2 * math.sqrt(2)
 	local sect_hr = math.floor(r / 3 + 0.9999)
 	local sect_vr = math.floor(r / 2 + 0.9999)
-	local t0us = minetest.get_us_time()
+	local t0us = core.get_us_time()
 	local t0s = os.time()
 
 	-- Compute elapsed time since last search.
@@ -218,38 +219,42 @@ local function find_fruit_trunks_near(ftpos, sect)
 	if t0us < sect_search_stats.last_us then
 		-- Correct a simple wraparound.
 		-- This is not sufficient, as the time value may have wrapped more than once...
-		sect_search_stats.last_us = sect_search_stats.last_us - 2^32
+		sect_search_stats.last_us = sect_search_stats.last_us - 2 ^ 32
 	end
-	if t0s - sect_search_stats.last_s > 2^32/1000000 then
+	if t0s - sect_search_stats.last_s > 2 ^ 32 / 1000000 then
 		-- One additional correction is enough for our purposes.
 		-- For exact results, more corrections may be needed though...
 		-- (and even not applying this correction at all would still only yield
 		--  a minimal risk of a non-serious miscalculation...)
-		sect_search_stats.last_us = sect_search_stats.last_us - 2^32
+		sect_search_stats.last_us = sect_search_stats.last_us - 2 ^ 32
 	end
 
 	-- Skip the search if it is consuming too much CPU time
-	if sect_search_stats.count > 0 and moretrees.dates_blossom_search_iload > 0
-			and sect_search_stats.sum / sect_search_stats.count > moretrees.dates_blossom_search_time_treshold
-			and t0us - sect_search_stats.last_us < moretrees.dates_blossom_search_iload
-			* (sect_search_stats.sum / sect_search_stats.count) then
+	if
+		sect_search_stats.count > 0
+		and moretrees.dates_blossom_search_iload > 0
+		and sect_search_stats.sum / sect_search_stats.count > moretrees.dates_blossom_search_time_treshold
+		and t0us - sect_search_stats.last_us
+			< moretrees.dates_blossom_search_iload * (sect_search_stats.sum / sect_search_stats.count)
+	then
 		sect_search_stats.skip = sect_search_stats.skip + 1
 		return nil
 	end
 
-	local basevec = { x = ftpos.x + 2 * sect.x * sect_hr,
-			  y = ftpos.y,
-			  z = ftpos.z + 2 * sect.z * sect_hr}
+	local basevec = { x = ftpos.x + 2 * sect.x * sect_hr, y = ftpos.y, z = ftpos.z + 2 * sect.z * sect_hr }
 	-- find_nodes_in_area is limited to 82^3, make sure to not overrun it
 	local sizevec = { x = sect_hr, y = sect_vr, z = sect_hr }
-	if sect_hr * sect_hr * sect_vr > 41^3 then
-		sizevec = vector.apply(sizevec, function(a) return math.min(a, 41) end)
+	if sect_hr * sect_hr * sect_vr > 41 ^ 3 then
+		sizevec = vector.apply(sizevec, function(a)
+			return math.min(a, 41)
+		end)
 	end
 
-	local all_palms = minetest.find_nodes_in_area(
-				vector.subtract(basevec, sizevec),
-				vector.add(basevec, sizevec),
-				{"moretrees:date_palm_mfruit_trunk", "moretrees:date_palm_ffruit_trunk"})
+	local all_palms = core.find_nodes_in_area(
+		vector.subtract(basevec, sizevec),
+		vector.add(basevec, sizevec),
+		{ "moretrees:date_palm_mfruit_trunk", "moretrees:date_palm_ffruit_trunk" }
+	)
 
 	-- Collect different palms in separate lists.
 	local female_palms = {}
@@ -257,23 +262,23 @@ local function find_fruit_trunks_near(ftpos, sect)
 	local all_male_palms = {}
 	for _, pos in pairs(all_palms) do
 		if pos.x ~= ftpos.x or pos.y ~= ftpos.y or pos.z ~= ftpos.z then
-			local node = minetest.get_node(pos)
+			local node = core.get_node(pos)
 			if node and node.name == "moretrees:date_palm_ffruit_trunk" then
-				table.insert(female_palms,pos)
+				table.insert(female_palms, pos)
 			elseif node then
-				table.insert(all_male_palms,pos)
+				table.insert(all_male_palms, pos)
 				-- In sector 0, all palms are of interest.
 				-- In other sectors, forget about palms that are too far away.
 				if sect == 0 then
-					table.insert(male_palms,pos)
+					table.insert(male_palms, pos)
 				else
 					local ssq = 0
-					for _, c in pairs({"x", "z"}) do
+					for _, c in pairs({ "x", "z" }) do
 						local dc = pos[c] - ftpos[c]
 						ssq = ssq + dc * dc
 					end
 					if math.sqrt(ssq) <= r then
-						table.insert(male_palms,pos)
+						table.insert(male_palms, pos)
 					end
 				end
 			end
@@ -281,16 +286,16 @@ local function find_fruit_trunks_near(ftpos, sect)
 	end
 
 	-- Update search statistics
-	local t1us = minetest.get_us_time()
+	local t1us = core.get_us_time()
 	if t1us < t0us then
 		-- Wraparound. Assume the search lasted less than 2^32 microseconds (~71 min)
 		-- (so no need to apply another correction)
-		t0us = t0us - 2^32
+		t0us = t0us - 2 ^ 32
 	end
 	sect_search_stats.last_us = t0us
 	sect_search_stats.last_s = t0s
 	sect_search_stats.count = sect_search_stats.count + 1
-	sect_search_stats.sum = sect_search_stats.sum + t1us-t0us
+	sect_search_stats.sum = sect_search_stats.sum + t1us - t0us
 	if t1us - t0us < sect_search_stats.min then
 		sect_search_stats.min = t1us - t0us
 	end
@@ -304,19 +309,24 @@ end
 local function dates_print_search_stats(log)
 	local stats
 	if sect_search_stats.count > 0 then
-		stats = string.format("Male date tree searching stats: searches: %d/%d:  average: %d µs  (%d..%d)",
-			sect_search_stats.count, sect_search_stats.count + sect_search_stats.skip,
-			sect_search_stats.sum/sect_search_stats.count, sect_search_stats.min, sect_search_stats.max)
+		stats = string.format(
+			"Male date tree searching stats: searches: %d/%d:  average: %d µs  (%d..%d)",
+			sect_search_stats.count,
+			sect_search_stats.count + sect_search_stats.skip,
+			sect_search_stats.sum / sect_search_stats.count,
+			sect_search_stats.min,
+			sect_search_stats.max
+		)
 	else
 		stats = string.format("Male date tree searching stats: searches: 0/0:  average: (no searches yet)")
 	end
 	if log then
-		minetest.log("action", "[moretrees] " .. stats)
+		core.log("action", "[moretrees] " .. stats)
 	end
 	return true, stats
 end
 
-minetest.register_chatcommand("dates_stats", {
+core.register_chatcommand("dates_stats", {
 	description = "Print male date palm search statistics",
 	params = "|chat|log|reset",
 	privs = { server = true },
@@ -337,14 +347,16 @@ minetest.register_chatcommand("dates_stats", {
 
 -- Find the female trunk near the female flowers to be pollinated
 local function find_female_trunk(fbpos)
-	local trunks = minetest.find_nodes_in_area({x=fbpos.x-2, y=fbpos.y, z=fbpos.z-2},
-						{x=fbpos.x+2, y=fbpos.y, z=fbpos.z+2},
-						"moretrees:date_palm_ffruit_trunk")
+	local trunks = core.find_nodes_in_area(
+		{ x = fbpos.x - 2, y = fbpos.y, z = fbpos.z - 2 },
+		{ x = fbpos.x + 2, y = fbpos.y, z = fbpos.z + 2 },
+		"moretrees:date_palm_ffruit_trunk"
+	)
 	local ftpos
 	local d = 99
 	for x, pos in pairs(trunks) do
 		local ssq = 0
-		for _, c in pairs({"x", "z"}) do
+		for _, c in pairs({ "x", "z" }) do
 			local dc = pos[c] - fbpos[c]
 			ssq = ssq + dc * dc
 		end
@@ -360,12 +372,14 @@ end
 -- the male blossom must be in range of a specific female blossom as well
 local function find_male_blossom_near_trunk(fbpos, mtpos)
 	local r = moretrees.dates_pollination_distance
-	local blossoms = minetest.find_nodes_in_area({x=mtpos.x-2, y=mtpos.y, z=mtpos.z-2},
-						{x=mtpos.x+2, y=mtpos.y, z=mtpos.z+2},
-						"moretrees:dates_m0")
+	local blossoms = core.find_nodes_in_area(
+		{ x = mtpos.x - 2, y = mtpos.y, z = mtpos.z - 2 },
+		{ x = mtpos.x + 2, y = mtpos.y, z = mtpos.z + 2 },
+		"moretrees:dates_m0"
+	)
 	for x, mbpos in pairs(blossoms) do
 		local ssq = 0
-		for _, c in pairs({"x", "z"}) do
+		for _, c in pairs({ "x", "z" }) do
 			local dc = mbpos[c] - fbpos[c]
 			ssq = ssq + dc * dc
 		end
@@ -373,7 +387,6 @@ local function find_male_blossom_near_trunk(fbpos, mtpos)
 			return mbpos
 		end
 	end
-
 end
 
 -- Find a male blossom in range of a specific female blossom,
@@ -383,16 +396,16 @@ local function find_male_blossom_in_mpalms(ftpos, fbpos, mpalms)
 	-- First, compute the order in which the sectors will be searched
 	local sect_index = {}
 	local sect_rnd = {}
-	for i = -4,4 do
+	for i = -4, 4 do
 		local n = math.random(1023)
-		sect_index[n] =  i
+		sect_index[n] = i
 		table.insert(sect_rnd, n)
 	end
 	table.sort(sect_rnd)
 
 	-- Search the sectors
 	local sect_old = 0
-	local sect_time = minetest.get_gametime()
+	local sect_time = core.get_gametime()
 	for _, n in pairs(sect_rnd) do
 		-- Record the oldest sector, so that it can be searched if no male
 		-- blossoms were found
@@ -405,7 +418,7 @@ local function find_male_blossom_in_mpalms(ftpos, fbpos, mpalms)
 		end
 		if mpalms.sect[sect_index[n]] and #mpalms.sect[sect_index[n]] then
 			for px, mtpos in pairs(mpalms.sect[sect_index[n]]) do
-				local node = minetest.get_node(mtpos)
+				local node = core.get_node(mtpos)
 				if node and node.name == "moretrees:date_palm_mfruit_trunk" then
 					local mbpos = find_male_blossom_near_trunk(fbpos, mtpos)
 					if mbpos then
@@ -425,8 +438,8 @@ end
 -- using the cache associated with the given female trunk
 -- If necessary, recompute part of the cache
 local last_search_result = {}
-local function find_male_blossom_with_ftrunk(fbpos,ftpos)
-	local meta = minetest.get_meta(ftpos)
+local function find_male_blossom_with_ftrunk(fbpos, ftpos)
+	local meta = core.get_meta(ftpos)
 	local mpalms
 	local cache_changed = true
 
@@ -435,7 +448,7 @@ local function find_male_blossom_with_ftrunk(fbpos,ftpos)
 	if mpalms_dist and mpalms_dist == moretrees.dates_pollination_distance then
 		mpalms = meta:get_string("male_palms")
 		if mpalms and mpalms ~= "" then
-			mpalms = minetest.deserialize(mpalms)
+			mpalms = core.deserialize(mpalms)
 			cache_changed = false
 		end
 	end
@@ -452,8 +465,8 @@ local function find_male_blossom_with_ftrunk(fbpos,ftpos)
 
 	-- Always make sure that sector 0 is cached
 	if not mpalms.sect[0] then
-		mpalms.sect[0], fpalms_list, all_mpalms_list = find_fruit_trunks_near(ftpos, {x = 0, z = 0})
-		mpalms.sect_time[0] = minetest.get_gametime()
+		mpalms.sect[0], fpalms_list, all_mpalms_list = find_fruit_trunks_near(ftpos, { x = 0, z = 0 })
+		mpalms.sect_time[0] = core.get_gametime()
 		sector0_searched = true
 		cache_changed = true
 		last_search_result.female = fpalms_list
@@ -472,8 +485,13 @@ local function find_male_blossom_with_ftrunk(fbpos,ftpos)
 		end
 		-- Use globally cached result if possible
 		mpalms.sect[sect_old] = nil
-		if sect_old == 0 and mpalms.sect_time[0] and mpalms.sect_time[0] > 0
-				and last_search_result.male and #last_search_result.male then
+		if
+			sect_old == 0
+			and mpalms.sect_time[0]
+			and mpalms.sect_time[0] > 0
+			and last_search_result.male
+			and #last_search_result.male
+		then
 			for _, pos in pairs(last_search_result.female) do
 				if pos.x == ftpos.x and pos.y == ftpos.y and pos.z == ftpos.z then
 					mpalms.sect[sect_old] = last_search_result.male
@@ -485,10 +503,8 @@ local function find_male_blossom_with_ftrunk(fbpos,ftpos)
 		end
 		-- Else do a new search
 		if not mpalms.sect[sect_old] then
-			mpalms.sect[sect_old], fpalms_list, all_mpalms_list = find_fruit_trunks_near(
-				ftpos,
-				{x = (sect_old + 4) % 3 - 1, z = (sect_old + 4) / 3 - 1}
-			)
+			mpalms.sect[sect_old], fpalms_list, all_mpalms_list =
+				find_fruit_trunks_near(ftpos, { x = (sect_old + 4) % 3 - 1, z = (sect_old + 4) / 3 - 1 })
 			cache_changed = true
 			if sect_old == 0 then
 				-- Save the results if it is sector 0
@@ -497,7 +513,7 @@ local function find_male_blossom_with_ftrunk(fbpos,ftpos)
 				last_search_result.male = all_mpalms_list
 			end
 			if mpalms.sect[sect_old] then
-				mpalms.sect_time[sect_old] = minetest.get_gametime()
+				mpalms.sect_time[sect_old] = core.get_gametime()
 			else
 				mpalms.sect_time[sect_old] = nil
 			end
@@ -512,9 +528,9 @@ local function find_male_blossom_with_ftrunk(fbpos,ftpos)
 		all_mpalms.sect_time = {}
 		all_mpalms.sect[0] = all_mpalms_list
 		-- Don't set sect_time[0], so that the cached sector will be re-searched soon (if necessary)
-		local all_mpalms_serialized = minetest.serialize(all_mpalms)
+		local all_mpalms_serialized = core.serialize(all_mpalms)
 		for _, pos in pairs(fpalms_list) do
-			local fmeta = minetest.get_meta(pos)
+			local fmeta = core.get_meta(pos)
 			local fdist = fmeta:get_int("male_palms_dist")
 			if not fdist or fdist ~= moretrees.dates_pollination_distance then
 				fmeta:set_string("male_palms", all_mpalms_serialized)
@@ -525,7 +541,7 @@ local function find_male_blossom_with_ftrunk(fbpos,ftpos)
 
 	-- Save cache.
 	if cache_changed then
-		meta:set_string("male_palms", minetest.serialize(mpalms))
+		meta:set_string("male_palms", core.serialize(mpalms))
 	end
 
 	return mbpos
@@ -542,7 +558,7 @@ end
 
 -- Growing function for dates
 local dates_growfn = function(pos, elapsed)
-	local node = minetest.get_node(pos)
+	local node = core.get_node(pos)
 	local delay = moretrees.dates_grow_interval
 	local action
 	if not node then
@@ -550,28 +566,28 @@ local dates_growfn = function(pos, elapsed)
 	elseif not moretrees.dates_regrow_pollinated and dates_regrow_prob == 0 then
 		-- Regrowing of dates is disabled.
 		if string.find(node.name, "moretrees:dates_f") then
-			minetest.swap_node(pos, {name="moretrees:dates_f4"})
+			core.swap_node(pos, { name = "moretrees:dates_f4" })
 		elseif string.find(node.name, "moretrees:dates_m") then
-			minetest.swap_node(pos, {name="moretrees:dates_n"})
+			core.swap_node(pos, { name = "moretrees:dates_n" })
 		else
-			minetest.swap_node(pos, {name = "air"})
+			core.swap_node(pos, { name = "air" })
 		end
 		return
 	elseif node.name == "moretrees:dates_f0" and math.random(100) <= 100 * dates_regrow_prob then
 		-- Dates grow unpollinated
-		minetest.swap_node(pos, {name="moretrees:dates_f1"})
+		core.swap_node(pos, { name = "moretrees:dates_f1" })
 		action = "nopollinate"
 	elseif node.name == "moretrees:dates_f0" and moretrees.dates_regrow_pollinated and find_male_blossom(pos) then
 		-- Pollinate flowers
-		minetest.swap_node(pos, {name="moretrees:dates_f1"})
+		core.swap_node(pos, { name = "moretrees:dates_f1" })
 		action = "pollinate"
 	elseif string.match(node.name, "0$") then
 		-- Make female unpollinated and male flowers last a bit longer
 		if math.random(flowers_wither_ichance) == 1 then
 			if node.name == "moretrees:dates_f0" then
-				minetest.swap_node(pos, {name="moretrees:dates_fn"})
+				core.swap_node(pos, { name = "moretrees:dates_fn" })
 			else
-				minetest.swap_node(pos, {name="moretrees:dates_n"})
+				core.swap_node(pos, { name = "moretrees:dates_n" })
 			end
 			action = "wither"
 		else
@@ -581,12 +597,12 @@ local dates_growfn = function(pos, elapsed)
 		-- Remove dates, and optionally drop them as items
 		if math.random(dates_drop_ichance) == 1 then
 			if moretrees.dates_item_drop_ichance > 0 and math.random(moretrees.dates_item_drop_ichance) == 1 then
-				local items = minetest.get_node_drops(minetest.get_node(pos).name)
+				local items = core.get_node_drops(core.get_node(pos).name)
 				for _, itemname in pairs(items) do
-					minetest.add_item(pos, itemname)
+					core.add_item(pos, itemname)
 				end
 			end
-			minetest.swap_node(pos, {name="moretrees:dates_n"})
+			core.swap_node(pos, { name = "moretrees:dates_n" })
 			action = "drop"
 		else
 			action = "nodrop"
@@ -594,7 +610,7 @@ local dates_growfn = function(pos, elapsed)
 	elseif string.match(node.name, "n$") then
 		-- Remove stems.
 		if math.random(stems_drop_ichance) == 1 then
-			minetest.swap_node(pos, {name = "air"})
+			core.swap_node(pos, { name = "air" })
 			return "stemdrop"
 		end
 		action = "nostemdrop"
@@ -602,11 +618,11 @@ local dates_growfn = function(pos, elapsed)
 		-- Grow dates
 		local offset = 18
 		local n = string.sub(node.name, offset)
-		minetest.swap_node(pos, {name=string.sub(node.name, 1, offset-1)..n+1})
+		core.swap_node(pos, { name = string.sub(node.name, 1, offset - 1) .. n + 1 })
 		action = "grow"
 	end
 	-- Don't catch up when elapsed time is large. Regular visits are needed for growth...
-	local timer = minetest.get_node_timer(pos)
+	local timer = core.get_node_timer(pos)
 	timer:start(delay + math.random(moretrees.dates_grow_interval))
 	return action
 end
@@ -618,9 +634,9 @@ end
 local stat = {}
 stat.count = 0
 local dates_growfn_profiling = function(pos, elapsed)
-	local t0 = minetest.get_us_time()
+	local t0 = core.get_us_time()
 	local action = dates_growfn(pos, elapsed)
-	local t1 = minetest.get_us_time()
+	local t1 = core.get_us_time()
 	if t1 < t0 then
 		t1 = t1 + 2^32
 	end
@@ -679,33 +695,33 @@ end
 -- Register dates
 
 local dates_starttimer = function(pos, elapsed)
-	local timer = minetest.get_node_timer(pos)
+	local timer = core.get_node_timer(pos)
 	local base_interval = moretrees.dates_grow_interval * 2 / 3
 	timer:set(base_interval + math.random(base_interval), elapsed or 0)
 end
 
 local dates_drop = {
 	items = {
-		{items = { "moretrees:date" }},
-		{items = { "moretrees:date" }},
-		{items = { "moretrees:date" }},
-		{items = { "moretrees:date" }},
-		{items = { "moretrees:date" }, rarity = 2 },
-		{items = { "moretrees:date" }, rarity = 2 },
-		{items = { "moretrees:date" }, rarity = 2 },
-		{items = { "moretrees:date" }, rarity = 2 },
-		{items = { "moretrees:date" }, rarity = 5 },
-		{items = { "moretrees:date" }, rarity = 5 },
-		{items = { "moretrees:date" }, rarity = 5 },
-		{items = { "moretrees:date" }, rarity = 5 },
-		{items = { "moretrees:date" }, rarity = 20 },
-		{items = { "moretrees:date" }, rarity = 20 },
-		{items = { "moretrees:date" }, rarity = 20 },
-		{items = { "moretrees:date" }, rarity = 20 },
-	}
+		{ items = { "moretrees:date" } },
+		{ items = { "moretrees:date" } },
+		{ items = { "moretrees:date" } },
+		{ items = { "moretrees:date" } },
+		{ items = { "moretrees:date" }, rarity = 2 },
+		{ items = { "moretrees:date" }, rarity = 2 },
+		{ items = { "moretrees:date" }, rarity = 2 },
+		{ items = { "moretrees:date" }, rarity = 2 },
+		{ items = { "moretrees:date" }, rarity = 5 },
+		{ items = { "moretrees:date" }, rarity = 5 },
+		{ items = { "moretrees:date" }, rarity = 5 },
+		{ items = { "moretrees:date" }, rarity = 5 },
+		{ items = { "moretrees:date" }, rarity = 20 },
+		{ items = { "moretrees:date" }, rarity = 20 },
+		{ items = { "moretrees:date" }, rarity = 20 },
+		{ items = { "moretrees:date" }, rarity = 20 },
+	},
 }
 
-for _,suffix in ipairs({"f0", "f1", "f2", "f3", "f4", "m0", "fn", "n"}) do
+for _, suffix in ipairs({ "f0", "f1", "f2", "f3", "f4", "m0", "fn", "n" }) do
 	local name
 	if suffix == "f0" or suffix == "m0" then
 		name = S("Date Flowers")
@@ -717,28 +733,27 @@ for _,suffix in ipairs({"f0", "f1", "f2", "f3", "f4", "m0", "fn", "n"}) do
 	local dropfn = suffix == "f4" and dates_drop or ""
 	local datedef = {
 		description = name,
-		tiles = {"moretrees_dates_"..suffix..".png"},
+		tiles = { "moretrees_dates_" .. suffix .. ".png" },
 		visual_scale = 2,
 		drawtype = "plantlike",
 		paramtype = "light",
 		sunlight_propagates = true,
 		walkable = false,
 		is_ground_content = false,
-		groups = { fleshy=3, dig_immediate=3, flammable=2, moretrees_dates=1 },
-		inventory_image = "moretrees_dates_"..suffix..".png^[transformR0",
-		wield_image = "moretrees_dates_"..suffix..".png^[transformR90",
+		groups = { fleshy = 3, dig_immediate = 3, flammable = 2, moretrees_dates = 1 },
+		inventory_image = "moretrees_dates_" .. suffix .. ".png^[transformR0",
+		wield_image = "moretrees_dates_" .. suffix .. ".png^[transformR90",
 		sounds = xcompat.sounds.node_sound_default(),
 		drop = dropfn,
 		selection_box = {
 			type = "fixed",
-			fixed = {-0.3, -0.3, -0.3, 0.3, 3.5, 0.3}
+			fixed = { -0.3, -0.3, -0.3, 0.3, 3.5, 0.3 },
 		},
 		on_timer = dates_growfn,
 		on_construct = (moretrees.dates_regrow_pollinated or moretrees.dates_regrow_unpollinated_percent > 0)
-				and dates_starttimer,
-
+			and dates_starttimer,
 	}
-	minetest.register_node("moretrees:dates_"..suffix, datedef)
+	core.register_node("moretrees:dates_" .. suffix, datedef)
 end
 
 -- If regrowing was previously disabled, but is enabled now, make sure timers are started for existing dates
@@ -747,24 +762,23 @@ if moretrees.dates_regrow_pollinated or moretrees.dates_regrow_unpollinated_perc
 		name = "moretrees:restart_dates_regrow_timer",
 		nodenames = "group:moretrees_dates",
 		action = function(pos, node, active_object_count, active_object_count_wider)
-			local timer = minetest.get_node_timer(pos)
+			local timer = core.get_node_timer(pos)
 			if not timer:is_started() then
 				dates_starttimer(pos)
 			else
 				local timeout = timer:get_timeout()
 				local elapsed = timer:get_elapsed()
-				if timeout - elapsed > moretrees.dates_grow_interval * 4/3 then
-					dates_starttimer(pos, math.random(moretrees.dates_grow_interval * 4/3))
+				if timeout - elapsed > moretrees.dates_grow_interval * 4 / 3 then
+					dates_starttimer(pos, math.random(moretrees.dates_grow_interval * 4 / 3))
 				end
 			end
 		end,
 	}
-	if minetest.register_lbm then
-		minetest.register_lbm(spec)
+	if core.register_lbm then
+		core.register_lbm(spec)
 	else
 		spec.interval = 3557
 		spec.chance = 10
-		minetest.register_abm(spec)
+		core.register_abm(spec)
 	end
 end
-
