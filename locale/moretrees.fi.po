@@ -8,823 +8,825 @@ msgstr ""
 "Project-Id-Version: moretrees\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-08-21 13:05-0500\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2026-08-30 00:43+0000\n"
+"Last-Translator: Jouni Järvinen <rautajunk@gmail.com>\n"
+"Language-Team: Finnish <https://translate.luanti.ch/projects/mt-mods/"
+"moretrees/fi/>\n"
 "Language: fi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 2026.8.1\n"
 
 #: cocos_palm.lua:155
 msgid "Coconut Flower"
-msgstr ""
+msgstr "Kookoskukka"
 
 #: cocos_palm.lua:157
 msgid "Coconut"
-msgstr ""
+msgstr "Kookos"
 
 #: crafts.lua:40
 msgid "Coconut Milk"
-msgstr ""
+msgstr "Kookosmaito"
 
 #: crafts.lua:48
 msgid "Raw Coconut"
-msgstr ""
+msgstr "Raaka kookos"
 
 #: crafts.lua:54
 msgid "Date"
-msgstr ""
+msgstr "Päivämäärä"
 
 #: crafts.lua:60
 msgid "Date & nut snack"
-msgstr ""
+msgstr "Taateli-pähkinävälipala"
 
 #: crafts.lua:66
 msgid "Date-nut cake batter"
-msgstr ""
+msgstr "Taateli-pähkinäkakkutaikina"
 
 #: crafts.lua:71
 msgid "Date-nut cake"
-msgstr ""
+msgstr "Taateli-pähkinäkakku"
 
 #: crafts.lua:77
 msgid "Date-nut energy bar"
-msgstr ""
+msgstr "Taateli-pähkinäenergiapatukka"
 
 #: crafts.lua:83
 msgid "Acorn Muffin batter"
-msgstr ""
+msgstr "Terhomuffinitaikina"
 
 #: crafts.lua:88
 msgid "Acorn Muffin"
-msgstr ""
+msgstr "Terhomuffini"
 
 #: crafts.lua:94
 msgid "Roasted Spruce Cone Nuts"
-msgstr ""
+msgstr "Paahdetut kuusenkäpyt"
 
 #: crafts.lua:100
 msgid "Roasted Cedar Cone Nuts"
-msgstr ""
+msgstr "Paahdetut setripuunkäpyt"
 
 #: crafts.lua:106
 msgid "Roasted Fir Cone Nuts"
-msgstr ""
+msgstr "Paahdetut Douglaskuusenkäpyt"
 
 #: date_palm.lua:711
 msgid "Date Flowers"
-msgstr ""
+msgstr "Taatelipuun kukat"
 
 #: date_palm.lua:713
 msgid "Date Stem"
-msgstr ""
+msgstr "Taatelivarsi"
 
 #: date_palm.lua:715
 msgid "Dates"
-msgstr ""
+msgstr "Taatelit"
 
 #: init.lua:22
 msgid "Sapling"
-msgstr ""
+msgstr "Taimi"
 
 #: init.lua:26
 msgid "Tree"
-msgstr ""
+msgstr "Puu"
 
 #: init.lua:30
 msgid "Wooden Planks"
-msgstr ""
+msgstr "Puulankut"
 
 #: init.lua:34
 msgid "Leaves"
-msgstr ""
+msgstr "Lehdet"
 
 #: init.lua:38
 msgid "Wooden Fence"
-msgstr ""
+msgstr "Puuaita"
 
 #: init.lua:42
 msgid "Wooden Fence Rail"
-msgstr ""
+msgstr "Puuaitakaide"
 
 #: init.lua:48 init.lua:52
 msgid "Wooden Fence Gate"
-msgstr ""
+msgstr "Puinen aitaportti"
 
 #: node_defs.lua:9
 msgid "Beech Tree"
-msgstr ""
+msgstr "Pyökki"
 
 #: node_defs.lua:10
 msgid "Apple Tree"
-msgstr ""
+msgstr "Omenapuu"
 
 #: node_defs.lua:11
 msgid "Acorn"
-msgstr ""
+msgstr "Terho"
 
 #: node_defs.lua:11
 msgid "Oak Tree"
-msgstr ""
+msgstr "Tammi"
 
 #: node_defs.lua:12
 msgid "Giant Sequoia"
-msgstr ""
+msgstr "Jättiläispetopuu"
 
 #: node_defs.lua:13
 msgid "Birch Tree"
-msgstr ""
+msgstr "Koivu"
 
 #: node_defs.lua:14
 msgid "Palm Tree"
-msgstr ""
+msgstr "Palmu"
 
 #: node_defs.lua:15
 msgid "Date Palm Tree"
-msgstr ""
+msgstr "Taatelipalmu"
 
 #: node_defs.lua:16
 msgid "Spruce Cone"
-msgstr ""
+msgstr "Kuusenkäpy"
 
 #: node_defs.lua:16
 msgid "Spruce Tree"
-msgstr ""
+msgstr "Kuusenpuu"
 
 #: node_defs.lua:17
 msgid "Cedar Cone"
-msgstr ""
+msgstr "Setrikäpy"
 
 #: node_defs.lua:17
 msgid "Cedar Tree"
-msgstr ""
+msgstr "Setripuu"
 
 #: node_defs.lua:18 node_defs.lua:19
 msgid "Poplar Tree"
-msgstr ""
+msgstr "Poppelipuu"
 
 #: node_defs.lua:20
 msgid "Willow Tree"
-msgstr ""
+msgstr "Pajupuu"
 
 #: node_defs.lua:21
 msgid "Rubber Tree"
-msgstr ""
+msgstr "Kumipuu"
 
 #: node_defs.lua:22
 msgid "Douglas Fir"
-msgstr ""
+msgstr "Douglaskuusi"
 
 #: node_defs.lua:22
 msgid "Fir Cone"
-msgstr ""
+msgstr "Douglaskuusenkäpy"
 
 #: node_defs.lua:23
 msgid "Jungle Tree"
-msgstr ""
+msgstr "Viidakkopuu"
 
 #: node_defs.lua:28
 msgid "Beech Tree Trunk"
-msgstr ""
+msgstr "Pyökin runko"
 
 #: node_defs.lua:29
 msgid "Beech Tree Planks"
-msgstr ""
+msgstr "Pyökkilankut"
 
 #: node_defs.lua:30
 msgid "Beech Tree Sapling"
-msgstr ""
+msgstr "Pyökkitaimi"
 
 #: node_defs.lua:31
 msgid "Beech Tree Leaves"
-msgstr ""
+msgstr "Pyökkilehdet"
 
 #: node_defs.lua:32
 msgid "Beech Tree Trunk Stair"
-msgstr ""
+msgstr "Pyökin rungon portaat"
 
 #: node_defs.lua:33
 msgid "Beech Tree Trunk Slab"
-msgstr ""
+msgstr "Pyökin rungon laatta"
 
 #: node_defs.lua:34
 msgid "Beech Tree Planks Stair"
-msgstr ""
+msgstr "Pyökkipuun lankkuporras"
 
 #: node_defs.lua:35
 msgid "Beech Tree Planks Slab"
-msgstr ""
+msgstr "Pyökkipuun lankkulaatta"
 
 #: node_defs.lua:36
 msgid "Beech Tree Fence"
-msgstr ""
+msgstr "Pyökkiaita"
 
 #: node_defs.lua:37
 msgid "Beech Tree Fence Rail"
-msgstr ""
+msgstr "Pyökkiaitakaide"
 
 #: node_defs.lua:38
 msgid "Beech Tree Fence Gate"
-msgstr ""
+msgstr "Pyökkiaitaportti"
 
 #: node_defs.lua:41
 msgid "Apple Tree Trunk"
-msgstr ""
+msgstr "Omenapuun runko"
 
 #: node_defs.lua:42
 msgid "Apple Tree Planks"
-msgstr ""
+msgstr "Omenapuulankut"
 
 #: node_defs.lua:43
 msgid "Apple Tree Sapling"
-msgstr ""
+msgstr "Omenapuun taimi"
 
 #: node_defs.lua:44
 msgid "Apple Tree Leaves"
-msgstr ""
+msgstr "Omenapuun lehdet"
 
 #: node_defs.lua:45
 msgid "Apple Tree Trunk Stair"
-msgstr ""
+msgstr "Omenapuun rungon portaat"
 
 #: node_defs.lua:46
 msgid "Apple Tree Trunk Slab"
-msgstr ""
+msgstr "Omenapuun rungon laatta"
 
 #: node_defs.lua:47
 msgid "Apple Tree Planks Stair"
-msgstr ""
+msgstr "Omenapuulankkuportaat"
 
 #: node_defs.lua:48
 msgid "Apple Tree Planks Slab"
-msgstr ""
+msgstr "Omenapuulankkulaatta"
 
 #: node_defs.lua:49
 msgid "Apple Tree Fence"
-msgstr ""
+msgstr "Omenapuuaita"
 
 #: node_defs.lua:50
 msgid "Apple Tree Fence Rail"
-msgstr ""
+msgstr "Omenapuuaitakaide"
 
 #: node_defs.lua:51
 msgid "Apple Tree Fence Gate"
-msgstr ""
+msgstr "Omenapuuaitaportti"
 
 #: node_defs.lua:54
 msgid "Oak Tree Trunk"
-msgstr ""
+msgstr "Tammen runko"
 
 #: node_defs.lua:55
 msgid "Oak Tree Planks"
-msgstr ""
+msgstr "Tammilankut"
 
 #: node_defs.lua:56
 msgid "Oak Tree Sapling"
-msgstr ""
+msgstr "Tammen taimi"
 
 #: node_defs.lua:57
 msgid "Oak Tree Leaves"
-msgstr ""
+msgstr "Tammen lehdet"
 
 #: node_defs.lua:58
 msgid "Oak Tree Trunk Stair"
-msgstr ""
+msgstr "Tammen rungon portaat"
 
 #: node_defs.lua:59
 msgid "Oak Tree Trunk Slab"
-msgstr ""
+msgstr "Tammen rungon laatta"
 
 #: node_defs.lua:60
 msgid "Oak Tree Planks Stair"
-msgstr ""
+msgstr "Tammilankkuportaat"
 
 #: node_defs.lua:61
 msgid "Oak Tree Planks Slab"
-msgstr ""
+msgstr "Tammilankkulaatta"
 
 #: node_defs.lua:62
 msgid "Oak Tree Fence"
-msgstr ""
+msgstr "Tammiaita"
 
 #: node_defs.lua:63
 msgid "Oak Tree Fence Rail"
-msgstr ""
+msgstr "Tammiaitakaide"
 
 #: node_defs.lua:64
 msgid "Oak Tree Fence Gate"
-msgstr ""
+msgstr "Tammiaitaportti"
 
 #: node_defs.lua:67
 msgid "Giant Sequoia Trunk"
-msgstr ""
+msgstr "Jättiläispetopuun runko"
 
 #: node_defs.lua:68
 msgid "Giant Sequoia Planks"
-msgstr ""
+msgstr "Jättiläispetopuun lankut"
 
 #: node_defs.lua:69
 msgid "Giant Sequoia Sapling"
-msgstr ""
+msgstr "Jättiläispetopuun taimi"
 
 #: node_defs.lua:70
 msgid "Giant Sequoia Leaves"
-msgstr ""
+msgstr "Jättiläispetopuun lehdet"
 
 #: node_defs.lua:71
 msgid "Giant Sequoia Trunk Stair"
-msgstr ""
+msgstr "Jättiläispetopuun rungon portaat"
 
 #: node_defs.lua:72
 msgid "Giant Sequoia Trunk Slab"
-msgstr ""
+msgstr "Jättiläispetopuurunkolaatta"
 
 #: node_defs.lua:73
 msgid "Giant Sequoia Planks Stair"
-msgstr ""
+msgstr "Jättiläispetopuulankkuportaat"
 
 #: node_defs.lua:74
 msgid "Giant Sequoia Planks Slab"
-msgstr ""
+msgstr "Jättiläispetopuulankkulaatta"
 
 #: node_defs.lua:75
 msgid "Giant Sequoia Fence"
-msgstr ""
+msgstr "Jättiläispetopuuaita"
 
 #: node_defs.lua:76
 msgid "Giant Sequoia Fence Rail"
-msgstr ""
+msgstr "Jättiläispetopuuaitakaide"
 
 #: node_defs.lua:77
 msgid "Giant Sequoia Fence Gate"
-msgstr ""
+msgstr "Jättiläispetopuuaitaportti"
 
 #: node_defs.lua:80
 msgid "Birch Tree Trunk"
-msgstr ""
+msgstr "Koivun runko"
 
 #: node_defs.lua:81
 msgid "Birch Tree Planks"
-msgstr ""
+msgstr "Koivun lankut"
 
 #: node_defs.lua:82
 msgid "Birch Tree Sapling"
-msgstr ""
+msgstr "Koivun taimi"
 
 #: node_defs.lua:83
 msgid "Birch Tree Leaves"
-msgstr ""
+msgstr "Koivun lehdet"
 
 #: node_defs.lua:84
 msgid "Birch Tree Trunk Stair"
-msgstr ""
+msgstr "Koivun rungon portaat"
 
 #: node_defs.lua:85
 msgid "Birch Tree Trunk Slab"
-msgstr ""
+msgstr "Koivun rungon laatta"
 
 #: node_defs.lua:86
 msgid "Birch Tree Planks Stair"
-msgstr ""
+msgstr "Koivun lankut portaat"
 
 #: node_defs.lua:87
 msgid "Birch Tree Planks Slab"
-msgstr ""
+msgstr "Koivun lankut laatta"
 
 #: node_defs.lua:88
 msgid "Birch Tree Fence"
-msgstr ""
+msgstr "Koivun aita"
 
 #: node_defs.lua:89
 msgid "Birch Tree Fence Rail"
-msgstr ""
+msgstr "Koivun aitakaide"
 
 #: node_defs.lua:90
 msgid "Birch Tree Fence Gate"
-msgstr ""
+msgstr "Koivun aitaportti"
 
 #: node_defs.lua:93
 msgid "Palm Tree Trunk"
-msgstr ""
+msgstr "Palmun runko"
 
 #: node_defs.lua:94
 msgid "Palm Tree Planks"
-msgstr ""
+msgstr "Palmun lankut"
 
 #: node_defs.lua:95
 msgid "Palm Tree Sapling"
-msgstr ""
+msgstr "Palmun taimi"
 
 #: node_defs.lua:96
 msgid "Palm Tree Leaves"
-msgstr ""
+msgstr "Palmun lehdet"
 
 #: node_defs.lua:97
 msgid "Palm Tree Trunk Stair"
-msgstr ""
+msgstr "Palmun rungon portaat"
 
 #: node_defs.lua:98
 msgid "Palm Tree Trunk Slab"
-msgstr ""
+msgstr "Palmun rungon laatta"
 
 #: node_defs.lua:99
 msgid "Palm Tree Planks Stair"
-msgstr ""
+msgstr "Palmun lankut portaat"
 
 #: node_defs.lua:100
 msgid "Palm Tree Planks Slab"
-msgstr ""
+msgstr "Palmun lankut laatta"
 
 #: node_defs.lua:101
 msgid "Palm Tree Fence"
-msgstr ""
+msgstr "Palmuaita"
 
 #: node_defs.lua:102
 msgid "Palm Tree Fence Rail"
-msgstr ""
+msgstr "Palmun aitakaide"
 
 #: node_defs.lua:103
 msgid "Palm Tree Fence Gate"
-msgstr ""
+msgstr "Palmun aitaportti"
 
 #: node_defs.lua:106
 msgid "Date Palm Tree Trunk"
-msgstr ""
+msgstr "Taatelipalmun runko"
 
 #: node_defs.lua:107
 msgid "Date Palm Tree Planks"
-msgstr ""
+msgstr "Taatelipalmun lankut"
 
 #: node_defs.lua:108
 msgid "Date Palm Tree Sapling"
-msgstr ""
+msgstr "Taatelipalmun taimi"
 
 #: node_defs.lua:109
 msgid "Date Palm Tree Leaves"
-msgstr ""
+msgstr "Taatelipalmun lehdet"
 
 #: node_defs.lua:110
 msgid "Date Palm Tree Trunk Stair"
-msgstr ""
+msgstr "Taatelipalmu Rungon portaat"
 
 #: node_defs.lua:111
 msgid "Date Palm Tree Trunk Slab"
-msgstr ""
+msgstr "Taatelipalmun rungon laatta"
 
 #: node_defs.lua:112
 msgid "Date Palm Tree Planks Stair"
-msgstr ""
+msgstr "Taatelipalmun lankkuportaat"
 
 #: node_defs.lua:113
 msgid "Date Palm Tree Planks Slab"
-msgstr ""
+msgstr "Taatelipalmun lankkulevy"
 
 #: node_defs.lua:114
 msgid "Date Palm Tree Fence"
-msgstr ""
+msgstr "Taatelipalmun aita"
 
 #: node_defs.lua:115
 msgid "Date Palm Tree Fence Rail"
-msgstr ""
+msgstr "Taatelipalmun aitakaide"
 
 #: node_defs.lua:116
 msgid "Date Palm Tree Fence Gate"
-msgstr ""
+msgstr "Taatelipalmun aitaportti"
 
 #: node_defs.lua:119
 msgid "Spruce Tree Trunk"
-msgstr ""
+msgstr "Kuusen runko"
 
 #: node_defs.lua:120
 msgid "Spruce Tree Planks"
-msgstr ""
+msgstr "Kuusen lankut"
 
 #: node_defs.lua:121
 msgid "Spruce Tree Sapling"
-msgstr ""
+msgstr "Kuusen taimi"
 
 #: node_defs.lua:122
 msgid "Spruce Tree Leaves"
-msgstr ""
+msgstr "Kuusen lehdet"
 
 #: node_defs.lua:123
 msgid "Spruce Tree Trunk Stair"
-msgstr ""
+msgstr "Kuusen rungon portaat"
 
 #: node_defs.lua:124
 msgid "Spruce Tree Trunk Slab"
-msgstr ""
+msgstr "Kuusen rungon laatta"
 
 #: node_defs.lua:125
 msgid "Spruce Tree Planks Stair"
-msgstr ""
+msgstr "Kuusen lankut portaat"
 
 #: node_defs.lua:126
 msgid "Spruce Tree Planks Slab"
-msgstr ""
+msgstr "Kuusen lankut laatta"
 
 #: node_defs.lua:127
 msgid "Spruce Tree Fence"
-msgstr ""
+msgstr "Kuusen aita"
 
 #: node_defs.lua:128
 msgid "Spruce Tree Fence Rail"
-msgstr ""
+msgstr "Kuusen aitakaide"
 
 #: node_defs.lua:129
 msgid "Spruce Tree Fence Gate"
-msgstr ""
+msgstr "Kuusen aitaportti"
 
 #: node_defs.lua:132
 msgid "Cedar Tree Trunk"
-msgstr ""
+msgstr "Setripuun runko"
 
 #: node_defs.lua:133
 msgid "Cedar Tree Planks"
-msgstr ""
+msgstr "Setripuun lankut"
 
 #: node_defs.lua:134
 msgid "Cedar Tree Sapling"
-msgstr ""
+msgstr "Setripuun taimi"
 
 #: node_defs.lua:135
 msgid "Cedar Tree Leaves"
-msgstr ""
+msgstr "Setripuun lehdet"
 
 #: node_defs.lua:136
 msgid "Cedar Tree Trunk Stair"
-msgstr ""
+msgstr "Setripuun rungon portaat"
 
 #: node_defs.lua:137
 msgid "Cedar Tree Trunk Slab"
-msgstr ""
+msgstr "Setripuun rungon laatta"
 
 #: node_defs.lua:138
 msgid "Cedar Tree Planks Stair"
-msgstr ""
+msgstr "Setripuun lankut portaat"
 
 #: node_defs.lua:139
 msgid "Cedar Tree Planks Slab"
-msgstr ""
+msgstr "Setripuun lankut laatta"
 
 #: node_defs.lua:140
 msgid "Cedar Tree Fence"
-msgstr ""
+msgstr "Setripuun aita"
 
 #: node_defs.lua:141
 msgid "Cedar Tree Fence Rail"
-msgstr ""
+msgstr "Setripuun aitakaide"
 
 #: node_defs.lua:142
 msgid "Cedar Tree Fence Gate"
-msgstr ""
+msgstr "Setripuun aitaportti"
 
 #: node_defs.lua:145
 msgid "Poplar Tree Trunk"
-msgstr ""
+msgstr "Poppelipuun runko"
 
 #: node_defs.lua:146
 msgid "Poplar Tree Planks"
-msgstr ""
+msgstr "Poppelipuun lankut"
 
 #: node_defs.lua:147
 msgid "Poplar Tree Sapling"
-msgstr ""
+msgstr "Poppelipuun taimi"
 
 #: node_defs.lua:148
 msgid "Poplar Tree Leaves"
-msgstr ""
+msgstr "Poppeli Lehdet"
 
 #: node_defs.lua:149
 msgid "Poplar Tree Trunk Stair"
-msgstr ""
+msgstr "Poppelipuun rungon portaat"
 
 #: node_defs.lua:150
 msgid "Poplar Tree Trunk Slab"
-msgstr ""
+msgstr "Poppelipuun rungon laatta"
 
 #: node_defs.lua:151
 msgid "Poplar Tree Planks Stair"
-msgstr ""
+msgstr "Poppelipuun lankut, portaat"
 
 #: node_defs.lua:152
 msgid "Poplar Tree Planks Slab"
-msgstr ""
+msgstr "Poppelipuun lankut, laatta"
 
 #: node_defs.lua:153
 msgid "Poplar Tree Fence"
-msgstr ""
+msgstr "Poppelipuun aita"
 
 #: node_defs.lua:154
 msgid "Poplar Tree Fence Rail"
-msgstr ""
+msgstr "Poppelipuun aitakaide"
 
 #: node_defs.lua:155
 msgid "Poplar Tree Fence Gate"
-msgstr ""
+msgstr "Poppelipuun aitaportti"
 
 #: node_defs.lua:158
 msgid "Small poplar Tree Sapling"
-msgstr ""
+msgstr "Pieni poppelipuun taimi"
 
 #: node_defs.lua:161
 msgid "Willow Tree Trunk"
-msgstr ""
+msgstr "Pajupuun runko"
 
 #: node_defs.lua:162
 msgid "Willow Tree Planks"
-msgstr ""
+msgstr "Pajupuun lankut"
 
 #: node_defs.lua:163
 msgid "Willow Tree Sapling"
-msgstr ""
+msgstr "Pajupuun taimi"
 
 #: node_defs.lua:164
 msgid "Willow Tree Leaves"
-msgstr ""
+msgstr "Pajupuun lehdet"
 
 #: node_defs.lua:165
 msgid "Willow Tree Trunk Stair"
-msgstr ""
+msgstr "Pajupuun rungon portaat"
 
 #: node_defs.lua:166
 msgid "Willow Tree Trunk Slab"
-msgstr ""
+msgstr "Pajupuun rungon laatta"
 
 #: node_defs.lua:167
 msgid "Willow Tree Planks Stair"
-msgstr ""
+msgstr "Pajupuun lankut, portaat"
 
 #: node_defs.lua:168
 msgid "Willow Tree Planks Slab"
-msgstr ""
+msgstr "Pajupuun lankut, laatta"
 
 #: node_defs.lua:169
 msgid "Willow Tree Fence"
-msgstr ""
+msgstr "Pajupuun aita"
 
 #: node_defs.lua:170
 msgid "Willow Tree Fence Rail"
-msgstr ""
+msgstr "Pajupuun aitakaide"
 
 #: node_defs.lua:171
 msgid "Willow Tree Fence Gate"
-msgstr ""
+msgstr "Pajupuun aitaportti"
 
 #: node_defs.lua:174
 msgid "Rubber Tree Trunk"
-msgstr ""
+msgstr "Kumipuun runko"
 
 #: node_defs.lua:175
 msgid "Rubber Tree Planks"
-msgstr ""
+msgstr "Kumipuun lankut"
 
 #: node_defs.lua:176
 msgid "Rubber Tree Sapling"
-msgstr ""
+msgstr "Kumipuun taimi"
 
 #: node_defs.lua:177
 msgid "Rubber Tree Leaves"
-msgstr ""
+msgstr "Kumipuun lehdet"
 
 #: node_defs.lua:178
 msgid "Rubber Tree Trunk Stair"
-msgstr ""
+msgstr "Kumipuun rungon portaat"
 
 #: node_defs.lua:179
 msgid "Rubber Tree Trunk Slab"
-msgstr ""
+msgstr "Kumipuun rungon laatta"
 
 #: node_defs.lua:180
 msgid "Rubber Tree Planks Stair"
-msgstr ""
+msgstr "Kumipuun lankut, portaat"
 
 #: node_defs.lua:181
 msgid "Rubber Tree Planks Slab"
-msgstr ""
+msgstr "Kumipuun lankut, laatta"
 
 #: node_defs.lua:182
 msgid "Rubber Tree Fence"
-msgstr ""
+msgstr "Kumipuun aita"
 
 #: node_defs.lua:183
 msgid "Rubber Tree Fence Rail"
-msgstr ""
+msgstr "Kumipuun aitakaide"
 
 #: node_defs.lua:184
 msgid "Rubber Tree Fence Gate"
-msgstr ""
+msgstr "Kumipuun aitaportti"
 
 #: node_defs.lua:187
 msgid "Douglas Fir Trunk"
-msgstr ""
+msgstr "Douglas-kuusen runko"
 
 #: node_defs.lua:188
 msgid "Douglas Fir Planks"
-msgstr ""
+msgstr "Douglas-kuusen lankut"
 
 #: node_defs.lua:189
 msgid "Douglas Fir Sapling"
-msgstr ""
+msgstr "Douglas-kuusen taimi"
 
 #: node_defs.lua:190
 msgid "Douglas Fir Leaves"
-msgstr ""
+msgstr "Douglas-kuusen lehdet"
 
 #: node_defs.lua:191
 msgid "Douglas Fir Trunk Stair"
-msgstr ""
+msgstr "Douglas-kuusi Runkoportaat"
 
 #: node_defs.lua:192
 msgid "Douglas Fir Trunk Slab"
-msgstr ""
+msgstr "Douglas-kuusen runkolaatta"
 
 #: node_defs.lua:193
 msgid "Douglas Fir Planks Stair"
-msgstr ""
+msgstr "Douglas-kuusen lankkuportaat"
 
 #: node_defs.lua:194
 msgid "Douglas Fir Planks Slab"
-msgstr ""
+msgstr "Douglas-kuusen lankkulaatta"
 
 #: node_defs.lua:195
 msgid "Douglas Fir Fence"
-msgstr ""
+msgstr "Douglas-kuusen aita"
 
 #: node_defs.lua:196
 msgid "Douglas Fir Fence Rail"
-msgstr ""
+msgstr "Douglas-kuusen aitakaide"
 
 #: node_defs.lua:197
 msgid "Douglas Fir Fence Gate"
-msgstr ""
+msgstr "Douglas-kuusen aitaportti"
 
 #: node_defs.lua:200
 msgid "Jungle Tree Trunk"
-msgstr ""
+msgstr "Viidakkopuun runko"
 
 #: node_defs.lua:201
 msgid "Jungle Tree Planks"
-msgstr ""
+msgstr "Viidakkopuulankut"
 
 #: node_defs.lua:202
 msgid "Jungle Tree Sapling"
-msgstr ""
+msgstr "Viidakkopuun taimi"
 
 #: node_defs.lua:203
 msgid "Jungle Tree Leaves"
-msgstr ""
+msgstr "Viidakkopuun lehdet"
 
 #: node_defs.lua:204
 msgid "Jungle Tree Trunk Stair"
-msgstr ""
+msgstr "Viidakkopuun rungon portaat"
 
 #: node_defs.lua:205
 msgid "Jungle Tree Trunk Slab"
-msgstr ""
+msgstr "Viidakkopuun rungon laatta"
 
 #: node_defs.lua:206
 msgid "Jungle Tree Planks Stair"
-msgstr ""
+msgstr "Viidakkopuulankkuportaat"
 
 #: node_defs.lua:207
 msgid "Jungle Tree Planks Slab"
-msgstr ""
+msgstr "Viidakkopuulankkulaatta"
 
 #: node_defs.lua:208
 msgid "Jungle Tree Fence"
-msgstr ""
+msgstr "Viidakkopuuaita"
 
 #: node_defs.lua:209
 msgid "Jungle Tree Fence Rail"
-msgstr ""
+msgstr "Viidakkopuuaitakaide"
 
 #: node_defs.lua:210
 msgid "Jungle Tree Fence Gate"
-msgstr ""
+msgstr "Viidakkopuuaitaportti"
 
 #: node_defs.lua:491
 msgid "@1 (fast growth)"
-msgstr ""
+msgstr "@1 (nopea kasvu)"
 
 #: node_defs.lua:610
 msgid "Red"
-msgstr ""
+msgstr "Punainen"
 
 #: node_defs.lua:610
 msgid "Yellow"
-msgstr ""
+msgstr "Keltainen"
 
 #: node_defs.lua:623
 msgid "Jungle Tree Leaves (@1)"
-msgstr ""
+msgstr "Viidakkopuun lehdet (@1)"
 
 #: node_defs.lua:670
 msgid "Douglas Fir Leaves (Bright)"
-msgstr ""
+msgstr "Douglas-kuusen lehdet (kirkkaanväriset)"
 
 #: node_defs.lua:716
 msgid "Rubber Tree Trunk (Empty)"
-msgstr ""
+msgstr "Kumipuun runko (tyhjä)"
